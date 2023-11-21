@@ -1,0 +1,54 @@
+#bgImage {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -100;
+}
+.main {
+  padding-top: 88px;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 0;
+}
+.main-toggler {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+#mainNavbar {
+  background-color: #bf6a4d;
+  width: auto;
+  height: 150px;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 6.5rem;
+}
+.navbar-toggler {
+  padding: 0;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-toggler-icon {
+  width: 32px;
+  height: 32px;
+}
+.itemLink {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #fff;
+}
+
+#indexTitle {
+  font-family: HanWangHeiHeavy;
+  font-size: 7.5rem;
+  font-weight: 400;
+  line-height: normal;
+}

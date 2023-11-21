@@ -1,0 +1,114 @@
+$paper-texture: url("/assets/img/paper_texture_repeat.jpg");
+$hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
+
+:root {
+    // home
+    --peach-dark: #BF6A4D;
+    --peach-light: #F9CFB9;
+    // p1
+    --green-dark: #637E3E;
+    --green-light: #C9E48B;
+    // p2
+    --blue-dark: #444F7E;
+    --blue-light: #ADC5E1;
+    // p3
+    --brown-dark: #826A46;
+    --brown-light: #DCBB9E;
+    // p4
+    --purple-dark: #785489;
+    --purple-light: #D4BFDE;
+    // p5
+    --teal-dark: #3A6C57;
+    --teal-light: #A3D3BF;
+    // p6
+    --claret-dark: #6C3A58;
+    --claret-light: #D9B2BB;
+    // p7
+    --cyan-dark: #2E878D;
+    --cyan-light: #A7D8DB;
+}
+body {
+    background: $paper-texture repeat;
+    background-size: 100px 100px;
+}
+// home
+.kv {
+    .kv-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width: 992px) {
+            align-items: flex-start;
+        }
+    }
+    .kv-date {
+        margin-bottom: 8px;
+        font-family: $hanwang;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        color: var(--main-color);
+        @media (min-width: 768px) {
+            font-size: 2.25rem;
+            gap: 1rem;
+        }
+        .date-line {
+            width: 2rem;
+            height: 0;
+            border-bottom: 2px solid var(--main-color);
+            @media (min-width: 768px) {
+                width: 5rem;
+                border-width: 4px;
+            }
+        }
+    }
+    .kv-title {
+        font-family: $hanwang;
+        color: var(--main-color);
+        font-size: 3rem;
+        text-align: center;
+        @media (min-width: 768px) {
+            font-size: 5.5rem;
+        }
+        @media (min-width: 992px) {
+            text-align: left;
+        }
+        .large {
+            display: block;
+            font-size: 4rem;
+            @media (min-width: 768px) {
+                font-size: 5rem;
+            }
+            @media (min-width: 992px) {
+                font-size: 6rem;
+            }
+            @media (min-width: 1200px) {
+                font-size: 7rem;
+            }
+            @media (min-width: 1400px) {
+                font-size: 7.5rem;
+            }
+        }
+    }
+    .kv-bubble {
+        width: 100%;
+        height: auto;
+        @media (min-width: 1200px) {
+            width: 512px;
+        }
+    }
+    .kv-sub-title {
+        margin-top: 1rem;
+        @media (min-width: 1200px) {
+            margin-top: 2.5rem;
+            margin-left: 2.25rem;
+        }
+    }
+    .kv-img {
+        padding-top: 32px;
+        .kv-main {
+            width: 100%;
+        }
+    }
+}

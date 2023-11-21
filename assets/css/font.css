@@ -1,0 +1,9 @@
+/* 要先用@font-face定義這個font-family會在路徑裡撈哪個字體檔 */
+@font-face {
+    font-family: 'HanWangHeiHeavy';
+    src: url('/assets/font/HanWangHeiHeavy.woff2') format('woff2'),
+        url('/assets/font/HanWangHeiHeavy.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
