@@ -1,5 +1,18 @@
 $paper-texture: url("/assets/img/paper_texture_repeat.jpg");
+$grid-texture: url("/assets/img/grid-bg.jpg");
 $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
+
+// Mixin
+// 紙張紋理
+@mixin paper-bg {
+    background: $paper-texture repeat;
+    background-size: 100px 100px;
+}
+// 格線紋理
+@mixin grid-bg {
+    background: $grid-texture repeat;
+    background-size: 208px 210px;
+}
 
 :root {
     // home
@@ -32,15 +45,15 @@ $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
     width: 0.5rem;
 }
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #F8F6E5;
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgba(128, 128, 128, 0.511);
     border-radius: 5px;
 }
 body {
-    background: $paper-texture repeat;
-    background-size: 100px 100px;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    @include paper-bg;
     overflow-x: hidden;
 }
 // home
