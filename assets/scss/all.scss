@@ -5,6 +5,7 @@ $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
     // home
     --peach-dark: #BF6A4D;
     --peach-light: #F9CFB9;
+    --nav--yellow: #EFE719;
     // p1
     --green-dark: #637E3E;
     --green-light: #C9E48B;
@@ -30,9 +31,15 @@ $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
 body {
     background: $paper-texture repeat;
     background-size: 100px 100px;
+    overflow-x: hidden;
 }
 // home
+@import '_nav.scss';
 .kv {
+    img{
+        width: 100%;
+    }
+    padding-top: 88px;
     .kv-text {
         display: flex;
         flex-direction: column;
@@ -111,4 +118,92 @@ body {
             width: 100%;
         }
     }
+    .kv-sec{
+        margin-top: 10rem;
+    }
+    
+}
+.bubble{
+    text-align: center;
+    margin-top: 3rem;
+    .col-12{
+        display: flex;
+        gap: 2.63rem;
+        justify-content: center;
+    }
+    img{
+        width: 22rem;
+    }
+    
+}
+.bubblesec{
+    .bubble-secimg{
+        width: 25rem;
+    }
+    .bubblesec-catman{
+        position: absolute;
+        width: auto;
+        bottom: 0;
+        margin-bottom: 2.56rem;
+    }
+    .bubblesec-text{
+        color: #000;
+        text-align: center;
+        font-family: HanWangHeiHeavy;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 1.93rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        .bubblesec-limg{
+            position: absolute;
+            width: auto;
+            margin-left: -10rem;
+            top: -1.56rem;
+            transform: rotate(0.75turn);
+        }
+        .bubblesec-rimg{
+            position: absolute;
+            width: auto;
+            margin-left: 10rem;
+            top: -1.56rem;
+        }
+    }
+}
+#link-item{
+    margin-top: 7.37rem;
+    .link-img1{
+        margin-left: 1rem;
+        width: 38rem;
+    }
+    .link-img2{
+        width: 36.75rem;
+        left: -100px;
+        bottom: 0;
+        position: absolute;
+    }
+    .link-secrow{
+        margin-top: 2.88rem;
+        .link-img3{
+            margin-left: 13.5rem;
+            width: 53.5rem;
+        }
+        .link-img4{
+            position: absolute;
+            width: 50.25rem;
+        }
+    }
+
+}
+footer{
+    color: #000;
+    text-align: center;
+    font-family: Noto Sans TC;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
