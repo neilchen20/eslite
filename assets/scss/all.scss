@@ -28,6 +28,16 @@ $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
     --cyan-dark: #2E878D;
     --cyan-light: #A7D8DB;
 }
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.511);
+    border-radius: 5px;
+}
 body {
     background: $paper-texture repeat;
     background-size: 100px 100px;
@@ -175,14 +185,14 @@ body {
 #link-item{
     margin-top: 7.37rem;
     .link-img1{
-        margin-left: 1rem;
+        display: block;
+        transform: translate(20px, 0);
         width: 38rem;
     }
     .link-img2{
+        display: block;
+        transform: translate(20px, 0);
         width: 36.75rem;
-        left: -100px;
-        bottom: 0;
-        position: absolute;
     }
     .link-secrow{
         margin-top: 2.88rem;
