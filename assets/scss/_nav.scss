@@ -11,7 +11,7 @@
     padding: 0.75rem;
     gap: 0.5rem;
     border-radius: 1rem;
-    background: var(--peach-dark);
+    background: var(--main-color);
   }
   .nav-righticon {
     display: inline-flex;
@@ -24,7 +24,7 @@
     background: var(--nav--yellow);
   }
   #nav-mainNavbar {
-    background-color: #bf6a4d;
+    background-color: var(--main-color);
     width: auto;
     height: 150px;
     border-radius: 1.5rem;
