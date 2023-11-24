@@ -1,95 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>誠品 | eslite</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- BS5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- Fontawsome 6 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <!-- Custom -->
-    <link href="/assets/css/font.css" rel="stylesheet" />
-    <link href="/assets/css/all.min.css" rel="stylesheet" />
-    <style>
-      :root {
-        --main-color: var(--peach-dark);
-        --minor-color: var(--peach-light);
-      }
-    </style>
+  <title>誠品 | eslite</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- BS5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Fontawsome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Custom -->
+  <link href="/assets/css/font.css" rel="stylesheet" />
+  <link href="/assets/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --main-color: var(--cyan-dark);
+      --minor-color: var(--cyan-light);
+    }
+
+    .btn-primary {
+      width: fit-content;
+      --bs-btn-padding-y: 12px;
+      --bs-btn-padding-x: 32px;
+      --bs-btn-bg: var(--main-color);
+      --bs-btn-border-color: var(--main-color);
+      --bs-btn-hover-bg: color-mix(in srgb, var(--main-color) 90%, black);
+      --bs-btn-hover-border-color: color-mix(in srgb, var(--main-color) 90%, black);
+      --bs-btn-active-bg: color-mix(in srgb, var(--main-color) 80%, black);
+      --bs-btn-active-border-color: color-mix(in srgb, var(--main-color) 80%, black);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 的高寬比例 */
+      padding-top: 30px;
+      /* 上方的空間，可依需求調整 */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-container {
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    p{
+      font-size: 20px;
+    }
+    h2{
+      font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+    }
+  </style>
 </head>
+
 <body>
   <!-- nav -->
   <nav class="navbar fixed-top p-0">
     <div class="container-fluid p-0">
-      <button
-        class="navbar-toggler nav-mainToggler"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#nav-mainNavbar"
-        aria-controls="nav-mainNavbar"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler nav-mainToggler" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#nav-mainNavbar" aria-controls="nav-mainNavbar" aria-label="Toggle navigation">
         <div class="nav-lefticon">
           <img src="/assets/img/icon/menu-white.svg" alt="navbar link" />
         </div>
       </button>
       <!-- main-toggler -->
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="nav-mainNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="nav-mainNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-body">
-          <ul
-            class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row text-light">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row text-light">
             <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#"
-                >誠品全通路 24 小時閱讀分析</a
-              >
+              <a class="nav-link active" aria-current="page" href="#">誠品全通路 24 小時閱讀分析</a>
             </li>
             <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#"
-                >台灣閱讀觀察</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="#">台灣閱讀觀察</a>
             </li>
             <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#"
-                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="#">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
             </li>
             <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="#"
-                >台灣年度暢銷書榜</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度暢銷書榜</a>
             </li>
           </ul>
-          <ul
-            class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row mt-3 text-light">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row mt-3 text-light">
             <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#"
-                >台灣年度暢銷作家</a
-              >
+              <a class="nav-link active" aria-current="page" href="#">台灣年度暢銷作家</a>
             </li>
             <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#"
-                >台灣年度之最＿出版社</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度之最＿出版社</a>
             </li>
             <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#"
-                >誠品社群十大之最</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="#">誠品社群十大之最</a>
             </li>
             <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="/"
-                >返回首頁</a
-              >
+              <a class="nav-link active ms-3" aria-current="page" href="/">返回首頁</a>
             </li>
           </ul>
         </div>
@@ -97,140 +118,163 @@
 
       <!-- link-toggler -->
       <div class="dropdown">
-<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  Dropdown button
-</button>
-<ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Action</a></li>
-  <li><a class="dropdown-item" href="#">Another action</a></li>
-  <li><a class="dropdown-item" href="#">Something else here</a></li>
-</ul>
-</div>
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-     <!-- 歡迎收聽誠品迷Podcast-->
-     <div class="container">
+  <!-- 歡迎收聽誠品迷Podcast-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-title_xl@2x.png" alt="誠品2023年度貼文在這裡" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-title_xs@2x.png" alt="誠品2023年度貼文在這裡" />
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post01_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post01_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">哪一本書曾經拯救了你？</h2>
+        <p>近兩千位粉絲熱烈討論與分享，來去看看大家都從哪些書籍獲得拯救！</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite.member/posts/pfbid02UXmEgunmWWjiX6wsgEGuTeeaxXwmprqdm2Ss3HCPzwTmCZz4LJhfa3jwgq9EfiWml" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post02_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post02_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">誠品讀詩 ＜披薩＞</h2>
+        <p>從披薩和女人，你看見多少問題？但其實原本的他們，都應該毫髮無傷的享受著各自的陽光和咖啡。📖自林于玄《換貓上場了》</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite/posts/pfbid0JHWVNfa1tQjpsS41RfeWyf9jBzrQCGrABke4kucpdGbsVhTxQQs4iQUsGXsSRaJwl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post03_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post03_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">搞笑野生動物攝影</h2>
+        <p>動物們各個放飛自我，從極地、海洋到草原，世界各地派出最「狂野」的代表來參賽。攝影師希望藉由展現野生動物「擬人化」的一面，引起人們對於動物保育議題的關注。<br>  📖《Wild and Crazy》</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite.member/posts/pfbid027aCJbCpQrUDNDrvmA2w2zs3FncAFGP9HGjiCnKDkXoNyFRgrR2dnxGoFZHsvpMwCl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post04_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post04_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">沒有任何付出該被視為理所當然</h2>
+        <p>真正累垮一位母親的，是付出被視為理所當然、委屈不被在乎。與傷心相比，更希望「母親」擁有自己的聲音，取代默默嚥下的委屈。<br> 📖趙南柱《82年生的金智英》</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite/posts/pfbid02ticstsQ8qpC8woBveirF3xVvvSksVjBK9FgCaPdd7S8NgQDMRDoPbMcPRnCK5vzrl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁       <img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post05_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post05_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">卡通裡的「媽媽」也該有名字</h2>
+        <p>小丸子的媽媽、大雄的媽媽、小新的媽媽，除了擔任媽媽的角色，還有許多不為人知的的興趣愛好和夢想！</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.instagram.com/p/CsKlayNrsOu/" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post06_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post06_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">北歐幸福感關鍵字</h2>
+        <p>把這些字放心上，隨時提醒自己：「再怎麼忙碌或迷惘，都要記得先讓心情感到幸福。」</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.instagram.com/p/CxPEqezvWnj/" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
+      <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post07_xl@2x.png" alt="">
+      <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post07_xs@2x.png" alt="">
+      <h2 class="hanwang mt-4">「教練，我想演電影」- 三井壽沒有說過</h2>
+      <p>漫畫《灌籃高手》是許多人心中的經典之作，不只隨著電影上映重溫當年的熱血與感動，也帶來更多面對現實世界的勇氣。<br> 📖《灌籃高手完全版》電影上映紀念套書</p>
+      <div class="link mt-auto d-flex flex-column align-items-end">
+        <a href="https://www.facebook.com/eslite/posts/pfbid0x4mnW4XunDzgqC9ikDXbxMxk3igoEutHVC461hhfHv1FTSh6D6QANkVPqCsnSQFAl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+            src="/assets/img/arrow-long-right.svg" alt=""></a>
+      </div>
+    </div>
+    <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
+      <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post08_xl@2x.png" alt="">
+      <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post08_xs@2x.png" alt="">
+      <h2 class="hanwang mt-4">買這個要幹嘛......第 2 彈！</h2>
+      <p>與耶穌共舞，不必是天選之人也能「見證神蹟」！<br> 將全球最幽默的暢銷書《Dancing with Jesus》實體化，打造出手舞足蹈的迷你耶穌，隨時隨地為你上陣熱舞。</p>
+      <div class="link mt-auto d-flex flex-column align-items-end">
+        <a href="https://www.facebook.com/eslite.member/posts/pfbid0uyf9Y4tkNzJubDNiHj9zkmm1rMszA2ufCMDVowLJBRSz2VDiyhKLZezYfpsoLfTpl?locale=zh_TW" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
+            src="/assets/img/arrow-long-right.svg" alt=""></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- 歡迎收聽誠品迷Podcast-->
+    <div class="container my-5">
       <div class="row">
         <div class="col">
-          <img class="img-fluid d-lg-flex d-none"
-            src="/assets/img/p7/sc1-title_xl@2x.png"
-            alt="誠品2023年度貼文在這裡"/>
-          <img class="img-fluid d-flex d-lg-none"
-            src="/assets/img/p7/sc1-title_xs@2x.png"
-            alt="誠品2023年度貼文在這裡"/>
-        </div>
-      </div>
-
-     </div>
-    
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 order-1 order-md-1">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post01_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post01_xl@2x.png" alt="">
-           <h2 class="hanwang">哪一本書曾經拯救了你？</h2>
-           <p>近兩千位粉絲熱烈討論與分享，來去看看大家都從哪些書籍獲得拯救！</p>
-        </div>
-        <div class="col-md-6 order-2 order-md-2">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post02_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post02_xs@2x.png" alt="">
-           <h2 class="hanwang">誠品讀詩 ＜披薩＞</h2>
-           <p>從披薩和女人，你看見多少問題？但其實原本的他們，都應該毫髮無傷的享受著各自的陽光和咖啡。📖自林于玄《換貓上場了》</p>
+          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
+          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
         </div>
       </div>
     </div>
-
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 order-1 order-md-1">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post03_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post03_xs@2x.png" alt="">
-           <h2 class="hanwang">搞笑野生動物攝影</h2>
-           <p>動物們各個放飛自我，從極地、海洋到草原，世界各地派出最「狂野」的代表來參賽。攝影師希望藉由展現野生動物「擬人化」的一面，引起人們對於動物保育議題的關注。 📖《Wild and Crazy》</p>
-        </div>
-        <div class="col-md-6 order-2 order-md-2">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post04_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post04_xs@2x.png" alt="">
-           <h2 class="hanwang">沒有任何付出該被視為理所當然</h2>
-           <p>真正累垮一位母親的，是付出被視為理所當然、委屈不被在乎。與傷心相比，更希望「母親」擁有自己的聲音，取代默默嚥下的委屈。  📖趙南柱《82年生的金智英》</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 order-1 order-md-1">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post05_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post05_xs@2x.png" alt="">
-           <h2>卡通裡的「媽媽」也該有名字</h2>
-           <p>小丸子的媽媽、大雄的媽媽、小新的媽媽，除了擔任媽媽的角色，還有許多不為人知的的興趣愛好和夢想！ 📖《Wild and Crazy》</p>
-        </div>
-        <div class="col-md-6 order-2 order-md-2">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post06_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post06_xs@2x.png" alt="">
-           <h2>北歐幸福感關鍵字</h2>
-           <p>把這些字放心上，隨時提醒自己：「再怎麼忙碌或迷惘，都要記得先讓心情感到幸福。」</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 order-1 order-md-1">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post07_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post07_xs@2x.png" alt="">
-           <h2>「教練，我想演電影」- 三井壽沒有說過</h2>
-           <p>漫畫《灌籃高手》是許多人心中的經典之作，不只隨著電影上映重溫當年的熱血與感動，也帶來更多面對現實世界的勇氣。 📖《灌籃高手完全版》電影上映紀念套書</p>
-        </div>
-        <div class="col-md-6 order-2 order-md-2">
-          <img class="img-fluid d-lg-flex d-none"
-          src="/assets/img/p7/sc1-post08_xl@2x.png" alt="">
-          <img class="img-fluid d-flex d-lg-none"
-           src="/assets/img/p7/sc1-post08_xs@2x.png" alt="">
-           <h2>買這個要幹嘛......第 2 彈！</h2>
-           <p>與耶穌共舞，不必是天選之人也能「見證神蹟」！ 將全球最幽默的暢銷書《Dancing with Jesus》實體化，打造出手舞足蹈的迷你耶穌，隨時隨地為你上陣熱舞。</p>
-        </div>
-      </div>
-    </div>
-
-     <!-- 歡迎收聽誠品迷Podcast-->
-     <div class="container">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid d-lg-flex d-none"
-            src="/assets/img/p7/sc2-title_xl@2x.png"
-            alt="歡迎收聽誠品迷Podcast"/>
-          <img class="img-fluid d-flex d-lg-none"
-            src="/assets/img/p7/sc2-title_xl@2x.png"
-            alt="歡迎收聽誠品迷Podcast"/>
-        </div>
-      </div>
-     </div>
-     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-10">
-          <img class="img-fluid d-flex"
-          src="/assets/img/p7/sc2-podcast@2x.png" alt="">
-        
-           <h2>《為什麼我們不想生》：生孩子是人生必經之路？</h2>
-           <p>獻給處於生與不生的兩難，與做了決定仍感焦慮的現代人；無論怎麼選擇，都應該坦誠面對自己的抉擇。</p>
+          <img class="img-fluid d-flex" src="/assets/img/p7/sc2-podcast@2x.png" alt="">
+
+          <h2 class="hanwang mt-4">《為什麼我們不想生》：生孩子是人生必經之路？</h2>
+          <p>獻給處於生與不生的兩難，與做了決定仍感焦慮的現代人；無論怎麼選擇，都應該坦誠面對自己的抉擇。</p>
+
+          <div class="link d-flex flex-column  align-items-end my-5">
+            <a href="https://podcasts.apple.com/us/podcast/ep222-%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E6%9C%89%E5%85%89-%E5%8B%95%E7%9B%AA%E6%99%82%E5%88%BB%E5%8B%87%E6%95%A2%E5%89%8D%E8%A1%8C%E7%9A%84%E5%8A%9B%E9%87%8F-%E4%BB%8A%E5%A4%A9%E8%AE%80%E4%BB%80%E9%BA%BC/id1535976211?i=1000595391224" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+                src="/assets/img/arrow-long-right.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 歡迎收看誠品迷Youtube-->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
+          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
         </div>
       </div>
     </div>
@@ -239,22 +283,102 @@
       <div class="row justify-content-center">
         <div class="col-xl-10">
           <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/szs6XkqPsug?si=YmBxj04FVmmIGpIl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-           <h2>鄧九雲分享的是療癒書單還是殘酷書單？如何安放遺憾與失去</h2>
-           <p>作家鄧九雲帶著《女二》與她喜歡的兩本書，和大家一同感受生命中所面臨的遺憾與失去。</p>
+            <iframe src="https://www.youtube.com/embed/szs6XkqPsug?si=YmBxj04FVmmIGpIl" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <h2 class="hanwang mt-4">鄧九雲分享的是療癒書單還是殘酷書單？如何安放遺憾與失去</h2>
+          <p>作家鄧九雲帶著《女二》與她喜歡的兩本書，和大家一同感受生命中所面臨的遺憾與失去。</p>
+          <div class="link d-flex flex-column  align-items-end my-5">
+            <a href="https://www.youtube.com/watch?v=szs6XkqPsug" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+                src="/assets/img/arrow-long-right.svg" alt=""></a>
+          </div>
         </div>
       </div>
     </div>
 
-     <div class="container">
+    <!-- 歡迎來到誠品迷網站-->
+    <div class="container my-5">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
+          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-10">
-          <img class="img-fluid d-flex"
-          src="/assets/img/p7/sc4-web@2x.png" alt="">
-        
-           <h2>【解析人類圖】人類圖是什麼？你是人類圖中的哪一型與人生角色呢？</h2>
-           <p>你做的決定，是按照自己想要，還是符合大眾期望？ 藉由「人類圖」了解最深層的自己，找到最適當的人生選擇。</p>
+          <img class="img-fluid d-flex" src="/assets/img/p7/sc4-web@2x.png" alt="">
+
+          <h2 class="hanwang mt-4">【解析人類圖】人類圖是什麼？你是人類圖中的哪一型與人生角色呢？</h2>
+          <p>你做的決定，是按照自己想要，還是符合大眾期望？ <br>藉由「人類圖」了解最深層的自己，找到最適當的人生選擇。</p>
+          <div class="link d-flex flex-column  align-items-end my-5">
+            <a href="https://meet.eslite.com/tw/tc/article/202303230001" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+                src="/assets/img/arrow-long-right.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- 創造多元的閱讀-->
+     <div class="container my-5">
+      <div class="row">
+        <div class="col">
+          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-bubble_xl@2x.png" alt="創造多元的閱讀" />
+          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-bubble_xs@2x.png" alt="創造多元的閱讀" />
+        </div>
+      </div>
+    </div>
+
+     <!-- 看更多精彩內容-->
+     <div class="container my-5 d-flex justify-content-center">
+      <div class="row">
+        <div class="col text-center">
+          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-title_xl@2x.png" alt="看更多精彩內容" />
+          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-title_xs@2x.png" alt="看更多精彩內容" />
+          <p class="m-3" style="font-size:24px;">歡迎追蹤、訂閱、關注、開啟小鈴鐺</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!--  -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://www.facebook.com/eslite.member/?locale=zh_TW" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo1_xs@2x.png" alt="Image 1">
+          </a>
+        </div>
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://www.facebook.com/eslite/?locale=zh_TW" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo2_xs@2x.png" alt="Image 2">
+          </a>
+        </div>
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://www.instagram.com/eslite_global/" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo3_xs@2x.png" alt="Image 3">
+          </a>
+        </div>
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://meet.eslite.com/tw/tc" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo4_xs@2x.png" alt="Image 4">
+          </a>
+        </div>
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://podcasts.apple.com/tw/podcast/%E8%BF%B7%E8%AA%A0%E5%93%81/id1535976211" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo5_xs@2x.png" alt="Image 5">
+          </a>
+        </div>
+        <div class="col-lg-2 col-6 image-container">
+          <a href="https://www.youtube.com/channel/UCyBWpXCsYqhbY1cDBwqUrHw" target="_blank">
+            <img src="/assets/img/p7/sc5-eslite-logo6_xs@2x.png" alt="Image 6">
+          </a>
         </div>
       </div>
     </div>
@@ -262,10 +386,11 @@
 
 
 
-  <footer>
-    誠品線上 - 誠品生活股份有限公司<br />
-    本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
-    Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
-  </footer>
+    <footer>
+      誠品線上 - 誠品生活股份有限公司<br />
+      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
+      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+    </footer>
 </body>
+
 </html>
