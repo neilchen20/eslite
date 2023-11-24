@@ -28,6 +28,9 @@
       .lead {
         font-weight: 400;
       }
+      .hanwang {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+      }
       #sectionTab  {
         .nav {
           justify-content: center;
@@ -37,7 +40,7 @@
           }
         }
         .nav-link {
-          font-weight: bold;
+          font-family: 'HanWangHeiHeavy', Arial, sans-serif;
           --bs-nav-link-padding-y: 1rem;
           --bs-nav-link-padding-x: 1.5rem;
           border: 2px solid var(--main-color);
@@ -81,6 +84,13 @@
         .nav-pills #childTab.active {
           background-color: rgba(167, 216, 219, 0.5);
           --bs-nav-pills-link-active-color: var(--main-color);
+        }
+      }
+      .tab-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+        font-size: 2.5rem;
+        @media (min-width: 992px) {
+          font-size: 4rem;
         }
       }
       #bookTypeContent {
@@ -146,6 +156,7 @@
         flex-shrink: 0;
       }
       .article-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
         display: flex;
         column-gap: 8px;
         width: 100%;
@@ -197,6 +208,7 @@
       </ul>
       <!-- 內容 -->
       <div class="tab-content" id="bookTypeContent">
+        <!-- 中文書內容 -->
         <div class="tab-pane fade show active" id="chineseContent" role="tabpanel" aria-labelledby="chineseTab">
           <div class="bg-white rounded-5">
             <div class="row">
@@ -215,32 +227,32 @@
               <!-- 錨點列表 -->
               <div class="col-12 col-md-8 col-xl-7">
                 <div class="list-group list-group-flush">
-                  <a href="#article1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
+                  <a href="#article1-1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
+                  <a href="#article1-2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
+                  <a href="#article1-3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
+                  <a href="#article1-4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article5" class="list-group-item d-flex">韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元
+                  <a href="#article1-5" class="list-group-item d-flex">韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article6" class="list-group-item d-flex">疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選
+                  <a href="#article1-6" class="list-group-item d-flex">疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
@@ -249,8 +261,8 @@
               </div>
             </div>
             <div class="d-flex flex-column gap-5 mt-5">
-              <!-- 介紹1 -->
-            <div class="row justify-content-center" id="article1">
+            <!-- 介紹1 -->
+            <div class="row justify-content-center" id="article1-1">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -267,7 +279,7 @@
                         </div>
                         <p class="lead">自2016-2017年間興起的新世代網路作家，在連續幾年巨大的出版能量爆發後，逐漸開始進入盤整期，也使得真正有長久讀者支持與維持銷量的作家，在書市開墾出自己一條獨特路線；比如：黃山料、張西、不朽等，都已擁有各自穩定寫作風格與讀者樣貌。而文壇上長年來創作不綴、一直都有忠實讀者擁護的張曼娟與吳明益兩位作家，新書出版依然必造成話題。此外，過去劇場演員聞名的鄧九雲，多年來耕耘寫作不綴，新作《女二》在獲得台北文學獎年金大獎後，銷量與口碑也突破以往作品，也更加奠定其作家身分。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00149" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -276,7 +288,7 @@
               </div>
             </div>
             <!-- 介紹2 -->
-            <div class="row justify-content-center" id="article2">
+            <div class="row justify-content-center" id="article1-2">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -293,7 +305,7 @@
                         </div>
                         <p class="lead">半導體與AI是今年度全球最關注的科技發展與經濟議題，這兩項技術和民生經濟、人力資源，甚至全球政治局勢緊扣，使得許多原本對科技發展興趣不大的商業經營者也不得不去理解。《晶片戰爭》、《晶片對決》等書皆揭示了半導體產業的強勢現象，宣告全球化現象已死、島鏈化時代正式來臨，這將考驗企業分散分險能力。而AI的應用全面發展，不只科技業、服務業，甚至亦威脅過去大量倚靠人原發創意與思考的藝文產業。AI取代人類危機聲起，也令人自問：「人類存在的意義是？」</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00150" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -302,7 +314,7 @@
               </div>
             </div>
             <!-- 介紹3 -->
-            <div class="row justify-content-center" id="article3">
+            <div class="row justify-content-center" id="article1-3">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -319,7 +331,7 @@
                         </div>
                         <p class="lead">在高競爭、資訊快速迭代的時代，超群出眾、出類拔萃是普遍大眾努力追求目標，卻因而身心俱疲。不同於過去幾年關注療癒，今年出現不少如《我可能錯了》、《過度努力》等透過禪學、佛學智者引導，又或諮商心理師分析，以學習接納與放下的閱讀趨勢，將已經受傷的心轉為更積極、賦能的自癒能量。而哲學家尼采、心理學家阿德勒的經典作品亦仍長銷，追尋自我已然成為大部分人重視的人生課題，企盼能從培養獨立思考能力到實踐思想自由，進而超越自己</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00151" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -328,7 +340,7 @@
               </div>
             </div>
             <!-- 介紹4 -->
-            <div class="row justify-content-center" id="article4">
+            <div class="row justify-content-center" id="article1-4">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -345,7 +357,7 @@
                         </div>
                         <p class="lead">電影《奧本海默》意外帶起全球對物理研究的討論熱潮，使原子彈、原爆等議題重新進入一般大眾的視野，更深入探討人類在當代宛如「上帝」角色，主宰且擁有著毀滅世界能力背後的道德議題。而《大話題》、《高手量子力量》等關乎時間與世界運作邏輯的量子理論，也不再專屬物理學家；當抽象理論推論至生活的實相，進而影響人對自身生命的看法——科學研究、科技發展與人文哲思不再是兩方極端。這些交互影響且環環相扣的議題，也使得《陽光小姐》、《廣島末班車》等軟性小說或紀實文學開始受到關注。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00154" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -354,7 +366,7 @@
               </div>
             </div>
             <!-- 介紹5 -->
-            <div class="row justify-content-center" id="article5">
+            <div class="row justify-content-center" id="article1-5">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -371,7 +383,7 @@
                         </div>
                         <p class="lead">2018年《82年生的金智英》再到2021年《歡迎光臨夢境百貨》，接連多本反應國家社會事件或關懷各式議題的書籍出版，為台灣書市注入一波對韓國文學的關注。而豐沛的出版能量也在打開台灣讀者接受度後，更敢於挑戰少了嚴肅議題的溫馨療癒小品，如《不便利的便利店》或《觀迎光臨休南洞書店》等小品，以貼近讀者的人生「小事」引起共鳴，多元類型重新定位韓國文學於書市綻放的風貌。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00155" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -380,7 +392,7 @@
               </div>
             </div>
             <!-- 介紹6 -->
-            <div class="row justify-content-center" id="article6">
+            <div class="row justify-content-center" id="article1-6">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -397,7 +409,7 @@
                         </div>
                         <p class="lead">對許多將日本當第二家鄉的人而言，疫情三年可不好過！隨國境解封，台灣人出國海外第一站，首選仍是日本，其中更以食衣住行最為方便的東京、大阪與京都等都市圈最為熱門。也因而提供第一手情報的最新旅遊書，如《東京攻略完全制霸》等系列書皆同步熱銷。而在日本之外，歐美也成很多疫情間結婚的新婚夫妻補過蜜月的目的地，無論跟團、自由行皆開始復甦。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="https://www.eslite.com/exhibitions/CU202310-00155" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -408,6 +420,7 @@
             </div>
           </div>
         </div>
+        <!-- 外文書內容 -->
         <div class="tab-pane fade" id="foreignContent" role="tabpanel" aria-labelledby="foreignTab">
           <div class="bg-white rounded-5">
             <div class="row">
@@ -426,32 +439,22 @@
               <!-- 錨點列表 -->
               <div class="col-12 col-md-8 col-xl-7">
                 <div class="list-group list-group-flush">
-                  <a href="#article1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
+                  <a href="#article2-1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
+                  <a href="#article2-2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
+                  <a href="#article2-3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
-                    <div class="circle-btn">
-                      <img src="/assets/img/arrow-long-down.svg" alt="">
-                    </div>
-                  </a>
-                  <a href="#article5" class="list-group-item d-flex">韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元
-                    <div class="circle-btn">
-                      <img src="/assets/img/arrow-long-down.svg" alt="">
-                    </div>
-                  </a>
-                  <a href="#article6" class="list-group-item d-flex">疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選
+                  <a href="#article2-4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
@@ -461,12 +464,12 @@
             </div>
             <div class="d-flex flex-column gap-5 mt-5">
               <!-- 介紹1 -->
-            <div class="row justify-content-center" id="article1">
+            <div class="row justify-content-center" id="article2-1">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
                     <div class="book-cover">
-                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab1-book-1.png" alt="">
+                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab2-book-1.png" alt="">
                     </div>
                   </div>
                   <div class="col-12 col-xl-8 d-flex align-items-center">
@@ -474,11 +477,11 @@
                       <div class="d-flex flex-column align-items-end">
                         <div class="article-title">
                           <span class="decor-yellow-dot"></span>
-                          <h4>跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地</h4>
+                          <h4>年輕亞裔作家發聲，多元視角刻畫新世代的失落、追尋與想像</h4>
                         </div>
-                        <p class="lead">自2016-2017年間興起的新世代網路作家，在連續幾年巨大的出版能量爆發後，逐漸開始進入盤整期，也使得真正有長久讀者支持與維持銷量的作家，在書市開墾出自己一條獨特路線；比如：黃山料、張西、不朽等，都已擁有各自穩定寫作風格與讀者樣貌。而文壇上長年來創作不綴、一直都有忠實讀者擁護的張曼娟與吳明益兩位作家，新書出版依然必造成話題。此外，過去劇場演員聞名的鄧九雲，多年來耕耘寫作不綴，新作《女二》在獲得台北文學獎年金大獎後，銷量與口碑也突破以往作品，也更加奠定其作家身分。</p>
+                        <p class="lead">早期亞裔作家的書寫主題，多關注早期移民英美地區華人所面對的認同問題與家族困境，如譚艾美的《喜福會》。近年，越來越多不同亞裔聲音在出版界一鳴驚人。他們拋開過去傳統亞裔文學的離散性與尋根枷鎖，將目光聚焦於現代社會，思索自己的存在定位。台裔美籍作家許華，以真摯直白的語調寫下《Stay True》，記錄與已故日裔好友的回憶，及童年成長時遇到的掙扎與憂愁；台灣作家陳思宏的作品《鬼地方》（Ghost Town）則打入國際書市，以誇張、充滿戲劇性與華麗緊湊的筆法，描寫童年於彰化縣永靖鄉的成長過程，讓新一代台灣文學大放異彩。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -487,7 +490,7 @@
               </div>
             </div>
             <!-- 介紹2 -->
-            <div class="row justify-content-center" id="article2">
+            <div class="row justify-content-center" id="article2-2">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -504,7 +507,7 @@
                         </div>
                         <p class="lead">半導體與AI是今年度全球最關注的科技發展與經濟議題，這兩項技術和民生經濟、人力資源，甚至全球政治局勢緊扣，使得許多原本對科技發展興趣不大的商業經營者也不得不去理解。《晶片戰爭》、《晶片對決》等書皆揭示了半導體產業的強勢現象，宣告全球化現象已死、島鏈化時代正式來臨，這將考驗企業分散分險能力。而AI的應用全面發展，不只科技業、服務業，甚至亦威脅過去大量倚靠人原發創意與思考的藝文產業。AI取代人類危機聲起，也令人自問：「人類存在的意義是？」</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -513,7 +516,7 @@
               </div>
             </div>
             <!-- 介紹3 -->
-            <div class="row justify-content-center" id="article3">
+            <div class="row justify-content-center" id="article2-3">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -530,7 +533,7 @@
                         </div>
                         <p class="lead">在高競爭、資訊快速迭代的時代，超群出眾、出類拔萃是普遍大眾努力追求目標，卻因而身心俱疲。不同於過去幾年關注療癒，今年出現不少如《我可能錯了》、《過度努力》等透過禪學、佛學智者引導，又或諮商心理師分析，以學習接納與放下的閱讀趨勢，將已經受傷的心轉為更積極、賦能的自癒能量。而哲學家尼采、心理學家阿德勒的經典作品亦仍長銷，追尋自我已然成為大部分人重視的人生課題，企盼能從培養獨立思考能力到實踐思想自由，進而超越自己</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -539,7 +542,7 @@
               </div>
             </div>
             <!-- 介紹4 -->
-            <div class="row justify-content-center" id="article4">
+            <div class="row justify-content-center" id="article2-4">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -556,69 +559,18 @@
                         </div>
                         <p class="lead">電影《奧本海默》意外帶起全球對物理研究的討論熱潮，使原子彈、原爆等議題重新進入一般大眾的視野，更深入探討人類在當代宛如「上帝」角色，主宰且擁有著毀滅世界能力背後的道德議題。而《大話題》、《高手量子力量》等關乎時間與世界運作邏輯的量子理論，也不再專屬物理學家；當抽象理論推論至生活的實相，進而影響人對自身生命的看法——科學研究、科技發展與人文哲思不再是兩方極端。這些交互影響且環環相扣的議題，也使得《陽光小姐》、《廣島末班車》等軟性小說或紀實文學開始受到關注。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- 介紹5 -->
-            <div class="row justify-content-center" id="article5">
-              <div class="col-12 col-xl-10">
-                <div class="row">
-                  <div class="col-12 col-xl-4">
-                    <div class="book-cover">
-                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab1-book-5.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-8 d-flex align-items-center">
-                    <div class="article ms-xl-4">
-                      <div class="d-flex flex-column align-items-end">
-                        <div class="article-title">
-                          <span class="decor-yellow-dot"></span>
-                          <h4>韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元</h4>
-                        </div>
-                        <p class="lead">2018年《82年生的金智英》再到2021年《歡迎光臨夢境百貨》，接連多本反應國家社會事件或關懷各式議題的書籍出版，為台灣書市注入一波對韓國文學的關注。而豐沛的出版能量也在打開台灣讀者接受度後，更敢於挑戰少了嚴肅議題的溫馨療癒小品，如《不便利的便利店》或《觀迎光臨休南洞書店》等小品，以貼近讀者的人生「小事」引起共鳴，多元類型重新定位韓國文學於書市綻放的風貌。</p>
-                        <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 介紹6 -->
-            <div class="row justify-content-center" id="article6">
-              <div class="col-12 col-xl-10">
-                <div class="row">
-                  <div class="col-12 col-xl-4 order-lg-2">
-                    <div class="book-cover">
-                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab1-book-6.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-8 d-flex align-items-center">
-                    <div class="article me-xl-4">
-                      <div class="d-flex flex-column align-items-end">
-                        <div class="article-title">
-                          <span class="decor-yellow-dot"></span>
-                          <h4>疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選</h4>
-                        </div>
-                        <p class="lead">對許多將日本當第二家鄉的人而言，疫情三年可不好過！隨國境解封，台灣人出國海外第一站，首選仍是日本，其中更以食衣住行最為方便的東京、大阪與京都等都市圈最為熱門。也因而提供第一手情報的最新旅遊書，如《東京攻略完全制霸》等系列書皆同步熱銷。而在日本之外，歐美也成很多疫情間結婚的新婚夫妻補過蜜月的目的地，無論跟團、自由行皆開始復甦。</p>
-                        <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
+          </div>
         </div>
+        <!-- 兒童書內容 -->
         <div class="tab-pane fade" id="childContent" role="tabpanel" aria-labelledby="childTab">
           <div class="bg-white rounded-5">
             <div class="row">
@@ -637,32 +589,22 @@
               <!-- 錨點列表 -->
               <div class="col-12 col-md-8 col-xl-7">
                 <div class="list-group list-group-flush">
-                  <a href="#article1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
+                  <a href="#article3-1" class="list-group-item d-flex">跨世代華文作家各擅勝場，網路作家歷經盤整期、資深作家仍佔一席之地
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
+                  <a href="#article3-2" class="list-group-item d-flex">當科技連結生存意義，晶片與AI議題全民關注
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
+                  <a href="#article3-3" class="list-group-item d-flex">從過度努力、關注療癒，慢慢來到日常生活中的自我修行
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
                   </a>
-                  <a href="#article4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
-                    <div class="circle-btn">
-                      <img src="/assets/img/arrow-long-down.svg" alt="">
-                    </div>
-                  </a>
-                  <a href="#article5" class="list-group-item d-flex">韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元
-                    <div class="circle-btn">
-                      <img src="/assets/img/arrow-long-down.svg" alt="">
-                    </div>
-                  </a>
-                  <a href="#article6" class="list-group-item d-flex">疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選
+                  <a href="#article3-4" class="list-group-item d-flex">科學研究與人文反思，不再是光譜的兩方極端
                     <div class="circle-btn">
                       <img src="/assets/img/arrow-long-down.svg" alt="">
                     </div>
@@ -671,8 +613,8 @@
               </div>
             </div>
             <div class="d-flex flex-column gap-5 mt-5">
-              <!-- 介紹1 -->
-            <div class="row justify-content-center" id="article1">
+            <!-- 介紹1 -->
+            <div class="row justify-content-center" id="article3-1">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -689,7 +631,7 @@
                         </div>
                         <p class="lead">自2016-2017年間興起的新世代網路作家，在連續幾年巨大的出版能量爆發後，逐漸開始進入盤整期，也使得真正有長久讀者支持與維持銷量的作家，在書市開墾出自己一條獨特路線；比如：黃山料、張西、不朽等，都已擁有各自穩定寫作風格與讀者樣貌。而文壇上長年來創作不綴、一直都有忠實讀者擁護的張曼娟與吳明益兩位作家，新書出版依然必造成話題。此外，過去劇場演員聞名的鄧九雲，多年來耕耘寫作不綴，新作《女二》在獲得台北文學獎年金大獎後，銷量與口碑也突破以往作品，也更加奠定其作家身分。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -698,7 +640,7 @@
               </div>
             </div>
             <!-- 介紹2 -->
-            <div class="row justify-content-center" id="article2">
+            <div class="row justify-content-center" id="article3-2">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -715,7 +657,7 @@
                         </div>
                         <p class="lead">半導體與AI是今年度全球最關注的科技發展與經濟議題，這兩項技術和民生經濟、人力資源，甚至全球政治局勢緊扣，使得許多原本對科技發展興趣不大的商業經營者也不得不去理解。《晶片戰爭》、《晶片對決》等書皆揭示了半導體產業的強勢現象，宣告全球化現象已死、島鏈化時代正式來臨，這將考驗企業分散分險能力。而AI的應用全面發展，不只科技業、服務業，甚至亦威脅過去大量倚靠人原發創意與思考的藝文產業。AI取代人類危機聲起，也令人自問：「人類存在的意義是？」</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -724,7 +666,7 @@
               </div>
             </div>
             <!-- 介紹3 -->
-            <div class="row justify-content-center" id="article3">
+            <div class="row justify-content-center" id="article3-3">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4">
@@ -741,7 +683,7 @@
                         </div>
                         <p class="lead">在高競爭、資訊快速迭代的時代，超群出眾、出類拔萃是普遍大眾努力追求目標，卻因而身心俱疲。不同於過去幾年關注療癒，今年出現不少如《我可能錯了》、《過度努力》等透過禪學、佛學智者引導，又或諮商心理師分析，以學習接納與放下的閱讀趨勢，將已經受傷的心轉為更積極、賦能的自癒能量。而哲學家尼采、心理學家阿德勒的經典作品亦仍長銷，追尋自我已然成為大部分人重視的人生課題，企盼能從培養獨立思考能力到實踐思想自由，進而超越自己</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -750,7 +692,7 @@
               </div>
             </div>
             <!-- 介紹4 -->
-            <div class="row justify-content-center" id="article4">
+            <div class="row justify-content-center" id="article3-4">
               <div class="col-12 col-xl-10">
                 <div class="row">
                   <div class="col-12 col-xl-4 order-lg-2">
@@ -767,7 +709,7 @@
                         </div>
                         <p class="lead">電影《奧本海默》意外帶起全球對物理研究的討論熱潮，使原子彈、原爆等議題重新進入一般大眾的視野，更深入探討人類在當代宛如「上帝」角色，主宰且擁有著毀滅世界能力背後的道德議題。而《大話題》、《高手量子力量》等關乎時間與世界運作邏輯的量子理論，也不再專屬物理學家；當抽象理論推論至生活的實相，進而影響人對自身生命的看法——科學研究、科技發展與人文哲思不再是兩方極端。這些交互影響且環環相扣的議題，也使得《陽光小姐》、《廣島末班車》等軟性小說或紀實文學開始受到關注。</p>
                         <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -775,59 +717,7 @@
                 </div>
               </div>
             </div>
-            <!-- 介紹5 -->
-            <div class="row justify-content-center" id="article5">
-              <div class="col-12 col-xl-10">
-                <div class="row">
-                  <div class="col-12 col-xl-4">
-                    <div class="book-cover">
-                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab1-book-5.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-8 d-flex align-items-center">
-                    <div class="article ms-xl-4">
-                      <div class="d-flex flex-column align-items-end">
-                        <div class="article-title">
-                          <span class="decor-yellow-dot"></span>
-                          <h4>韓國翻譯文學由嚴肅議題開枝散葉，類型愈趨多元</h4>
-                        </div>
-                        <p class="lead">2018年《82年生的金智英》再到2021年《歡迎光臨夢境百貨》，接連多本反應國家社會事件或關懷各式議題的書籍出版，為台灣書市注入一波對韓國文學的關注。而豐沛的出版能量也在打開台灣讀者接受度後，更敢於挑戰少了嚴肅議題的溫馨療癒小品，如《不便利的便利店》或《觀迎光臨休南洞書店》等小品，以貼近讀者的人生「小事」引起共鳴，多元類型重新定位韓國文學於書市綻放的風貌。</p>
-                        <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 介紹6 -->
-            <div class="row justify-content-center" id="article6">
-              <div class="col-12 col-xl-10">
-                <div class="row">
-                  <div class="col-12 col-xl-4 order-lg-2">
-                    <div class="book-cover">
-                      <img class="img-fluid" src="/assets/img/p2/p2-taiwan_read/p2-tab1-book-6.png" alt="">
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-8 d-flex align-items-center">
-                    <div class="article me-xl-4">
-                      <div class="d-flex flex-column align-items-end">
-                        <div class="article-title">
-                          <span class="decor-yellow-dot"></span>
-                          <h4>疫後全球解封，日本仍為台灣人海外旅遊、「返鄉」首選</h4>
-                        </div>
-                        <p class="lead">對許多將日本當第二家鄉的人而言，疫情三年可不好過！隨國境解封，台灣人出國海外第一站，首選仍是日本，其中更以食衣住行最為方便的東京、大阪與京都等都市圈最為熱門。也因而提供第一手情報的最新旅遊書，如《東京攻略完全制霸》等系列書皆同步熱銷。而在日本之外，歐美也成很多疫情間結婚的新婚夫妻補過蜜月的目的地，無論跟團、自由行皆開始復甦。</p>
-                        <div class="link">
-                          <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
+          </div>
           </div>
         </div>
       </div>
