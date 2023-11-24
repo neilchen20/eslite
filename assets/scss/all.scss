@@ -56,6 +56,9 @@ body {
     @include paper-bg;
     overflow-x: hidden;
 }
+.hanwang {
+    font-family: $hanwang;
+}
 // home
 @import '_nav.scss';
 .kv {
