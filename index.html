@@ -5,8 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- BS5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
     <!-- Fontawsome 6 -->
     <link
       rel="stylesheet"
@@ -17,6 +24,8 @@
     <!-- Custom -->
     <link href="/assets/css/font.css" rel="stylesheet" />
     <link href="/assets/css/all.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/assets/js/chengeicon.js"></script>
+
     <style>
       :root {
         --main-color: var(--peach-dark);
@@ -31,13 +40,22 @@
       <div class="container-fluid p-0">
         <button
           class="navbar-toggler nav-mainToggler"
+          id="toggleButton"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#nav-mainNavbar"
           aria-controls="nav-mainNavbar"
           aria-label="Toggle navigation">
           <div class="nav-lefticon">
-            <img src="/assets/img/icon/menu-white.svg" alt="navbar link" />
+            <img
+              src="/assets/img/icon/menu-white.svg"
+              alt="navbar link"
+              id="menuIcon" />
+            <img
+              src="/assets/img/icon/close-white.svg"
+              alt="close navbar"
+              style="display: none"
+              id="closeIcon" />
           </div>
         </button>
         <!-- main-toggler -->
@@ -46,49 +64,135 @@
           tabindex="-1"
           id="nav-mainNavbar"
           aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-body">
+          <div class="offcanvas-body d-none d-lg-block">
             <ul
-              class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row text-light">
-              <li class="nav-item itemLink me-3">
-                <a class="nav-link active" aria-current="page" href="#"
+              class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/all-day.html"
                   >誠品全通路 24 小時閱讀分析</a
                 >
               </li>
-              <li class="nav-item itemLink border-start me-3">
-                <a class="nav-link active ms-3" aria-current="page" href="#"
+              <li class="nav-item nav-itemLink">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/taiwan-read.html"
                   >台灣閱讀觀察</a
                 >
               </li>
-              <li class="nav-item itemLink border-start me-3">
-                <a class="nav-link active ms-3" aria-current="page" href="#"
+              <li class="nav-item nav-itemLink">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/hskt-read.html"
                   >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
                 >
               </li>
-              <li class="nav-item itemLink border-start">
-                <a class="nav-link active ms-3" aria-current="page" href="#"
+              <li class="nav-item nav-itemLink">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/year-top.html"
                   >台灣年度暢銷書榜</a
                 >
               </li>
             </ul>
-            <ul
-              class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row mt-3 text-light">
-              <li class="nav-item itemLink me-3">
-                <a class="nav-link active" aria-current="page" href="#"
+            <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/year-writer.html"
                   >台灣年度暢銷作家</a
                 >
               </li>
-              <li class="nav-item itemLink border-start me-3">
-                <a class="nav-link active ms-3" aria-current="page" href="#"
+              <li class="nav-item nav-itemLink">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/publish.html"
                   >台灣年度之最＿出版社</a
                 >
               </li>
-              <li class="nav-item itemLink border-start me-3">
-                <a class="nav-link active ms-3" aria-current="page" href="#"
+              <li class="nav-item nav-itemLink">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/social.html"
                   >誠品社群十大之最</a
                 >
               </li>
-              <li class="nav-item itemLink border-start">
-                <a class="nav-link active ms-3" aria-current="page" href="/"
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link active" aria-current="page" href="/"
+                  >返回首頁</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="offcanvas-body d-block d-lg-none">
+            <ul
+              class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/all-day.html"
+                  >誠品全通路 24 小時閱讀分析</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/taiwan-read.html"
+                  >台灣閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/hskt-read.html"
+                  >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/year-top.html"
+                  >台灣年度暢銷書榜</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/year-writer.html"
+                  >台灣年度暢銷作家</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/publish.html"
+                  >台灣年度之最＿出版社</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/social.html"
+                  >誠品社群十大之最</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link active" aria-current="page" href="/"
                   >返回首頁</a
                 >
               </li>
@@ -97,16 +201,35 @@
         </div>
 
         <!-- link-toggler -->
-        <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
+        <div class="dropdown" id="link-dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle p-0"
+            id="link-dropbtn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <div class="nav-righticon">
+              <img src="/assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon"/>
+              <img
+              src="/assets/img/icon/close-black.svg"
+              alt="close navbar"
+              style="display: none"
+              id="d-closeIcon" />
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <img
+              src="/assets/img/Polygon1.svg"
+              alt="Polygon1"
+              id="nav-polygon" />
+            <li><a class="dropdown-item" href="#">中文館</a></li>
+            <li><a class="dropdown-item" href="#">外文館</a></li>
+            <li><a class="dropdown-item" href="#">兒童館</a></li>
+            <li><a class="dropdown-item" href="#">誠品線上</a></li>
+            <li><a class="dropdown-item" href="#">TOP 100</a></li>
+            <li><a class="dropdown-item" href="#">職人大賞</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -136,7 +259,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
           <div class="kv-img">
             <img
               class="kv-main"
@@ -159,90 +282,110 @@
         </div>
       </div>
       <!-- bubble -->
-      <div class="row bubble">
-        <div class="col-12">
-          <img src="/assets/img/bubble-explore@2x.png" alt="bubble explore" />
-          <img src="/assets/img/bubble-hashtag@2x.png" alt="bubble hashtag" />
-          <img src="/assets/img/bubble-checkin@2x.png" alt="bubble checkin" />
+      <div class="bubble">
+        <div class="row bubbleone">
+          <div class="col-12 col-lg-4">
+            <img src="/assets/img/bubble-explore@2x.png" alt="bubble explore" />
+          </div>
+          <div class="col-12 col-lg-4">
+            <img src="/assets/img/bubble-hashtag@2x.png" alt="bubble hashtag" />
+          </div>
+          <div class="col-12 col-lg-4">
+            <img src="/assets/img/bubble-checkin@2x.png" alt="bubble checkin" />
+          </div>
         </div>
-      </div>
-      <div class="row text-center mt-3 position-relative bubblesec">
-        <div class="col">
-          <img
-            src="/assets/img/bubble-like@2x.png"
-            alt="bubble like"
-            class="bubble-secimg me-5" />
-          <img
-            src="/assets/img/bubble-save-subscribe@2x.png"
-            alt="bubble save subscribe"
-            class="bubble-secimg" />
-          <img
-            src="/assets/img/cat-man.png"
-            alt="cat man"
-            class="bubblesec-catman" />
-        </div>
-        <div class="row bubblesec-text">
-          <img
-            src="/assets/img/highlight.svg"
-            alt="點開通知"
-            class="bubblesec-limg" />
-          <span>點開通知</span>
-          <img
-            src="/assets/img/highlight.svg"
-            alt="點開通知"
-            class="bubblesec-rimg" />
-          <span>讀取今年度的閱讀回顧總整理</span>
+        <div class="row bubblesec">
+          <div class="col bubblesec-gap">
+            <img
+              src="/assets/img/bubble-like@2x.png"
+              alt="bubble like"
+              class="bubble-secimg" />
+            <img
+              src="/assets/img/bubble-save-subscribe@2x.png"
+              alt="bubble save subscribe"
+              class="bubble-secimg" />
+            <img
+              src="/assets/img/cat-man.png"
+              alt="cat man"
+              class="bubblesec-catman" />
+          </div>
+          <div class="row bubblesec-text">
+            <img
+              src="/assets/img/highlight.svg"
+              alt="點開通知"
+              class="bubblesec-limg" />
+            <span>點開通知</span>
+            <img
+              src="/assets/img/highlight.svg"
+              alt="點開通知"
+              class="bubblesec-rimg" />
+            <span>讀取今年度的閱讀回顧總整理</span>
+          </div>
         </div>
       </div>
       <!-- link item -->
       <div id="link-item">
         <div class="row">
           <div class="col">
-            <a href="">
+            <a href="" class="link-img1">
               <img
                 src="/assets/img/link-item-1.png"
-                alt="誠品全通路24小時閱讀分析" class="link-img1"/>
+                alt="誠品全通路24小時閱讀分析"
+                id="link-img1" />
             </a>
           </div>
           <div class="col d-flex align-items-end position-relative">
-            <a href="">
-              <img src="/assets/img/link-item-2.png" alt="台灣閱讀觀察" class="link-img2"/>
+            <a href="" class="link-img2">
+              <img
+                src="/assets/img/link-item-2.png"
+                alt="台灣閱讀觀察"
+                id="link-img2" />
             </a>
           </div>
         </div>
         <div class="row link-secrow">
-          <div class="col-6">
-            <a href="">
+          <div class="col col-lg-6 link-colimg3">
+            <a href="" class="link-img3">
               <img
                 src="/assets/img/link-item-3.png"
-                alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察" class="link-img3"/>
+                alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察"
+                id="link-img3" />
             </a>
           </div>
-          <div class="col-6">
-            <a href="">
-              <img src="/assets/img/link-item-4.png" alt="台灣年度暢銷書榜" class="link-img4"/>
+          <div class="col col-lg-6">
+            <a href="" class="link-img4">
+              <img
+                src="/assets/img/link-item-4.png"
+                alt="台灣年度暢銷書榜"
+                id="link-img4" />
             </a>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <a href="">
-              <img src="/assets/img/link-item-5.png" alt="台灣年度暢銷作家" />
+        <div class="row link-thrrow">
+          <div class="col link-colimg5">
+            <a href="" class="link-img5">
+              <img
+                src="/assets/img/link-item-5.png"
+                alt="台灣年度暢銷作家"
+                id="link-img5" />
             </a>
           </div>
           <div class="col">
-            <a href="">
+            <a href="" class="link-img7">
               <img
                 src="/assets/img/link-item-7.png"
                 alt="台灣年度之最＿出版社"
-                class="w-auto" />
+                id="link-img7" />
             </a>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <a href="">
-              <img src="/assets/img/link-item-6.png" alt="誠品社群十大之最" />
+        <div class="row link-fourow">
+          <div class="col link-colimg6">
+            <a href="" class="link-img6">
+              <img
+                src="/assets/img/link-item-6.png"
+                alt="誠品社群十大之最"
+                id="link-img6" />
             </a>
           </div>
         </div>
@@ -253,5 +396,25 @@
       本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
       Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
     </footer>
+    <script>
+      var offcanvasElement = document.getElementById('nav-mainNavbar')
+      offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'none'
+        document.getElementById('closeIcon').style.display = 'block'
+      })
+      offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'block'
+        document.getElementById('closeIcon').style.display = 'none'
+      })
+      var dropdownElement = document.getElementById('link-dropdown')
+      dropdownElement.addEventListener('show.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'none'
+        document.getElementById('d-closeIcon').style.display = 'block'
+      })
+      dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'block'
+        document.getElementById('d-closeIcon').style.display = 'none'
+      })
+    </script>
   </body>
 </html>
