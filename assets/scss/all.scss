@@ -43,7 +43,6 @@ $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
 }
 ::-webkit-scrollbar {
     width: 0.5rem;
-    position: absolute;
 }
 ::-webkit-scrollbar-track {
     background: #F8F6E5;
@@ -57,30 +56,16 @@ body {
     @include paper-bg;
     overflow-x: hidden;
 }
-body::before{
-    @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('/assets/img/Ellipse2.svg');
-        background-repeat: no-repeat;
-        width: 24.375rem;
-        height: 24.375rem;
-        top: 0rem;
-        z-index: -10;
-    }
+.hanwang {
+    font-family: $hanwang;
 }
 // home
 @import '_nav.scss';
 .kv {
-    overflow-x: hidden;
-    @media (min-width:992px) {
-        overflow-x: unset;
-    }
     img{
         width: 100%;
     }
-    padding-top: 170px;
+    padding-top: 88px;
     .kv-text {
         display: flex;
         flex-direction: column;
@@ -154,52 +139,9 @@ body::before{
         }
     }
     .kv-img {
-        position: relative;
         padding-top: 32px;
         .kv-main {
             width: 100%;
-            @media (min-width:992px) {
-                width: 120%;
-            }
-        }
-    }
-    .kv-img::before{
-        @media (min-width:992px) {
-            content: '';
-            display: block;
-            position: absolute;
-            background-image: url('/assets/img/tree.png');
-            background-repeat: no-repeat;
-            width: 8.75rem;
-            height: 11.875rem;
-            right: -4rem;
-            bottom: -1rem;
-            z-index: -10;
-        }
-    }
-    .kv-img::after{
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('/assets/img/balloon.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 3.5rem;
-        height: 4rem;
-        top: 0;
-        right: 7rem;
-        z-index: -10;
-        @media (min-width:992px) {
-            content: '';
-            display: block;
-            position: absolute;
-            background-image: url('/assets/img/balloon.png');
-            background-repeat: no-repeat;
-            width: 8.75rem;
-            height: 11.875rem;
-            top: -4rem;
-            right: 8.5rem;
-            z-index: -10;
         }
     }
     .kv-sec{
@@ -207,316 +149,79 @@ body::before{
     }
     
 }
-
 .bubble{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .bubbleone{
-        text-align: center;
-        margin-top: 3rem;
-        .col-12{
-            display: flex;
-            gap: 2.63rem;
-            justify-content: center;
-        }
-        img{
-            width: 19rem;
-            @media (min-width: 992px) {
-                width: 22rem;
-            }
-        }
-        
-    }
-    .bubblesec{
-        position: relative;
+    text-align: center;
+    margin-top: 3rem;
+    .col-12{
+        display: flex;
+        gap: 2.63rem;
         justify-content: center;
+    }
+    img{
+        width: 22rem;
+    }
+    
+}
+.bubblesec{
+    .bubble-secimg{
+        width: 25rem;
+    }
+    .bubblesec-catman{
+        position: absolute;
+        width: auto;
+        bottom: 0;
+        margin-bottom: 2.56rem;
+    }
+    .bubblesec-text{
+        color: #000;
         text-align: center;
-        margin-top: 1rem;
-        .bubblesec-gap{
-            display: flex;
-            gap: 1rem;
-            flex-direction: column;
-            align-items: center;
-            @media (min-width:992px) {
-                display: flex;
-                flex-direction: unset;
-                justify-content: center;
-            }
-            .bubble-secimg{
-                width: 19rem;
-                @media (min-width:992px) {
-                    width: 25rem;
-                }
-            }
-        }
-        
-        .bubblesec-catman{
-            display: none;
+        font-family: HanWangHeiHeavy;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 1.93rem;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        .bubblesec-limg{
             position: absolute;
             width: auto;
-            top: 8rem;
-            right: 10rem;
-            bottom: 0;
-            margin-bottom: 2.56rem;
-            @media (min-width:992px) {
-                display: block;
-            }
+            margin-left: -10rem;
+            top: -1.56rem;
+            transform: rotate(0.75turn);
         }
-        .bubblesec-text{
-            color: #000;
-            text-align: center;
-            font-family: HanWangHeiHeavy;
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: normal;
-            margin-top: 1.93rem;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            @media (min-width:992px) {
-                font-size: 2rem;
-            }
-            .bubblesec-limg{
-                position: absolute;
-                width: auto;
-                margin-left: -10rem;
-                top: -1.56rem;
-                transform: rotate(0.75turn);
-            }
-            .bubblesec-rimg{
-                position: absolute;
-                width: auto;
-                margin-left: 10rem;
-                top: -1.56rem;
-            }
+        .bubblesec-rimg{
+            position: absolute;
+            width: auto;
+            margin-left: 10rem;
+            top: -1.56rem;
         }
-    }
-}
-.bubbleone::before{
-    @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 75rem;
-        height: 4rem;
-        background: #FFE719;
-        top: 8.5rem;
-        right: -5rem;
-        z-index: -1;
-    }
-}
-.bubblesec::before{
-    @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 60rem;
-        height: 4rem;
-        background: #FFE719;
-        top: 4.5rem;
-        left: 0rem;
-        z-index: -1;
-    }
-}
-.bubble::before{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 50rem;
-    height: 4rem;
-    transform: rotate(-90deg);
-    background: #FFE719;
-    top: 30rem;
-    z-index: -1;
-    @media (min-width:992px) {
-        display: none;
     }
 }
 #link-item{
-    margin-top: 5rem;
-    @media (min-width:992px) {
-        margin-top: 7.37rem;
-    }
+    margin-top: 7.37rem;
     .link-img1{
         display: block;
-        transform: translate(-30px, 0);
-        @media (min-width: 992px) {
-            transform: translate(20px, 0);
-        }
-    }
-    #link-img1{
-        width: 24rem;
-        @media (min-width: 768px) {
-            font-size: 5rem;
-        }
-        @media (min-width: 992px) {
-            width: 38rem;
-        }
+        transform: translate(20px, 0);
+        width: 38rem;
     }
     .link-img2{
         display: block;
-        transform: translate(-12px, 0);
-        @media (min-width: 992px) {
-            transform: translate(-100px, 0);
-        }
-    }
-    #link-img2{
-        width: 23rem;
-        @media (min-width: 768px) {
-            font-size: 5rem;
-        }
-        @media (min-width: 992px) {
-            width: 41rem;
-        }
-
+        transform: translate(20px, 0);
+        width: 36.75rem;
     }
     .link-secrow{
-        position: relative;
-        margin-top: 1.125rem;
-        @media (min-width:992px) {
-            margin-top: 2.88rem;
-        }
+        margin-top: 2.88rem;
         .link-img3{
-            display: block;
-            transform: translate(-30px, 0);
-            @media (min-width: 992px) {
-                transform: translate(160px, 0);
-            }
-        }
-        .link-colimg3::before{
-            @media (min-width:992px) {
-                content: '';
-                display: block;
-                position: absolute;
-                background-image: url('/assets/img/flow-balloon-small-1.png');
-                background-repeat: no-repeat;
-                width: 3.125rem;
-                height: 4.625rem;
-                bottom: 8rem;
-                z-index: -10;
-            }
-        }
-        #link-img3{
-            width: 23rem;
-            @media (min-width: 768px) {
-                font-size: 5rem;
-            }
-            @media (min-width: 992px) {
-                width: 53.5rem;
-            }
+            margin-left: 13.5rem;
+            width: 53.5rem;
         }
         .link-img4{
-            display: block;
-            @media (min-width: 992px) {
-                transform: translate(-25px, 285px);
-            }
-        }
-        #link-img4{
-            width: 25rem;
-            @media (min-width: 768px) {
-                font-size: 5rem;
-            }
-            @media (min-width: 992px) {
-                width: 50.25rem;
-            }
+            position: absolute;
+            width: 50.25rem;
         }
     }
-    .link-thrrow{
-        position: relative;
-        margin-top: 1.5rem;
-        @media (min-width:992px) {
-            margin-top: 5rem;
-        }
-        .link-img5{
-            display: block;
-            transform: translate(24px, 0);
-            @media (min-width: 992px) {
-                transform: translate(60px, 0);
-            }
-        }
-        .link-colimg5::before{
-            @media (min-width:992px) {
-                content: '';
-                display: block;
-                position: absolute;
-                background-image: url('/assets/img/flow-balloons.png');
-                background-repeat: no-repeat;
-                width: 12.5rem;
-                height: 13.75rem;
-                top: -6rem;
-                z-index: -10;
-            }
-        }
-        #link-img5{
-            width: 23rem;
-            @media (min-width: 768px) {
-                font-size: 5rem;
-            }
-            @media (min-width: 992px) {
-                width: 40.625rem;
-            }
-        }
-        .link-img7{
-            display: block;
-            transform: translate(60px, 0px);
-            @media (min-width: 992px) {
-                transform: translate(125px, 100px);
-            }
-        }
-        #link-img7{
-            width: 17rem;
-            @media (min-width: 768px) {
-                font-size: 5rem;
-            }
-            @media (min-width: 992px) {
-                width: 26.875rem;
-            }
-        }
-    }
-    .link-fourow{
-        position: relative;
-        .link-colimg6{
-            @media (min-width: 992px) {
-                display: flex;
-                justify-content: center;
-            }
-        }
-        .link-colimg6::before{
-            @media (min-width:992px) {
-                content: '';
-                display: block;
-                position: absolute;
-                background-image: url('/assets/img/flow-tree.png');
-                background-repeat: no-repeat;
-                width: 11.875rem;
-                height: 16.875rem;
-                bottom: 0;
-                left: 5rem;
-                z-index: -10;
-            }
-        }
-        .link-img6{
-            display: flex;
-            transform: translate(-36px, 0px);
-            @media (min-width: 992px) {
-                justify-content: center;
-                transform: translate(0, -20px);
-                width: fit-content;
-                width: -moz-fit-content;
-            }
-        }
-        #link-img6{
-            width: 23rem;
-            @media (min-width: 768px) {
-                font-size: 5rem;
-            }
-            @media (min-width: 992px) {
-                width: 41.875rem;
-            }
-        }
-    }
+
 }
 footer{
     color: #000;
@@ -526,5 +231,5 @@ footer{
     font-weight: 400;
     line-height: normal;
     margin-top: 1.5rem;
-    margin-bottom: 12px;
+    margin-bottom: 0.5rem;
 }
