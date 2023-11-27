@@ -23,6 +23,10 @@
       --main-color: var(--cyan-dark);
       --minor-color: var(--cyan-light);
     }
+    
+    body::before {
+      display: none !important;
+    }
 
     .btn-primary {
       width: fit-content;
@@ -76,41 +80,163 @@
   <!-- nav -->
   <nav class="navbar fixed-top p-0">
     <div class="container-fluid p-0">
-      <button class="navbar-toggler nav-mainToggler" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#nav-mainNavbar" aria-controls="nav-mainNavbar" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler nav-mainToggler"
+        id="toggleButton"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#nav-mainNavbar"
+        aria-controls="nav-mainNavbar"
+        aria-label="Toggle navigation">
         <div class="nav-lefticon">
-          <img src="/assets/img/icon/menu-white.svg" alt="navbar link" />
+          <img
+            src="/assets/img/icon/menu-white.svg"
+            alt="navbar link"
+            id="menuIcon" />
+          <img
+            src="/assets/img/icon/close-white.svg"
+            alt="close navbar"
+            style="display: none"
+            id="closeIcon" />
         </div>
       </button>
       <!-- main-toggler -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="nav-mainNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row text-light">
-            <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#">誠品全通路 24 小時閱讀分析</a>
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="nav-mainNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-body d-none d-lg-block">
+          <ul
+            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/all-day.html"
+                >誠品全通路 24 小時閱讀分析</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣閱讀觀察</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/taiwan-read.html"
+                >台灣閱讀觀察</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/hskt-read.html"
+                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+              >
             </li>
-            <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度暢銷書榜</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-top.html"
+                >台灣年度暢銷書榜</a
+              >
             </li>
           </ul>
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row mt-3 text-light">
-            <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#">台灣年度暢銷作家</a>
+          <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-writer.html"
+                >台灣年度暢銷作家</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度之最＿出版社</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/publish.html"
+                >台灣年度之最＿出版社</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">誠品社群十大之最</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/social.html"
+                >誠品社群十大之最</a
+              >
             </li>
-            <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="/">返回首頁</a>
+            <li class="nav-item nav-itemLink">
+              <a class="nav-link active" aria-current="page" href="/"
+                >返回首頁</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="offcanvas-body d-block d-lg-none">
+          <ul
+            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/all-day.html"
+                >誠品全通路 24 小時閱讀分析</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/taiwan-read.html"
+                >台灣閱讀觀察</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/hskt-read.html"
+                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-top.html"
+                >台灣年度暢銷書榜</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-writer.html"
+                >台灣年度暢銷作家</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/publish.html"
+                >台灣年度之最＿出版社</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/social.html"
+                >誠品社群十大之最</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a class="nav-link active" aria-current="page" href="/"
+                >返回首頁</a
+              >
             </li>
           </ul>
         </div>
