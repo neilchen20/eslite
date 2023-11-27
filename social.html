@@ -73,6 +73,111 @@
     h2{
       font-family: 'HanWangHeiHeavy', Arial, sans-serif;
     }
+
+      /* 分頁Banner */
+      /* Banner-X */
+      #page-banner {
+        height: 100vh;
+        @media (min-width: 992px) {
+          height: 826px;
+        }
+        .page-banner-title {
+          padding-top: 90px;
+          @media (min-width: 992px) {
+            padding-top: 130px;
+          }
+        }
+        .page-banner-text {
+          margin-top: 1rem;
+          text-align: center;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+          }
+          .lead {
+            @media (max-width: 575.98px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .fit-content-h {
+        width: fit-content;
+      }
+      .fit-content-v {
+        height: fit-content;
+      }
+      .banner-tree {
+        width: 127px;
+        left: -25px;
+        top: -45px;
+      }
+      .banner-character {
+        width: 296px;
+        right: -8px;
+        top: 0px;
+        z-index: 1;
+      }
+      @media (min-width: 1200px) {
+        .banner-tree {
+          width: auto;
+          left: -150px;
+          top: -300px;
+        }
+        .banner-character {
+          width: auto;
+          right: -64px;
+          top: -200px;
+        }
+      }
+      div[class*="circle"]::after {
+        content: '';
+        position: absolute;
+        background: var(--blue-light);
+        z-index: -1;
+        border-radius: 100%;
+      }
+      .circle-left {
+        &::after {
+          display: none;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            display: block;
+            width: 450px;
+            height: 450px;
+            top: -740px;
+            left: -190px;
+          }
+        }
+      }
+      .circle-right {
+        &::after {
+          right: -50px;
+          top: -20px;
+          width: 210px;
+          height: 210px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 512px;
+            height: 512px;
+            right: -90px;
+            top: -260px;
+          }
+        }
+      }
+      .banner-birds {
+        left: 190px;
+        top: -470px;
+      }
+      .banner-balloons {
+        right: 64px;
+        top: -460px;
+      }
+      .banner-cat {
+        left: 246px;
+        top: -20px;
+      }
   </style>
 </head>
 
@@ -274,6 +379,49 @@
       </div>
     </div>
   </nav>
+  
+   <!-- banner -->
+   <section class="overflow-hidden" id="page-banner">
+    <div class="container-xl position-relative">
+      <!-- 中間元素 -->
+      <div class="main-element">
+        <!-- 分頁Banner標題 -->
+      <div class="row justify-content-center page-banner-title">
+        <div class="col-12 text-center">
+          <picture>
+            <source srcset="/assets/img/p2/p2-banner-title_xl.png" media="(min-width: 750px)">
+            <img class="img-fluid" src="/assets/img/p2/p2-banner-title_xs@2x.png" alt="">
+          </picture>
+        </div>
+      </div>
+      <!-- 分頁Banner介紹 -->
+      <div class="row justify-content-center page-banner-text">
+        <div class="col-12 col-xxl-6">
+          <p class="lead">跟著誠品小編一起回顧2023最吸眼球的選書推薦！ 我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言Talk to You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。 往下看【誠品社群十大之最】，回放今年的社群話題！   </p>
+          <img src="/assets/img/p2/banner-icon-hashtag.svg" alt="">
+        </div>
+      </div>
+      </div>
+      <!-- 浮動元素 -->
+      <div class="flow-element w-100 position-relative">
+        <div class="position-relative circle-left">
+          <img class="banner-tree position-absolute" src="/assets/img/p2/banner/tree.png" alt="">
+        </div>
+        <div class="position-relative circle-right">
+          <img class="banner-character position-absolute" src="/assets/img/p2/banner/character.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-birds position-absolute" src="/assets/img/p2/banner/birds.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-balloons position-absolute" src="/assets/img/p2/banner/balloons.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-cat position-absolute" src="/assets/img/p2/banner/cat-yellow.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 歡迎收聽誠品迷Podcast-->
   <div class="container my-5">
