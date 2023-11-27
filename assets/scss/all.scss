@@ -58,15 +58,26 @@ body {
     overflow-x: hidden;
 }
 body::before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('/assets/img/Ellipse2_xs.svg');
+    background-repeat: no-repeat;
+    width: 17.75rem;
+    height: 17.75rem;
+    top: -7rem;
+    left: -7rem;
+    z-index: -10;
     @media (min-width:992px) {
         content: '';
         display: block;
         position: absolute;
         background-image: url('/assets/img/Ellipse2.svg');
         background-repeat: no-repeat;
-        width: 24.375rem;
-        height: 24.375rem;
-        top: 0rem;
+        width: 25.5rem;
+        height: 25.5rem;
+        top: -10rem;
+        left: -7rem;
         z-index: -10;
     }
 }
@@ -74,13 +85,14 @@ body::before{
 @import '_nav.scss';
 .kv {
     overflow-x: hidden;
+    padding-top: 6rem;
     @media (min-width:992px) {
         overflow-x: unset;
+        padding-top: 10.625rem;
     }
     img{
         width: 100%;
     }
-    padding-top: 170px;
     .kv-text {
         display: flex;
         flex-direction: column;
@@ -162,6 +174,54 @@ body::before{
                 width: 120%;
             }
         }
+        .kv-cloud::before{
+            content: '';
+            display: block;
+            position: absolute;
+            background-image: url('/assets/img/cloud_xs.png');
+            background-repeat: no-repeat;
+            width: 3.375rem;
+            height: 3.5rem;
+            top: 0rem;
+            left: 3rem;
+            z-index: -10;
+            @media (min-width:992px) {
+                content: '';
+                display: block;
+                position: absolute;
+                background-image: url('/assets/img/cloud.png');
+                background-repeat: no-repeat;
+                width: 8.75rem;
+                height: 11.875rem;
+                top: -4rem;
+                left: 6rem;
+                z-index: -10;
+            }
+        }
+        .kv-cloud::after{
+            content: '';
+            display: block;
+            position: absolute;
+            background-image: url('/assets/img/Ellipse1_xs.svg');
+            background-repeat: no-repeat;
+            width: 23.75rem;
+            height: 23.75rem;
+            top: 0.5rem;
+            left: 2.5rem;
+            z-index: -15;
+            @media (min-width:992px) {
+                content: '';
+                display: block;
+                position: absolute;
+                background-image: url('/assets/img/Ellipse1.svg');
+                background-repeat: no-repeat;
+                width: 64.875rem;
+                height: 64.875rem;
+                top: 2rem;
+                left: 1rem;
+                z-index: -15;
+            }
+        }
     }
     .kv-img::before{
         @media (min-width:992px) {
@@ -203,8 +263,26 @@ body::before{
         }
     }
     .kv-sec{
-        margin-top: 10rem;
+        position: relative;
+        margin-top: 1.375rem;
+        @media (min-width:992px) {
+            margin-top: 10rem;
+        }
     }
+    .kv-sec::before{
+            @media (min-width:992px) {
+                content: '';
+                display: block;
+                position: absolute;
+                background-image: url('/assets/img/Ellipse3.svg');
+                background-repeat: no-repeat;
+                width: 30.875rem;
+                height: 30.875rem;
+                bottom: -1rem;
+                left: -17rem;
+                z-index: -10;
+            }
+        }
     
 }
 
@@ -281,15 +359,30 @@ body::before{
             .bubblesec-limg{
                 position: absolute;
                 width: auto;
-                margin-left: -10rem;
+                margin-left: -9rem;
                 top: -1.56rem;
                 transform: rotate(0.75turn);
             }
             .bubblesec-rimg{
                 position: absolute;
                 width: auto;
-                margin-left: 10rem;
+                margin-left: 8rem;
                 top: -1.56rem;
+            }
+            @media (min-width:992px) {
+                .bubblesec-limg{
+                    position: absolute;
+                    width: auto;
+                    margin-left: -10rem;
+                    top: -1.56rem;
+                    transform: rotate(0.75turn);
+                }
+                .bubblesec-rimg{
+                    position: absolute;
+                    width: auto;
+                    margin-left: 10rem;
+                    top: -1.56rem;
+                }
             }
         }
     }
@@ -316,7 +409,7 @@ body::before{
         height: 4rem;
         background: #FFE719;
         top: 4.5rem;
-        left: 0rem;
+        left: -4rem;
         z-index: -1;
     }
 }
@@ -527,4 +620,6 @@ footer{
     line-height: normal;
     margin-top: 1.5rem;
     margin-bottom: 12px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
 }
