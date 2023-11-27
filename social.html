@@ -117,14 +117,33 @@
       </div>
 
       <!-- link-toggler -->
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
+      <div class="dropdown" id="link-dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle p-0"
+          id="link-dropbtn"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <div class="nav-righticon">
+            <img src="/assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon"/>
+            <img
+            src="/assets/img/icon/close-black.svg"
+            alt="close navbar"
+            style="display: none"
+            id="d-closeIcon" />
+          </div>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <img
+            src="/assets/img/Polygon1.svg"
+            alt="Polygon1"
+            id="nav-polygon" />
+          <li><a class="dropdown-item" href="#">中文館</a></li>
+          <li><a class="dropdown-item" href="#">外文館</a></li>
+          <li><a class="dropdown-item" href="#">兒童館</a></li>
+          <li><a class="dropdown-item" href="#">誠品線上</a></li>
+          <li><a class="dropdown-item" href="#">TOP 100</a></li>
+          <li><a class="dropdown-item" href="#">職人大賞</a></li>
         </ul>
       </div>
     </div>
@@ -346,7 +365,7 @@
     </div>
 
 
-    <!--  -->
+    <!-- 誠品社群媒體 -->
 
     <div class="container">
       <div class="row">
@@ -391,6 +410,26 @@
       本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
       Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
     </footer>
+    <script>
+      var offcanvasElement = document.getElementById('nav-mainNavbar')
+      offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'none'
+        document.getElementById('closeIcon').style.display = 'block'
+      })
+      offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'block'
+        document.getElementById('closeIcon').style.display = 'none'
+      })
+      var dropdownElement = document.getElementById('link-dropdown')
+      dropdownElement.addEventListener('show.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'none'
+        document.getElementById('d-closeIcon').style.display = 'block'
+      })
+      dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'block'
+        document.getElementById('d-closeIcon').style.display = 'none'
+      })
+    </script>
 </body>
 
 </html>
