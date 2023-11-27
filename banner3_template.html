@@ -18,6 +18,13 @@
     <link href="/assets/css/font.css" rel="stylesheet" />
     <link href="/assets/css/all.min.css" rel="stylesheet" />
     <style>
+      :root {
+        --main-color: var(--brown-dark);
+        --minor-color: var(--brown-light);
+      }
+      .lead {
+        font-weight: 400;
+      }
       /* 分頁Banner */
       /* Banner-X */
       #page-banner {
@@ -50,77 +57,73 @@
       .fit-content-v {
         height: fit-content;
       }
-      .banner-tree {
-        width: 127px;
-        left: -25px;
-        top: -45px;
+      .banner-character-left {
+        width: 178px;
+        left: 10px;
+        top: -10px;
+        z-index: -1;
       }
-      .banner-character {
-        width: 296px;
+      .banner-character-right {
+        width: 104px;
         right: -8px;
-        top: 0px;
+        top: 8px;
         z-index: 1;
       }
       @media (min-width: 1200px) {
-        .banner-tree {
+        .banner-character-left {
           width: auto;
-          left: -150px;
-          top: -300px;
+          left: -70px;
+          top: -430px;
         }
-        .banner-character {
+        .banner-character-right {
           width: auto;
-          right: -64px;
-          top: -200px;
+          right: -15px;
+          top: -190px;
         }
       }
       div[class*="circle"]::after {
         content: '';
         position: absolute;
-        background: var(--blue-light);
+        background: var(--minor-color);
         z-index: -1;
         border-radius: 100%;
       }
       .circle-left {
         &::after {
-          display: none;
+          width: 265px;
+          height: 265px;
+          top: 0px;
+          left: 0px;
+          z-index: -2 !important;
         }
         @media (min-width: 992px) {
           &::after {
-            display: block;
-            width: 450px;
-            height: 450px;
-            top: -740px;
-            left: -190px;
+            width: 524px;
+            height: 524px;
+            top: -470px;
+            left: -160px;
           }
         }
       }
       .circle-right {
         &::after {
-          right: -50px;
-          top: -20px;
-          width: 210px;
-          height: 210px;
+          width: 265px;
+          height: 265px;
+          top: -40px;
+          right: 100px;
         }
         @media (min-width: 992px) {
           &::after {
-            width: 512px;
-            height: 512px;
-            right: -90px;
-            top: -260px;
+            width: 352px;
+            height: 352px;
+            right: -120px;
+            top: -280px;
           }
         }
       }
-      .banner-birds {
-        left: 190px;
-        top: -470px;
-      }
-      .banner-balloons {
-        right: 64px;
-        top: -460px;
-      }
-      .banner-cat {
-        left: 246px;
-        top: -20px;
+      .banner-fan {
+        right: 65px;
+        top: -560px;
       }
     </style>
   </head>
@@ -135,35 +138,29 @@
         <div class="row justify-content-center page-banner-title">
           <div class="col-12 text-center">
             <picture>
-              <source srcset="/assets/img/p2/p2-banner-title_xl.png" media="(min-width: 750px)">
-              <img class="img-fluid" src="/assets/img/p2/p2-banner-title_xs@2x.png" alt="">
+              <source srcset="/assets/img/p3/p3-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="/assets/img/p3/p3-banner-title_xs@2x.png" alt="">
             </picture>
           </div>
         </div>
         <!-- 分頁Banner介紹 -->
         <div class="row justify-content-center page-banner-text">
           <div class="col-12 col-xxl-6">
-            <p class="lead">一個熱門 #hashtag 可以連結到更多和自己關注相同議題的人，晶片、AI、國境解封等關鍵字串生成，社群河道上新知、評論摩肩接踵。好焦慮嗎？這裡有人也從閱讀回歸本心</p>
-            <img src="/assets/img/p2/banner-icon-hashtag.svg" alt="">
+            <p class="lead">閱讀現象跨國打卡，吉隆坡店書市觀察首度加入！點入四地書店打卡點，洞悉出版趨勢，也從讀者購書行為、暢銷書探見各地尋常裏風景。</p>
+            <img src="/assets/img/p3/banner-icon-location.svg" alt="">
           </div>
         </div>
         </div>
         <!-- 浮動元素 -->
         <div class="flow-element w-100 position-relative">
           <div class="position-relative circle-left">
-            <img class="banner-tree position-absolute" src="/assets/img/p2/banner/tree.png" alt="">
+            <img class="banner-character-left position-absolute" src="/assets/img/p3/banner/character-left.png" alt="">
           </div>
           <div class="position-relative circle-right">
-            <img class="banner-character position-absolute" src="/assets/img/p2/banner/character.png" alt="">
+            <img class="banner-character-right position-absolute" src="/assets/img/p3/banner/character-right.png" alt="">
           </div>
           <div class="d-none d-xl-block position-relative">
-            <img class="banner-birds position-absolute" src="/assets/img/p2/banner/birds.png" alt="">
-          </div>
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-balloons position-absolute" src="/assets/img/p2/banner/balloons.png" alt="">
-          </div>
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-cat position-absolute" src="/assets/img/p2/banner/cat-yellow.png" alt="">
+            <img class="banner-fan position-absolute" src="/assets/img/p3/banner/fan.png" alt="">
           </div>
         </div>
       </div>
