@@ -23,6 +23,10 @@
       --main-color: var(--cyan-dark);
       --minor-color: var(--cyan-light);
     }
+    
+    body::before {
+      display: none !important;
+    }
 
     .btn-primary {
       width: fit-content;
@@ -69,6 +73,111 @@
     h2{
       font-family: 'HanWangHeiHeavy', Arial, sans-serif;
     }
+
+      /* 分頁Banner */
+      /* Banner-X */
+      #page-banner {
+        height: 100vh;
+        @media (min-width: 992px) {
+          height: 826px;
+        }
+        .page-banner-title {
+          padding-top: 90px;
+          @media (min-width: 992px) {
+            padding-top: 130px;
+          }
+        }
+        .page-banner-text {
+          margin-top: 1rem;
+          text-align: center;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+          }
+          .lead {
+            @media (max-width: 575.98px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .fit-content-h {
+        width: fit-content;
+      }
+      .fit-content-v {
+        height: fit-content;
+      }
+      .banner-tree {
+        width: 127px;
+        left: -25px;
+        top: -45px;
+      }
+      .banner-character {
+        width: 296px;
+        right: -8px;
+        top: 0px;
+        z-index: 1;
+      }
+      @media (min-width: 1200px) {
+        .banner-tree {
+          width: auto;
+          left: -150px;
+          top: -300px;
+        }
+        .banner-character {
+          width: auto;
+          right: -64px;
+          top: -200px;
+        }
+      }
+      div[class*="circle"]::after {
+        content: '';
+        position: absolute;
+        background: var(--blue-light);
+        z-index: -1;
+        border-radius: 100%;
+      }
+      .circle-left {
+        &::after {
+          display: none;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            display: block;
+            width: 450px;
+            height: 450px;
+            top: -740px;
+            left: -190px;
+          }
+        }
+      }
+      .circle-right {
+        &::after {
+          right: -50px;
+          top: -20px;
+          width: 210px;
+          height: 210px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 512px;
+            height: 512px;
+            right: -90px;
+            top: -260px;
+          }
+        }
+      }
+      .banner-birds {
+        left: 190px;
+        top: -470px;
+      }
+      .banner-balloons {
+        right: 64px;
+        top: -460px;
+      }
+      .banner-cat {
+        left: 246px;
+        top: -20px;
+      }
   </style>
 </head>
 
@@ -76,59 +185,243 @@
   <!-- nav -->
   <nav class="navbar fixed-top p-0">
     <div class="container-fluid p-0">
-      <button class="navbar-toggler nav-mainToggler" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#nav-mainNavbar" aria-controls="nav-mainNavbar" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler nav-mainToggler"
+        id="toggleButton"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#nav-mainNavbar"
+        aria-controls="nav-mainNavbar"
+        aria-label="Toggle navigation">
         <div class="nav-lefticon">
-          <img src="/assets/img/icon/menu-white.svg" alt="navbar link" />
+          <img
+            src="/assets/img/icon/menu-white.svg"
+            alt="navbar link"
+            id="menuIcon" />
+          <img
+            src="/assets/img/icon/close-white.svg"
+            alt="close navbar"
+            style="display: none"
+            id="closeIcon" />
         </div>
       </button>
       <!-- main-toggler -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="nav-mainNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row text-light">
-            <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#">誠品全通路 24 小時閱讀分析</a>
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="nav-mainNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-body d-none d-lg-block">
+          <ul
+            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/all-day.html"
+                >誠品全通路 24 小時閱讀分析</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣閱讀觀察</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/taiwan-read.html"
+                >台灣閱讀觀察</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/hskt-read.html"
+                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+              >
             </li>
-            <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度暢銷書榜</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-top.html"
+                >台灣年度暢銷書榜</a
+              >
             </li>
           </ul>
-          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 flex-row mt-3 text-light">
-            <li class="nav-item itemLink me-3">
-              <a class="nav-link active" aria-current="page" href="#">台灣年度暢銷作家</a>
+          <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-writer.html"
+                >台灣年度暢銷作家</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">台灣年度之最＿出版社</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/publish.html"
+                >台灣年度之最＿出版社</a
+              >
             </li>
-            <li class="nav-item itemLink border-start me-3">
-              <a class="nav-link active ms-3" aria-current="page" href="#">誠品社群十大之最</a>
+            <li class="nav-item nav-itemLink">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/social.html"
+                >誠品社群十大之最</a
+              >
             </li>
-            <li class="nav-item itemLink border-start">
-              <a class="nav-link active ms-3" aria-current="page" href="/">返回首頁</a>
+            <li class="nav-item nav-itemLink">
+              <a class="nav-link active" aria-current="page" href="/"
+                >返回首頁</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="offcanvas-body d-block d-lg-none">
+          <ul
+            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/all-day.html"
+                >誠品全通路 24 小時閱讀分析</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/taiwan-read.html"
+                >台灣閱讀觀察</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/hskt-read.html"
+                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-top.html"
+                >台灣年度暢銷書榜</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/year-writer.html"
+                >台灣年度暢銷作家</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/publish.html"
+                >台灣年度之最＿出版社</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/social.html"
+                >誠品社群十大之最</a
+              >
+            </li>
+            <li class="nav-item nav-mobile">
+              <a class="nav-link active" aria-current="page" href="/"
+                >返回首頁</a
+              >
             </li>
           </ul>
         </div>
       </div>
 
       <!-- link-toggler -->
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown button
+      <div class="dropdown" id="link-dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle p-0"
+          id="link-dropbtn"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <div class="nav-righticon">
+            <img src="/assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon"/>
+            <img
+            src="/assets/img/icon/close-black.svg"
+            alt="close navbar"
+            style="display: none"
+            id="d-closeIcon" />
+          </div>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <img
+            src="/assets/img/Polygon1.svg"
+            alt="Polygon1"
+            id="nav-polygon" />
+          <li><a class="dropdown-item" href="#">中文館</a></li>
+          <li><a class="dropdown-item" href="#">外文館</a></li>
+          <li><a class="dropdown-item" href="#">兒童館</a></li>
+          <li><a class="dropdown-item" href="#">誠品線上</a></li>
+          <li><a class="dropdown-item" href="#">TOP 100</a></li>
+          <li><a class="dropdown-item" href="#">職人大賞</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  
+   <!-- banner -->
+   <section class="overflow-hidden" id="page-banner">
+    <div class="container-xl position-relative">
+      <!-- 中間元素 -->
+      <div class="main-element">
+        <!-- 分頁Banner標題 -->
+      <div class="row justify-content-center page-banner-title">
+        <div class="col-12 text-center">
+          <picture>
+            <source srcset="/assets/img/p2/p2-banner-title_xl.png" media="(min-width: 750px)">
+            <img class="img-fluid" src="/assets/img/p2/p2-banner-title_xs@2x.png" alt="">
+          </picture>
+        </div>
+      </div>
+      <!-- 分頁Banner介紹 -->
+      <div class="row justify-content-center page-banner-text">
+        <div class="col-12 col-xxl-6">
+          <p class="lead">跟著誠品小編一起回顧2023最吸眼球的選書推薦！ 我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言Talk to You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。 往下看【誠品社群十大之最】，回放今年的社群話題！   </p>
+          <img src="/assets/img/p2/banner-icon-hashtag.svg" alt="">
+        </div>
+      </div>
+      </div>
+      <!-- 浮動元素 -->
+      <div class="flow-element w-100 position-relative">
+        <div class="position-relative circle-left">
+          <img class="banner-tree position-absolute" src="/assets/img/p2/banner/tree.png" alt="">
+        </div>
+        <div class="position-relative circle-right">
+          <img class="banner-character position-absolute" src="/assets/img/p2/banner/character.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-birds position-absolute" src="/assets/img/p2/banner/birds.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-balloons position-absolute" src="/assets/img/p2/banner/balloons.png" alt="">
+        </div>
+        <div class="d-none d-xl-block position-relative">
+          <img class="banner-cat position-absolute" src="/assets/img/p2/banner/cat-yellow.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 歡迎收聽誠品迷Podcast-->
   <div class="container my-5">
@@ -346,7 +639,7 @@
     </div>
 
 
-    <!--  -->
+    <!-- 誠品社群媒體 -->
 
     <div class="container">
       <div class="row">
@@ -391,6 +684,26 @@
       本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
       Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
     </footer>
+    <script>
+      var offcanvasElement = document.getElementById('nav-mainNavbar')
+      offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'none'
+        document.getElementById('closeIcon').style.display = 'block'
+      })
+      offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'block'
+        document.getElementById('closeIcon').style.display = 'none'
+      })
+      var dropdownElement = document.getElementById('link-dropdown')
+      dropdownElement.addEventListener('show.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'none'
+        document.getElementById('d-closeIcon').style.display = 'block'
+      })
+      dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'block'
+        document.getElementById('d-closeIcon').style.display = 'none'
+      })
+    </script>
 </body>
 
 </html>
