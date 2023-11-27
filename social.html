@@ -23,6 +23,7 @@
       --main-color: var(--cyan-dark);
       --minor-color: var(--cyan-light);
     }
+
     
     body::before {
       display: none !important;
@@ -67,281 +68,190 @@
       height: auto;
     }
 
-    p{
+    p {
       font-size: 20px;
     }
-    h2{
+
+    h2 {
       font-family: 'HanWangHeiHeavy', Arial, sans-serif;
     }
 
-      /* 分頁Banner */
-      /* Banner-X */
-      #page-banner {
-        height: 100vh;
+    /* 分頁Banner */
+    /* Banner-X */
+    #page-banner {
+      height: 100vh;
+
+      @media (min-width: 992px) {
+        height: 826px;
+      }
+
+      .page-banner-title {
+        padding-top: 90px;
+
         @media (min-width: 992px) {
-          height: 826px;
-        }
-        .page-banner-title {
-          padding-top: 90px;
-          @media (min-width: 992px) {
-            padding-top: 130px;
-          }
-        }
-        .page-banner-text {
-          margin-top: 1rem;
-          text-align: center;
-          @media (min-width: 992px) {
-            margin-top: 2rem;
-          }
-          .lead {
-            @media (max-width: 575.98px) {
-              font-size: 1rem;
-            }
-          }
+          padding-top: 130px;
         }
       }
-      .fit-content-h {
-        width: fit-content;
-      }
-      .fit-content-v {
-        height: fit-content;
-      }
-      .banner-tree {
-        width: 127px;
-        left: -25px;
-        top: -45px;
-      }
-      .banner-character {
-        width: 296px;
-        right: -8px;
-        top: 0px;
-        z-index: 1;
-      }
-      @media (min-width: 1200px) {
-        .banner-tree {
-          width: auto;
-          left: -150px;
-          top: -300px;
-        }
-        .banner-character {
-          width: auto;
-          right: -64px;
-          top: -200px;
-        }
-      }
-      div[class*="circle"]::after {
-        content: '';
-        position: absolute;
-        background: var(--blue-light);
-        z-index: -1;
-        border-radius: 100%;
-      }
-      .circle-left {
-        &::after {
-          display: none;
-        }
+
+      .page-banner-text {
+        margin-top: 1rem;
+        text-align: center;
+
         @media (min-width: 992px) {
-          &::after {
-            display: block;
-            width: 450px;
-            height: 450px;
-            top: -740px;
-            left: -190px;
+          margin-top: 2rem;
+        }
+
+        .lead {
+          @media (max-width: 575.98px) {
+            font-size: 1rem;
           }
         }
       }
-      .circle-right {
-        &::after {
-          right: -50px;
-          top: -20px;
-          width: 210px;
-          height: 210px;
-        }
-        @media (min-width: 992px) {
-          &::after {
-            width: 512px;
-            height: 512px;
-            right: -90px;
-            top: -260px;
-          }
-        }
+    }
+
+    .fit-content-h {
+      width: fit-content;
+    }
+
+    .fit-content-v {
+      height: fit-content;
+    }
+
+    .banner-cat-left {
+      width: 127px;
+      left: -25px;
+      top: -45px;
+      z-index: -1;
+    }
+
+    .banner-cat-right {
+      width: 100px;
+      right: -8px;
+      top: 0px;
+      z-index: 1;
+    }
+
+    @media (min-width: 1200px) {
+      .banner-cat-left {
+        width: auto;
+        left: -150px;
+        top: -300px;
       }
-      .banner-birds {
-        left: 190px;
-        top: -470px;
+
+      .banner-cat-right {
+        width: auto;
+        right: -64px;
+        top: -200px;
+        
       }
-      .banner-balloons {
-        right: 64px;
-        top: -460px;
-      }
-      .banner-cat {
-        left: 246px;
+    }
+
+    div[class*="circle"]::after {
+      content: '';
+      position: absolute;
+      background: var(--cyan-light);
+      z-index: -1;
+      border-radius: 100%;
+    }
+
+    .circle-right {
+      &::after {
+        right: -50px;
         top: -20px;
+        width: 210px;
+        height: 210px;
       }
+
+      @media (min-width: 992px) {
+        &::after {
+          width: 512px;
+          height: 512px;
+          right: -140px;
+          top: -629px;
+        }
+      }
+    }
+
+    .banner-cloud {
+      right: 125px;
+      top: -590px;
+    }
+
+    .banner-cat {
+      left: 246px;
+      top: -20px;
+    }
   </style>
 </head>
 
 <body>
   <!-- nav -->
-  <nav class="navbar fixed-top p-0">
+  <nav class="navbar fixed-top p-0 d-none">
     <div class="container-fluid p-0">
-      <button
-        class="navbar-toggler nav-mainToggler"
-        id="toggleButton"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#nav-mainNavbar"
-        aria-controls="nav-mainNavbar"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler nav-mainToggler" id="toggleButton" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#nav-mainNavbar" aria-controls="nav-mainNavbar" aria-label="Toggle navigation">
         <div class="nav-lefticon">
-          <img
-            src="/assets/img/icon/menu-white.svg"
-            alt="navbar link"
-            id="menuIcon" />
-          <img
-            src="/assets/img/icon/close-white.svg"
-            alt="close navbar"
-            style="display: none"
-            id="closeIcon" />
+          <img src="/assets/img/icon/menu-white.svg" alt="navbar link" id="menuIcon" />
+          <img src="/assets/img/icon/close-white.svg" alt="close navbar" style="display: none" id="closeIcon" />
         </div>
       </button>
       <!-- main-toggler -->
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="nav-mainNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="nav-mainNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-body d-none d-lg-block">
-          <ul
-            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+          <ul class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/all-day.html"
-                >誠品全通路 24 小時閱讀分析</a
-              >
+              <a class="nav-link active" aria-current="page" href="/all-day.html">誠品全通路 24 小時閱讀分析</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/taiwan-read.html"
-                >台灣閱讀觀察</a
-              >
+              <a class="nav-link active" aria-current="page" href="/taiwan-read.html">台灣閱讀觀察</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/hskt-read.html"
-                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
-              >
+              <a class="nav-link active" aria-current="page" href="/hskt-read.html">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/year-top.html"
-                >台灣年度暢銷書榜</a
-              >
+              <a class="nav-link active" aria-current="page" href="/year-top.html">台灣年度暢銷書榜</a>
             </li>
           </ul>
           <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/year-writer.html"
-                >台灣年度暢銷作家</a
-              >
+              <a class="nav-link active" aria-current="page" href="/year-writer.html">台灣年度暢銷作家</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/publish.html"
-                >台灣年度之最＿出版社</a
-              >
+              <a class="nav-link active" aria-current="page" href="/publish.html">台灣年度之最＿出版社</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/social.html"
-                >誠品社群十大之最</a
-              >
+              <a class="nav-link active" aria-current="page" href="/social.html">誠品社群十大之最</a>
             </li>
             <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/"
-                >返回首頁</a
-              >
+              <a class="nav-link active" aria-current="page" href="/">返回首頁</a>
             </li>
           </ul>
         </div>
         <div class="offcanvas-body d-block d-lg-none">
-          <ul
-            class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+          <ul class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/all-day.html"
-                >誠品全通路 24 小時閱讀分析</a
-              >
+              <a class="nav-link active" aria-current="page" href="/all-day.html">誠品全通路 24 小時閱讀分析</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/taiwan-read.html"
-                >台灣閱讀觀察</a
-              >
+              <a class="nav-link active" aria-current="page" href="/taiwan-read.html">台灣閱讀觀察</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/hskt-read.html"
-                >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
-              >
+              <a class="nav-link active" aria-current="page" href="/hskt-read.html">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/year-top.html"
-                >台灣年度暢銷書榜</a
-              >
+              <a class="nav-link active" aria-current="page" href="/year-top.html">台灣年度暢銷書榜</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/year-writer.html"
-                >台灣年度暢銷作家</a
-              >
+              <a class="nav-link active" aria-current="page" href="/year-writer.html">台灣年度暢銷作家</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/publish.html"
-                >台灣年度之最＿出版社</a
-              >
+              <a class="nav-link active" aria-current="page" href="/publish.html">台灣年度之最＿出版社</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/social.html"
-                >誠品社群十大之最</a
-              >
+              <a class="nav-link active" aria-current="page" href="/social.html">誠品社群十大之最</a>
             </li>
             <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/"
-                >返回首頁</a
-              >
+              <a class="nav-link active" aria-current="page" href="/">返回首頁</a>
             </li>
           </ul>
         </div>
@@ -349,26 +259,15 @@
 
       <!-- link-toggler -->
       <div class="dropdown" id="link-dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle p-0"
-          id="link-dropbtn"
-          type="button"
-          data-bs-toggle="dropdown"
+        <button class="btn btn-secondary dropdown-toggle p-0" id="link-dropbtn" type="button" data-bs-toggle="dropdown"
           aria-expanded="false">
           <div class="nav-righticon">
-            <img src="/assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon"/>
-            <img
-            src="/assets/img/icon/close-black.svg"
-            alt="close navbar"
-            style="display: none"
-            id="d-closeIcon" />
+            <img src="/assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon" />
+            <img src="/assets/img/icon/close-black.svg" alt="close navbar" style="display: none" id="d-closeIcon" />
           </div>
         </button>
         <ul class="dropdown-menu">
-          <img
-            src="/assets/img/Polygon1.svg"
-            alt="Polygon1"
-            id="nav-polygon" />
+          <img src="/assets/img/Polygon1.svg" alt="Polygon1" id="nav-polygon" />
           <li><a class="dropdown-item" href="#">中文館</a></li>
           <li><a class="dropdown-item" href="#">外文館</a></li>
           <li><a class="dropdown-item" href="#">兒童館</a></li>
@@ -379,50 +278,43 @@
       </div>
     </div>
   </nav>
-  
-   <!-- banner -->
-   <section class="overflow-hidden" id="page-banner">
+  <!-- banner -->
+  <section class="overflow-hidden" id="page-banner">
     <div class="container-xl position-relative">
       <!-- 中間元素 -->
       <div class="main-element">
         <!-- 分頁Banner標題 -->
-      <div class="row justify-content-center page-banner-title">
-        <div class="col-12 text-center">
-          <picture>
-            <source srcset="/assets/img/p2/p2-banner-title_xl.png" media="(min-width: 750px)">
-            <img class="img-fluid" src="/assets/img/p2/p2-banner-title_xs@2x.png" alt="">
-          </picture>
+        <div class="row justify-content-center page-banner-title">
+          <div class="col-12 text-center">
+            <picture>
+              <source srcset="/assets/img/p7/p7-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="/assets/img/p7/p7-banner-title_xl.png" alt="">
+            </picture>
+          </div>
         </div>
-      </div>
-      <!-- 分頁Banner介紹 -->
-      <div class="row justify-content-center page-banner-text">
-        <div class="col-12 col-xxl-6">
-          <p class="lead">跟著誠品小編一起回顧2023最吸眼球的選書推薦！ 我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言Talk to You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。 往下看【誠品社群十大之最】，回放今年的社群話題！   </p>
-          <img src="/assets/img/p2/banner-icon-hashtag.svg" alt="">
+        <!-- 分頁Banner介紹 -->
+        <div class="row justify-content-center page-banner-text">
+          <div class="col-12 col-xxl-6">
+            <p class="lead">跟著誠品小編一起回顧2023最吸眼球的選書推薦！ 我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言Talk to
+              You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。 往下看【誠品社群十大之最】，回放今年的社群話題！ </p>
+          </div>
         </div>
-      </div>
       </div>
       <!-- 浮動元素 -->
       <div class="flow-element w-100 position-relative">
         <div class="position-relative circle-left">
-          <img class="banner-tree position-absolute" src="/assets/img/p2/banner/tree.png" alt="">
+          <img class="banner-cat-left position-absolute" src="/assets/img/p7/banner/cat-man-left-circle.png" alt="">
         </div>
         <div class="position-relative circle-right">
-          <img class="banner-character position-absolute" src="/assets/img/p2/banner/character.png" alt="">
+          <img class="banner-cat-right position-absolute" src="/assets/img/p7/banner/cat-man-right.png" alt="">
         </div>
         <div class="d-none d-xl-block position-relative">
-          <img class="banner-birds position-absolute" src="/assets/img/p2/banner/birds.png" alt="">
+          <img class="banner-cloud position-absolute" src="/assets/img/p7/banner/cloud.png" alt="">
         </div>
-        <div class="d-none d-xl-block position-relative">
-          <img class="banner-balloons position-absolute" src="/assets/img/p2/banner/balloons.png" alt="">
-        </div>
-        <div class="d-none d-xl-block position-relative">
-          <img class="banner-cat position-absolute" src="/assets/img/p2/banner/cat-yellow.png" alt="">
-        </div>
+
       </div>
     </div>
   </section>
-
   <!-- 歡迎收聽誠品迷Podcast-->
   <div class="container my-5">
     <div class="row">
@@ -444,7 +336,8 @@
         <h2 class="hanwang mt-4">哪一本書曾經拯救了你？</h2>
         <p>近兩千位粉絲熱烈討論與分享，來去看看大家都從哪些書籍獲得拯救！</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.facebook.com/eslite.member/posts/pfbid02UXmEgunmWWjiX6wsgEGuTeeaxXwmprqdm2Ss3HCPzwTmCZz4LJhfa3jwgq9EfiWml" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+          <a href="https://www.facebook.com/eslite.member/posts/pfbid02UXmEgunmWWjiX6wsgEGuTeeaxXwmprqdm2Ss3HCPzwTmCZz4LJhfa3jwgq9EfiWml"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
@@ -454,7 +347,8 @@
         <h2 class="hanwang mt-4">誠品讀詩 ＜披薩＞</h2>
         <p>從披薩和女人，你看見多少問題？但其實原本的他們，都應該毫髮無傷的享受著各自的陽光和咖啡。📖自林于玄《換貓上場了》</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.facebook.com/eslite/posts/pfbid0JHWVNfa1tQjpsS41RfeWyf9jBzrQCGrABke4kucpdGbsVhTxQQs4iQUsGXsSRaJwl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
+          <a href="https://www.facebook.com/eslite/posts/pfbid0JHWVNfa1tQjpsS41RfeWyf9jBzrQCGrABke4kucpdGbsVhTxQQs4iQUsGXsSRaJwl"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
@@ -467,9 +361,10 @@
         <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post03_xl@2x.png" alt="">
         <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post03_xs@2x.png" alt="">
         <h2 class="hanwang mt-4">搞笑野生動物攝影</h2>
-        <p>動物們各個放飛自我，從極地、海洋到草原，世界各地派出最「狂野」的代表來參賽。攝影師希望藉由展現野生動物「擬人化」的一面，引起人們對於動物保育議題的關注。<br>  📖《Wild and Crazy》</p>
+        <p>動物們各個放飛自我，從極地、海洋到草原，世界各地派出最「狂野」的代表來參賽。攝影師希望藉由展現野生動物「擬人化」的一面，引起人們對於動物保育議題的關注。<br> 📖《Wild and Crazy》</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.facebook.com/eslite.member/posts/pfbid027aCJbCpQrUDNDrvmA2w2zs3FncAFGP9HGjiCnKDkXoNyFRgrR2dnxGoFZHsvpMwCl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+          <a href="https://www.facebook.com/eslite.member/posts/pfbid027aCJbCpQrUDNDrvmA2w2zs3FncAFGP9HGjiCnKDkXoNyFRgrR2dnxGoFZHsvpMwCl"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
@@ -479,7 +374,8 @@
         <h2 class="hanwang mt-4">沒有任何付出該被視為理所當然</h2>
         <p>真正累垮一位母親的，是付出被視為理所當然、委屈不被在乎。與傷心相比，更希望「母親」擁有自己的聲音，取代默默嚥下的委屈。<br> 📖趙南柱《82年生的金智英》</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.facebook.com/eslite/posts/pfbid02ticstsQ8qpC8woBveirF3xVvvSksVjBK9FgCaPdd7S8NgQDMRDoPbMcPRnCK5vzrl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁       <img
+          <a href="https://www.facebook.com/eslite/posts/pfbid02ticstsQ8qpC8woBveirF3xVvvSksVjBK9FgCaPdd7S8NgQDMRDoPbMcPRnCK5vzrl"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁 <img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
@@ -494,7 +390,8 @@
         <h2 class="hanwang mt-4">卡通裡的「媽媽」也該有名字</h2>
         <p>小丸子的媽媽、大雄的媽媽、小新的媽媽，除了擔任媽媽的角色，還有許多不為人知的的興趣愛好和夢想！</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.instagram.com/p/CsKlayNrsOu/" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
+          <a href="https://www.instagram.com/p/CsKlayNrsOu/" target="_blank"
+            class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
@@ -504,206 +401,212 @@
         <h2 class="hanwang mt-4">北歐幸福感關鍵字</h2>
         <p>把這些字放心上，隨時提醒自己：「再怎麼忙碌或迷惘，都要記得先讓心情感到幸福。」</p>
         <div class="link mt-auto d-flex flex-column align-items-end">
-          <a href="https://www.instagram.com/p/CxPEqezvWnj/" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
+          <a href="https://www.instagram.com/p/CxPEqezvWnj/" target="_blank"
+            class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品IG<img
               src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
     </div>
   </div>
 
- <div class="container my-5">
-  <div class="row">
-    <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
-      <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post07_xl@2x.png" alt="">
-      <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post07_xs@2x.png" alt="">
-      <h2 class="hanwang mt-4">「教練，我想演電影」- 三井壽沒有說過</h2>
-      <p>漫畫《灌籃高手》是許多人心中的經典之作，不只隨著電影上映重溫當年的熱血與感動，也帶來更多面對現實世界的勇氣。<br> 📖《灌籃高手完全版》電影上映紀念套書</p>
-      <div class="link mt-auto d-flex flex-column align-items-end">
-        <a href="https://www.facebook.com/eslite/posts/pfbid0x4mnW4XunDzgqC9ikDXbxMxk3igoEutHVC461hhfHv1FTSh6D6QANkVPqCsnSQFAl" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
-            src="/assets/img/arrow-long-right.svg" alt=""></a>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 order-1 order-md-1 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post07_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post07_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">「教練，我想演電影」- 三井壽沒有說過</h2>
+        <p>漫畫《灌籃高手》是許多人心中的經典之作，不只隨著電影上映重溫當年的熱血與感動，也帶來更多面對現實世界的勇氣。<br> 📖《灌籃高手完全版》電影上映紀念套書</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite/posts/pfbid0x4mnW4XunDzgqC9ikDXbxMxk3igoEutHVC461hhfHv1FTSh6D6QANkVPqCsnSQFAl"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品人粉絲專頁<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
       </div>
-    </div>
-    <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
-      <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post08_xl@2x.png" alt="">
-      <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post08_xs@2x.png" alt="">
-      <h2 class="hanwang mt-4">買這個要幹嘛......第 2 彈！</h2>
-      <p>與耶穌共舞，不必是天選之人也能「見證神蹟」！<br> 將全球最幽默的暢銷書《Dancing with Jesus》實體化，打造出手舞足蹈的迷你耶穌，隨時隨地為你上陣熱舞。</p>
-      <div class="link mt-auto d-flex flex-column align-items-end">
-        <a href="https://www.facebook.com/eslite.member/posts/pfbid0uyf9Y4tkNzJubDNiHj9zkmm1rMszA2ufCMDVowLJBRSz2VDiyhKLZezYfpsoLfTpl?locale=zh_TW" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
-            src="/assets/img/arrow-long-right.svg" alt=""></a>
+      <div class="col-md-6 order-2 order-md-2 mb-4 d-flex flex-column">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc1-post08_xl@2x.png" alt="">
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc1-post08_xs@2x.png" alt="">
+        <h2 class="hanwang mt-4">買這個要幹嘛......第 2 彈！</h2>
+        <p>與耶穌共舞，不必是天選之人也能「見證神蹟」！<br> 將全球最幽默的暢銷書《Dancing with Jesus》實體化，打造出手舞足蹈的迷你耶穌，隨時隨地為你上陣熱舞。</p>
+        <div class="link mt-auto d-flex flex-column align-items-end">
+          <a href="https://www.facebook.com/eslite.member/posts/pfbid0uyf9Y4tkNzJubDNiHj9zkmm1rMszA2ufCMDVowLJBRSz2VDiyhKLZezYfpsoLfTpl?locale=zh_TW"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">去逛誠品書店粉絲專頁<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-    <!-- 歡迎收聽誠品迷Podcast-->
-    <div class="container my-5">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
-          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
+  <!-- 歡迎收聽誠品迷Podcast-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc2-title_xl@2x.png" alt="歡迎收聽誠品迷Podcast" />
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <img class="img-fluid d-flex" src="/assets/img/p7/sc2-podcast@2x.png" alt="">
+
+        <h2 class="hanwang mt-4">《為什麼我們不想生》：生孩子是人生必經之路？</h2>
+        <p>獻給處於生與不生的兩難，與做了決定仍感焦慮的現代人；無論怎麼選擇，都應該坦誠面對自己的抉擇。</p>
+
+        <div class="link d-flex flex-column  align-items-end my-5">
+          <a href="https://podcasts.apple.com/us/podcast/ep222-%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E6%9C%89%E5%85%89-%E5%8B%95%E7%9B%AA%E6%99%82%E5%88%BB%E5%8B%87%E6%95%A2%E5%89%8D%E8%A1%8C%E7%9A%84%E5%8A%9B%E9%87%8F-%E4%BB%8A%E5%A4%A9%E8%AE%80%E4%BB%80%E9%BA%BC/id1535976211?i=1000595391224"
+            target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
-          <img class="img-fluid d-flex" src="/assets/img/p7/sc2-podcast@2x.png" alt="">
+  </div>
 
-          <h2 class="hanwang mt-4">《為什麼我們不想生》：生孩子是人生必經之路？</h2>
-          <p>獻給處於生與不生的兩難，與做了決定仍感焦慮的現代人；無論怎麼選擇，都應該坦誠面對自己的抉擇。</p>
+  <!-- 歡迎收看誠品迷Youtube-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
+      </div>
+    </div>
+  </div>
 
-          <div class="link d-flex flex-column  align-items-end my-5">
-            <a href="https://podcasts.apple.com/us/podcast/ep222-%E6%88%91%E5%80%91%E8%BA%AB%E4%B8%8A%E6%9C%89%E5%85%89-%E5%8B%95%E7%9B%AA%E6%99%82%E5%88%BB%E5%8B%87%E6%95%A2%E5%89%8D%E8%A1%8C%E7%9A%84%E5%8A%9B%E9%87%8F-%E4%BB%8A%E5%A4%A9%E8%AE%80%E4%BB%80%E9%BA%BC/id1535976211?i=1000595391224" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
-                src="/assets/img/arrow-long-right.svg" alt=""></a>
-          </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/szs6XkqPsug?si=YmBxj04FVmmIGpIl" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <h2 class="hanwang mt-4">鄧九雲分享的是療癒書單還是殘酷書單？如何安放遺憾與失去</h2>
+        <p>作家鄧九雲帶著《女二》與她喜歡的兩本書，和大家一同感受生命中所面臨的遺憾與失去。</p>
+        <div class="link d-flex flex-column  align-items-end my-5">
+          <a href="https://www.youtube.com/watch?v=szs6XkqPsug" target="_blank"
+            class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- 歡迎收看誠品迷Youtube-->
-    <div class="container my-5">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
-          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc3-title_xl@2x.png" alt="歡迎收看誠品迷Youtube" />
+  <!-- 歡迎來到誠品迷網站-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <img class="img-fluid d-flex" src="/assets/img/p7/sc4-web@2x.png" alt="">
+
+        <h2 class="hanwang mt-4">【解析人類圖】人類圖是什麼？你是人類圖中的哪一型與人生角色呢？</h2>
+        <p>你做的決定，是按照自己想要，還是符合大眾期望？ <br>藉由「人類圖」了解最深層的自己，找到最適當的人生選擇。</p>
+        <div class="link d-flex flex-column  align-items-end my-5">
+          <a href="https://meet.eslite.com/tw/tc/article/202303230001" target="_blank"
+            class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
+              src="/assets/img/arrow-long-right.svg" alt=""></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/szs6XkqPsug?si=YmBxj04FVmmIGpIl" title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <h2 class="hanwang mt-4">鄧九雲分享的是療癒書單還是殘酷書單？如何安放遺憾與失去</h2>
-          <p>作家鄧九雲帶著《女二》與她喜歡的兩本書，和大家一同感受生命中所面臨的遺憾與失去。</p>
-          <div class="link d-flex flex-column  align-items-end my-5">
-            <a href="https://www.youtube.com/watch?v=szs6XkqPsug" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
-                src="/assets/img/arrow-long-right.svg" alt=""></a>
-          </div>
-        </div>
+  <!-- 創造多元的閱讀-->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-bubble_xl@2x.png" alt="創造多元的閱讀" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-bubble_xs@2x.png" alt="創造多元的閱讀" />
       </div>
     </div>
+  </div>
 
-    <!-- 歡迎來到誠品迷網站-->
-    <div class="container my-5">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
-          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc4-title_xl@2x.png" alt="歡迎來到誠品迷網站" />
-        </div>
+  <!-- 看更多精彩內容-->
+  <div class="container my-5 d-flex justify-content-center">
+    <div class="row">
+      <div class="col text-center">
+        <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-title_xl@2x.png" alt="看更多精彩內容" />
+        <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-title_xs@2x.png" alt="看更多精彩內容" />
+        <p class="m-3" style="font-size:24px;">歡迎追蹤、訂閱、關注、開啟小鈴鐺</p>
       </div>
     </div>
+  </div>
 
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-10">
-          <img class="img-fluid d-flex" src="/assets/img/p7/sc4-web@2x.png" alt="">
+  <!-- 誠品社群媒體 -->
 
-          <h2 class="hanwang mt-4">【解析人類圖】人類圖是什麼？你是人類圖中的哪一型與人生角色呢？</h2>
-          <p>你做的決定，是按照自己想要，還是符合大眾期望？ <br>藉由「人類圖」了解最深層的自己，找到最適當的人生選擇。</p>
-          <div class="link d-flex flex-column  align-items-end my-5">
-            <a href="https://meet.eslite.com/tw/tc/article/202303230001" target="_blank" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead">收聽更多迷誠品Podcast<img
-                src="/assets/img/arrow-long-right.svg" alt=""></a>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://www.facebook.com/eslite.member/?locale=zh_TW" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo1_xs@2x.png" alt="Image 1">
+        </a>
+      </div>
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://www.facebook.com/eslite/?locale=zh_TW" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo2_xs@2x.png" alt="Image 2">
+        </a>
+      </div>
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://www.instagram.com/eslite_global/" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo3_xs@2x.png" alt="Image 3">
+        </a>
+      </div>
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://meet.eslite.com/tw/tc" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo4_xs@2x.png" alt="Image 4">
+        </a>
+      </div>
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://podcasts.apple.com/tw/podcast/%E8%BF%B7%E8%AA%A0%E5%93%81/id1535976211" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo5_xs@2x.png" alt="Image 5">
+        </a>
+      </div>
+      <div class="col-lg-2 col-6 image-container">
+        <a href="https://www.youtube.com/channel/UCyBWpXCsYqhbY1cDBwqUrHw" target="_blank">
+          <img src="/assets/img/p7/sc5-eslite-logo6_xs@2x.png" alt="Image 6">
+        </a>
       </div>
     </div>
-
-     <!-- 創造多元的閱讀-->
-     <div class="container my-5">
-      <div class="row">
-        <div class="col">
-          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-bubble_xl@2x.png" alt="創造多元的閱讀" />
-          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-bubble_xs@2x.png" alt="創造多元的閱讀" />
-        </div>
-      </div>
-    </div>
-
-     <!-- 看更多精彩內容-->
-     <div class="container my-5 d-flex justify-content-center">
-      <div class="row">
-        <div class="col text-center">
-          <img class="img-fluid d-lg-flex d-none" src="/assets/img/p7/sc5-title_xl@2x.png" alt="看更多精彩內容" />
-          <img class="img-fluid d-flex d-lg-none" src="/assets/img/p7/sc5-title_xs@2x.png" alt="看更多精彩內容" />
-          <p class="m-3" style="font-size:24px;">歡迎追蹤、訂閱、關注、開啟小鈴鐺</p>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 誠品社群媒體 -->
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://www.facebook.com/eslite.member/?locale=zh_TW" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo1_xs@2x.png" alt="Image 1">
-          </a>
-        </div>
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://www.facebook.com/eslite/?locale=zh_TW" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo2_xs@2x.png" alt="Image 2">
-          </a>
-        </div>
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://www.instagram.com/eslite_global/" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo3_xs@2x.png" alt="Image 3">
-          </a>
-        </div>
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://meet.eslite.com/tw/tc" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo4_xs@2x.png" alt="Image 4">
-          </a>
-        </div>
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://podcasts.apple.com/tw/podcast/%E8%BF%B7%E8%AA%A0%E5%93%81/id1535976211" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo5_xs@2x.png" alt="Image 5">
-          </a>
-        </div>
-        <div class="col-lg-2 col-6 image-container">
-          <a href="https://www.youtube.com/channel/UCyBWpXCsYqhbY1cDBwqUrHw" target="_blank">
-            <img src="/assets/img/p7/sc5-eslite-logo6_xs@2x.png" alt="Image 6">
-          </a>
-        </div>
-      </div>
-    </div>
+  </div>
 
 
 
 
-    <footer>
-      誠品線上 - 誠品生活股份有限公司<br />
-      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
-      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
-    </footer>
-    <script>
-      var offcanvasElement = document.getElementById('nav-mainNavbar')
-      offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-        document.getElementById('menuIcon').style.display = 'none'
-        document.getElementById('closeIcon').style.display = 'block'
-      })
-      offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
-        document.getElementById('menuIcon').style.display = 'block'
-        document.getElementById('closeIcon').style.display = 'none'
-      })
-      var dropdownElement = document.getElementById('link-dropdown')
-      dropdownElement.addEventListener('show.bs.dropdown', (event) => {
-        document.getElementById('d-menuIcon').style.display = 'none'
-        document.getElementById('d-closeIcon').style.display = 'block'
-      })
-      dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
-        document.getElementById('d-menuIcon').style.display = 'block'
-        document.getElementById('d-closeIcon').style.display = 'none'
-      })
-    </script>
+  <footer>
+    誠品線上 - 誠品生活股份有限公司<br />
+    本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
+    Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+  </footer>
+  <script>
+    var offcanvasElement = document.getElementById('nav-mainNavbar')
+    offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+      document.getElementById('menuIcon').style.display = 'none'
+      document.getElementById('closeIcon').style.display = 'block'
+    })
+    offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
+      document.getElementById('menuIcon').style.display = 'block'
+      document.getElementById('closeIcon').style.display = 'none'
+    })
+    var dropdownElement = document.getElementById('link-dropdown')
+    dropdownElement.addEventListener('show.bs.dropdown', (event) => {
+      document.getElementById('d-menuIcon').style.display = 'none'
+      document.getElementById('d-closeIcon').style.display = 'block'
+    })
+    dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
+      document.getElementById('d-menuIcon').style.display = 'block'
+      document.getElementById('d-closeIcon').style.display = 'none'
+    })
+  </script>
 </body>
 
 </html>
