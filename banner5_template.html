@@ -19,8 +19,8 @@
     <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
-        --main-color: var(--brown-dark);
-        --minor-color: var(--brown-light);
+        --main-color: var(--teal-dark);
+        --minor-color: var(--teal-light);
       }
       .lead {
         font-weight: 400;
@@ -57,28 +57,28 @@
       .fit-content-v {
         height: fit-content;
       }
-      .banner-character-left {
-        width: 178px;
+      .banner-big-book-left {
+        width: 304px;
         left: -30px;
-        top: -44px;
+        top: 0px;
         z-index: -1;
       }
-      .banner-character-right {
+      .banner-teacher-right {
         width: 83px;
         right: 20px;
         top: 24px;
         z-index: 1;
       }
       @media (min-width: 1200px) {
-        .banner-character-left {
+        .banner-big-book-left {
           width: auto;
-          left: -70px;
-          top: -430px;
+          left: -170px;
+          top: -350px;
         }
-        .banner-character-right {
+        .banner-teacher-right {
           width: auto;
-          right: -15px;
-          top: -190px;
+          right: -40px;
+          top: -550px;
         }
       }
       div[class*="circle"]::after {
@@ -90,44 +90,34 @@
       }
       .circle-left {
         &::after {
-          width: 265px;
-          height: 265px;
-          top: -80px;
-          left: -70px;
+          width: 314px;
+          height: 314px;
+          top: -40px;
+          left: -40px;
         }
         @media (min-width: 992px) {
           &::after {
             width: 524px;
             height: 524px;
-            top: -470px;
+            top: -430px;
             left: -160px;
           }
         }
       }
       .circle-right {
         &::after {
-          width: 130px;
-          height: 130px;
-          top: -8px;
-          right: -20px;
+          width: 160px;
+          height: 160px;
+          top: 80px;
+          right: -60px;
         }
         @media (min-width: 992px) {
           &::after {
             width: 352px;
             height: 352px;
-            right: -120px;
-            top: -280px;
+            right: -150px;
+            top: -610px;
           }
-        }
-      }
-      .banner-fan {
-        width: 105px;
-        right: 40px;
-        top: -415px;
-        @media (min-width: 1200px) {
-          width: auto;
-          right: 65px;
-          top: -560px;
         }
       }
     </style>
@@ -143,34 +133,26 @@
         <div class="row justify-content-center page-banner-title">
           <div class="col-12 text-center">
             <picture>
-              <source srcset="./assets/img/p3/p3-banner-title_xl.png" media="(min-width: 750px)">
-              <img class="img-fluid" src="./assets/img/p3/p3-banner-title_xs@2x.png" alt="">
+              <source srcset="./assets/img/p5/p5-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/p5/p5-banner-title_xs@2x.png" alt="">
             </picture>
           </div>
         </div>
         <!-- 分頁Banner介紹 -->
         <div class="row justify-content-center page-banner-text">
           <div class="col-12 col-xxl-6">
-            <p class="lead">閱讀現象跨國打卡，吉隆坡店書市觀察首度加入！點入四地書店打卡點，洞悉出版趨勢，也從讀者購書行為、暢銷書探見各地尋常裏風景。</p>
-            <img src="./assets/img/p3/banner-icon-location.svg" alt="">
+            <p class="lead text-start">是哪個作家，讓讀者甘願為他騰出時間閱讀、清出書架專屬C位？這些作家的作品，在讀者閱讀河道上享有特權，親簽版、首刷贈品版、誠品通路特別封面版，第一時間統統要收齊！</p>
+            <img src="./assets/img/p5/banner-icon-pen.svg" alt="">
           </div>
         </div>
         </div>
         <!-- 浮動元素 -->
         <div class="flow-element w-100 position-relative">
           <div class="position-relative circle-left">
-            <img class="banner-character-left position-absolute" src="./assets/img/p3/banner/character-left.png" alt="">
+            <img class="banner-big-book-left position-absolute" src="./assets/img/p5/banner/big-book-left.png" alt="">
           </div>
-          <div class="position-relative circle-right">
-            <img class="banner-character-right position-absolute" src="./assets/img/p3/banner/character-right.png" alt="">
-          </div>
-<<<<<<< HEAD
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-fan position-absolute" src="./assets/img/p3/banner/fan.png" alt="">
-=======
-          <div class="position-relative">
-            <img class="banner-fan position-absolute" src="/assets/img/p3/banner/fan.png" alt="">
->>>>>>> e8d01249e0e5424595fc8a78a04561b5998d5bd4
+          <div class="d-none d-xl-block position-relative circle-right">
+            <img class="banner-teacher-right position-absolute" src="./assets/img/p5/banner/teacher-right.png" alt="">
           </div>
         </div>
       </div>

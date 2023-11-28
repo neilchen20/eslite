@@ -19,8 +19,8 @@
     <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
-        --main-color: var(--brown-dark);
-        --minor-color: var(--brown-light);
+        --main-color: var(--purple-dark);
+        --minor-color: var(--purple-light);
       }
       .lead {
         font-weight: 400;
@@ -58,27 +58,27 @@
         height: fit-content;
       }
       .banner-character-left {
-        width: 178px;
-        left: -30px;
-        top: -44px;
+        width: 238px;
+        left: -96px;
+        top: -5px;
         z-index: -1;
       }
       .banner-character-right {
-        width: 83px;
-        right: 20px;
-        top: 24px;
+        width: 206px;
+        right: -66px;
+        top: 100px;
         z-index: 1;
       }
       @media (min-width: 1200px) {
         .banner-character-left {
           width: auto;
-          left: -70px;
-          top: -430px;
+          left: -210px;
+          top: -510px;
         }
         .banner-character-right {
           width: auto;
-          right: -15px;
-          top: -190px;
+          right: -95px;
+          top: -580px;
         }
       }
       div[class*="circle"]::after {
@@ -90,45 +90,50 @@
       }
       .circle-left {
         &::after {
-          width: 265px;
-          height: 265px;
-          top: -80px;
-          left: -70px;
+          width: 220px;
+          height: 220px;
+          top: 70px;
+          left: -56px;
         }
         @media (min-width: 992px) {
           &::after {
             width: 524px;
             height: 524px;
-            top: -470px;
-            left: -160px;
+            top: -330px;
+            left: -100px;
           }
         }
       }
       .circle-right {
         &::after {
-          width: 130px;
-          height: 130px;
-          top: -8px;
-          right: -20px;
+          width: 160px;
+          height: 160px;
+          top: 80px;
+          right: -60px;
         }
         @media (min-width: 992px) {
           &::after {
             width: 352px;
             height: 352px;
-            right: -120px;
-            top: -280px;
+            right: -150px;
+            top: -590px;
           }
         }
       }
-      .banner-fan {
-        width: 105px;
-        right: 40px;
-        top: -415px;
+      .banner-bubble {
+        width: 240px;
+        right: 30px;
+        top: 17px;
         @media (min-width: 1200px) {
           width: auto;
-          right: 65px;
-          top: -560px;
+          right: -30px;
+          top: -280px;
         }
+      }
+      .banner-cat-man {
+        width: auto;
+        right: 85px;
+        top: -130px;
       }
     </style>
   </head>
@@ -143,34 +148,35 @@
         <div class="row justify-content-center page-banner-title">
           <div class="col-12 text-center">
             <picture>
-              <source srcset="./assets/img/p3/p3-banner-title_xl.png" media="(min-width: 750px)">
-              <img class="img-fluid" src="./assets/img/p3/p3-banner-title_xs@2x.png" alt="">
+              <source srcset="./assets/img/p4/p4-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/p4/p4-banner-title_xs@2x.png" alt="">
             </picture>
           </div>
         </div>
         <!-- 分頁Banner介紹 -->
         <div class="row justify-content-center page-banner-text">
           <div class="col-12 col-xxl-6">
-            <p class="lead">閱讀現象跨國打卡，吉隆坡店書市觀察首度加入！點入四地書店打卡點，洞悉出版趨勢，也從讀者購書行為、暢銷書探見各地尋常裏風景。</p>
-            <img src="./assets/img/p3/banner-icon-location.svg" alt="">
+            <p class="lead text-start">購書就是對好故事最強力的 donate！累積好多顆愛心點讚的書，竄上熱門暢銷榜，疊合熱搜軌跡，成為今年度台灣整體閱讀樣貌。</p>
+            <img class="d-none d-xl-block mx-auto" src="./assets/img/p4/banner-icon-heart.svg" alt="">
           </div>
         </div>
         </div>
         <!-- 浮動元素 -->
         <div class="flow-element w-100 position-relative">
           <div class="position-relative circle-left">
-            <img class="banner-character-left position-absolute" src="./assets/img/p3/banner/character-left.png" alt="">
+            <img class="banner-character-left position-absolute" src="./assets/img/p4/banner/character-left.png" alt="">
           </div>
           <div class="position-relative circle-right">
-            <img class="banner-character-right position-absolute" src="./assets/img/p3/banner/character-right.png" alt="">
+            <img class="banner-character-right position-absolute" src="./assets/img/p4/banner/character-right.png" alt="">
           </div>
-<<<<<<< HEAD
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-fan position-absolute" src="./assets/img/p3/banner/fan.png" alt="">
-=======
           <div class="position-relative">
-            <img class="banner-fan position-absolute" src="/assets/img/p3/banner/fan.png" alt="">
->>>>>>> e8d01249e0e5424595fc8a78a04561b5998d5bd4
+            <picture>
+              <source srcset="./assets/img/p4/banner/bubble_xl.png" media="(min-width: 750px)">
+              <img class="banner-bubble position-absolute" src="./assets/img/p4/banner/bubble_xs@2x.png" alt="">
+            </picture>
+          </div>
+          <div class="d-none d-xl-block position-relative">
+            <img class="banner-cat-man position-absolute" src="./assets/img/p4/banner/cat-man.png" alt="">
           </div>
         </div>
       </div>

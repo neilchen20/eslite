@@ -19,8 +19,8 @@
     <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
-        --main-color: var(--brown-dark);
-        --minor-color: var(--brown-light);
+        --main-color: var(--claret-dark);
+        --minor-color: var(--claret-light);
       }
       .lead {
         font-weight: 400;
@@ -35,7 +35,7 @@
         .page-banner-title {
           padding-top: 90px;
           @media (min-width: 992px) {
-            padding-top: 130px;
+            padding-top: 56px;
           }
         }
         .page-banner-text {
@@ -57,28 +57,28 @@
       .fit-content-v {
         height: fit-content;
       }
-      .banner-character-left {
-        width: 178px;
-        left: -30px;
-        top: -44px;
+      .banner-cat-book {
+        width: 65px;
+        left: 10px;
+        top: 14px;
         z-index: -1;
       }
-      .banner-character-right {
-        width: 83px;
-        right: 20px;
-        top: 24px;
-        z-index: 1;
+      .banner-on-book {
+        width: 336px;
+        right: -110px;
+        top: 0px;
+        z-index: -1;
       }
       @media (min-width: 1200px) {
-        .banner-character-left {
+        .banner-cat-book {
           width: auto;
-          left: -70px;
-          top: -430px;
+          left: 10px;
+          top: -130px;
         }
-        .banner-character-right {
+        .banner-on-book {
           width: auto;
-          right: -15px;
-          top: -190px;
+          right: -170px;
+          top: -470px;
         }
       }
       div[class*="circle"]::after {
@@ -90,44 +90,43 @@
       }
       .circle-left {
         &::after {
-          width: 265px;
-          height: 265px;
-          top: -80px;
-          left: -70px;
+          display: none;
         }
         @media (min-width: 992px) {
           &::after {
-            width: 524px;
-            height: 524px;
-            top: -470px;
-            left: -160px;
+            display: block;
+            width: 284px;
+            height: 284px;
+            top: -260px;
+            left: -10px;
           }
         }
       }
       .circle-right {
         &::after {
-          width: 130px;
-          height: 130px;
-          top: -8px;
-          right: -20px;
+          width: 312px;
+          height: 312px;
+          top: -50px;
+          right: -60px;
         }
         @media (min-width: 992px) {
           &::after {
-            width: 352px;
-            height: 352px;
+            width: 506px;
+            height: 506px;
             right: -120px;
-            top: -280px;
+            top: -530px;
           }
         }
       }
-      .banner-fan {
-        width: 105px;
-        right: 40px;
-        top: -415px;
-        @media (min-width: 1200px) {
-          width: auto;
-          right: 65px;
-          top: -560px;
+      .banner-shed {
+        width: 295px;
+        top: -590px;
+        left: -130px;
+        z-index: -1;
+        @media (min-width: 992px) {
+            width: auto;
+            top: -650px;
+            left: -220px;
         }
       }
     </style>
@@ -143,34 +142,39 @@
         <div class="row justify-content-center page-banner-title">
           <div class="col-12 text-center">
             <picture>
-              <source srcset="./assets/img/p3/p3-banner-title_xl.png" media="(min-width: 750px)">
-              <img class="img-fluid" src="./assets/img/p3/p3-banner-title_xs@2x.png" alt="">
+              <source srcset="./assets/img/p6/p6-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/p6/p6-banner-title_xs@2x.png" alt="">
             </picture>
           </div>
         </div>
         <!-- 分頁Banner介紹 -->
         <div class="row justify-content-center page-banner-text">
           <div class="col-12 col-xxl-6">
-            <p class="lead">閱讀現象跨國打卡，吉隆坡店書市觀察首度加入！點入四地書店打卡點，洞悉出版趨勢，也從讀者購書行為、暢銷書探見各地尋常裏風景。</p>
-            <img src="./assets/img/p3/banner-icon-location.svg" alt="">
+            <p class="lead text-start">
+                這些台灣出版社都超會賣、超會編、超會創造議題！
+                <span class="d-block">
+                    我們得以徜徉書海，是由於有這些出版社、出版人殷勤造浪。汪洋之中，每瓢海水的樣貌都不盡相同——有些以溫柔包覆，給予支持，浮沉人生不至滅頂；有些栽種無數繽紛物種，點綴生活；有些則在水裡拋下船錨、鑄造港灣，暴風中給予清晰航向。
+                </span>
+                <span class="d-block">
+                    台灣幸運擁有為數眾多的出版社，各有守備專業範圍、類型全面，幾乎涵蓋人一生所有可能關注議題，甚至提前讀者一步洞悉。認識一家好的出版社，就等同多獲得一個與好內容相遇的管道。
+                </span>
+            </p>
           </div>
         </div>
         </div>
         <!-- 浮動元素 -->
         <div class="flow-element w-100 position-relative">
           <div class="position-relative circle-left">
-            <img class="banner-character-left position-absolute" src="./assets/img/p3/banner/character-left.png" alt="">
+            <picture>
+                <source srcset="./assets/img/p6/banner/cat-book_xl.png" media="(min-width: 750px)">
+                <img class="banner-cat-book position-absolute" src="./assets/img/p6/banner/cat-book_xs@2x.png" alt="">
+            </picture>
           </div>
           <div class="position-relative circle-right">
-            <img class="banner-character-right position-absolute" src="./assets/img/p3/banner/character-right.png" alt="">
+            <img class="banner-on-book position-absolute" src="./assets/img/p6/banner/on-book.png" alt="">
           </div>
-<<<<<<< HEAD
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-fan position-absolute" src="./assets/img/p3/banner/fan.png" alt="">
-=======
           <div class="position-relative">
-            <img class="banner-fan position-absolute" src="/assets/img/p3/banner/fan.png" alt="">
->>>>>>> e8d01249e0e5424595fc8a78a04561b5998d5bd4
+            <img class="banner-shed position-absolute" src="./assets/img/p6/banner/shed.png" alt="">
           </div>
         </div>
       </div>

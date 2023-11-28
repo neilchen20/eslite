@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>香港 蘇州 吉隆坡 東京閱讀觀察 | 2023誠品年度閱讀報告</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Fontawsome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom -->
+    <link href="/assets/css/font.css" rel="stylesheet" />
+    <link href="/assets/css/all.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --main-color: var(--brown-dark);
+        --minor-color: var(--brown-light);
+        --swiper-theme-color: var(--main-color);
+      }
+      .lead {
+        font-weight: 400;
+      }
+      .hanwang {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+      }
+      #sectionTab  {
+        .nav {
+          justify-content: center;
+          gap: 0.5rem;
+          @media (min-width: 768px) {
+            gap: 1.5rem;
+          }
+        }
+        .nav-link {
+          font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+          white-space: nowrap;
+          --bs-nav-link-padding-y: 0.75rem;
+          --bs-nav-link-padding-x: 1.25rem;
+          border: 2px solid var(--main-color);
+          border-radius: var(--bs-border-radius-pill);
+          --bs-nav-link-color: var(--main-color);
+          @media (min-width: 768px) {
+            --bs-nav-link-padding-y: 1.5rem;
+            --bs-nav-link-padding-x: 3.5rem;
+            font-size: 2.5rem;
+          }
+        }
+        .nav-link:hover {
+          color: var(--main-color);
+        }
+        .nav-pills .nav-link.active {
+          background-color: rgba(220, 187, 158, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+        /* 蘇州頁籤 */
+        #suzhouTab {
+          --main-color: var(--claret-dark);
+          border-color: var(--main-color);
+          --bs-nav-link-color: var(--main-color);
+        }
+        #suzhouTab:hover {
+          color: var(--main-color);
+        }
+        .nav-pills #suzhouTab.active {
+          background-color: rgba(217, 178, 187, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+        /* 吉隆坡頁籤 */
+        #kualaLumpurTab {
+          --main-color: var(--cyan-dark);
+          border-color: var(--main-color);
+          --bs-nav-link-color: var(--main-color);
+        }
+        #kualaLumpurTab:hover {
+          color: var(--main-color);
+        }
+        .nav-pills #kualaLumpurTab.active {
+          background-color: rgba(167, 216, 219, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+        /* 東京頁籤 */
+        #tokyoTab {
+          --main-color: var(--blue-dark);
+          border-color: var(--main-color);
+          --bs-nav-link-color: var(--main-color);
+        }
+        #tokyoTab:hover {
+          color: var(--main-color);
+        }
+        .nav-pills #tokyoTab.active {
+          background-color: rgba(173, 197, 225, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+      }
+      .tab-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+        font-size: 2.5rem;
+        @media (min-width: 992px) {
+          font-size: 4rem;
+        }
+      }
+      #bookTypeContent {
+        margin-top: 1.5rem;
+        .info-block {
+          .list-group {
+            border-top: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+            border-bottom: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+            .list-group-item {
+              --bs-list-group-item-padding-x: 0;
+              --bs-list-group-item-padding-y: 1rem;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 20px;
+              font-weight: bold;
+              gap: 1rem;
+              .circle-btn {
+                flex-shrink: 0;
+                background: var(--main-color);
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      .book-cover {
+        --book-cover-padding-x: 0.5rem;
+        --book-cover-padding-y: 0.625rem;
+        width: 220px;
+        background-color: white;
+        border: 1px solid var(--main-color);
+        border-radius: 0.75rem;
+        padding-top: var(--book-cover-padding-y);
+        padding-bottom: var(--book-cover-padding-y);
+        padding-left: var(--book-cover-padding-x);
+        padding-right: var(--book-cover-padding-x);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        @media (min-width: 1200px) {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+      .btn-primary {
+        --bs-btn-padding-y: 12px;
+        --bs-btn-padding-x: 32px;
+        --bs-btn-bg: var(--main-color);
+        --bs-btn-border-color: var(--main-color);
+        --bs-btn-hover-bg: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-hover-border-color: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-active-bg: color-mix(in srgb, var(--main-color) 80%, black);
+        --bs-btn-active-border-color: color-mix(in srgb, var(--main-color) 80%, black);
+      }
+      .decor-yellow-dot {
+        background: url("assets/img/decor-yellow-dot.svg") no-repeat;
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        display: block;
+        flex-shrink: 0;
+      }
+      .article-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+        display: flex;
+        column-gap: 8px;
+        width: 100%;
+      }
+      .article .lead {
+        @media (max-width: 575.98px) {
+          font-size: 1rem;
+        }
+      }
+      .tab-pane > div {
+        padding: 2.25rem 0.75rem;
+        @media (min-width: 992px) {
+          padding: 2.5rem 2rem;
+        }
+      }
+      /* Hashtag標籤 */
+      .hashtags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        .badge {
+            line-height: 1.5rem;
+            --bs-badge-font-size: 0.875rem;
+            --bs-badge-padding-x: 0.5rem;
+            --bs-badge-padding-y: 0.25rem;
+            --bs-badge-font-weight: 400;
+            --bs-badge-color: var(--main-color);
+            @media (min-width: 992px) {
+                --bs-badge-font-size: 1rem;
+            }
+        }
+        .bg-primary {
+            --bs-primary-rgb: 220, 187, 158;
+            --bs-bg-opacity: 0.58;
+        }
+      }
+      /* 蘇州內容 */
+      #suzhouContent {
+        --main-color: var(--claret-dark);
+        .bg-primary {
+            --bs-primary-rgb: 212, 191, 222;
+        }
+      }
+      /* 吉隆玻內容 */
+      #kualaLumpurContent {
+        --main-color: var(--cyan-dark);
+        .bg-primary {
+            --bs-primary-rgb: 167, 216, 219;
+        }
+      }
+      /* 東京內容 */
+      #tokyoContent {
+        --main-color: var(--blue-dark);
+        .bg-primary {
+            --bs-primary-rgb: 173, 197, 225;
+        }
+      }
+      
+      /* 頁籤內容-區塊標題 */
+      .tab-sc-title {
+        font-size: 2rem;
+        @media (min-width: 992px) {
+            font-size: 3rem;
+        }
+      }
+      /* 加寬字母OP間距 */
+      .expand-spacing {
+        letter-spacing: 0.18rem;
+      }
+      /* 輪播 */
+      .swiper {
+        overflow: visible;
+      }
+      .swiper-slide {
+        padding-bottom: 12px;
+        & a {
+            text-decoration: none;
+        }
+        .book-cover {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            --book-cover-padding-x: 1.5rem;
+            --book-cover-padding-y: 2rem;
+            @media (min-width: 992px) {
+                margin-bottom: 1rem;
+                --book-cover-padding-x: 2rem;
+                --book-cover-padding-y: 2.5rem;
+            }
+        }
+        .slide-text {
+            @media (min-width: 992px) {
+                margin-bottom: 0.5rem;
+            }
+            .slide-title {
+                font-weight: bold;
+                font-size: 1.25rem;
+                @media (min-width: 992px) {
+                    font-size: 1.5rem;
+                }
+            }
+            .meta {
+                font-weight: bold;
+            }
+        }
+      }
+      .swiper-pagination {
+        --swiper-pagination-bottom: 0px;
+      }
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: var(--main-color);
+      }
+      .swiper-button-next, .swiper-button-prev {
+        transform: translateY(50%);
+        --swiper-navigation-size: 2rem;
+        --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 3);
+        --swiper-navigation-top-offset: 90px;
+        --swiper-pagination-color: var(--main-color);
+        background: var(--main-color);
+        border-radius: 100%;
+        width: var(--swiper-navigation-size);
+        height: var(--swiper-navigation-size);
+        @media (min-width: 992px) {
+            --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 2);
+            --swiper-navigation-top-offset: 116px;
+            --swiper-navigation-size: 3.5rem;
+        }
+        &:after {
+            display: none;
+        }
+        & img {
+            width: 1rem;
+            height: 1rem;
+            @media (min-width: 992px) {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- banner -->
+    <!-- 區塊2 -->
+    <div class="container-xl p-0" id="sectionTab">
+      <!-- 頁籤 -->
+      <ul class="nav nav-pills" id="bookTypeTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" id="hongKongTab" data-bs-target="#hongKongContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">香港</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="suzhouTab" data-bs-target="#suzhouContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">蘇州</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="kualaLumpurTab" data-bs-target="#kualaLumpurContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">吉隆坡</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="tokyoTab" data-bs-target="#tokyoContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">東京</button>
+          </li>
+      </ul>
+      <!-- 內容 -->
+      <div class="tab-content" id="bookTypeContent">
+        <!-- 香港內容 -->
+        <div class="tab-pane fade show active" id="hongKongContent" role="tabpanel" aria-labelledby="hongKongTab">
+          <div class="bg-white rounded-5 overflow-hidden">
+            <div class="row mb-5">
+              <div class="col-12 col-md-6">
+                <h2 class="tab-title">香港閱讀現象</h2>
+                <p class="lead text-start">網路原生作家如黃山料、Middle 等人的魅力已經明顯跨越地域且熱燒多年，但香港本土暢銷作家與已故大師於當地仍具聲量。而香港近年對地方的認同與依戀感，同樣反映在書市懷舊現象上，不少人文社科或休閒書籍都由在地出發，描生活、道文化、說飲食，甚至香港主題兒童繪本也成送禮給移民親朋好友的不二首選。而財經類則明顯因為投資冷卻，過去對投資工具書的需求漸漸轉向經濟學經典。</p>
+                <div class="hashtags mb-4">
+                    <span class="badge bg-primary">#網路世代作家</span>
+                    <span class="badge bg-primary">#本土懷舊現象</span>
+                    <span class="badge bg-primary">#家鄉味</span>
+                    <span class="badge bg-primary">#投資冷卻</span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <img class="img-fluid rounded-3" src="./assets/img/p3/photo/hongkong@2x.jpg" alt="">
+              </div>
+            </div>
+            <!-- 年度新書TOP10 -->
+            <!-- 開頭 -->
+            <div class="row mb-3 mb-lg-4">
+                <div class="col-12 col-md-5">
+                    <h3 class="tab-sc-title hanwang">年度新書T<span class="expand-spacing">OP</span>1O</h3>
+                </div>
+                <div class="col-12 col-md-7">
+                    <p class="lead">新書榜亦如同年度重要事件簿，如何療癒、關照自我是香港2023年新書榜上顯見的年度主題；閱讀起來無壓力、具啟發性，內容核心又直指如何提升幸福感的作品最引人注目。而隨旅遊復甦，以本土深度視角認識香港人文自然地景的季刊也入榜。</p>
+                </div>
+            </div>
+            <!-- 輪播tab1-1 -->
+            <div class="mb-4 mb-lg-5 swiper">
+                <div class="swiper-wrapper">
+                    <!-- 內容 -->
+                    <!-- book1-1-1 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-1@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">你的不快樂, 是花了太多時間在乎, 不在乎你的人和事</h4>
+                                <span class="meta">Peter Su</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-2 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-2@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">SLAM DUNK灌籃高手總集篇</h4>
+                                <span class="meta">井上雄彥</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-3 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-3@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">讓我最放不下的人</h4>
+                                <span class="meta">Middle</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-4 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-4@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">餘生是你 晚點沒關係</h4>
+                                <span class="meta">黃山料</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-5 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-5@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">別對每件事都有反應</h4>
+                                <span class="meta">枡野俊明</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-6 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-6@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">怎麼專注</h4>
+                                <span class="meta">一行禪師</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-7 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-7@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">你會坦然面對, 每一場告別</h4>
+                                <span class="meta">角子</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-8 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-8@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">我還能再看到幾次滿月?</h4>
+                                <span class="meta">坂本龍一</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-9 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-9@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">就係香港 BeingHongKong 017</h4>
+                                <span class="meta">就係媒體編輯部</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-10 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-10@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">有腦的女人最好命</h4>
+                                <span class="meta">王迪詩</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 頁數 -->
+                <div class="swiper-pagination d-none d-xl-block"></div>
+                <!-- 上一張/下一張 -->
+                <div class="swiper-button-prev">
+                    <img src="./assets/img/icon/arrow-left.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./assets/img/icon/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <!-- 年度華文文學作家TOP1O -->
+            <!-- 開頭 -->
+            <div class="row mb-3 mb-lg-4">
+                <div class="col-12 col-md-5">
+                    <h3 class="tab-sc-title hanwang">年度華文文學作家T<span class="expand-spacing">OP</span>1O</h3>
+                </div>
+                <div class="col-12 col-md-7">
+                    <p class="lead">讀者對於與香港緣分深刻的在地作家有明確偏好，世代上跨張愛玲、西西、李怡與亦舒等散文名家、評論家，亦有王詩迪、林夕、Middle等中新生代作家。時代刻畫於土地，人親土親，展現無遺。而科幻小說家劉慈欣也再度入榜，其作品曾獲科幻小說界大獎雨果獎並改編影視，新書一出，影響力仍舊。</p>
+                </div>
+            </div>
+            <!-- 輪播tab1-2 -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- 內容 -->
+                    <!-- book1-2-1 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-1@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">Middle</h4>
+                                <span class="meta">在你變成回憶之前</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-2 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-2@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">墨香銅臭</h4>
+                                <span class="meta">天官賜福 六 (完)</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-3 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-3@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">黃山料</h4>
+                                <span class="meta">那女孩對我說</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-4 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-4@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">林夕</h4>
+                                <span class="meta">別人的歌+我的詞</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-5 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-5@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">張愛玲</h4>
+                                <span class="meta">傾城之戀</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-6 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-6@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">王迪詩</h4>
+                                <span class="meta">職場見聞錄</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-7 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-7@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">亦舒</h4>
+                                <span class="meta">明日佳期月圓</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-8 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-8@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">劉慈欣</h4>
+                                <span class="meta">三體</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-9 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-9@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">李怡</h4>
+                                <span class="meta">見微知著</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-10 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-10@2x.png" alt="">
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">不朽</h4>
+                                <span class="meta">所有溫柔都是你的隱喻 </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 頁數 -->
+                <div class="swiper-pagination d-none d-xl-block"></div>
+                <!-- 上一張/下一張 -->
+                <div class="swiper-button-prev">
+                    <img src="./assets/img/icon/arrow-left.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./assets/img/icon/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <!-- 閱讀觀察 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-4">
+                    <picture>
+                        <source srcset="./assets/img/p3/hongkong-title_xl@2x.png" media="(min-width: 750px)">
+                        <img class="img-fluid mt-5" src="./assets/img/p3/hongkong-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-5 mt-4 mt-xl-5">
+                <!-- 介紹1 -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                        <div class="col-12 col-xl-4">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-8 d-flex align-items-center">
+                            <div class="article ms-xl-4">
+                            <div class="d-flex flex-column align-items-end">
+                                <div class="article-title">
+                                <span class="decor-yellow-dot"></span>
+                                <h4>華文文學樣態多元，香港本土、網路原生與已故大師作家皆受歡迎</h4>
+                                </div>
+                                <p class="lead">與台灣華文文學市場現況相似，黃山料、不朽與Middle等擅長使用社群媒體與粉絲互動的網路原生作家，在香港也同樣擁有超高人氣，長霸榜首位置，凸顯網路世代所擁抱的心事更加無地域差異。而深耕香港的老牌作家李怡與西西，於2022年相繼過世後，兩人作品也持續發揮影響力，許多人感懷之餘亦重啟書頁閱讀。除此之外，林夕、王迪詩與唐啟灃等香港本土暢銷作家穩定出版新作，共振居住於都會區的港人心事，每每上市都能吸引忠實讀者入手。三種樣態的作家各有讀者擁護，樣態多元。</p>
+                                <div class="link">
+                                <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-0" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 介紹2 -->
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                        <div class="col-12 col-xl-4 order-lg-2">
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-8 d-flex align-items-center">
+                            <div class="article me-xl-4">
+                            <div class="d-flex flex-column align-items-end">
+                                <div class="article-title">
+                                <span class="decor-yellow-dot"></span>
+                                <h4>懷舊現象持續！描寫香港本土生活景況的書依然熱賣</h4>
+                                </div>
+                                <p class="lead">香港書市這幾年懷舊現象持續，並且書寫主題已漸次走入面向日常生活的描摹；由早先針對城區舊風貌的緬懷，演化為對過往生活方式的追求。而《香港散步學》、《城市散步學》等「本地漫遊」主題亦是歷經疫情所附加的一項新焦點。疫情期間，港人不止於對歷史文化等知識面有興趣，也開始以雙腳實際踏入街區，因而以五感體驗、認識在地環境與生活的書也開始熱賣。這樣的現象同樣顯現於兒少圖書上，比如《渡輪小星的祕密之旅》或《THIS IS HONG KONG》等繪本，不只能帶孩子認識香港，也由於近年移民潮，十分適合作為送即將移民的親朋好友的贈禮。</p>
+                                <div class="link">
+                                <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-1" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 介紹3 -->
+                <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-8 d-flex align-items-center">
+                        <div class="article ms-xl-4">
+                        <div class="d-flex flex-column align-items-end">
+                            <div class="article-title">
+                            <span class="decor-yellow-dot"></span>
+                            <h4>股票投資遇冷， NFT 及加密貨幣熱潮消退，理財書銷量反逆勢成長</h4>
+                            </div>
+                            <p class="lead">隨香港投資氣氛冷卻，過去幾年暢銷的投資累書籍風光不再；同時間，加密貨幣平台陸續倒閉，新興投資工具如NFT、加密貨幣、Metaverse等議題熱潮快速消退。這些現象都推使關注金融的讀者將目光重新轉向經典投資書籍，如《富爸爸，窮爸爸》、《財務自由，提早過你真正想過的生活》等，放緩腳步，以理財原理取代較投資操作工具書。也透過《原則》、《一本書讀懂經濟學》、《窮查理的普通常識》投入更多對財富與經濟運作本質的思考。</p>
+                            <div class="link">
+                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-2" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- 介紹4 -->
+                <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="row">
+                    <div class="col-12 col-xl-4 order-lg-2">
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-8 d-flex align-items-center">
+                        <div class="article me-xl-4">
+                        <div class="d-flex flex-column align-items-end">
+                            <div class="article-title">
+                            <span class="decor-yellow-dot"></span>
+                            <h4>無論移居何處，每個人仍渴望在餐桌上複刻家鄉味</h4>
+                            </div>
+                            <p class="lead">繼疫情的自煮風氣與移民潮後，許多港人開始更加關注餐桌上的家鄉滋味，這使得標榜港式料理的食譜應聲而出。如《移英自煮香港味》即是許多移民英國港人的生活寫照。英國不若香港每個街角都是餐飲店，多數菜色也吃不慣，重拾鍋鏟創造港味變成新生活最實用指南。而《四季裡的港式湯水圖鑑》和《香港味道》則深入港飲特色，由文化探勘舌尖上的在地滋味，重拾對家鄉的依戀。</p>
+                            <div class="link">
+                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- 蘇州內容 -->
+        <div class="tab-pane fade" id="suzhouContent" role="tabpanel" aria-labelledby="suzhouTab">
+            <div class="bg-white rounded-5 overflow-hidden">
+              <div class="row mb-5">
+                <div class="col-12 col-md-6">
+                  <h2 class="tab-title">蘇州閱讀現象</h2>
+                  <p class="lead text-start">在短影音當道的時代，閱讀還有什麼突圍的可能？綜觀蘇州2023年度書市現象觀察，可見多元化的閱讀推廣手法創意包夾！有綜藝節目《我在島嶼讀書》推波助瀾，為文學大師帶來新的讀者；色彩主題覆面書透過群眾互動重新包裝村上春樹；影視動畫IP延伸繪本、漫畫延續收視熱度。而文史、數理化等硬知識，又或醫療主題，也透過新穎切角和出版策略，打入大眾閱讀市場。融入趣味、生活化且親切的連結，將更多讀者圈入書的世界。</p>
+                  <div class="hashtags mb-4">
+                      <span class="badge bg-primary">#閱讀主題綜藝節目</span>
+                      <span class="badge bg-primary">#村上春樹色彩覆面書</span>
+                      <span class="badge bg-primary">#醫療文學</span>
+                      <span class="badge bg-primary">#動畫IP</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <img class="img-fluid rounded-3" src="./assets/img/p3/photo/suzhou@2x.jpg" alt="">
+                </div>
+              </div>
+              <!-- 年度新書TOP10 -->
+              <!-- 開頭 -->
+              <div class="row mb-3 mb-lg-4">
+                  <div class="col-12 col-md-5">
+                      <h3 class="tab-sc-title hanwang">年度新書T<span class="expand-spacing">OP</span>1O</h3>
+                  </div>
+                  <div class="col-12 col-md-7">
+                      <p class="lead">比起療癒系，這裡的讀者口味似乎有點不同？推理、動漫、歷史奇幻和影視小說才是顯學！榜上除了多本日本動漫延伸出版品外，亦有當代中日繪師的故事插畫集。除此之外，還有一本日本社科書，以女性主義議題出線，足見該議題於世界各地的共通性。</p>
+                  </div>
+              </div>
+              <!-- 輪播tab1-1 -->
+              <div class="mb-4 mb-lg-5 swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book1-1-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-1@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">你的不快樂, 是花了太多時間在乎, 不在乎你的人和事</h4>
+                                  <span class="meta">Peter Su</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-2@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">SLAM DUNK灌籃高手總集篇</h4>
+                                  <span class="meta">井上雄彥</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-3@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">讓我最放不下的人</h4>
+                                  <span class="meta">Middle</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-4@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">餘生是你 晚點沒關係</h4>
+                                  <span class="meta">黃山料</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-5@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">別對每件事都有反應</h4>
+                                  <span class="meta">枡野俊明</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-6@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">怎麼專注</h4>
+                                  <span class="meta">一行禪師</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-7 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-7@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">你會坦然面對, 每一場告別</h4>
+                                  <span class="meta">角子</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-8 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-8@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">我還能再看到幾次滿月?</h4>
+                                  <span class="meta">坂本龍一</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-9 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-9@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">就係香港 BeingHongKong 017</h4>
+                                  <span class="meta">就係媒體編輯部</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-10 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-10@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">有腦的女人最好命</h4>
+                                  <span class="meta">王迪詩</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 年度華文文學作家TOP1O -->
+              <!-- 開頭 -->
+              <div class="row mb-3 mb-lg-4">
+                  <div class="col-12 col-md-5">
+                      <h3 class="tab-sc-title hanwang">年度華文文學作家T<span class="expand-spacing">OP</span>1O</h3>
+                  </div>
+                  <div class="col-12 col-md-7">
+                      <p class="lead">除了魯迅、余華、莫言等文壇上極巨影響力的作家之外，華文作家年度仍有歷史、科幻與知識型網紅等關鍵詞。在歷史的大敘事下，有些作家透過漫畫、短影音重新尋找更簡便易懂的形式，與大眾溝通對話。奇幻、幽默元素為知識內容加料，在數位傳播上能快速抓取眼球，觀看完也不會有平白浪費了時間的罪惡感，以IP延伸的出版品也就跟著受到關注。</p>
+                  </div>
+              </div>
+              <!-- 輪播tab1-2 -->
+              <div class="swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book1-2-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-1@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Middle</h4>
+                                  <span class="meta">在你變成回憶之前</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-2@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">墨香銅臭</h4>
+                                  <span class="meta">天官賜福 六 (完)</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-3@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">黃山料</h4>
+                                  <span class="meta">那女孩對我說</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-4@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">林夕</h4>
+                                  <span class="meta">別人的歌+我的詞</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-5@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">張愛玲</h4>
+                                  <span class="meta">傾城之戀</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-6@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">王迪詩</h4>
+                                  <span class="meta">職場見聞錄</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-7 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-7@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">亦舒</h4>
+                                  <span class="meta">明日佳期月圓</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-8 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-8@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">劉慈欣</h4>
+                                  <span class="meta">三體</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-9 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-9@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">李怡</h4>
+                                  <span class="meta">見微知著</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-10 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-10@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">不朽</h4>
+                                  <span class="meta">所有溫柔都是你的隱喻 </span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 閱讀觀察 -->
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p3/suzhou-title_xl@2x.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p3/suzhou-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <div class="d-flex flex-column gap-5 mt-4 mt-xl-5">
+                  <!-- 介紹1 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-1.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article ms-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>余華、莫言、蘇童：當代文學大師強強聯手，助力出版突破同溫層</h4>
+                                  </div>
+                                  <p class="lead">純文學閱讀還有什麼突破重圍的可能呢？以閱讀交流為主題的綜藝節目《我在島嶼讀書》，自開播後便擁有很好的收視率和口碑，2023年播出第二季，更是在社群媒體上火速引起話題。其中尤以余華、史鐵生等作家的相關內容頻頻突破同溫層，有效地將話題熱度由節目延續到實體書的閱讀上，使得《我與地壇（插圖珍藏版）》、《史鐵生散文》等書受到關注，不但引入新的閱讀受眾，也讓讀者更多面向地認識這些作家。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-0" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹2 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4 order-lg-2">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-2.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article me-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>覆面書行銷新手法，主打不同「顏色」的村上春樹</h4>
+                                  </div>
+                                  <p class="lead">有趣的出版企畫，也能再次帶動經典作品銷售高峰。2023年夏天，上海譯文出版社聯合網易雲音樂，透過與群眾徵集和專家評選，討論「你眼中的村上春樹是什麼顏色」主題，最終發布「村上春樹色譜」，以九種色彩詮釋村上春樹的文學世界。每種顏色皆對應一部村上春樹的作品，以覆面書形式推出，上市即熱賣，搭配陳列的色彩文宣也為讀者提供「打卡」的熱烈氛圍。 IS HONG KONG》等繪本，不只能帶孩子認識香港，也由於近年移民潮，十分適合作為送即將移民的親朋好友的贈禮。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-1" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹3 -->
+                  <div class="row justify-content-center">
+                  <div class="col-12 col-xl-10">
+                      <div class="row">
+                      <div class="col-12 col-xl-4">
+                          <div class="book-cover">
+                              <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-3.png" alt="">
+                          </div>
+                      </div>
+                      <div class="col-12 col-xl-8 d-flex align-items-center">
+                          <div class="article ms-xl-4">
+                          <div class="d-flex flex-column align-items-end">
+                              <div class="article-title">
+                              <span class="decor-yellow-dot"></span>
+                              <h4>新生代文史作家競相發力，書寫歷史敘事新篇章</h4>
+                              </div>
+                              <p class="lead">反轉過往文史書枯燥乏味的印象，《翦商》無疑是2023年歷史類書籍中最具影響力的作品之一。作者李碩為專業歷史研究者，由史料精微之處展開敘事，將上古時代的人事物帶到讀者眼前，令許多人讀完後大呼震撼。此外，新銳文史作家羅斯《漫長的雨聲》、郭建龍《盛世的崩塌》等作品的暢銷，也顯示出讀者對這類文學性強的歷史敘事更加偏愛。</p>
+                              <div class="link">
+                              <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-2" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <!-- 介紹4 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4 order-lg-2">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>微積分、化學、AI等理科知識成為當代顯學，輕量化伴學書銷售見長</h4>
+                                        </div>
+                                        <p class="lead">「數學使人周密，科學使人深刻。」教育家培根四個世紀前所說的話，現正也反映在近期理科書籍的出版主題上。不只教學用書，如《歡樂數學之瘋狂微積分》、《微積分的力量》、《生活中的化學》等面向大眾的、和日常生活經驗緊密的理科書籍也在銷售榜上嶄露頭角。而隨「雙減」（減少學生作業與校外培訓負擔）政策實施與成熟，家長更加重視孩子在理科方面的啟蒙，並希望將學科學習融入日常。漫畫、繪本、百科全書等圖文結合的輕量化伴學書，在激發孩子求知慾同時，又能以輕鬆愉快的氛圍助力，讓孩子更願意進入數理的世界。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- 介紹5 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>執刀者執筆，醫療議題轉向第一視角記述新形式</h4>
+                                        </div>
+                                        <p class="lead">「醫療」相關內容長期以來都是出版熱門主題，無論是專業領域的疾病研究，又或者社會學面向的醫病關係觀察，均不乏長銷好書。而2023年有多家出版社相繼推出以醫療為主題的文學類書籍，意外非常受到市場歡迎。專業醫者以第一視角書寫，不光帶給讀者驚心動魄的臨場感，更讓大眾能以不同角度認識醫生這個職業。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- 介紹6 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4 order-lg-2">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>中國文化透過動畫影視IP，延伸豐富出版樣貌</h4>
+                                        </div>
+                                        <p class="lead">2023年初，動畫短篇集《中國奇譚》以其鮮明風格、極具辨識度的內容和製作水準，受到社群媒體上年輕一代觀眾所愛，帶動角色IP及系列繪本、漫畫出版。而電影《長安三萬里》以盛唐為背景，講述安史之亂後整個長安因戰爭陷入混亂，身處局勢中的高適回憶自己與李白過往的故事。在電影熱映後，《長安三萬里藝術設定集》、《長安三萬里藝術畫集》、《長安詩選》等書也因而熱銷。中國口碑動畫影視的延伸出版品，在影像化敘事帶起討論後，透過實體書籍延長生命力，傳遞基於故事、文化、藝術等多角度的閱讀內容，深度世界觀的思考。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <!-- 吉隆坡內容 -->
+        <div class="tab-pane fade" id="kualaLumpurContent" role="tabpanel" aria-labelledby="kualaLumpurTab">
+            <div class="bg-white rounded-5 overflow-hidden">
+              <div class="row mb-5">
+                <div class="col-12 col-md-6">
+                  <h2 class="tab-title">吉隆坡閱讀現象</h2>
+                  <p class="lead text-start">世界變化再快，能呼應內心深層渴望與共鳴的書，始終都能獲得銷量佳績。2022年誠品首度跨入吉隆坡市場，經過整年度的閱讀觀察，發現網路原生作家與台灣作家於當地的強大影響力，並同樣觀察到馬華文化圈對療癒類禪修、哲學經典內容的興趣；數位行銷和時尚既為全球現象，同樣反映於當地商業財經與藝術類書籍需求。而最特別之處，應當屬療癒休閒類型的插畫繪本出版品，不少當地創作者透過風格強烈的繪筆，在故事中添入屬於馬來西亞獨特文化的聲音。</p>
+                  <div class="hashtags mb-4">
+                      <span class="badge bg-primary">#網路世代作家</span>
+                      <span class="badge bg-primary">#時代觀察</span>
+                      <span class="badge bg-primary">#禪修</span>
+                      <span class="badge bg-primary">#時尚</span>
+                      <span class="badge bg-primary">#品牌行銷</span>
+                      <span class="badge bg-primary">#在地文化</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <img class="img-fluid rounded-3" src="./assets/img/p3/photo/kuala-lumpur@2x.jpg" alt="">
+                </div>
+              </div>
+              <!-- 年度新書TOP10 -->
+              <!-- 開頭 -->
+              <div class="row mb-3 mb-lg-4">
+                  <div class="col-12 col-md-5">
+                      <h3 class="tab-sc-title hanwang">年度新書T<span class="expand-spacing">OP</span>1O</h3>
+                  </div>
+                  <div class="col-12 col-md-7">
+                      <p class="lead">職人如何思考？吉隆坡年度新書暢銷榜上出現多本關於音樂人、法醫、閱讀推廣者等不同領域專業者的思考筆記，翻開書亦如同探入作者的大腦；閱讀不光增廣見聞，更是由思維層次導入脈絡。新生代網路原生作家作品，以及影視、動畫延伸出版品暢銷皆是跨地區現象，而特別榜上有名的則是馬來西亞當地插畫家、媒體總編作品集結成冊的書籍。</p>
+                  </div>
+              </div>
+              <!-- 輪播tab1-1 -->
+              <div class="mb-4 mb-lg-5 swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book1-1-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-1@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">你的不快樂, 是花了太多時間在乎, 不在乎你的人和事</h4>
+                                  <span class="meta">Peter Su</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-2@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">SLAM DUNK灌籃高手總集篇</h4>
+                                  <span class="meta">井上雄彥</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-3@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">讓我最放不下的人</h4>
+                                  <span class="meta">Middle</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-4@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">餘生是你 晚點沒關係</h4>
+                                  <span class="meta">黃山料</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-5@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">別對每件事都有反應</h4>
+                                  <span class="meta">枡野俊明</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-6@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">怎麼專注</h4>
+                                  <span class="meta">一行禪師</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-7 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-7@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">你會坦然面對, 每一場告別</h4>
+                                  <span class="meta">角子</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-8 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-8@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">我還能再看到幾次滿月?</h4>
+                                  <span class="meta">坂本龍一</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-9 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-9@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">就係香港 BeingHongKong 017</h4>
+                                  <span class="meta">就係媒體編輯部</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-1-10 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc1-10@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">有腦的女人最好命</h4>
+                                  <span class="meta">王迪詩</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 年度華文文學作家TOP1O -->
+              <!-- 開頭 -->
+              <div class="row mb-3 mb-lg-4">
+                  <div class="col-12 col-md-5">
+                      <h3 class="tab-sc-title hanwang">年度華文文學作家T<span class="expand-spacing">OP</span>1O</h3>
+                  </div>
+                  <div class="col-12 col-md-7">
+                      <p class="lead">類型多元，網路作家、散文家、小說家各有忠實讀者擁護，共譜不同視角的當代與都會情懷。在吉隆坡，香港與馬華文學作家擁有長期影響力，榜上除多位善於言情、筆鋒細膩的女性作家，亦有台灣文壇重要作家。</p>
+                  </div>
+              </div>
+              <!-- 輪播tab1-2 -->
+              <div class="swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book1-2-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-1@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Middle</h4>
+                                  <span class="meta">在你變成回憶之前</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-2@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">墨香銅臭</h4>
+                                  <span class="meta">天官賜福 六 (完)</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-3@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">黃山料</h4>
+                                  <span class="meta">那女孩對我說</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-4@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">林夕</h4>
+                                  <span class="meta">別人的歌+我的詞</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-5@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">張愛玲</h4>
+                                  <span class="meta">傾城之戀</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-6@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">王迪詩</h4>
+                                  <span class="meta">職場見聞錄</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-7 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-7@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">亦舒</h4>
+                                  <span class="meta">明日佳期月圓</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-8 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-8@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">劉慈欣</h4>
+                                  <span class="meta">三體</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-9 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-9@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">李怡</h4>
+                                  <span class="meta">見微知著</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book1-2-10 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00005#sidebar-2-0">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc2-10@2x.png" alt="">
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">不朽</h4>
+                                  <span class="meta">所有溫柔都是你的隱喻 </span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 閱讀觀察 -->
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p3/KualaLumpur-title_xl@2x.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p3/KualaLumpur-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <div class="d-flex flex-column gap-5 mt-4 mt-xl-5">
+                  <!-- 介紹1 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-1.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article ms-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>港台新生代作家與書寫時代的馬華作家，共撐華文創作繁盛</h4>
+                                  </div>
+                                  <p class="lead">馬華文學一向反映在地社會一個時代的經歷、價值觀等重要文化議題，吸引一票不同年齡層，甚至居住不同地區的讀者思考與共鳴。如黎紫書《流俗地》、張貴興《野豬渡河》等以有地方色彩的小說筆法形塑深刻寓言故事，龍應台《走路》、詹宏志《旅行與讀書》則將隨筆融入價值觀呈現時代印記。而台灣網路原生世代作家亦以敏銳充沛的情感書寫生活，貼近時下年輕讀者心境，引起跨地域的閱讀共鳴，無論新舊作品都長銷不斷。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-0" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹2 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4 order-lg-2">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-2.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article me-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>外在世界步調不斷加速中，轉從禪修與哲學中領悟人生</h4>
+                                  </div>
+                                  <p class="lead">2023年一行禪師與眾哲學家相關書籍銷售出色，《跟著一行禪師過日常》系列套書與《和好》等書以療癒企劃風格，帶領讀者將覺察的步調放緩；《沉思錄》與羅大倫所撰寫老子相關論述書籍，則透過經典重新切入觀看人生的視角。這類書籍帶領讀者從簡易的禪修與經書中理解與體會人生，並又以輕鬆、易懂的入門內容為主的品項銷售尤其突出。在匆忙、快速變化的世道中，這種化繁為簡的力量幫助讀者尋求生活的平衡。 IS HONG KONG》等繪本，不只能帶孩子認識香港，也由於近年移民潮，十分適合作為送即將移民的親朋好友的贈禮。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-1" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹3 -->
+                  <div class="row justify-content-center">
+                  <div class="col-12 col-xl-10">
+                      <div class="row">
+                      <div class="col-12 col-xl-4">
+                          <div class="book-cover">
+                              <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-3.png" alt="">
+                          </div>
+                      </div>
+                      <div class="col-12 col-xl-8 d-flex align-items-center">
+                          <div class="article ms-xl-4">
+                          <div class="d-flex flex-column align-items-end">
+                              <div class="article-title">
+                              <span class="decor-yellow-dot"></span>
+                              <h4>藝術類書籍以時尚服飾主題最為熱銷，高單價也要入手</h4>
+                              </div>
+                              <p class="lead">在眾多藝術書籍類別中，時尚服飾書籍的銷售表現相當出色。這些書籍涵蓋了品牌風格理念、設計作品集，甚至是知名設計師的傳記如《The World According to Coco Jean-Christophe Napias》等，引起讀者的濃厚興趣。精緻的原文書儘管價格高，讀者的購買慾望卻似乎並未受到影響，仍有非常好的銷售成績。此外，服飾製作和物料相關的實用手冊如《Texitilepedia》等亦十分受到歡迎。在潮流文化日新月異變化下，經典、簡約的書籍設計和內容，驅動讀者依然願意入手收藏。</p>
+                              <div class="link">
+                              <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-2" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <!-- 介紹4 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4 order-lg-2">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>數位時代的行銷力、品牌力與文案力受矚，短影音流量研究也熱門</h4>
+                                        </div>
+                                        <p class="lead">電商、社群蓬勃發展，消費戰場逐漸由實體轉向虛擬，但無論線上或線下的商品銷售，皆和行銷、品牌、定價和文案設計緊密相關，同時亦影響著產品或服務的成功與否。當今正值網絡和數位行銷蓬勃發展的時代，刺激了如《其實你可以再賣貴一點》、《我，就是品牌》等行銷和品牌建立相關的書籍銷售。而《TikTok百萬流量全公開》又更聚焦於現正影響全球最盛的短影音行銷模式。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- 介紹5 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>大人的漫畫繪本！本土作家繪寫在地文化與傳承共鳴</h4>
+                                        </div>
+                                        <p class="lead">孩童的視角最為貼近地方，而成長後的大人，也善以童趣插畫與故事述說筆法，重述馬來西亞當地的文化表達與傳承。《When I was a Kid 7》講述一個孩子由馬來西亞到新加坡生活的成長歷程、《Lots More Lat》與《Keluarga Si Mamat》則以當地插畫作家Dato Lat獨特而強力的畫風，呈現出馬來西亞的地方文化。這些作家將在地風景、傳統、政治等觀點融入作品，透過輕鬆、幽默的形式，使多數當地讀者產生強烈共鳴。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <!-- 東京內容 -->
+        <div class="tab-pane fade" id="tokyoContent" role="tabpanel" aria-labelledby="tokyoTab">
+            <div class="bg-white rounded-5 overflow-hidden">
+              <div class="row mb-0">
+                <div class="col-12 col-md-6">
+                  <h2 class="tab-title">東京閱讀現象</h2>
+                  <p class="lead text-start">東京一直擁有獨特的出版文化，讀者重視當年日本書店、文學獎項頒發結果，也會帶動相關書籍的銷售。同樣地，2023年本屋大賞與MOE繪本大獎得獎作品獲得讀者廣大迴響，而關注度稍弱的芥川賞、直木賞得獎作品，也因作者重度障礙者的身分，意外引起社會高度重視。而韓國文學炫風不只席捲台灣，日本同樣受韓星推薦與女性主義議題影響，開始有更多人投入翻譯文學閱讀。而無論是日本本土文學或翻譯文學，書寫主題對社會議題的關注也可見於人文社科類書籍上。即便社科類書籍銷量大幅下滑，但仍有許多出版品正悄悄地推動、重整日本讀者的思想地圖。</p>
+                  <div class="hashtags mb-4">
+                      <span class="badge bg-primary">#本屋大賞</span>
+                      <span class="badge bg-primary">#芥川賞</span>
+                      <span class="badge bg-primary">#直木賞</span>
+                      <span class="badge bg-primary">#韓國文學</span>
+                      <span class="badge bg-primary">#思想整理</span>
+                      <span class="badge bg-primary">#鈴木典丈</span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <img class="img-fluid rounded-3" src="./assets/img/p3/photo/tokyo@2x.jpg" alt="">
+                </div>
+              </div>
+              <!-- 閱讀觀察 -->
+              <div class="row justify-content-center">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p3/tokyo-title_xl@2x.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p3/tokyo-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <div class="d-flex flex-column gap-5 mt-4 mt-xl-5">
+                  <!-- 介紹1 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-1.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article ms-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>港台新生代作家與書寫時代的馬華作家，共撐華文創作繁盛</h4>
+                                  </div>
+                                  <p class="lead">馬華文學一向反映在地社會一個時代的經歷、價值觀等重要文化議題，吸引一票不同年齡層，甚至居住不同地區的讀者思考與共鳴。如黎紫書《流俗地》、張貴興《野豬渡河》等以有地方色彩的小說筆法形塑深刻寓言故事，龍應台《走路》、詹宏志《旅行與讀書》則將隨筆融入價值觀呈現時代印記。而台灣網路原生世代作家亦以敏銳充沛的情感書寫生活，貼近時下年輕讀者心境，引起跨地域的閱讀共鳴，無論新舊作品都長銷不斷。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-0" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹2 -->
+                  <div class="row justify-content-center">
+                      <div class="col-12 col-xl-10">
+                          <div class="row">
+                          <div class="col-12 col-xl-4 order-lg-2">
+                              <div class="book-cover">
+                                  <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-2.png" alt="">
+                              </div>
+                          </div>
+                          <div class="col-12 col-xl-8 d-flex align-items-center">
+                              <div class="article me-xl-4">
+                              <div class="d-flex flex-column align-items-end">
+                                  <div class="article-title">
+                                  <span class="decor-yellow-dot"></span>
+                                  <h4>外在世界步調不斷加速中，轉從禪修與哲學中領悟人生</h4>
+                                  </div>
+                                  <p class="lead">2023年一行禪師與眾哲學家相關書籍銷售出色，《跟著一行禪師過日常》系列套書與《和好》等書以療癒企劃風格，帶領讀者將覺察的步調放緩；《沉思錄》與羅大倫所撰寫老子相關論述書籍，則透過經典重新切入觀看人生的視角。這類書籍帶領讀者從簡易的禪修與經書中理解與體會人生，並又以輕鬆、易懂的入門內容為主的品項銷售尤其突出。在匆忙、快速變化的世道中，這種化繁為簡的力量幫助讀者尋求生活的平衡。 IS HONG KONG》等繪本，不只能帶孩子認識香港，也由於近年移民潮，十分適合作為送即將移民的親朋好友的贈禮。</p>
+                                  <div class="link">
+                                  <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-1" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                  </div>
+                              </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 介紹3 -->
+                  <div class="row justify-content-center">
+                  <div class="col-12 col-xl-10">
+                      <div class="row">
+                      <div class="col-12 col-xl-4">
+                          <div class="book-cover">
+                              <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-3.png" alt="">
+                          </div>
+                      </div>
+                      <div class="col-12 col-xl-8 d-flex align-items-center">
+                          <div class="article ms-xl-4">
+                          <div class="d-flex flex-column align-items-end">
+                              <div class="article-title">
+                              <span class="decor-yellow-dot"></span>
+                              <h4>藝術類書籍以時尚服飾主題最為熱銷，高單價也要入手</h4>
+                              </div>
+                              <p class="lead">在眾多藝術書籍類別中，時尚服飾書籍的銷售表現相當出色。這些書籍涵蓋了品牌風格理念、設計作品集，甚至是知名設計師的傳記如《The World According to Coco Jean-Christophe Napias》等，引起讀者的濃厚興趣。精緻的原文書儘管價格高，讀者的購買慾望卻似乎並未受到影響，仍有非常好的銷售成績。此外，服飾製作和物料相關的實用手冊如《Texitilepedia》等亦十分受到歡迎。在潮流文化日新月異變化下，經典、簡約的書籍設計和內容，驅動讀者依然願意入手收藏。</p>
+                              <div class="link">
+                              <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-2" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <!-- 介紹4 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4 order-lg-2">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>數位時代的行銷力、品牌力與文案力受矚，短影音流量研究也熱門</h4>
+                                        </div>
+                                        <p class="lead">電商、社群蓬勃發展，消費戰場逐漸由實體轉向虛擬，但無論線上或線下的商品銷售，皆和行銷、品牌、定價和文案設計緊密相關，同時亦影響著產品或服務的成功與否。當今正值網絡和數位行銷蓬勃發展的時代，刺激了如《其實你可以再賣貴一點》、《我，就是品牌》等行銷和品牌建立相關的書籍銷售。而《TikTok百萬流量全公開》又更聚焦於現正影響全球最盛的短影音行銷模式。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- 介紹5 -->
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="row">
+                            <div class="col-12 col-xl-4">
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p3/p3-book/p3-tab1-book-sc3-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-8 d-flex align-items-center">
+                                <div class="article me-xl-4">
+                                    <div class="d-flex flex-column align-items-end">
+                                        <div class="article-title">
+                                            <span class="decor-yellow-dot"></span>
+                                            <h4>大人的漫畫繪本！本土作家繪寫在地文化與傳承共鳴</h4>
+                                        </div>
+                                        <p class="lead">孩童的視角最為貼近地方，而成長後的大人，也善以童趣插畫與故事述說筆法，重述馬來西亞當地的文化表達與傳承。《When I was a Kid 7》講述一個孩子由馬來西亞到新加坡生活的成長歷程、《Lots More Lat》與《Keluarga Si Mamat》則以當地插畫作家Dato Lat獨特而強力的畫風，呈現出馬來西亞的地方文化。這些作家將在地風景、傳統、政治等觀點融入作品，透過輕鬆、幽默的形式，使多數當地讀者產生強烈共鳴。</p>
+                                        <div class="link">
+                                            <a href="https://www.eslite.com/exhibitions/CU202310-00192#sidebar-2-3" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead"  target="_blank">推薦書單<img src="/assets/img/arrow-long-right.svg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <footer>
+      誠品線上 - 誠品生活股份有限公司<br />
+      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
+      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+    </footer> -->
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: false,
+            // 每次5張
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 12,
+            breakpoints: {
+                576: {
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                    spaceBetween: 24,
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+  </body>
+</html>
