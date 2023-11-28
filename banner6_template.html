@@ -19,8 +19,8 @@
     <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
-        --main-color: var(--purple-dark);
-        --minor-color: var(--purple-light);
+        --main-color: var(--claret-dark);
+        --minor-color: var(--claret-light);
       }
       .lead {
         font-weight: 400;
@@ -35,7 +35,7 @@
         .page-banner-title {
           padding-top: 90px;
           @media (min-width: 992px) {
-            padding-top: 130px;
+            padding-top: 56px;
           }
         }
         .page-banner-text {
@@ -57,28 +57,28 @@
       .fit-content-v {
         height: fit-content;
       }
-      .banner-character-left {
-        width: 238px;
-        left: -96px;
-        top: -5px;
+      .banner-cat-book {
+        width: 65px;
+        left: 10px;
+        top: 14px;
         z-index: -1;
       }
-      .banner-character-right {
-        width: 206px;
-        right: -66px;
-        top: 100px;
-        z-index: 1;
+      .banner-on-book {
+        width: 336px;
+        right: -110px;
+        top: 0px;
+        z-index: -1;
       }
       @media (min-width: 1200px) {
-        .banner-character-left {
+        .banner-cat-book {
           width: auto;
-          left: -210px;
-          top: -510px;
+          left: 10px;
+          top: -130px;
         }
-        .banner-character-right {
+        .banner-on-book {
           width: auto;
-          right: -95px;
-          top: -580px;
+          right: -170px;
+          top: -470px;
         }
       }
       div[class*="circle"]::after {
@@ -90,50 +90,44 @@
       }
       .circle-left {
         &::after {
-          width: 220px;
-          height: 220px;
-          top: 70px;
-          left: -56px;
+          display: none;
         }
         @media (min-width: 992px) {
           &::after {
-            width: 524px;
-            height: 524px;
-            top: -330px;
-            left: -100px;
+            display: block;
+            width: 284px;
+            height: 284px;
+            top: -260px;
+            left: -10px;
           }
         }
       }
       .circle-right {
         &::after {
-          width: 160px;
-          height: 160px;
-          top: 80px;
+          width: 312px;
+          height: 312px;
+          top: -50px;
           right: -60px;
         }
         @media (min-width: 992px) {
           &::after {
-            width: 352px;
-            height: 352px;
-            right: -150px;
-            top: -590px;
+            width: 506px;
+            height: 506px;
+            right: -120px;
+            top: -530px;
           }
         }
       }
-      .banner-bubble {
-        width: 240px;
-        right: 30px;
-        top: 17px;
-        @media (min-width: 1200px) {
-          width: auto;
-          right: -30px;
-          top: -280px;
+      .banner-shed {
+        width: 295px;
+        top: -590px;
+        left: -130px;
+        z-index: -1;
+        @media (min-width: 992px) {
+            width: auto;
+            top: -650px;
+            left: -220px;
         }
-      }
-      .banner-cat-man {
-        width: auto;
-        right: 85px;
-        top: -130px;
       }
     </style>
   </head>
@@ -148,35 +142,39 @@
         <div class="row justify-content-center page-banner-title">
           <div class="col-12 text-center">
             <picture>
-              <source srcset="./assets/img/p4/p4-banner-title_xl.png" media="(min-width: 750px)">
-              <img class="img-fluid" src="./assets/img/p4/p4-banner-title_xs@2x.png" alt="">
+              <source srcset="./assets/img/p6/p6-banner-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/p6/p6-banner-title_xs@2x.png" alt="">
             </picture>
           </div>
         </div>
         <!-- 分頁Banner介紹 -->
         <div class="row justify-content-center page-banner-text">
           <div class="col-12 col-xxl-6">
-            <p class="lead text-start">購書就是對好故事最強力的 donate！累積好多顆愛心點讚的書，竄上熱門暢銷榜，疊合熱搜軌跡，成為今年度台灣整體閱讀樣貌。</p>
-            <img class="d-none d-xl-block mx-auto" src="./assets/img/p4/banner-icon-heart.svg" alt="">
+            <p class="lead text-start">
+                這些台灣出版社都超會賣、超會編、超會創造議題！
+                <span class="d-block">
+                    我們得以徜徉書海，是由於有這些出版社、出版人殷勤造浪。汪洋之中，每瓢海水的樣貌都不盡相同——有些以溫柔包覆，給予支持，浮沉人生不至滅頂；有些栽種無數繽紛物種，點綴生活；有些則在水裡拋下船錨、鑄造港灣，暴風中給予清晰航向。
+                </span>
+                <span class="d-block">
+                    台灣幸運擁有為數眾多的出版社，各有守備專業範圍、類型全面，幾乎涵蓋人一生所有可能關注議題，甚至提前讀者一步洞悉。認識一家好的出版社，就等同多獲得一個與好內容相遇的管道。
+                </span>
+            </p>
           </div>
         </div>
         </div>
         <!-- 浮動元素 -->
         <div class="flow-element w-100 position-relative">
           <div class="position-relative circle-left">
-            <img class="banner-character-left position-absolute" src="./assets/img/p4/banner/character-left.png" alt="">
-          </div>
-          <div class="position-relative circle-right">
-            <img class="banner-character-right position-absolute" src="./assets/img/p4/banner/character-right.png" alt="">
-          </div>
-          <div class="position-relative">
             <picture>
-              <source srcset="./assets/img/p4/banner/bubble_xl.png" media="(min-width: 750px)">
-              <img class="banner-bubble position-absolute" src="./assets/img/p4/banner/bubble_xs@2x.png" alt="">
+                <source srcset="./assets/img/p6/banner/cat-book_xl.png" media="(min-width: 750px)">
+                <img class="banner-cat-book position-absolute" src="./assets/img/p6/banner/cat-book_xs@2x.png" alt="">
             </picture>
           </div>
-          <div class="d-none d-xl-block position-relative">
-            <img class="banner-cat-man position-absolute" src="./assets/img/p4/banner/cat-man.png" alt="">
+          <div class="position-relative circle-right">
+            <img class="banner-on-book position-absolute" src="./assets/img/p6/banner/on-book.png" alt="">
+          </div>
+          <div class="position-relative">
+            <img class="banner-shed position-absolute" src="./assets/img/p6/banner/shed.png" alt="">
           </div>
         </div>
       </div>
