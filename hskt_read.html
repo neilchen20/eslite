@@ -20,19 +20,127 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom -->
-    <link href="/assets/css/font.css" rel="stylesheet" />
-    <link href="/assets/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/css/font.css" rel="stylesheet" />
+    <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
         --main-color: var(--brown-dark);
         --minor-color: var(--brown-light);
         --swiper-theme-color: var(--main-color);
       }
+      body:before {
+        display: none;
+      }
       .lead {
         font-weight: 400;
       }
       .hanwang {
         font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+      }
+      /* 分頁Banner */
+      /* Banner-X */
+      #page-banner {
+        height: 660px;
+        @media (min-width: 992px) {
+          height: 685px;
+        }
+        .page-banner-title {
+          padding-top: 90px;
+          @media (min-width: 992px) {
+            padding-top: 130px;
+          }
+        }
+        .page-banner-text {
+          margin-top: 1rem;
+          text-align: center;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+          }
+          .lead {
+            @media (max-width: 575.98px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .fit-content-h {
+        width: fit-content;
+      }
+      .fit-content-v {
+        height: fit-content;
+      }
+      .banner-character-left {
+        width: 178px;
+        left: -30px;
+        top: -44px;
+        z-index: -1;
+      }
+      .banner-character-right {
+        width: 83px;
+        right: 20px;
+        top: 24px;
+        z-index: 1;
+      }
+      @media (min-width: 1200px) {
+        .banner-character-left {
+          width: auto;
+          left: -70px;
+          top: -430px;
+        }
+        .banner-character-right {
+          width: auto;
+          right: -15px;
+          top: -190px;
+        }
+      }
+      div[class*="circle"]::after {
+        content: '';
+        position: absolute;
+        background: var(--minor-color);
+        z-index: -2;
+        border-radius: 100%;
+      }
+      .circle-left {
+        &::after {
+          width: 265px;
+          height: 265px;
+          top: -80px;
+          left: -70px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 524px;
+            height: 524px;
+            top: -470px;
+            left: -160px;
+          }
+        }
+      }
+      .circle-right {
+        &::after {
+          width: 130px;
+          height: 130px;
+          top: -8px;
+          right: -20px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 352px;
+            height: 352px;
+            right: -120px;
+            top: -280px;
+          }
+        }
+      }
+      .banner-fan {
+        width: 105px;
+        right: 40px;
+        top: -415px;
+        @media (min-width: 1200px) {
+          width: auto;
+          right: 65px;
+          top: -560px;
+        }
       }
       #sectionTab  {
         .nav {
@@ -322,6 +430,41 @@
 
   <body>
     <!-- banner -->
+    <section class="overflow-hidden" id="page-banner">
+        <div class="container-xl position-relative">
+          <!-- 中間元素 -->
+          <div class="main-element">
+            <!-- 分頁Banner標題 -->
+          <div class="row justify-content-center page-banner-title">
+            <div class="col-12 text-center">
+              <picture>
+                <source srcset="./assets/img/p3/p3-banner-title_xl.png" media="(min-width: 750px)">
+                <img class="img-fluid" src="./assets/img/p3/p3-banner-title_xs@2x.png" alt="">
+              </picture>
+            </div>
+          </div>
+          <!-- 分頁Banner介紹 -->
+          <div class="row justify-content-center page-banner-text">
+            <div class="col-12 col-xxl-6">
+              <p class="lead">閱讀現象跨國打卡，吉隆坡店書市觀察首度加入！點入四地書店打卡點，洞悉出版趨勢，也從讀者購書行為、暢銷書探見各地尋常裏風景。</p>
+              <img src="./assets/img/p3/banner-icon-location.svg" alt="">
+            </div>
+          </div>
+          </div>
+          <!-- 浮動元素 -->
+          <div class="flow-element w-100 position-relative">
+            <div class="position-relative circle-left">
+              <img class="banner-character-left position-absolute" src="./assets/img/p3/banner/character-left.png" alt="">
+            </div>
+            <div class="position-relative circle-right">
+              <img class="banner-character-right position-absolute" src="./assets/img/p3/banner/character-right.png" alt="">
+            </div>
+            <div class="d-none d-xl-block position-relative">
+              <img class="banner-fan position-absolute" src="./assets/img/p3/banner/fan.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
     <!-- 區塊2 -->
     <div class="container-xl p-0" id="sectionTab">
       <!-- 頁籤 -->
