@@ -1,5 +1,5 @@
-$paper-texture: url("/assets/img/paper_texture_repeat.jpg");
-$grid-texture: url("/assets/img/grid-bg.jpg");
+$paper-texture: url("../img/paper_texture_repeat.jpg");
+$grid-texture: url("../img/grid-bg.jpg");
 $hanwang: 'HanWangHeiHeavy', Arial, sans-serif;
 
 // Mixin
@@ -61,7 +61,7 @@ body::before{
     content: '';
     display: block;
     position: absolute;
-    background-image: url('/assets/img/Ellipse2_xs.svg');
+    background-image: url('../img/Ellipse2_xs.svg');
     background-repeat: no-repeat;
     width: 17.75rem;
     height: 17.75rem;
@@ -72,7 +72,7 @@ body::before{
         content: '';
         display: block;
         position: absolute;
-        background-image: url('/assets/img/Ellipse2.svg');
+        background-image: url('../img/Ellipse2.svg');
         background-repeat: no-repeat;
         width: 25.5rem;
         height: 25.5rem;
@@ -178,7 +178,7 @@ body::before{
             content: '';
             display: block;
             position: absolute;
-            background-image: url('/assets/img/cloud_xs.png');
+            background-image: url('../img/cloud_xs.png');
             background-repeat: no-repeat;
             width: 3.375rem;
             height: 3.5rem;
@@ -189,7 +189,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/cloud.png');
+                background-image: url('../img/cloud.png');
                 background-repeat: no-repeat;
                 width: 8.75rem;
                 height: 11.875rem;
@@ -202,7 +202,7 @@ body::before{
             content: '';
             display: block;
             position: absolute;
-            background-image: url('/assets/img/Ellipse1_xs.svg');
+            background-image: url('../img/Ellipse1_xs.svg');
             background-repeat: no-repeat;
             width: 23.75rem;
             height: 23.75rem;
@@ -213,7 +213,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/Ellipse1.svg');
+                background-image: url('../img/Ellipse1.svg');
                 background-repeat: no-repeat;
                 width: 64.875rem;
                 height: 64.875rem;
@@ -228,7 +228,7 @@ body::before{
             content: '';
             display: block;
             position: absolute;
-            background-image: url('/assets/img/tree.png');
+            background-image: url('../img/tree.png');
             background-repeat: no-repeat;
             width: 8.75rem;
             height: 11.875rem;
@@ -241,7 +241,7 @@ body::before{
         content: '';
         display: block;
         position: absolute;
-        background-image: url('/assets/img/balloon.png');
+        background-image: url('../img/balloon.png');
         background-size: contain;
         background-repeat: no-repeat;
         width: 3.5rem;
@@ -253,7 +253,7 @@ body::before{
             content: '';
             display: block;
             position: absolute;
-            background-image: url('/assets/img/balloon.png');
+            background-image: url('../img/balloon.png');
             background-repeat: no-repeat;
             width: 8.75rem;
             height: 11.875rem;
@@ -274,7 +274,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/Ellipse3.svg');
+                background-image: url('../img/Ellipse3.svg');
                 background-repeat: no-repeat;
                 width: 30.875rem;
                 height: 30.875rem;
@@ -483,7 +483,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/flow-balloon-small-1.png');
+                background-image: url('../img/flow-balloon-small-1.png');
                 background-repeat: no-repeat;
                 width: 3.125rem;
                 height: 4.625rem;
@@ -534,7 +534,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/flow-balloons.png');
+                background-image: url('../img/flow-balloons.png');
                 background-repeat: no-repeat;
                 width: 12.5rem;
                 height: 13.75rem;
@@ -581,7 +581,7 @@ body::before{
                 content: '';
                 display: block;
                 position: absolute;
-                background-image: url('/assets/img/flow-tree.png');
+                background-image: url('../img/flow-tree.png');
                 background-repeat: no-repeat;
                 width: 11.875rem;
                 height: 16.875rem;
