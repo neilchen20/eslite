@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>台灣年度暢銷書榜 | 2023誠品年度閱讀報告</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Fontawsome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom -->
+    <link href="/assets/css/font.css" rel="stylesheet" />
+    <link href="/assets/css/all.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --main-color: var(--purple-dark);
+        --minor-color: var(--purple-light);
+        --swiper-theme-color: var(--main-color);
+        --movement: 1.5rem;
+      }
+      body:before {
+        display: none;
+      }
+      .lead {
+        font-weight: 400;
+      }
+      .hanwang {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+      }
+      #sectionTab  {
+        .nav {
+          justify-content: center;
+          gap: 0.5rem;
+          @media (min-width: 768px) {
+            gap: 1.5rem;
+          }
+        }
+        .nav-link {
+          font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+          white-space: nowrap;
+          --bs-nav-link-padding-y: 0.75rem;
+          --bs-nav-link-padding-x: 1.25rem;
+          border: 2px solid var(--main-color);
+          border-radius: var(--bs-border-radius-pill);
+          --bs-nav-link-color: var(--main-color);
+          @media (min-width: 768px) {
+            --bs-nav-link-padding-y: 1.5rem;
+            --bs-nav-link-padding-x: 3.5rem;
+            font-size: 2.5rem;
+          }
+        }
+        .nav-link:hover {
+          color: var(--main-color);
+        }
+        .nav-pills .nav-link.active {
+          background-color: rgba(212, 191, 222, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+        /* 外文頁籤 */
+        #foreignTab {
+          --main-color: var(--blue-dark);
+          border-color: var(--main-color);
+          --bs-nav-link-color: var(--main-color);
+        }
+        #foreignTab:hover {
+          color: var(--main-color);
+        }
+        .nav-pills #foreignTab.active {
+          background-color: rgba(173, 197, 225, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+        /* 青少年兒童頁籤 */
+        #childTab {
+          --main-color: var(--cyan-dark);
+          border-color: var(--main-color);
+          --bs-nav-link-color: var(--main-color);
+        }
+        #childTab:hover {
+          color: var(--main-color);
+        }
+        .nav-pills #childTab.active {
+          background-color: rgba(167, 216, 219, 0.5);
+          --bs-nav-pills-link-active-color: var(--main-color);
+        }
+      }
+      .tab-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+        font-size: 2.5rem;
+        @media (min-width: 992px) {
+          font-size: 4rem;
+        }
+      }
+      #bookTypeContent {
+        margin-top: 1.5rem;
+        .info-block {
+          .list-group {
+            border-top: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+            border-bottom: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+            .list-group-item {
+              --bs-list-group-item-padding-x: 0;
+              --bs-list-group-item-padding-y: 1rem;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 20px;
+              font-weight: bold;
+              gap: 1rem;
+              .circle-btn {
+                flex-shrink: 0;
+                background: var(--main-color);
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      .book-cover {
+        --book-cover-padding-x: 0.5rem;
+        --book-cover-padding-y: 0.625rem;
+        width: 220px;
+        background-color: white;
+        border: 1px solid var(--main-color);
+        border-radius: 0.75rem;
+        padding-top: var(--book-cover-padding-y);
+        padding-bottom: var(--book-cover-padding-y);
+        padding-left: var(--book-cover-padding-x);
+        padding-right: var(--book-cover-padding-x);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        @media (min-width: 1200px) {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+      .btn-primary {
+        --bs-btn-padding-y: 12px;
+        --bs-btn-padding-x: 32px;
+        --bs-btn-bg: var(--main-color);
+        --bs-btn-border-color: var(--main-color);
+        --bs-btn-hover-bg: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-hover-border-color: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-active-bg: color-mix(in srgb, var(--main-color) 80%, black);
+        --bs-btn-active-border-color: color-mix(in srgb, var(--main-color) 80%, black);
+      }
+      .decor-yellow-dot {
+        background: url("assets/img/decor-yellow-dot.svg") no-repeat;
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+        display: block;
+        flex-shrink: 0;
+      }
+      .article-title {
+        font-family: 'HanWangHeiHeavy', Arial, sans-serif;
+        display: flex;
+        column-gap: 8px;
+        width: 100%;
+      }
+      .article .lead {
+        @media (max-width: 575.98px) {
+          font-size: 1rem;
+        }
+      }
+      .tab-pane > div {
+        padding: 2.25rem 0.75rem;
+        @media (min-width: 992px) {
+          padding: 2.5rem 2rem;
+        }
+      }
+      /* Hashtag標籤 */
+      .hashtags {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        .badge {
+            --bs-badge-border-radius: var(--bs-border-radius-lg);
+            line-height: 1.5rem;
+            --bs-badge-font-size: 1.125rem;
+            --bs-badge-padding-x: 1rem;
+            --bs-badge-padding-y: 0.75rem;
+            --bs-badge-font-weight: 700;
+            --bs-badge-color: var(--bs-dark);
+            @media (min-width: 992px) {
+                --bs-badge-font-size: 1.25rem;
+            }
+        }
+        .bg-primary {
+            --bs-primary-rgb: 212, 191, 222;
+            --bs-bg-opacity: 0.5;
+        }
+      }
+      /* 外文內容 */
+      #foreignContent {
+        --main-color: var(--blue-dark);
+        --minor-color: var(--blue-light);
+        .bg-primary {
+            --bs-primary-rgb: 212, 191, 222;
+        }
+      }
+      /* 青少年兒童內容 */
+      #childContent {
+        --main-color: var(--cyan-dark);
+        --minor-color: var(--cyan-light);
+        .bg-primary {
+            --bs-primary-rgb: 167, 216, 219;
+        }
+      }
+      
+      /* 頁籤內容-區塊標題 */
+      .tab-sc-title {
+        font-size: 2rem;
+        @media (min-width: 992px) {
+            font-size: 3rem;
+        }
+      }
+      /* 加寬字母OP間距 */
+      .expand-spacing {
+        letter-spacing: 0.18rem;
+      }
+      /* 輪播 */
+      .swiper {
+        overflow: visible;
+      }
+      .swiper-slide {
+        padding-bottom: 12px;
+        & a {
+            text-decoration: none;
+        }
+        .book-cover {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            --book-cover-padding-x: 1.5rem;
+            --book-cover-padding-y: 2rem;
+            @media (min-width: 992px) {
+                margin-bottom: 1rem;
+                --book-cover-padding-x: 2rem;
+                --book-cover-padding-y: 2.5rem;
+            }
+        }
+        .slide-text {
+            @media (min-width: 992px) {
+                margin-bottom: 0.5rem;
+            }
+            .slide-title {
+                font-weight: bold;
+                font-size: 1.25rem;
+                @media (min-width: 992px) {
+                    font-size: 1.5rem;
+                }
+            }
+            .meta {
+                font-weight: bold;
+            }
+        }
+      }
+      .swiper-pagination {
+        --swiper-pagination-bottom: 0px;
+      }
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: var(--main-color);
+      }
+      .swiper-button-next, .swiper-button-prev {
+        transform: translateY(50%);
+        --swiper-navigation-size: 2rem;
+        --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 3);
+        --swiper-navigation-top-offset: 90px;
+        --swiper-pagination-color: var(--main-color);
+        background: var(--main-color);
+        border-radius: 100%;
+        width: var(--swiper-navigation-size);
+        height: var(--swiper-navigation-size);
+        @media (min-width: 992px) {
+            --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 2);
+            --swiper-navigation-top-offset: 116px;
+            --swiper-navigation-size: 3.5rem;
+        }
+        &:after {
+            display: none;
+        }
+        & img {
+            width: 1rem;
+            height: 1rem;
+            @media (min-width: 992px) {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+      }
+      .type-label {
+            top: calc(-1 * var(--movement));
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .type-text {
+                display: flex;
+                justify-content: center;
+                & span {
+                    --label-padding-x: 0.5rem;
+                    --label-padding-y: 0.5rem;
+                    background: var(--minor-color);
+                    font-size: 1.25rem;
+                    line-height: normal;
+                    white-space: nowrap;
+                    flex-basis: fit-content;
+                    padding: var(--label-padding-y) var(--label-padding-x);
+                    @media (min-width: 992px) {
+                        font-size: 1.75rem;
+                    }
+                }
+                &:before, &:after {
+                    content: '';
+                    flex-basis: 0.75rem;
+                    flex-shrink: 0;
+                    background: var(--minor-color);
+                }
+                &:before {
+                    clip-path: polygon(0 0, 100% 100%, 100% 0);
+                }
+                &:after {
+                    clip-path: polygon(0 0, 0 100%, 100% 0);
+                }
+            }
+            .type-decor {
+                width: 0.875rem;
+                height: 0.875rem;
+                background: var(--minor-color);
+                clip-path: polygon(0 0, 50% 100%, 100% 0);
+            }
+        }
+      /* 書封包裹 */
+      .book-wrap {
+        position: relative;
+      }
+      .hero-swiper {
+        /* 排行榜書封 */
+        .book-cover {
+            margin-top: 2.5rem;
+            border-width: 3px;
+        }
+        /* 排行榜標籤-圓形 */
+        .ranking-badge {
+            position: absolute;
+            top: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: white;
+            font-weight: bold;
+            --ranking-size: 5rem;
+            width: var(--ranking-size);
+            height: var(--ranking-size);
+            background: var(--main-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 100%;
+            line-height: 1;
+            & span:nth-child(2) {
+                font-size: 2.25rem;
+            }
+        }
+      }
+      .normal-swiper {
+        @media (min-width: 992px) {
+            --movement: 2rem;
+        }
+        .book-cover {
+            margin-top: var(--movement);
+        }
+      }
+      .large-swiper {
+        .book-cover {
+            border-width: 3px;
+            margin-top: var(--movement);
+        }
+        .swiper-wrapper {
+            @media (min-width: 992px) {
+                justify-content: center;
+            }
+            .swiper-slide {
+                &:last-child {
+                    @media (min-width: 992px) {
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+        }
+      }
+      /* 格線卡片 */
+      .cards-grid {
+        gap: 1.5rem;
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            .card-1 {
+                grid-area: 1 / 1 / 3 / 6;
+            }
+            .card-2 {
+                grid-area: 1 / 6 / 2 / 13;
+            }
+            .card-3 {
+                grid-area: 2 / 6 / 3 / 13;
+            }
+        }
+      }
+      .card {
+        --bs-card-border-radius: 2rem;
+        --bs-card-border-width: 4px;
+        --bs-card-border-color: var(--minor-color);
+        background: url('./assets/img/grid-bg.jpg') repeat;
+        .card-body {
+            --bs-card-spacer-y: 2.5rem;
+            --bs-card-spacer-x: 1.5rem;
+            padding-bottom: var(--bs-card-spacer-x);
+            @media (min-width: 992px) {
+                --bs-card-spacer-y: 3rem;
+                --bs-card-spacer-x: 3rem;
+            }
+        }
+      }
+      /* 硬邊陰影 */
+      .hard-shadow {
+        --shadow-offset: 0.5rem;
+        --box-shadow-offset-x: var(--shadow-offset);
+        --box-shadow-offset-y: calc(-1 * var(--shadow-offset));
+        box-shadow: var(--box-shadow-offset-x) var(--box-shadow-offset-y) 0 var(--main-color);
+        @media (min-width: 992px) {
+            --shadow-offset: 0.75rem;
+        }
+      }
+      .card-2 {
+        --minor-color: var(--blue-light);
+        .bg-primary {
+            --bs-primary-rgb: 173, 197, 225;
+        }
+      }
+      .card-2.hard-shadow {
+        --main-color: var(--blue-dark);
+      }
+      .card-3 {
+        --minor-color: var(--cyan-light);
+        .bg-primary {
+            --bs-primary-rgb: 167, 216, 219;
+        }
+      }
+      .card-3.hard-shadow {
+        --main-color: var(--cyan-dark);
+      }
+      .topic-wrap {
+        display: grid;
+        gap: 1.5rem;
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(12, 1fr);
+        }
+        #topicTabs {
+            display: grid;
+            gap: 1rem;
+            @media (min-width: 992px) {
+                grid-area: 1 / 1 / 2 / 6;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+            .nav-item {
+                display: flex;
+                .nav-link {
+                    --bs-nav-pills-link-active-color: var(--main-color);
+                    --bs-nav-pills-link-active-bg: rgba(212, 191, 222, 0.50);
+                    --bs-nav-pills-border-radius: var(--bs-border-radius-pill);
+                    --bs-nav-link-padding-x: 1.5rem;
+                    --bs-nav-link-padding-y: 0.75rem;
+                    --bs-nav-link-color: var(--main-color);
+                    --bs-nav-link-hover-color: color-mix(in srgb, var(--main-color) 90%, black);
+                    font-weight: 700;
+                    flex: 1 1 auto;
+                    text-align: left;
+                    @media (min-width: 992px) {
+                        font-size: 1.25rem;
+                        --bs-nav-link-padding-y: 1rem;
+                    }
+                }
+            }
+        }
+        .border-primary {
+            --bs-primary-rgb: 120, 84, 137;
+        }
+        #topicContent {
+            display: flex;
+            @media (min-width: 992px) {
+                grid-area: 1 / 6 / 2 / 13;
+            }
+            .badge {
+                font-weight: 400;
+                --bs-badge-font-size: 1rem;
+                --bs-badge-color: var(--main-color);
+                --bs-badge-padding-x: 0.5rem;
+                --bs-badge-padding-y: 0.25rem;
+            }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- banner -->
+    <!-- 區塊2 -->
+    <div class="container-xxl p-0" id="sectionIntro">
+        <picture>
+          <source srcset="/assets/img/p4/sc1-intro_xl.png" media="(min-width: 750px)">
+          <img class="img-fluid" src="/assets/img/p4/sc1-intro_xs@2x.png" alt="">
+        </picture>
+    </div>
+    <!-- 區塊3 -->
+    <div class="container-xl p-0 mb-5" id="sectionTab">
+      <!-- 頁籤 -->
+      <ul class="nav nav-pills" id="bookTypeTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" id="chineseTab" data-bs-target="#chineseContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="true">中文書榜</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="foreignTab" data-bs-target="#foreignContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">外文書榜</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" id="childTab" data-bs-target="#childContent" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">青少年/兒童書榜</button>
+        </li>
+      </ul>
+      <!-- 內容 -->
+      <div class="tab-content" id="bookTypeContent">
+        <!-- 中文內容 -->
+        <div class="tab-pane fade show active" id="chineseContent" role="tabpanel" aria-labelledby="chineseTab">
+          <div class="bg-white rounded-5 overflow-hidden">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="tab-title">中文書榜</h2>
+                <p class="lead text-start">數位世界裡的熱鬧幾乎要掩蓋過實體；解鎖屏幕，資訊、動態就不斷摩肩擦踵而來。如此豐盛的時代，人仍得獨自面對生命孤獨的本質——於是，閱讀供給暖心的共鳴、熟悉感的慰藉，又或提出其他解放心靈的可能。而在自我之外的大時代，身處島國，我們還得知曉自身於世界政經局勢上的出路⋯⋯</p>
+              </div>
+            </div>
+            <!-- 新書TOP10 -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 col-lg-4">
+                    <picture>
+                        <source srcset="./assets/img/p4/p4-tab1-sc1-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid mt-3" src="./assets/img/p4/p4-tab1-sc1-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- 輪播tab1-1/Hero -->
+            <div class="hero-swiper swiper">
+                <div class="swiper-wrapper">
+                    <!-- 內容 -->
+                    <!-- book1-1-1 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">1</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">餘生是你 晚點沒關係</h4>
+                                <span class="meta">黃山料</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-2 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">2</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">你的不快樂, 是花了太多時間在乎, 不在乎你的人和事</h4>
+                                <span class="meta">Peter Su</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-3 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">3</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">別對每件事都有反應</h4>
+                                <span class="meta">枡野俊明</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-4 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">4</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-4.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">鈴芽之旅</h4>
+                                <span class="meta">新海誠</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-5 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">5</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-5.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">人間孤獨, 卻與你一見如故</h4>
+                                <span class="meta">黃山料/ 王昊齊</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-6 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">6</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-6.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">我可能錯了</h4>
+                                <span class="meta">比約恩．納提科．林德布勞/ 卡洛琳．班克勒/ 納維德．莫迪里</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-7 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">7</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-7.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">你會坦然面對, 每一場告別</h4>
+                                <span class="meta">角子</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-8 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">8</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-8.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">紅色賭盤</h4>
+                                <span class="meta">沈棟</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-9 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">9</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-9.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">晶片戰爭</h4>
+                                <span class="meta">克里斯．米勒</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-1-10 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00008">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">10</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc1-10.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">晚安, 我的生命</h4>
+                                <span class="meta">陳文茜 </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 頁數 -->
+                <div class="swiper-pagination d-none d-xl-block"></div>
+                <!-- 上一張/下一張 -->
+                <div class="swiper-button-prev">
+                    <img src="./assets/img/icon/arrow-left.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./assets/img/icon/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <!-- 新書TOP100 -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 col-lg-4">
+                    <picture>
+                        <source srcset="./assets/img/p4/p4-tab1-sc2-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab1-sc2-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- 輪播tab1-2 -->
+            <div class="normal-swiper swiper">
+                <div class="swiper-wrapper">
+                    <!-- 內容 -->
+                    <!-- book1-2-1 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-0">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>人文社科</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-1@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">躲在蚊子後面的大象</h4>
+                                <span class="meta">恩斯特弗利德．哈尼許/ 艾娃．溫德爾</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-2 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-1">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>華文創作</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-2@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">自成一派</h4>
+                                <span class="meta">張曼娟</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-3 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-2">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>翻譯文學</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-3@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">不便利的便利店 2</h4>
+                                <span class="meta">金浩然</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-4 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-3">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>財經商業</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-4@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">工作美學</h4>
+                                <span class="meta">江振誠</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-5 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-4">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>藝術設計</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-5@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">我還能再看到幾次滿月?</h4>
+                                <span class="meta">坂本龍一</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-6 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-5">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>心理勵志</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-6@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">外界的聲音只是參考, 你不開心就不參考</h4>
+                                <span class="meta">老楊的貓頭鷹</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-7 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-6">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>休閒趣味</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-7@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">SLAM DUNK灌籃高手總集篇</h4>
+                                <span class="meta">井上雄彥</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-8 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-7">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>健康生活</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-8@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">時時刻刻微養生</h4>
+                                <span class="meta">陳月卿</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-9 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-8">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>自然科普</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-9@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">圖解半導體</h4>
+                                <span class="meta">井上伸雄/ 藏本貴文</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-10 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-9">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>語言學習</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-10@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">全新! 新制多益TOEIC題庫解析</h4>
+                                <span class="meta">Hackers Academia</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-2-11 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00010#sidebar-2-10">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>考試用書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc2-11@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">職安一點通</h4>
+                                <span class="meta">蕭中剛/ 劉鈞傑/ 鄭技師/ 賴秋琴/ 徐英洲/ 江軍/ 葉日宏</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 頁數 -->
+                <div class="swiper-pagination d-none d-xl-block"></div>
+                <!-- 上一張/下一張 -->
+                <div class="swiper-button-prev">
+                    <img src="./assets/img/icon/arrow-left.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./assets/img/icon/arrow-right.svg" alt="">
+                </div>
+            </div>
+            <!-- 2023年總銷售TOP2OO -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 col-lg-6">
+                    <picture>
+                        <source srcset="./assets/img/p4/p4-tab1-sc3-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab1-sc3-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- 輪播tab1-3 -->
+            <div class="normal-swiper swiper">
+                <div class="swiper-wrapper">
+                    <!-- 內容 -->
+                    <!-- book1-3-1 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>人文社科</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-1@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">蛤蟆先生去看心理師</h4>
+                                <span class="meta">羅伯．狄保德</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-2 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>華文創作</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-2@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">生活是無以名狀的碎片</h4>
+                                <span class="meta">不朽</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-3 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>翻譯文學</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-3@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">不便利的便利店</h4>
+                                <span class="meta">金浩然</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-4 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>財經商業</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-4@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">底層邏輯</h4>
+                                <span class="meta">劉潤</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-5 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>藝術設計</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-5@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">光, 帶我走向遠方</h4>
+                                <span class="meta">李屏賓</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-6 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>心理勵志</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-6@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">原子習慣</h4>
+                                <span class="meta">詹姆斯．克利爾</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-7 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>休閒趣味</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-7@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">寶可夢 太陽&月亮 寶可夢全國大圖鑑</h4>
+                                <span class="meta">川島潤二/ はや</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-8 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>健康生活</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-8@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">自律神經超圖解: 身體怪怪的, 都是因為它? 學會與最不受控的人體系統和平共處</h4>
+                                <span class="meta">小林弘幸</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-9 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>自然科普</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-9@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">看圖讀懂半導體製造裝置</h4>
+                                <span class="meta">菊地正典/ 監修</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-10 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>語言學習</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-10@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">全新! 新制多益TOEIC單字大全: 備考多益唯一推薦權威單字書! 不論題型如何變化, 內容持續更新, 常考字彙表達完全掌握, 準確度最高! (附QR碼)</h4>
+                                <span class="meta">David Cho</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- book1-3-11 -->
+                    <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00003">
+                            <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>考試用書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab1-book-sc3-11@2x.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">短時間就上榜, 國考之神</h4>
+                                <span class="meta">平木太生 (jiji)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- 頁數 -->
+                <div class="swiper-pagination d-none d-xl-block"></div>
+                <!-- 上一張/下一張 -->
+                <div class="swiper-button-prev">
+                    <img src="./assets/img/icon/arrow-left.svg" alt="">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./assets/img/icon/arrow-right.svg" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- 外文內容 -->
+        <div class="tab-pane fade" id="foreignContent" role="tabpanel" aria-labelledby="foreignTab">
+            <div class="bg-white rounded-5 overflow-hidden">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="tab-title">外文書榜</h2>
+                  <p class="lead text-start">綜觀外文書暢銷榜，中文熱銷書的原文版與話題影視相關原文書居多；用視覺敘事抒懷的圖像閱讀、藝術、風尚書籍亦多。由人類喜歡聽故事的初心出發，撰寫出讓讀者從創作者的圖像創意及美學意念看到觸動自己的故事，更直覺地靠近創作者的情感原貌。財經商業類上榜的文字書也多以第一手報導者立場直觀撰述書寫主體或評論趨勢，直搗問題核心、直抵知識源頭。</p>
+                </div>
+              </div>
+              <!-- 新書TOP3 -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab2-sc1-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-3" src="./assets/img/p4/p4-tab2-sc1-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab2-1/Hero -->
+              <div class="hero-swiper swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book2-1-1 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">1</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                    </div>
+                      <!-- book2-1-2 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001134542682308370009">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">2</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">新海誠監督作品 すずめの戸締まり 公式ビジュアルガイド</h4>
+                                <span class="meta">新海誠/ 監督; コミックス．ウェーブ．フィルム/ 東宝/ STORY/ 監修; 角川書店/ 編</span>
+                            </div>
+                        </a>
+                    </div>
+                      <!-- book2-1-3 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001164192682262561000">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">3</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">8 Rules of Love</h4>
+                                <span class="meta">Jay Shetty</span>
+                            </div>
+                        </a>
+                    </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 新書TOP50 -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab2-sc2-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab2-sc2-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab2-2 -->
+              <div class="large-swiper swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book2-2-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>文學</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book2-2-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-1">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>圖像</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-2.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Spider-Man</h4>
+                                  <span class="meta">Ramin Zahed</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 2023年總銷售TOP2OO -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-6">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab2-sc3-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab2-sc3-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab2-3 -->
+              <div class="large-swiper swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book2-3-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>文字</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book2-3-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-1">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>圖像</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-2.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Dancing With Jesus</h4>
+                                  <span class="meta">Sam Stall</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book2-3-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-2">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>日文</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-3.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">PLUS/ SLAM DUNK ILLUSTRATIONS 2</h4>
+                                  <span class="meta">井上雄彦</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+            </div>
+        </div>
+        <!-- 青少年/兒童內容 -->
+        <div class="tab-pane fade" id="childContent" role="tabpanel" aria-labelledby="childTab">
+            <div class="bg-white rounded-5 overflow-hidden">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="tab-title">青少年/兒童書榜</h2>
+                  <p class="lead text-start">小孩對已經建立起信任感的故事場景、角色的喜愛是跨年齡現象；從圖畫書、知識書到兒童文學，都是一集又一集不漏接地收藏。而除了幾個重要故事系列續集暢銷之外，Roblox也是年度重要關鍵詞。小孩愛玩遊戲一定是壞事嗎？除了知名遊戲主題YouTuber「有感筆電Daptoper」彙整推薦百款遊戲外，Roblox系統的自由度容許玩家也加入開發設計，成功地結合學習與娛樂！</p>
+                </div>
+              </div>
+              <!-- 新書TOP10 -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab3-sc1-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-3" src="./assets/img/p4/p4-tab3-sc1-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab3-1/Hero -->
+              <div class="hero-swiper swiper">
+                  <div class="swiper-wrapper">
+                      <!-- 內容 -->
+                      <!-- book3-1-1 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">1</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-2 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">2</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-3 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">3</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-4 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">4</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-5 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">5</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-6 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">6</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-7 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">7</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-8 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">8</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-9 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">9</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                      <!-- book3-1-10 -->
+                      <div class="swiper-slide">
+                        <a class="link-dark" target="_blank" href="https://www.eslite.com/product/1001145542682286364007">
+                            <div class="book-wrap">
+                                <div class="ranking-badge">
+                                    <span>TOP</span>
+                                    <span class="hanwang">10</span>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc1-1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h4 class="slide-title mb-1">THE FIRST SLAM DUNK re:SOURCE</h4>
+                                <span class="meta">井上雄彦</span>
+                            </div>
+                        </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 新書TOP10 -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-4">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab3-sc2-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab3-sc2-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab3-2 -->
+              <div class="large-swiper swiper">
+                  <div class="swiper-wrapper" style="justify-content: unset;">
+                      <!-- 內容 -->
+                      <!-- book3-2-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>幼幼書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-2-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>遊戲書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-2-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>圖畫書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-2-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>兒童知識</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-2-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>兒童文學</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-2-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00013#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>青少年</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc2-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Hello Grief: I'll Be Right with You</h4>
+                                  <span class="meta">Alessandra Olanow</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+              <!-- 2023年總銷售TOP2OO -->
+              <div class="row justify-content-center mb-4">
+                  <div class="col-12 col-lg-6">
+                      <picture>
+                          <source srcset="./assets/img/p4/p4-tab3-sc3-title_xl.png" media="(min-width: 750px)">
+                          <img class="img-fluid mt-5" src="./assets/img/p4/p4-tab3-sc3-title_xs@2x.png" alt="">
+                      </picture>
+                  </div>
+              </div>
+              <!-- 輪播tab3-3 -->
+              <div class="large-swiper swiper">
+                  <div class="swiper-wrapper"  style="justify-content: unset;">
+                      <!-- 內容 -->
+                      <!-- book3-3-1 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>幼幼書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-3-2 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>遊戲書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-3-3 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>圖畫書</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-3-4 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>兒童知識</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-3-5 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>兒童文學</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                      <!-- book3-3-6 -->
+                      <div class="swiper-slide">
+                          <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00014#sidebar-2-0">
+                              <div class="book-wrap">
+                                <!-- 類別標籤 -->
+                                <div class="type-label">
+                                    <div class="type-text hanwang">
+                                        <span>青少年</span>
+                                    </div>
+                                    <div class="type-decor"></div>
+                                </div>
+                                <div class="book-cover">
+                                    <img class="img-fluid" src="./assets/img/p4/book/p4-tab2-book-sc3-1.png" alt="">
+                                </div>
+                              </div>
+                              <div class="slide-text">
+                                  <h4 class="slide-title mb-1">Atomic Habits</h4>
+                                  <span class="meta">James Clear</span>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+                  <!-- 頁數 -->
+                  <div class="swiper-pagination d-none d-xl-block"></div>
+                  <!-- 上一張/下一張 -->
+                  <div class="swiper-button-prev">
+                      <img src="./assets/img/icon/arrow-left.svg" alt="">
+                  </div>
+                  <div class="swiper-button-next">
+                      <img src="./assets/img/icon/arrow-right.svg" alt="">
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- 區塊4 -->
+    <div class="container-xl mb-5" id="sectionHashTag">
+        <!-- 開頭介紹 -->
+        <div class="d-flex flex-column gap-4 mb-4 mb-xl-5">
+            <!-- 標題 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <picture>
+                        <source srcset="/assets/img/p4/sc3-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid" src="/assets/img/p4/sc3-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- 內文 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8">
+                    <p class="lead text-start">什麼書最多人搜？線上搜尋欄的熱門關鍵字串，體現當年度最多人主動性查找的相關主題出版品；想回味再三看過的好劇、收藏喜歡的IP角色，又或追蹤多年的作家出新書了！這是間聯繫著所有日常的書店，無論讀者是剛離開電影院，或停在公園旁抓到一隻不認識的寶可夢，接著都能來這裡找到想要的書。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 格線卡片 -->
+        <div class="cards-grid d-grid">
+            <div class="card hard-shadow card-1">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title hanwang fs-1">中文書年度熱搜T<span class="expand-spacing">OP</span>1O</h3>
+                    <p class="card-text lead">熱搜榜囊括2023年度討論度最高的幾部影視作品，包含《灌籃高手》、《想見你》等；觀賞完動人的動畫，也令許多影迷想回味與收藏漫畫或設定集。另也有與讀者長期深耕關係的作者與連載作品，新書上市便會造成大量主動搜尋。想精進自我要讀什麼呢？原子習慣與多益考試最多人關心！這些「好想要」和「很需要」的心情，就是流量的祕密。</p>
+                    <div class="hashtags mt-auto">
+                        <span class="badge bg-primary">#灌籃高手</span>
+                        <span class="badge bg-primary">#不朽</span>
+                        <span class="badge bg-primary">#多益</span>
+                        <span class="badge bg-primary">#想見你</span>
+                        <span class="badge bg-primary">#鈴芽之旅</span>
+                        <span class="badge bg-primary">#原子習慣</span>
+                        <span class="badge bg-primary">#寶可夢</span>
+                        <span class="badge bg-primary">#終於要與自己和好如初</span>
+                        <span class="badge bg-primary">#咒術迴戰</span>
+                        <span class="badge bg-primary">#全知讀者視角</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card hard-shadow card-2">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title hanwang fs-1">外文書年度熱搜T<span class="expand-spacing">OP</span>5</h3>
+                    <p class="card-text lead">延續中文書對影視延伸出版品的關注，外文熱搜同樣有《我推的孩子》與《王室緋聞守則》兩部電影動畫與影集關鍵詞上榜；而原文版的《晶片戰爭》亦同中文譯本引起關注。特別的是，使用上較無語言與文化隔閡的塔羅牌與小廢物，由於近年大眾對靈性、療癒的興趣提升，也相當熱門。</p>
+                    <div class="hashtags mt-auto">
+                        <span class="badge bg-primary">#塔羅</span>
+                        <span class="badge bg-primary">#王室緋聞</span>
+                        <span class="badge bg-primary">#小廢物</span>
+                        <span class="badge bg-primary">#晶片戰爭</span>
+                        <span class="badge bg-primary">#我推的孩子</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card hard-shadow card-3">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title hanwang fs-1">青少年/兒童書年度熱搜T<span class="expand-spacing">OP</span>5</h3>
+                    <p class="card-text lead">哈利波特、神奇柑仔店與達克比是跨世代小孩界的三大套書偶像，只要看過第一集，就一定會一本又一本地地追下去。而2023年適逢《小王子》出版80周年，不止有珍藏集，亦有許多延伸於小王子角色的繪本、立體書出版。而童書最夯類型關鍵字則為「繪本」，暖心、療癒，是大人小孩送禮不敗選擇。</p>
+                    <div class="hashtags mt-auto">
+                        <span class="badge bg-primary">#哈利波特</span>
+                        <span class="badge bg-primary">#小王子</span>
+                        <span class="badge bg-primary">#神奇柑仔店</span>
+                        <span class="badge bg-primary">#繪本</span>
+                        <span class="badge bg-primary">#達克比</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 區塊5 -->
+    <div class="container-xl" id="sectionTopic">
+        <!-- 開頭介紹 -->
+        <div class="d-flex flex-column gap-4 mb-4 mb-xl-5">
+            <!-- 標題 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <picture>
+                        <source srcset="/assets/img/p4/sc4-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid" src="/assets/img/p4/sc4-title_xs@2x.png" alt="">
+                    </picture>
+                </div>
+            </div>
+            <!-- 內文 -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8">
+                    <p class="lead text-start">精選十項國內外大事件，沒跟到的請補帶，已上車的也邀請領取延伸書單。回顧這些重要的熱議事件，不只是為2023年書寫反思共筆，更是為未來打一劑更豐沛能量的強心針。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 焦點卡片 -->
+        <div class="topic-wrap">
+            <!-- 頁籤 -->
+            <ul class="nav nav-pills" id="topicTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active border border-primary" id="topicTab-1" data-bs-toggle="pill" data-bs-target="#topicContent-1" type="button" role="tab" aria-selected="true">地緣政治衝突四起，何處可覓得和平？</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-2" data-bs-toggle="pill" data-bs-target="#topicContent-2" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">你是誰？你想活出怎樣的人生？</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-3" data-bs-toggle="pill" data-bs-target="#topicContent-3" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">晶片戰爭牽動全球政治、經濟</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-4" data-bs-toggle="pill" data-bs-target="#topicContent-4" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">ChatGPT是進步還是取代？</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-5" data-bs-toggle="pill" data-bs-target="#topicContent-5" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">人人需要快樂物質多巴胺</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-6" data-bs-toggle="pill" data-bs-target="#topicContent-6" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">網紅浮生錄</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-7" data-bs-toggle="pill" data-bs-target="#topicContent-7" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">跟自己約會，學習優雅道別</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-8" data-bs-toggle="pill" data-bs-target="#topicContent-8" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">你以為的女生不是你的芭比</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-9" data-bs-toggle="pill" data-bs-target="#topicContent-9" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">山道猴子應該早知道的事情</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link border border-primary" id="topicTab-10" data-bs-toggle="pill" data-bs-target="#topicContent-10" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">在蛋與不蛋之間，我們可以⋯⋯</button>
+                </li>
+            </ul>
+            <!-- 內容 -->
+            <div class="tab-content" id="topicContent">
+                <div class="tab-pane fade show active" id="topicContent-1" role="tabpanel" aria-labelledby="topicTab-1">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">地緣政治衝突四起，何處可覓得和平？</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">自2022年初至今，俄烏戰爭仍未止息；到了2023年10月，以巴衝突又再起。以色列與巴勒斯坦之間的衝突，自1948年開始便不斷發生。而這些地緣政治緊張的局勢，也影響著全球金融體系；身處動盪時代，不禁思索何以能尋得普世的和平？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-2" role="tabpanel" aria-labelledby="topicTab-2">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">你是誰？你想活出怎樣的人生？ </h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#蒼鷺與少年</span>
+                                <span class="badge bg-primary">#宮崎駿</span>
+                                <span class="badge bg-primary">#心理學</span>
+                                <span class="badge bg-primary">#人類圖</span>
+                                <span class="badge bg-primary">#MBTI16型人格</span>
+                                <span class="badge bg-primary">#星座</span>
+                                <span class="badge bg-primary">#世界末日</span>
+                            </div>
+                            <p class="card-text lead">宮崎駿執導與編劇的動畫電影《蒼鷺與少年》於2023年熱映，社群河道上充斥著觀影後的討論，啟發宮崎駿復出創作此電影的書籍《你想活出怎樣的人生？》一書也再次受到矚目。此書為日本「百年最愛書籍」，探討人之所以為人的價值與態度，故事輕鬆卻深刻動人。而由韓國流行到台灣的MBTI 16型人格測驗，也帶起一波自我認識與同類人彼此認親的風潮，許多人甚至會在社群簡介與履歷上亮出自己的人格類型代碼。人生彷彿一場實境遊戲，每個人內建角色設定，被放置在宇宙中的一個位置——於一個未能選定的家庭中出生，接著求學、求職，又或邁入婚姻。我們是否能緩下腳步，透過閱讀、電影又或各種測驗、論述重新認識自己，以期活出更好的專屬人生？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-3" role="tabpanel" aria-labelledby="topicTab-3">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">晶片戰爭牽動全球政治、經濟</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">繼2023年5月之後，10月中旬輝達（Nvidia）執行長黃仁勳再度來台，期間也與台積電總裁魏哲家見面，引起許多媒體關注。晶片作為目前全世界最重要的技術之一，其關聯的不僅是科技技術，更影響各國的政治局勢；影響之大，也使得美國於2023年底下達升級版的出口禁令。過往晶片產業多僅有科技相關從業人員與投資者關注，然一旦高度涉及整體經濟與國家安全，位處供應鏈重要位置的台灣島民，也紛紛投入關注、討論晶片議題。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-4" role="tabpanel" aria-labelledby="topicTab-4">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">ChatGPT是進步還是取代？</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">你的工作可能會被AI取代嗎？自2022年底ChatGPT推出後，許多人都在社群上分享他們與系統對話的內容，後續也開始愈來愈多人將ChatGPT應用到專業工作上。隨著系統改良愈發精細，問答準確度提高，許多學校老師或管理階層也開始擔憂學生、部屬藉系統作弊或偷懶。然而這也一個新的討論：「如果AI能代勞，何樂不為？而人類最特有的價值又是什麼？」如果使用AI是無可抵擋的趨勢，我們還能如何好好應用、思考這項工具？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-5" role="tabpanel" aria-labelledby="topicTab-5">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">人人需要快樂物質多巴胺</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">多巴胺作為大腦中關聯獎勵機制與愉悅感來源的神經傳導物質，是帶來幸福感的關鍵之一。這個過往多出現在心理學或腦神經科學領域的詞彙，卻因為南韓女團NewJeans、歌手IU等人的「多巴胺穿搭（Dopamine Dressing）」風潮下引起關注。「多巴胺穿搭」主打明亮活力、給人愉快氛圍的配色運用，一反過往主流的黑灰白色系；如同多巴胺作用於腦部能帶來的效果，引發正向情緒。這波潮流似乎也顯示出大眾對正能量的渴望，藉此也認識到，原來我們的腦部有這樣關聯著快樂的物質！</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-6" role="tabpanel" aria-labelledby="topicTab-6">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">網紅浮生錄</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">流量在哪，市場就在哪。網紅時代也正代表市場走向分眾，過去流量價值最高的電視台八點檔廣告時段，現則逐漸轉向黏著度高的KOL口碑行銷；職業網紅收入模式日漸成熟、穩定，這也使得許多人投入將「網紅」當成全職工作。而作為追隨粉絲，面對信任的知識型網紅推薦、導讀，或甚至出版書籍，也相較容易引起興趣接著購買閱讀。生活於數位時代，網紅既是線上的朋友、心靈的依託，也是資訊獲取的渠道和購物的管道。+C25</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-7" role="tabpanel" aria-labelledby="topicTab-7">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">跟自己約會，學習優雅道別</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">根據統計，台灣人口數已連續三年負成長，至2022年的出生數更跌破14萬大關，已成生育率最低的國家之一。少子化現象也使孤獨老成為大眾關注議題，也使許多人在沒有生子的傳統約束下，回頭審視婚姻與情感關係的本質——單身、離婚都不大事情——那麼，獨身也美麗的下半生，要怎麼過得更精采、更忠於自己？不對傳統家庭模式妥協，也展現在希望生命能好好善終的掌控感上；提前思考，便能拿回自己對終老方式的選擇權。你的老後想怎麼過呢？</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-8" role="tabpanel" aria-labelledby="topicTab-8">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">你以為的女生不是你的芭比</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">2023年5月，網路上陸續揭露多起性騷擾事件，各領域皆有許多勇敢的女性，在隱忍多年後紛紛發文表述自己所遭受的不平等待遇，以自身經驗鼓勵其他受害者也能替自己發聲。如同台劇《人選之人 造浪者》裡頭的台詞：「我們不要就這樣算了，好不好？」這波 #metoo事件不止帶起大眾對女權的關注，也不分性別，重新審視權力關係與身體界線的議題，期許能將社會推往更平權、彼此尊重的境地。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-9" role="tabpanel" aria-labelledby="topicTab-9">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">山道猴子應該早知道的事情</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">台灣YouTuber Eric Duan於2023年7月至8月間，於頻道上發布長篇網路影片《山道猴子的一生》，頓時全台瘋傳。由於角色刻畫細緻，將一名在超商工作的跑山青年的故事、心境描繪得栩栩如生，不但引起許多人的共鳴，也有多篇文章深入討論「山道猴子」現象。比如：社群世代何以為了虛榮心不惜借錢添購設備；不但對理財思維陌生，亦容易在情感關係中迷失自我、尋求不到穩定價值感。影片受到迴響的程度，彰顯出這或許不僅是山道猴子，也是所有人都想早點知道的事情。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="topicContent-10" role="tabpanel" aria-labelledby="topicTab-10">
+                    <div class="card hard-shadow p-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-center gap-3">
+                            <h3 class="card-title hanwang fs-1 m-0">在蛋與不蛋之間，我們可以⋯⋯</h3>
+                            <div class="hashtags">
+                                <span class="badge bg-primary">#烏俄戰火未歇</span>
+                                <span class="badge bg-primary">#以巴衝突又起</span>
+                                <span class="badge bg-primary">#地緣政治</span>
+                            </div>
+                            <p class="card-text lead">「哪裡還買得到雞蛋？」2023年初，台灣爆發一波缺蛋潮，雖蛋荒非今年獨有問題，但由於整體產業結構未能轉型，又遇上寒冬產蛋率下降，而使得缺蛋議題浮上台面。買不到蛋的人焦慮、一下子囤太多蛋的人也焦慮，卻也逼使得網路上許多人祭出「無蛋蛋料理」或「多蛋蛋料理」的特色食譜。或許產業面問題仍需待專家解，但在蛋與不蛋之間，我們還能透過創意料理，為自己找點樂子。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+      誠品線上 - 誠品生活股份有限公司<br />
+      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
+      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+    </footer>
+    <script>
+        const swiper = new Swiper('.hero-swiper', {
+            loop: false,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 12,
+            breakpoints: {
+                576: {
+                    // 每次3張
+                    slidesPerView: 3,
+                    slidesPerGroup: 1,
+                    spaceBetween: 24,
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper2 = new Swiper('.normal-swiper', {
+            loop: false,
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 12,
+            breakpoints: {
+                576: {
+                    // 每次5張
+                    slidesPerView: 5,
+                    slidesPerGroup: 1,
+                    spaceBetween: 24,
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        const swiper3 = new Swiper('.large-swiper', {
+            loop: false,
+            slidesPerView: 1,
+            slidesPerGroup: 2,
+            spaceBetween: 12,
+            breakpoints: {
+                576: {
+                    // 每次3張
+                    slidesPerView: 3,
+                    slidesPerGroup: 2,
+                    spaceBetween: 24,
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+  </body>
+</html>
