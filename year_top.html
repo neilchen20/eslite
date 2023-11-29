@@ -20,8 +20,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom -->
-    <link href="/assets/css/font.css" rel="stylesheet" />
-    <link href="/assets/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/css/font.css" rel="stylesheet" />
+    <link href="./assets/css/all.min.css" rel="stylesheet" />
     <style>
       :root {
         --main-color: var(--purple-dark);
@@ -38,12 +38,130 @@
       .hanwang {
         font-family: 'HanWangHeiHeavy', Arial, sans-serif;
       }
+      /* 分頁Banner */
+      /* Banner-4 */
+      #page-banner {
+        height: 100vh;
+        @media (min-width: 992px) {
+          height: 826px;
+        }
+        .page-banner-title {
+          padding-top: 90px;
+          @media (min-width: 992px) {
+            padding-top: 130px;
+          }
+        }
+        .page-banner-text {
+          margin-top: 1rem;
+          text-align: center;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+          }
+          .lead {
+            @media (max-width: 575.98px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .fit-content-h {
+        width: fit-content;
+      }
+      .fit-content-v {
+        height: fit-content;
+      }
+      .banner-character-left {
+        width: 238px;
+        left: -96px;
+        top: -5px;
+        z-index: -1;
+      }
+      .banner-character-right {
+        width: 206px;
+        right: -66px;
+        top: 100px;
+        z-index: 1;
+      }
+      @media (min-width: 1200px) {
+        .banner-character-left {
+          width: auto;
+          left: -210px;
+          top: -510px;
+        }
+        .banner-character-right {
+          width: auto;
+          right: -95px;
+          top: -580px;
+        }
+      }
+      div[class*="circle"]::after {
+        content: '';
+        position: absolute;
+        background: var(--minor-color);
+        z-index: -2;
+        border-radius: 100%;
+      }
+      .circle-left {
+        &::after {
+          width: 220px;
+          height: 220px;
+          top: 70px;
+          left: -56px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 524px;
+            height: 524px;
+            top: -330px;
+            left: -100px;
+          }
+        }
+      }
+      .circle-right {
+        &::after {
+          width: 160px;
+          height: 160px;
+          top: 80px;
+          right: -60px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            width: 352px;
+            height: 352px;
+            right: -150px;
+            top: -590px;
+          }
+        }
+      }
+      .banner-bubble {
+        width: 240px;
+        right: 30px;
+        top: 17px;
+        @media (min-width: 1200px) {
+          width: auto;
+          right: -30px;
+          top: -280px;
+        }
+      }
+      .banner-cat-man {
+        width: auto;
+        right: 85px;
+        top: -130px;
+      }
       #sectionTab  {
         .nav {
-          justify-content: center;
+          justify-content: start;
+          flex-wrap: nowrap;
+          overflow-x: scroll;
           gap: 0.5rem;
+          padding-left: calc(var(--bs-gutter-x) * .5);
+          padding-right: calc(var(--bs-gutter-x) * .5);
           @media (min-width: 768px) {
+            justify-content: center;
             gap: 1.5rem;
+          }
+          &::-webkit-scrollbar {
+                display: none;
           }
         }
         .nav-link {
@@ -477,12 +595,24 @@
             grid-template-columns: repeat(12, 1fr);
         }
         #topicTabs {
-            display: grid;
-            gap: 1rem;
+            display: flex;
+            overflow-x: scroll;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 0.75rem;
+            margin-left: calc(-.5 * var(--bs-gutter-x));
+            margin-right: calc(-.5 * var(--bs-gutter-x));
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            padding-right: calc(var(--bs-gutter-x) * .5);
             @media (min-width: 992px) {
+                display: grid;
+                gap: 1rem;
                 grid-area: 1 / 1 / 2 / 6;
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(5, 1fr);
+            }
+            &::-webkit-scrollbar {
+                display: none;
             }
             .nav-item {
                 display: flex;
@@ -497,7 +627,9 @@
                     font-weight: 700;
                     flex: 1 1 auto;
                     text-align: left;
+                    white-space: nowrap;
                     @media (min-width: 992px) {
+                        white-space: normal;
                         font-size: 1.25rem;
                         --bs-nav-link-padding-y: 1rem;
                     }
@@ -526,11 +658,54 @@
 
   <body>
     <!-- banner -->
+    <section class="overflow-hidden" id="page-banner">
+        <div class="container-xl position-relative">
+            <!-- 中間元素 -->
+            <div class="main-element">
+                <!-- 分頁Banner標題 -->
+                <div class="row justify-content-center page-banner-title">
+                    <div class="col-12 text-center">
+                        <picture>
+                            <source srcset="./assets/img/p4/p4-banner-title_xl.png" media="(min-width: 750px)">
+                            <img class="img-fluid" src="./assets/img/p4/p4-banner-title_xs@2x.png" alt="">
+                        </picture>
+                    </div>
+                </div>
+                <!-- 分頁Banner介紹 -->
+                <div class="row justify-content-center page-banner-text">
+                    <div class="col-12 col-xxl-6">
+                        <p class="lead text-start">購書就是對好故事最強力的 donate！累積好多顆愛心點讚的書，竄上熱門暢銷榜，疊合熱搜軌跡，成為今年度台灣整體閱讀樣貌。</p>
+                        <img class="d-none d-xl-block mx-auto" src="./assets/img/p4/banner-icon-heart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 浮動元素 -->
+            <div class="flow-element w-100 position-relative">
+                <div class="position-relative circle-left">
+                    <img class="banner-character-left position-absolute" src="./assets/img/p4/banner/character-left.png"
+                        alt="">
+                </div>
+                <div class="position-relative circle-right">
+                    <img class="banner-character-right position-absolute" src="./assets/img/p4/banner/character-right.png"
+                        alt="">
+                </div>
+                <div class="position-relative">
+                    <picture>
+                        <source srcset="./assets/img/p4/banner/bubble_xl.png" media="(min-width: 750px)">
+                        <img class="banner-bubble position-absolute" src="./assets/img/p4/banner/bubble_xs@2x.png" alt="">
+                    </picture>
+                </div>
+                <div class="d-none d-xl-block position-relative">
+                    <img class="banner-cat-man position-absolute" src="./assets/img/p4/banner/cat-man.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- 區塊2 -->
     <div class="container-xxl p-0" id="sectionIntro">
         <picture>
           <source srcset="/assets/img/p4/sc1-intro_xl.png" media="(min-width: 750px)">
-          <img class="img-fluid" src="/assets/img/p4/sc1-intro_xs@2x.png" alt="">
+          <img class="img-fluid" src="./assets/img/p4/sc1-intro_xs@2x.png" alt="">
         </picture>
     </div>
     <!-- 區塊3 -->
@@ -2042,7 +2217,7 @@
                 <div class="col-12 col-xl-10">
                     <picture>
                         <source srcset="/assets/img/p4/sc3-title_xl.png" media="(min-width: 750px)">
-                        <img class="img-fluid" src="/assets/img/p4/sc3-title_xs@2x.png" alt="">
+                        <img class="img-fluid" src="./assets/img/p4/sc3-title_xs@2x.png" alt="">
                     </picture>
                 </div>
             </div>
@@ -2110,7 +2285,7 @@
                 <div class="col-12 col-xl-10">
                     <picture>
                         <source srcset="/assets/img/p4/sc4-title_xl.png" media="(min-width: 750px)">
-                        <img class="img-fluid" src="/assets/img/p4/sc4-title_xs@2x.png" alt="">
+                        <img class="img-fluid" src="./assets/img/p4/sc4-title_xs@2x.png" alt="">
                     </picture>
                 </div>
             </div>
