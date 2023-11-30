@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>誠品全通路24小時閱讀分析</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BS5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <!-- Fontawsome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!--svg-injector-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg-injector/1.1.3/svg-injector.min.js"></script>
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom -->
+    <link href="./assets/css/font.css" rel="stylesheet" />
+    <link href="./assets/css/all.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --main-color: var(--green-dark);
+        --minor-color: var(--green-light);
+      }
+      html {
+        overflow-x: auto;
+      }
+      body::before {
+        display: none;
+      }
+      .fill {
+        fill: var(--main-color);
+      }
+      .lead {
+        font-weight: 400;
+      }
+      /* 分頁Banner */
+      /* Banner-X */
+      #page-banner {
+        height: 100vh;
+        @media (min-width: 992px) {
+          height: 826px;
+        }
+        .page-banner-title {
+          padding-top: 90px;
+          @media (min-width: 992px) {
+            padding-top: 130px;
+          }
+        }
+        .page-banner-text {
+          margin-top: 1rem;
+          text-align: center;
+          @media (min-width: 992px) {
+            margin-top: 2rem;
+          }
+          .lead {
+            @media (max-width: 575.98px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .fit-content-h {
+        width: fit-content;
+        width: -moz-fit-content;
+      }
+      .fit-content-v {
+        height: fit-content;
+      }
+
+      .banner-character-left {
+        width: 110px;
+        left: -3px;
+        top: -50px;
+      }
+      .banner-bookshelf-right {
+        width: 220px;
+        right: -36px;
+        top: -20px;
+        z-index: 1;
+      }
+      @media (min-width: 1200px) {
+        .banner-character-left {
+          width: auto;
+          left: -70px;
+          top: -460px;
+        }
+        .banner-bookshelf-right {
+          width: auto;
+          right: -80px;
+          top: -260px;
+          z-index: -1;
+        }
+      }
+      div[class*='circle']::after {
+        content: '';
+        position: absolute;
+        background: var(--minor-color);
+        z-index: -1;
+        border-radius: 100%;
+      }
+      .circle-left {
+        &::after {
+          width: 240px;
+          height: 240px;
+          top: -80px;
+          left: -40px;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            display: block;
+            width: 565px;
+            height: 565px;
+            top: -520px;
+            left: -170px;
+          }
+        }
+      }
+      .circle-right {
+        &::after {
+          display: none;
+          z-index: -2 !important;
+        }
+        @media (min-width: 992px) {
+          &::after {
+            display: block;
+            width: 450px;
+            height: 450px;
+            right: -215px;
+            top: -710px;
+          }
+        }
+      }
+      .banner-gear {
+        right: 115px;
+        top: -540px;
+      }
+
+      /*swiper內的樣式 s*/
+      .tooltip-inner {
+        background-color: var(--main-color);
+        box-shadow: 0px 0px 4px var(--main-color);
+        opacity: 1 !important;
+      }
+      .book-cover {
+        --book-cover-padding-x: 0.5rem;
+        --book-cover-padding-y: 0.625rem;
+        width: 220px;
+        background-color: white;
+        border: 2px solid var(--main-color);
+        border-radius: 0.75rem;
+        padding-top: var(--book-cover-padding-y);
+        padding-bottom: var(--book-cover-padding-y);
+        padding-left: var(--book-cover-padding-x);
+        padding-right: var(--book-cover-padding-x);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        @media (min-width: 1200px) {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+
+      .swiper {
+        overflow: visible;
+        & span {
+          display: inline-block !important;
+          color: unset !important;
+          font-family: unset !important;
+          font-size: unset !important;
+          font-weight: unset !important;
+          line-height: unset !important;
+        }
+      }
+      .swiper-slide {
+        padding-bottom: 12px;
+        & a {
+          text-decoration: none;
+        }
+        .book-cover {
+          width: 100%;
+          margin-bottom: 0.5rem;
+          --book-cover-padding-x: 1.5rem;
+          --book-cover-padding-y: 2rem;
+          @media (min-width: 992px) {
+            margin-bottom: 1rem;
+            --book-cover-padding-x: 2rem;
+            --book-cover-padding-y: 2.5rem;
+          }
+        }
+        .slide-text {
+          @media (min-width: 992px) {
+            margin-bottom: 0.5rem;
+          }
+          .slide-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+            @media (min-width: 992px) {
+              font-size: 1.5rem;
+            }
+          }
+          .meta {
+            font-weight: bold !important;
+          }
+        }
+      }
+      .swiper-pagination {
+        --swiper-pagination-bottom: 0px;
+      }
+      .swiper-pagination-bullet-active {
+        --swiper-pagination-color: var(--main-color);
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        transform: translateY(50%);
+        --swiper-navigation-size: 2rem;
+        --swiper-navigation-sides-offset: calc(
+          -1 * var(--swiper-navigation-size) / 3
+        );
+        --swiper-navigation-top-offset: 90px;
+        --swiper-pagination-color: var(--main-color);
+        background: var(--main-color);
+        border-radius: 100%;
+        width: var(--swiper-navigation-size);
+        height: var(--swiper-navigation-size);
+        @media (min-width: 992px) {
+          --swiper-navigation-sides-offset: calc(
+            -1 * var(--swiper-navigation-size) / 2
+          );
+          --swiper-navigation-top-offset: 116px;
+          --swiper-navigation-size: 3.5rem;
+        }
+        &:after {
+          display: none;
+        }
+        & img {
+          width: 1rem;
+          height: 1rem;
+          @media (min-width: 992px) {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+      /*swiper內的樣式 e*/
+
+      /*共用樣式*/
+      .icon {
+        width: 1.5rem;
+        margin-right: 0.5rem;
+      }
+      .sec-title {
+        color: var(--bs-dark);
+        font-family: HanWangHeiHeavy;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+      .sec-content {
+        color: #1e1e1e;
+        font-family: Noto Sans TC;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+      }
+      /*tabs s*/
+      .nav-pills {
+        margin-top: 1.5rem;
+      }
+      #pills-tabContent {
+        margin-top: 0.79rem;
+      }
+      #dayandnight .row:last-child .col-12 {
+        margin-bottom: 2.37rem;
+      }
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        padding: 1.25rem 1.12rem;
+        background-color: var(--main-color);
+      }
+      .nav-pills .nav-link {
+        padding: 1.25rem 1.12rem;
+        color: var(--main-color);
+        border: 1px solid var(--main-color);
+      }
+      .tab-content > .active {
+        display: block;
+        overflow-x: scroll;
+        & img {
+          width: 46.6rem;
+        }
+      }
+      .tab-content > .active::-webkit-scrollbar {
+        display: none;
+      }
+      .chartmb{
+        margin-bottom: 2rem !important;
+      }
+      /*tabs e*/
+      @media (min-width: 992px) {
+        .icon {
+          width: 2.125rem;
+        }
+        .sec-title {
+          font-size: 2rem;
+        }
+        .sec-content {
+          font-size: 1.25rem;
+        }
+        .nav-pills {
+          margin-top: 2.5rem;
+        }
+        /*tabs*/
+        #pills-tabContent {
+          margin-top: 2.31rem;
+        }
+        .tab-content > .active img {
+          width: 100%;
+        }
+        #dayandnight .row:last-child .col-12 {
+          margin-bottom: unset;
+        }
+        .chartmb{
+          margin-bottom: 4rem !important;
+        }
+      }
+
+      /*24x24*/
+      #twenty-four .hero-img img {
+        width: 100%;
+      }
+
+      /*18年時光*/
+      #eighteen-year {
+        margin-top: 5.75rem;
+      }
+      #eighteen-year .hero-img img {
+        width: 100%;
+      }
+      #eighteen-year #eighteen-text {
+        margin-top: 0.75rem;
+      }
+      #eighteen-year span {
+        color: #000;
+        font-family: HanWangHeiHeavy;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      #eighteen-year iframe {
+        margin-top: 2.75rem;
+      }
+      #eighteen-bubble span {
+        display: block;
+        width: 21.125rem;
+        color: #1e1e1e;
+        font-family: Noto Sans TC;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: -0.176px;
+      }
+      #eighteen-year #eighteen-bubble .hero-img img {
+        position: relative;
+        margin-top: 0.5rem;
+        z-index: 10;
+      }
+      @media (min-width: 992px) {
+        #eighteen-year {
+          margin-top: 4.5rem;
+        }
+        #eighteen-year #eighteen-text {
+          margin-top: 2rem;
+        }
+        #eighteen-year span {
+          font-size: 2.5rem;
+        }
+        #eighteen-year iframe {
+          margin-top: 1rem;
+        }
+        #eighteen-year #eighteen-bubble .hero-img img {
+          position: relative;
+          transform: translate(0, -1.5rem);
+          width: 100%;
+          z-index: 10;
+        }
+      }
+
+      /*eighteen-books 18年暢銷書榜*/
+      #eighteen-books {
+        margin-top: 4.25rem;
+        margin-top: 9.875rem;
+      }
+      #eighteen-books .row:last-child {
+        margin-top: 1.5rem;
+      }
+      #eighteen-books img {
+        border-radius: 1.5rem;
+      }
+      #eighteen-catman {
+        width: 4.25rem;
+      }
+      #eighteen-books span {
+        display: block;
+      }
+      #eighteen-books span:first-child {
+        color: var(--bs-dark);
+        font-family: HanWangHeiHeavy;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: normal;
+      }
+      #eighteen-books span:not(:first-child):not(:last-child) {
+        color: var(--bs-dark);
+        font-family: HanWangHeiHeavy;
+        font-size: 2.25rem;
+        font-weight: 400;
+        line-height: normal;
+      }
+      #eighteen-books span:last-child {
+        color: var(--bs-dark);
+        font-family: HanWangHeiHeavy;
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: normal;
+      }
+      #eighteen-books p {
+        color: #1e1e1e;
+        font-family: Noto Sans TC;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: -0.176px;
+        margin-top: 0.75rem;
+      }
+      .eighteen-books-overview {
+        display: flex;
+        justify-content: center;
+      }
+      @media (min-width: 992px) {
+        #eighteen-books {
+          margin-top: 9.875rem;
+        }
+        #eighteen-books .row:last-child {
+          margin-top: 2.375rem;
+        }
+        #eighteen-catman {
+          width: 7.5rem;
+        }
+        #eighteen-books span:first-child {
+          font-size: 5rem;
+        }
+        #eighteen-books span:not(:first-child):not(:last-child) {
+          font-size: 4rem;
+        }
+        #eighteen-books span:last-child {
+          font-size: 1.25rem;
+        }
+        #eighteen-books p {
+          font-size: 1.25rem;
+          margin-top: 2.0625rem;
+          width: 38.875rem;
+          letter-spacing: -0.22px;
+        }
+      }
+
+      /*全通路*/
+      #omnichannel {
+        margin-top: 3.375rem;
+        padding: 0;
+      }
+      @media (min-width: 992px) {
+        #omnichannel {
+          margin-top: 7.5rem;
+        }
+      }
+
+      /*線上下、日夜書店*/
+      #dayandnight {
+        margin-top: 2.5rem;
+        background-image: url('./assets/img/grid-bg.jpg');
+      }
+      #dayandnight .col-lg-4 {
+        margin-top: 1.5rem;
+      }
+      #dayandnight .col-lg-6 {
+        margin-top: 0.5rem;
+      }
+      #dayandnight .sex {
+        margin-top: 2rem;
+        & hr {
+          margin: 0.5rem 0;
+          background: #b9b9b9;
+        }
+      }
+      @media (min-width: 992px) {
+        #dayandnight {
+          margin-top: 4.125rem;
+        }
+        #dayandnight .col-lg-4 {
+          margin-top: 6rem;
+        }
+        #dayandnight .col-lg-6 {
+          margin-top: unset;
+        }
+        #dayandnight .sex {
+          margin-top: 3rem;
+        }
+      }
+
+      /*線上下會員*/
+      #onoffline-member {
+        margin-top: 2.5rem;
+        background-image: url('./assets/img/grid-bg.jpg');
+      }
+      #onoffline-member .row:first-child .col-lg-4 {
+        margin-top: 1.5rem;
+      }
+      #onoffline-member .row:first-child .col-lg-6 {
+        margin-top: 0.5rem;
+      }
+      #member-sc2 {
+        margin-top: 2rem;
+      }
+      #onoffline-member hr {
+        margin: 0.5rem 0;
+        background: #b9b9b9;
+      }
+      #onoffline-member .row .col-lg-5:last-child {
+        margin-top: 1.5rem;
+      }
+      @media (min-width: 992px) {
+        #dayandnight {
+          margin-top: 4.125rem;
+        }
+        #onoffline-member .row:first-child .col-lg-4 {
+          margin-top: 6rem;
+        }
+        #onoffline-member .row:first-child .col-lg-6 {
+          margin-top: 6rem;
+        }
+        #member-sc2 {
+          margin-top: 4rem;
+        }
+        #onoffline-member .row .col-lg-5:last-child {
+          margin-top: unset;
+        }
+      }
+
+      /*日夜喜好大不同*/
+      #dayandnight-like {
+        margin-top: 2.5rem;
+        background-image: url('./assets/img/grid-bg.jpg');
+      }
+      #dayandnight-like .col-lg-4 {
+        margin-top: 1.5rem;
+      }
+      #dayandnight-like .col-lg-6 {
+        margin-top: 0.5rem;
+      }
+      #dayandnight-like .sex {
+        margin-top: 2rem;
+        & hr {
+          margin: 0.5rem 0;
+          background: #b9b9b9;
+        }
+      }
+      @media (min-width: 992px) {
+        #dayandnight-like {
+          margin-top: 4.125rem;
+        }
+        #dayandnight-like .col-lg-4 {
+          margin-top: 3rem;
+        }
+        #dayandnight-like .col-lg-6 {
+          margin-top: 3rem;
+        }
+        #dayandnight-like .sex {
+          margin-top: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- nav -->
+    <nav class="navbar fixed-top p-0">
+      <div class="container-fluid p-0">
+        <button
+          class="navbar-toggler nav-mainToggler"
+          id="toggleButton"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#nav-mainNavbar"
+          aria-controls="nav-mainNavbar"
+          aria-label="Toggle navigation">
+          <div class="nav-lefticon">
+            <img
+              src="./assets/img/icon/menu-white.svg"
+              alt="navbar link"
+              id="menuIcon" />
+            <img
+              src="./assets/img/icon/close-white.svg"
+              alt="close navbar"
+              style="display: none"
+              id="closeIcon" />
+          </div>
+        </button>
+        <!-- main-toggler -->
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="nav-mainNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-body d-none d-lg-block">
+            <ul
+              class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/all_day.html"
+                  >誠品全通路 24 小時閱讀分析</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/taiwan_read.html"
+                  >台灣閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/hskt_read.html"
+                  >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/year_top.html"
+                  >台灣年度暢銷書榜</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/year_writer.html"
+                  >台灣年度暢銷作家</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/publish.html"
+                  >台灣年度之最＿出版社</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/social.html"
+                  >誠品社群十大之最</a
+                >
+              </li>
+              <li class="nav-item nav-itemLink">
+                <a class="nav-link" aria-current="page" href="/">返回首頁</a>
+              </li>
+            </ul>
+          </div>
+          <div class="offcanvas-body d-block d-lg-none">
+            <ul
+              class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+              <li class="nav-item nav-mobile">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/all_day.html"
+                  >誠品全通路 24 小時閱讀分析</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/taiwan_read.html"
+                  >台灣閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/hskt_read.html"
+                  >香港｜蘇州｜吉隆坡｜東京閱讀觀察</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/year_top.html"
+                  >台灣年度暢銷書榜</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/year_writer.html"
+                  >台灣年度暢銷作家</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/publish.html"
+                  >台灣年度之最＿出版社</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/social.html"
+                  >誠品社群十大之最</a
+                >
+              </li>
+              <li class="nav-item nav-mobile">
+                <a class="nav-link" aria-current="page" href="/">返回首頁</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- link-toggler -->
+        <div class="dropdown" id="link-dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle p-0"
+            id="link-dropbtn"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <div class="nav-righticon">
+              <img
+                src="./assets/img/icon/menu-black.svg"
+                alt="navbar link"
+                id="d-menuIcon" />
+              <img
+                src="./assets/img/icon/close-black.svg"
+                alt="close navbar"
+                style="display: none"
+                id="d-closeIcon" />
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <img
+              src="./assets/img/Polygon1.svg"
+              alt="Polygon1"
+              id="nav-polygon"
+              class="inject-me fill" />
+            <li><a class="dropdown-item" href="#">中文館</a></li>
+            <li><a class="dropdown-item" href="#">外文館</a></li>
+            <li><a class="dropdown-item" href="#">兒童館</a></li>
+            <li><a class="dropdown-item" href="#">誠品線上</a></li>
+            <li><a class="dropdown-item" href="#">TOP 100</a></li>
+            <li><a class="dropdown-item" href="#">職人大賞</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- banner -->
+    <section class="overflow-hidden" id="page-banner">
+      <div class="container-xl position-relative">
+        <!-- 中間元素 -->
+        <div class="main-element">
+          <!-- 分頁Banner標題 -->
+          <div class="row justify-content-center page-banner-title">
+            <div class="col-12 text-center">
+              <picture>
+                <source
+                  srcset="./assets/img/p1/p1-banner-title_xl.png"
+                  media="(min-width: 750px)" />
+                <img
+                  class="img-fluid"
+                  src="./assets/img/p1/p1-banner-title_xs@2x.png"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+          <!-- 分頁Banner介紹 -->
+          <div class="row justify-content-center page-banner-text">
+            <div class="col-12 col-xxl-6">
+              <p class="lead text-start">
+                對準凌晨 3 點的孤獨，限時動態是走逛 24
+                小時書店或線上下單買書。夜貓們都讀什麼？文化幣真的讓台灣青年更愛看書嗎？沒想到除了肉粽，閱讀習慣也有城市差異⋯⋯
+              </p>
+              <img src="./assets/img/p1/banner-icon-book.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- 浮動元素 -->
+        <div class="flow-element w-100 position-relative">
+          <div class="position-relative circle-left">
+            <img
+              class="banner-character-left position-absolute"
+              src="./assets/img/p1/banner/banner-character.png"
+              alt="" />
+          </div>
+          <div class="position-relative circle-right">
+            <img
+              class="banner-bookshelf-right position-absolute"
+              src="./assets/img/p1/banner/banner-bookshelf.png"
+              alt="" />
+          </div>
+          <div class="d-none d-xl-block position-relative">
+            <img
+              class="banner-gear position-absolute"
+              src="./assets/img/p1/banner/banner-gears.png"
+              alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--24x24-->
+    <section class="container-xl px-0" id="twenty-four">
+      <div class="row m-0">
+        <div class="col p-0 text-center">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc1-intro_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc1-intro_xl.png"
+              alt="燦爛相傳，從實體到線上不間斷的閱讀計畫" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!--18年時光-->
+    <section class="container-xl px-0" id="eighteen-year">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc2-big-title_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc2-big-title_xl.png"
+              alt="誠品信義店18年時光凝聚成詩" />
+          </picture>
+        </div>
+      </div>
+      <div class="row mx-0" id="eighteen-text">
+        <div class="col p-0 text-center d-block d-lg-none">
+          <span>
+            2023創作主題曲<br />
+            “在一切終將消逝以前”
+          </span>
+        </div>
+        <div class="col p-0 text-center d-none d-lg-block">
+          <span> 2023創作主題曲 “在一切終將消逝以前” </span>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0">
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/lnljjPQPpwQ?si=lqRSkveBQ7sUoZmr"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-end" id="eighteen-bubble">
+        <div class="col-12 p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc2-bubble-text_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc2-bubble-text_xl.png"
+              alt="主題曲－在一切終將消逝以前" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!--18年暢銷書榜-->
+    <section class="container-xl" id="eighteen-books">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-6 p-0">
+          <div class="row mx-0 justify-content-center">
+            <div class="col-9 col-lg-8 p-0">
+              <span> 誠品信義店 </span>
+              <span> 18年暢銷書榜 </span>
+              <span> 統計區間：2006 ~ 2023 </span>
+            </div>
+            <div class="col-3 col-lg-4 p-0 d-flex justify-content-center">
+              <img
+                src="./assets/img/p1/sc3-cat-man.png"
+                alt="誠品信義店－18年暢銷書榜"
+                id="eighteen-catman" />
+            </div>
+          </div>
+          <div class="row mx-0">
+            <div class="col p-0">
+              <p>
+                閱讀映照社會大眾對於世界的探索、想像，以及自身最深切的渴求與企盼，從而凝鍊出一個時代人們最細緻、獨特的樣貌。<br />
+                「全球最大繁體中文書店」誠品信義店18年來匯聚百萬藏書、引薦當代議題、趨勢脈動，帶領讀者跟著作品走向更廣大的世界發掘種種未知，在冒險歷程中更加成長茁壯，也馳騁心靈體驗各式各樣天馬行空的創意與奇思妙想。<br />
+                20本2006年迄今最暢銷作品，收攏18年來讀者從誠品信義店將一本本愛書攜帶回家的心動軌跡；每一本書都是一次相遇，紀錄每顆心靈珍貴的生命時刻。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 p-0 position-relative">
+          <img
+            src="./assets/img/p1/sc3-gallery-img-1.png"
+            alt="overview international books"
+            class="w-100" />
+          <div class="eighteen-books-overview">映像攝影：簡子鑫</div>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 p-0">
+          <!--swiper-->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- 內容 -->
+              <!-- book1-2-1 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001110932682185908005">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-1@2x.png"
+                      alt="大江大海一九四九" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">大江大海一九四九</h4>
+                    <span class="meta">時報文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-2 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001136022367152">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-2@2x.png"
+                      alt="被討厭的勇氣" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">被討厭的勇氣</h4>
+                    <span class="meta">究竟出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-3 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001112701700708">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-3@2x.png"
+                      alt="The Secret祕密" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">The Secret祕密</h4>
+                    <span class="meta">方智出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-4 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001116992254653">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-4@2x.png"
+                      alt="解憂雜貨店" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">解憂雜貨店</h4>
+                    <span class="meta">皇冠文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-5 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001230442651614">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-5@2x.png"
+                      alt="別相信任何人" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">別相信任何人</h4>
+                    <span class="meta">寂寞出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-6 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001125812867047">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-6@2x.png"
+                      alt="蔡康永的說話之道" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">蔡康永的說話之道</h4>
+                    <span class="meta">如何出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-7 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001129721510763">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-7@2x.png"
+                      alt="有錢人想的和你不一樣" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">有錢人想的和你不一樣</h4>
+                    <span class="meta">大塊文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-8 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001112702764163">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-8@2x.png"
+                      alt="原子習慣" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">原子習慣</h4>
+                    <span class="meta">方智出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-9 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001128312292568">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-9@2x.png"
+                      alt="追風箏的孩子" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">追風箏的孩子</h4>
+                    <span class="meta">木馬文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-10 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001116172393989">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-10@2x.png"
+                      alt="秘密花園" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">秘密花園</h4>
+                    <span class="meta">遠流出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-11 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001124182644652">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-11@2x.png"
+                      alt="華頓商學院最受歡迎的談判課" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">華頓商學院最受歡迎的談判課</h4>
+                    <span class="meta">先覺出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-12 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001110932682172869005">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-12@2x.png"
+                      alt="目送" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">目送</h4>
+                    <span class="meta">時報文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-13 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001124182702786">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-13@2x.png"
+                      alt="正義: 一場思辨之旅" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">正義: 一場思辨之旅</h4>
+                    <span class="meta">先覺出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-14 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001125812318642">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-14@2x.png"
+                      alt="蔡康永的說話之道 2" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">蔡康永的說話之道 2</h4>
+                    <span class="meta">如何出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-15 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001125812719282">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-15@2x.png"
+                      alt="蔡康永的情商課" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">蔡康永的情商課</h4>
+                    <span class="meta">如何出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-16 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001131181599030">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-16@2x.png"
+                      alt="那些年, 我們一起追的女孩" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">那些年, 我們一起追的女孩</h4>
+                    <span class="meta">春天出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-17 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001122732681967226009">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-17@2x.png"
+                      alt="巨流河" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">巨流河</h4>
+                    <span class="meta">遠見天下</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-18 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-title="已絕版">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-18@2x.png"
+                      alt="列車上的女孩" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">列車上的女孩</h4>
+                    <span class="meta">寂寞出版</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-19 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001129881739178">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-19@2x.png"
+                      alt="世界是平的" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">世界是平的</h4>
+                    <span class="meta">雅言文化</span>
+                  </div>
+                </a>
+              </div>
+              <!-- book1-2-20 -->
+              <div class="swiper-slide">
+                <a
+                  class="link-dark"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.eslite.com/product/1001183842588701">
+                  <div class="book-cover">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/p1/sc3-book-20@2x.png"
+                      alt="在咖啡冷掉之前" />
+                  </div>
+                  <div class="slide-text">
+                    <h4 class="slide-title mb-1">在咖啡冷掉之前</h4>
+                    <span class="meta">悅知文化</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- 頁數 -->
+            <div class="swiper-pagination d-none d-xl-block"></div>
+            <!-- 上一張/下一張 -->
+            <div class="swiper-button-prev">
+              <img src="./assets/img/icon/arrow-left.svg" alt="上一張" />
+            </div>
+            <div class="swiper-button-next">
+              <img src="./assets/img/icon/arrow-right.svg" alt="下一張" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--全通路-->
+    <section class="container-xl" id="omnichannel">
+      <div class="row mx-0 justify-content-center">
+        <div class="col p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc4-1_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc4-1_xl.png"
+              alt="全通路-誠品會員閱讀分析"
+              class="w-100" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!--線上下、日夜書店-->
+    <section class="container-xl" id="dayandnight">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-4 p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc4-2-title_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc4-2-title_xl.png"
+              alt="線上下、日夜書店"
+              class="w-100" />
+          </picture>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+          <span class="sec-content">
+            什麼類型族群經常在深夜到實體書店買書呢？從會員購書數據中發現，於實體和線上兩個場域中，不同性別、年齡區段的購書習慣存在有趣的差異。<br />
+            比如：到了深夜，實體書店的購書會員中，男性和29歲以下族群比例大幅提高；清晨則多是養生早起的橘子世代。購書行為似乎也透露出不同性別對於夜間出門的安全性有不同考量，並顯現出不同世代晨型與夜行的生活習慣差異。
+          </span>
+        </div>
+      </div>
+      <!--tabs-->
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 sex">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-2-gender_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">日夜書店購買性別觀察</span>
+          </div>
+          <hr />
+          <span class="sec-content"
+            >實體書店到了夜間，購書會員中男性比例和日間相比大幅提高；線上性別比於日夜則無變化。</span
+          >
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0">
+          <ul
+            class="nav nav-pills mb-3 justify-content-center"
+            id="pills-sex-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="entity-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-entity"
+                type="button"
+                role="tab"
+                aria-controls="pills-entity"
+                aria-selected="true">
+                實體書店
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="online-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-online"
+                type="button"
+                role="tab"
+                aria-controls="pills-online"
+                aria-selected="false">
+                誠品線上
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-entity"
+              role="tabpanel"
+              aria-labelledby="entity-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-2-gender-chart-1_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-2-gender-chart-1_xl.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-online"
+              role="tabpanel"
+              aria-labelledby="online-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-2-gender-chart-2_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-2-gender-chart-2_xl.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--tabs-->
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 sex">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-2-gender_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">日夜書店購買年齡觀察</span>
+          </div>
+          <hr />
+          <span class="sec-content"
+            >實體書店到了夜間，購書會員中男性比例和日間相比大幅提高；線上性別比於日夜則無變化。</span
+          >
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 chartmb">
+          <ul
+            class="nav nav-pills mb-3 justify-content-center"
+            id="pills-age-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="entity-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#age-entity"
+                type="button"
+                role="tab"
+                aria-controls="age-entity"
+                aria-selected="true">
+                實體書店
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="online-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#age-online"
+                type="button"
+                role="tab"
+                aria-controls="age-online"
+                aria-selected="false">
+                誠品線上
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="age-entity"
+              role="tabpanel"
+              aria-labelledby="entity-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-2-age-chart-1_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-2-age-chart-1_xl.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="age-online"
+              role="tabpanel"
+              aria-labelledby="online-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-2-age-chart-2_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-2-age-chart-2_xl.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--線上下 會員書籍-->
+    <section class="container-xl" id="onoffline-member">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-4 p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc4-3-title_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc4-3-title_xl.png"
+              alt="線上下書店 會員都買什麼書？"
+              class="w-100" />
+          </picture>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+          <span class="sec-content">
+            什麼書在實體書店賣得好？什麼書又通常都從線上下單呢？由會員購書類別數據分析中可見，兒少圖書與旅遊休閒兩大類書籍於線上下佔比有較明顯差異。由於實體書店能親手翻閱、體驗與挑選書籍，家長多偏好到線下門市購買兒少圖書；而漫畫與旅遊書等購買目標明確、功能需求導向的書籍，則從線上訂購最為即時與方便。
+          </span>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center" id="member-sc2">
+        <div class="col-12 col-lg-5 ps-0">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-3-magnifier_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">線上下書店購書類別觀察</span>
+          </div>
+          <hr />
+          <span class="sec-content">
+            「兒少圖書」重視閱讀實際體驗，實體書店購書佔比高於線上，大人小孩到書店偶遇怦然心動的書就能直接買回家；「旅遊休閒」類書籍重視購買的即時性且功能明確，關鍵字一搜，馬上能由網路訂購，線上購書佔比高於實體書店。
+          </span>
+        </div>
+        <div class="col-12 col-lg-5 pe-0">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-3-analyze_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">線上下書店年齡與購書類別分析</span>
+          </div>
+          <hr />
+          <span class="sec-content">
+            不同年齡層個別於實體或線上書店購買的書籍類型中，有四個年齡區段的TOP1類型有明顯特色。29歲以下與50歲以上兩族群無論線上或實體，均以文學創作類購書佔比最大；30-39歲和40-49歲族群於實體買最多兒少圖書，線上則以圖像休閒類為主。
+          </span>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 chartmb">
+          <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills-one-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-one"
+                type="button"
+                role="tab"
+                aria-controls="pills-one"
+                aria-selected="true">
+                會員（不分年齡）
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-two-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-two"
+                type="button"
+                role="tab"
+                aria-controls="pills-two"
+                aria-selected="false">
+                Low-29歲
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-thr-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-thr"
+                type="button"
+                role="tab"
+                aria-controls="pills-thr"
+                aria-selected="false">
+                30-39歲
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-fou-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-fou"
+                type="button"
+                role="tab"
+                aria-controls="pills-fou"
+                aria-selected="false">
+                40-49歲
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-fiv-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-fiv"
+                type="button"
+                role="tab"
+                aria-controls="pills-fiv"
+                aria-selected="false">
+                50歲以上
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-one"
+              role="tabpanel"
+              aria-labelledby="pills-one-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-3-member-chart-1_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-3-member-chart-1_xl.png"
+                  alt="類別分析" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-two"
+              role="tabpanel"
+              aria-labelledby="pills-two-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-3-member-chart-2_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-3-member-chart-2_xl.png"
+                  alt="類別分析" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-thr"
+              role="tabpanel"
+              aria-labelledby="pills-thr-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-3-member-chart-3_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-3-member-chart-3_xl.png"
+                  alt="類別分析" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-fou"
+              role="tabpanel"
+              aria-labelledby="pills-fou-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-3-member-chart-4_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-3-member-chart-4_xl.png"
+                  alt="類別分析" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-fiv"
+              role="tabpanel"
+              aria-labelledby="pills-fiv-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-3-member-chart-5_xs@2x.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-3-member-chart-5_xl.png"
+                  alt="類別分析" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--日夜喜好大不同-->
+    <section class="container-xl" id="dayandnight-like">
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-4 p-0">
+          <picture class="hero-img">
+            <source
+              srcset="./assets/img/p1/sc4-4-title_xs@2x.png"
+              media="(max-width: 991px)" />
+            <img
+              src="./assets/img/p1/sc4-4-title_xl.png"
+              alt="線上下、日夜書店"
+              class="w-100" />
+          </picture>
+        </div>
+        <div class="col-12 col-lg-6 p-0">
+          <span class="sec-content">
+            從各類別在黑夜、白天不同時段購書佔該類別的佔比，觀察線上下不同的購書喜好。<br />
+            走入實體與線上書店的日與夜，還能看見會員於不同場域、時段狀態下各異的購書類型。在實體書店中，靜謐的深夜時段更適合思考，並由於家庭和安全考量，無養育小孩者與男性會員購書佔比高；線上書店，白天較夜間更為理性思考、下班後則心情多放鬆且重視娛樂，這些因素皆影響不同場域中日夜購書類型的選擇。
+          </span>
+        </div>
+      </div>
+      <!--tabs-->
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 sex">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-4-shop_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">實體書店的日夜購書類別分析</span>
+          </div>
+          <hr />
+          <span class="sec-content"
+            >觀察整體會員於實體書店購書行為，黑夜購書佔該類別的佔比，TOP3分別為宗教哲思、藝術設計與社會科學；白天TOP3則為兒少圖書、心理勵志與文學創作。實體書店的夜貓時段，是會員與自我心靈對話的好時機。</span
+          >
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0">
+          <ul
+            class="nav nav-pills mb-3 justify-content-center"
+            id="pills-day-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="night-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-night"
+                type="button"
+                role="tab"
+                aria-controls="pills-night"
+                aria-selected="true">
+                黑夜
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="day-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-day"
+                type="button"
+                role="tab"
+                aria-controls="pills-day"
+                aria-selected="false">
+                白天
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-night"
+              role="tabpanel"
+              aria-labelledby="night-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-4-store-chart-1.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-4-store-chart-1.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-day"
+              role="tabpanel"
+              aria-labelledby="day-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-4-store-chart-2.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-4-store-chart-2.png"
+                  alt="各時段購書人數" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--tabs-->
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 sex">
+          <div class="d-flex align-items-center">
+            <img
+              src="./assets/img/p1/sc4-4-phone_icon@2x.png"
+              alt="icon"
+              class="icon" />
+            <span class="sec-title">線上書店的日夜購書類別分析</span>
+          </div>
+          <hr />
+          <span class="sec-content">
+            會員逛線上書店，白天積極理性、夜晚很感性。線上書店方面，整體會員在黑夜購書佔該類別的佔比，TOP3分別為旅遊休閒、宗教歷史與文學創作；白天TOP3則為歷史文化、語言考用與社會科學。而兒少圖書，不同於實體書店佔比排名為各類型之末，在線上則提升至TOP8，可觀察到爸媽於下班後也仍不忘替小朋友補充精神食糧！
+          </span>
+        </div>
+      </div>
+      <div class="row mx-0 justify-content-center">
+        <div class="col-12 col-lg-10 p-0 chartmb">
+          <ul
+            class="nav nav-pills mb-3 justify-content-center"
+            id="pills-dayonline-tab"
+            role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="daynight-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#online-daynight"
+                type="button"
+                role="tab"
+                aria-controls="online-daynight"
+                aria-selected="true">
+                黑夜
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="dayonline-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#online-dayonline"
+                type="button"
+                role="tab"
+                aria-controls="online-dayonline"
+                aria-selected="false">
+                白天
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="online-daynight"
+              role="tabpanel"
+              aria-labelledby="daynight-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-4-online-chart-1.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-4-online-chart-1.png"
+                  alt="實體書店的日夜購書類別分析" />
+              </picture>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="online-dayonline"
+              role="tabpanel"
+              aria-labelledby="dayonline-tab"
+              tabindex="0">
+              <picture class="hero-img">
+                <source
+                  srcset="./assets/img/p1/sc4-4-online-chart-2.png"
+                  media="(max-width: 991px)" />
+                <img
+                  src="./assets/img/p1/sc4-4-online-chart-2.png"
+                  alt="線上書店的日夜購書類別分析" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      誠品線上 - 誠品生活股份有限公司<br />
+      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
+      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+    </footer>
+
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      )
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+      var offcanvasElement = document.getElementById('nav-mainNavbar')
+      offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'none'
+        document.getElementById('closeIcon').style.display = 'block'
+      })
+      offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
+        document.getElementById('menuIcon').style.display = 'block'
+        document.getElementById('closeIcon').style.display = 'none'
+      })
+      var dropdownElement = document.getElementById('link-dropdown')
+      dropdownElement.addEventListener('show.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'none'
+        document.getElementById('d-closeIcon').style.display = 'block'
+      })
+      dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
+        document.getElementById('d-menuIcon').style.display = 'block'
+        document.getElementById('d-closeIcon').style.display = 'none'
+      })
+
+      var mySVGsToInject = document.querySelectorAll('img.inject-me')
+      SVGInjector(mySVGsToInject)
+
+      const swiper = new Swiper('.swiper', {
+        loop: false,
+        // 每次5張
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 12,
+        breakpoints: {
+          576: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+            spaceBetween: 24,
+          },
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })
+    </script>
+  </body>
+</html>
