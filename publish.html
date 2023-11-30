@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <title>誠品 | eslite</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- BS5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- Fontawsome 6 -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- Custom -->
+        <link href="./assets/css/font.css" rel="stylesheet" />
+        <link href="./assets/css/all.min.css" rel="stylesheet" />
+        <style>
+            :root {
+                --main-color: var(--claret-dark);
+                --minor-color: var(--claret-light);
+                --movement: 1.5rem;
+            }
+            a {
+                text-decoration: none;
+            }
+            body:before {
+                display: none;
+            }
+            .lead {
+                font-weight: 400;
+            }
+            .hanwang {
+                font-family: "HanWangHeiHeavy", Arial, sans-serif;
+            }
+            /* 分頁Banner */
+            /* Banner-6 */
+            #page-banner {
+                height: 900px;
+                @media (min-width: 992px) {
+                height: 720px;
+                }
+                .page-banner-title {
+                padding-top: 90px;
+                @media (min-width: 992px) {
+                    padding-top: 56px;
+                }
+                }
+                .page-banner-text {
+                margin-top: 1rem;
+                text-align: center;
+                @media (min-width: 992px) {
+                    margin-top: 2rem;
+                }
+                .lead {
+                    @media (max-width: 575.98px) {
+                    font-size: 1rem;
+                    }
+                }
+                }
+            }
+            .fit-content-h {
+                width: fit-content;
+            }
+            .fit-content-v {
+                height: fit-content;
+            }
+            .banner-cat-book {
+                width: 65px;
+                left: 10px;
+                top: 14px;
+                z-index: -1;
+            }
+            .banner-on-book {
+                width: 336px;
+                right: -110px;
+                top: 0px;
+                z-index: -1;
+            }
+            @media (min-width: 1200px) {
+                .banner-cat-book {
+                width: auto;
+                left: 10px;
+                top: -130px;
+                }
+                .banner-on-book {
+                width: auto;
+                right: -170px;
+                top: -470px;
+                }
+            }
+            div[class*="circle"]::after {
+                content: '';
+                position: absolute;
+                background: var(--minor-color);
+                z-index: -2;
+                border-radius: 100%;
+            }
+            .circle-left {
+                &::after {
+                display: none;
+                }
+                @media (min-width: 992px) {
+                &::after {
+                    display: block;
+                    width: 284px;
+                    height: 284px;
+                    top: -260px;
+                    left: -10px;
+                }
+                }
+            }
+            .circle-right {
+                &::after {
+                width: 312px;
+                height: 312px;
+                top: -50px;
+                right: -60px;
+                }
+                @media (min-width: 992px) {
+                &::after {
+                    width: 506px;
+                    height: 506px;
+                    right: -120px;
+                    top: -530px;
+                }
+                }
+            }
+            .banner-shed {
+                width: 295px;
+                top: -590px;
+                left: -130px;
+                z-index: -1;
+                @media (min-width: 992px) {
+                    width: auto;
+                    top: -650px;
+                    left: -220px;
+                }
+            }
+            .tab-title {
+                font-family: "HanWangHeiHeavy", Arial, sans-serif;
+                font-size: 3.5rem;
+                color: var(--claret-dark);
+            }
+            .sub-title {
+                font-size: 3rem;
+                font-family: "HanWangHeiHeavy", Arial, sans-serif;
+            }
+            #sectionTab {
+                .nav {
+                    justify-content: center;
+                    gap: 1rem;
+                    @media (min-width: 768px) {
+                        gap: 1.5rem;
+                    }
+                }
+                .nav-link {
+                    font-family: "HanWangHeiHeavy", Arial, sans-serif;
+                    --bs-nav-link-padding-y: 1rem;
+                    --bs-nav-link-padding-x: 1.5rem;
+                    border: 2px solid var(--main-color);
+                    border-radius: var(--bs-border-radius-pill);
+                    --bs-nav-link-color: var(--main-color);
+                    @media (min-width: 768px) {
+                        --bs-nav-link-padding-y: 1.5rem;
+                        --bs-nav-link-padding-x: 3.5rem;
+                        font-size: 2.5rem;
+                    }
+                }
+                .nav-link:hover {
+                    color: var(--main-color);
+                }
+                .nav-pills .nav-link.active {
+                    background-color: rgba(173, 197, 225, 0.5);
+                    --bs-nav-pills-link-active-color: var(--main-color);
+                }
+            }
+
+            .book-cover {
+                width: 416px;
+                border-radius: 0.75rem;
+                padding: 10px 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+            img {
+                max-width: 100%;
+            }
+            @media (min-width: 1200px) {
+                .book-cover {
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+                .tb-block {
+                    min-height: 572px;
+                }
+                .swiper-pointer-events {
+                    overflow: visible !important;
+                }
+            }
+            .link .lead {
+                background: var(--claret-dark);
+            }
+            .btn-primary {
+                --bs-btn-padding-y: 12px;
+                --bs-btn-padding-x: 32px;
+                --bs-btn-bg: var(--main-color);
+                --bs-btn-border-color: var(--main-color);
+                --bs-btn-hover-bg: color-mix(in srgb, var(--main-color) 90%, black);
+                --bs-btn-hover-border-color: color-mix(in srgb, var(--main-color) 90%, black);
+                --bs-btn-active-bg: color-mix(in srgb, var(--main-color) 80%, black);
+                --bs-btn-active-border-color: color-mix(in srgb, var(--main-color) 80%, black);
+            }
+
+            .article-title {
+                font-family: "HanWangHeiHeavy", Arial, sans-serif;
+                display: flex;
+                column-gap: 8px;
+                width: 100%;
+            }
+            .article .lead {
+                @media (max-width: 575.98px) {
+                    font-size: 1rem;
+                }
+            }
+            .book-sec {
+                background: rgba(163, 211, 191, 0.5);
+                border-radius: 2rem;
+            }
+            .book-sec .article {
+                padding: 0 3.25rem;
+            }
+            .ft-space {
+                margin-top: 6rem;
+            }
+            .three-books {
+                background-color: var(--claret-dark);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 450px;
+            }
+
+            .publisher-section .names span,
+            .publisher-section .names p {
+                font-family: "HanWangHeiHeavy", Arial, sans-serif;
+            }
+            .publisher-section .names p {
+                font-size: 1.75rem;
+                margin-bottom: 0.5rem;
+            }
+            .publisher-section a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .names {
+                border-bottom: 3px solid var(--claret-light);
+                padding-top: 1rem;
+                text-align: center;
+            }
+
+            .book-wrap {
+                position: relative;
+            }
+            .type-label {
+                top: calc(-1 * var(--movement));
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .type-label .type-text {
+                display: flex;
+                justify-content: center;
+            }
+            .type-text:before {
+                clip-path: polygon(0 0, 100% 100%, 100% 0);
+            }
+
+            .type-text:after {
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+            }
+            .type-text:before, .type-text:after{
+                content: '';
+                flex-basis: 0.75rem;
+                flex-shrink: 0;
+                background: var(--minor-color);
+            }
+            .type-decor {
+                width: 0.875rem;
+                height: 0.875rem;
+                background: var(--minor-color);
+                clip-path: polygon(0 0, 50% 100%, 100% 0);
+            }
+            .book-cover {
+                margin-top: var(--movement);
+                width: 100%;
+                margin-bottom: 0.5rem;
+                --book-cover-padding-x: 1.5rem;
+                --book-cover-padding-y: 2rem;
+                max-width: 100%;
+            }
+            .book-cover {
+                --book-cover-padding-x: 0.5rem;
+                --book-cover-padding-y: 0.625rem;
+                width: 220px;
+                background-color: white;
+                border: 1px solid var(--main-color);
+                border-radius: 0.75rem;
+                padding-top: var(--book-cover-padding-y);
+                padding-bottom: var(--book-cover-padding-y);
+                padding-left: var(--book-cover-padding-x);
+                padding-right: var(--book-cover-padding-x);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+            .type-text span{
+                --label-padding-x: 0.5rem;
+                --label-padding-y: 0.5rem;
+                background: var(--minor-color);
+                font-size: 1.25rem;
+                line-height: normal;
+                white-space: nowrap;
+                flex-basis: fit-content;
+                padding: var(--label-padding-y) var(--label-padding-x);
+            }
+            @media (min-width: 992px){
+            .slide-text{ 
+                margin-bottom: 0.5rem;
+            }
+            .slide-title{
+                font-size: 1.5rem;
+            }
+            .type-text span{
+                font-size: 1.75rem;
+            }
+            .book-cover{
+                margin-bottom: 1rem;
+                --book-cover-padding-x: 2rem;
+                --book-cover-padding-y: 2.5rem;
+            }
+            }
+
+            @media (min-width: 1200px){
+                .book-cover {
+                width: 100%;
+            }
+            }
+
+            .slide-title {
+                font-weight: bold;
+                font-size: 1.25rem;
+            }
+
+            .meta {
+                font-weight: bold;
+            }
+
+            /* Swiper */
+            .swiper {
+                overflow: hidden;
+            }
+            .swiper .card {
+                width: 300px;
+                text-align: center;
+                border: none;
+                background: none;
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--claret-light) !important;
+                opacity: 1 !important;
+            }
+
+            .swiper-pagination-bullet-active {
+                opacity: var(--swiper-pagination-bullet-opacity, 1);
+                background: var(--claret-dark) !important;
+            }
+            .swiper .thumbnail img {
+                padding: 0rem 0rem 2.5rem 0rem;
+                max-width: 100%;
+            }
+            .swiper-button-next, .swiper-button-prev {
+                background: var(--claret-dark);
+                border-radius: 999px;
+                opacity: 1;
+                width: 56px !important;
+                height: 56px !important;
+                color: #fff !important;
+            }
+            .swiper-button-next:after, .swiper-button-prev:after {
+                font-size: 24px !important;
+            }
+            .swiper-button-prev {
+                left: -30px !important;
+            }
+            .swiper-button-next {
+                right: -30px !important;
+            }
+            .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+                opacity: 0.35;
+            }
+            @media (min-width: 768px) and (max-width: 1199.98px) {
+                .book-sec .article {
+                    padding: 3rem 3rem;
+                }
+                #bookTypeContent {
+                    margin-top: 2rem;
+                }
+                .row {
+                    margin: inherit;
+                }
+                .tab-title {
+                    font-size: 2.5rem;
+                }
+                .sub-title {
+                    font-size: 1.5rem;
+                }
+            }
+            @media (max-width: 767.98px) {
+                .publisher-section .sticky-top{
+                    overflow-x: scroll;
+                    flex-wrap: nowrap;
+                    margin-right: -1.5rem;
+                    margin-left: -1.5rem;
+                    padding: 0 1.5rem;
+                }
+                .publisher-section .names p {
+                    font-size: 1.5rem;
+                    white-space: nowrap;
+                    padding: 0 1rem;
+                }
+
+                .publisher-section .names span {
+                    font-size: 14px;
+                }
+                .swiper-button-prev {
+                    left: 20px !important;
+                }
+                .swiper-button-next {
+                    right: 20px !important;
+                }
+                #article1-2 {
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+                .book-sec .article {
+                    padding: 2rem 0;
+                }
+                .tab-title {
+                    font-size: 2rem;
+                }
+                .lead {
+                    font-size: 1rem;
+                }
+                .sub-title {
+                    font-size: 1.25rem;
+                }
+                .three-books {
+                    display: block;
+                    height: auto;
+                    background-color: transparent;
+                }
+                .info-block {
+                    margin-top: 3rem;
+                }
+                .row {
+                    margin: inherit;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <!-- banner -->
+        <section class="overflow-hidden" id="page-banner">
+            <div class="container-xl position-relative">
+                <!-- 中間元素 -->
+                <div class="main-element">
+                    <!-- 分頁Banner標題 -->
+                    <div class="row justify-content-center page-banner-title">
+                        <div class="col-12 text-center">
+                            <picture>
+                                <source srcset="./assets/img/p6/p6-banner-title_xl.png" media="(min-width: 750px)">
+                                <img class="img-fluid" src="./assets/img/p6/p6-banner-title_xs@2x.png" alt="">
+                            </picture>
+                        </div>
+                    </div>
+                    <!-- 分頁Banner介紹 -->
+                    <div class="row justify-content-center page-banner-text">
+                        <div class="col-12 col-xxl-6">
+                            <p class="lead text-start">
+                                這些台灣出版社都超會賣、超會編、超會創造議題！
+                                <span class="d-block">
+                                    我們得以徜徉書海，是由於有這些出版社、出版人殷勤造浪。汪洋之中，每瓢海水的樣貌都不盡相同——有些以溫柔包覆，給予支持，浮沉人生不至滅頂；有些栽種無數繽紛物種，點綴生活；有些則在水裡拋下船錨、鑄造港灣，暴風中給予清晰航向。
+                                </span>
+                                <span class="d-block">
+                                    台灣幸運擁有為數眾多的出版社，各有守備專業範圍、類型全面，幾乎涵蓋人一生所有可能關注議題，甚至提前讀者一步洞悉。認識一家好的出版社，就等同多獲得一個與好內容相遇的管道。
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 浮動元素 -->
+                <div class="flow-element w-100 position-relative">
+                    <div class="position-relative circle-left">
+                        <picture>
+                            <source srcset="./assets/img/p6/banner/cat-book_xl.png" media="(min-width: 750px)">
+                            <img class="banner-cat-book position-absolute" src="./assets/img/p6/banner/cat-book_xs@2x.png"
+                                alt="">
+                        </picture>
+                    </div>
+                    <div class="position-relative circle-right">
+                        <img class="banner-on-book position-absolute" src="./assets/img/p6/banner/on-book.png" alt="">
+                    </div>
+                    <div class="position-relative">
+                        <img class="banner-shed position-absolute" src="./assets/img/p6/banner/shed.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 區塊2 -->
+        <div class="container-xxl p-0" id="sectionIntro">
+            <picture>
+                <source srcset="./assets/img/p2/sc1-intro_xl.png" media="(min-width: 750px)" />
+                <img class="img-fluid" src="./assets/img/p2/sc1-intro_xs@2x.png" alt="" />
+            </picture>
+        </div>
+        <!-- 區塊3 -->
+        <div class="container-xl p-0" id="sectionTab" style="margin-bottom: 6rem;">
+            <!-- 頁籤 -->
+
+            <!-- 內容 -->
+            <div class="container-xl" id="bookTypeContent">
+                <!-- 中文書內容 -->
+                <div class="tab-pane fade show active" id="chineseContent" role="tabpanel" aria-labelledby="chineseTab">
+                    <div class="container-xl my-5">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc1-title_xl.png" alt="年度出版社TOP2O" />
+                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc1-title_xs@2x.png" alt="年度出版社TOP2O" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center page-banner-text">
+                        <div class="col-12 col-xxl-7">
+                            <p class="lead text-start">
+                                感謝這些出版社全年度、全天候為書店供應好內容！無論是由島內找尋好題材、好作者，又或緊盯國際出版趨勢、獎項，他們為讀者做好第一層把關與篩選，並持續投入、穩定製作良好品質的書籍，將多維度的世界推送到讀者面前。
+                            </p>
+                            <p class="text-start">
+                                ＊統計區間:2023.01~2023.11<br />
+                                ＊依出版社筆劃順序排列
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-section">
+                        <div class="d-flex flex-column gap-5 mt-3 mt-xl-5">
+                            <!-- Swiper -->
+                            <div class="row justify-content-center" id="article1-1">
+                                <div class="col-12 col-xl-12">
+                                    <div class="row">
+                                        <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                                            <div class="swiper-wrapper" id="swiper-wrapper-c10e2a429117b0f15" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
+                                                <div class="swiper-slide card swiper-slide-active" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00057" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-1@2x.png" alt="三采文化" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card swiper-slide-next" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00075" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-2@2x.png" alt="大塊文化" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00061" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-17@2x.png" alt="遠見天下" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00072" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-3@2x.png" alt="天下雜誌" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00066" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-4@2x.png" alt="台灣角川" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00077" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-5@2x.png" alt="台灣東販" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00059" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-6@2x.png" alt="尖端出版" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00076" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-7@2x.png" alt="幸福文化" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00064" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-8@2x.png" alt="東立出版" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00068" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-9@2x.png" alt="采實文化" /> </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00071" target="_blank"> <img src="./assets/img/p6/book/p6-book-sc1-10@2x.png" alt="春天出版" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00065" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-11@2x.png" alt="皇冠文化" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00073" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-12@2x.png" alt="悅知文化" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00058" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-13@2x.png" alt="時報文化" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00062" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-14@2x.png" alt="高寶國際" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00067" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-15@2x.png" alt="商周出版" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00070" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-16@2x.png" alt="野人文化" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00061" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-17@2x.png" alt="遠見天下" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00060" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-18@2x.png" alt="遠流出版" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00063" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-19@2x.png" alt="親子天下" /></a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-slide card" role="group">
+                                                    <div class="thumbnail">
+                                                        <a href="https://www.eslite.com/exhibitions/CU202311-00074" target="_blank"><img src="./assets/img/p6/book/p6-book-sc1-20@2x.png" alt="聯經出版" /></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-c10e2a429117b0f15" aria-disabled="false"></div>
+                                            <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-c10e2a429117b0f15" aria-disabled="true"></div>
+                                            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                                                <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span>
+                                                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span>
+                                                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span>
+                                                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span>
+                                                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span>
+                                                <span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span>
+                                            </div>
+                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-xl my-5">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc2-title_xl.png" alt="出版人心中的年度之最" />
+                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc2-title_xs@2x.png" alt="出版人心中的年度之最" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center page-banner-text">
+                        <div class="col-12 col-xxl-8">
+                            <p class="lead text-start">
+                                用心做出來的書，怎麼可能不愛？但如果只能從這堆書裡選出一本，成為「年度之最」，一定會讓許多出版人傷透腦筋吧⋯⋯出版社裡的專業職人每年讀過、經手過如此多的書，哪本書會是他們的年度之最呢？<br />
+                                誠品邀請29位出版人，包含出版社社長、總編輯或主編，選出他們心目中2023年度最想推薦給讀者的一本書，裡頭可能有偏心、有私藏的愛，又或者呼應著時代——總之，必定是要趕緊加入購物車的必讀書單！
+                            </p>
+                            <p class="text-start">＊依出版人筆劃順序排列</p>
+                        </div>
+                    </div>
+
+                    <div class="publisher-section row row-gap-3 mt-3 mt-xl-5">
+                        <!-- 插圖 -->
+                        <div class="col-12 col-md-4 col-xl-5">
+                            <div class="row sticky-top">
+                                <div class="col col-md-4">
+                                       <a href="#author1">
+                                        <div class="names">
+                                            <span>遠流出版</span>
+                                            <p class="lead">王榮文</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author2">
+                                        <div class="names">
+                                        <span>尖端出版</span>
+                                        <p class="lead">王怡翔</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author3">
+                                        <div class="names">
+                                        <span>寶瓶文化</span>
+                                        <p class="lead">朱亞君</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author4">
+                                        <div class="names">
+                                        <span>高寶國際</span>
+                                        <p class="lead">朱凱蕾</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author5">
+                                        <div class="names">
+                                        <span>遠見天下</span>
+                                        <p class="lead">吳佩穎</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author6">
+                                        <div class="names">
+                                        <span>大是文化</span>
+                                        <p class="lead">吳依瑋</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author7">
+                                        <div class="names">
+                                        <span>天下雜誌</span>
+                                        <p class="lead">吳韻儀</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author8">
+                                        <div class="names">
+                                        <span>台灣角川</span>
+                                        <p class="lead">呂慧君</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author9">
+                                        <div class="names">
+                                        <span>漫遊者</span>
+                                        <p class="lead">李嘉琪</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author10">
+                                        <div class="names">
+                                        <span>未來親子</span>
+                                        <p class="lead">李黨</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author11">
+                                        <div class="names">
+                                        <span>大塊文化</span>
+                                        <p class="lead">林怡君</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author12">
+                                        <div class="names">
+                                        <span>麥田出版</span>
+                                        <p class="lead">林怡君</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author13">
+                                        <div class="names">
+                                        <span>親子天下</span>
+                                        <p class="lead">林欣靜</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author14">
+                                        <div class="names">
+                                        <span>商業周刊</span>
+                                        <p class="lead">林雲</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author15">
+                                        <div class="names">
+                                        <span>幸福文化</span>
+                                        <p class="lead">林麗文</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author16">
+                                        <div class="names">
+                                        <span>聯經出版</span>
+                                        <p class="lead">涂豐恩</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author17">
+                                        <div class="names">
+                                        <span>三采文化</span>
+                                        <p class="lead">張育珊</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author18">
+                                        <div class="names">
+                                        <span>皇冠文化</span>
+                                        <p class="lead">許婷婷</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author19">
+                                        <div class="names">
+                                        <span>台灣東販</span>
+                                        <p class="lead">陳正芳</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author20">
+                                        <div class="names">
+                                        <span>采實文化</span>
+                                        <p class="lead">陳如翎</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author21">
+                                        <div class="names">
+                                        <span>木馬文化</span>
+                                        <p class="lead">陳瀅如</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author22">
+                                        <div class="names">
+                                        <span>商周出版</span>
+                                        <p class="lead">彭之琬</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author23">
+                                        <div class="names">
+                                        <span>悅知文化</span>
+                                        <p class="lead">葉怡慧</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author24">
+                                        <div class="names">
+                                        <span>新經典</span>
+                                        <p class="lead">葉美瑤</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author25">
+                                        <div class="names">
+                                        <span>時報文化</span>
+                                        <p class="lead">趙政岷</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author26">
+                                        <div class="names">
+                                        <span>野人文化</span>
+                                        <p class="lead">蔡麗真</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author27">
+                                        <div class="names">
+                                        <span>小熊</span>
+                                        <p class="lead">鄭如瑤</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author28">
+                                        <div class="names">
+                                        <span>圓神出版</span>
+                                        <p class="lead">簡志興</p>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col col-md-4">
+                                   <a href="#author29">
+                                        <div class="names">
+                                        <span>東立出版</span>
+                                        <p class="lead">Wendy</p>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 錨點列表 -->
+                        <div class="col-12 col-md-8 col-xl-7">
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-1_xl.png" media="(min-width: 750px)" />
+                                <img id="author1" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-1_xs.png" alt="王榮文" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-2_xl.png" media="(min-width: 750px)" />
+                                <img id="author2" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-2_xs.png" alt="王怡翔" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-3_xl.png" media="(min-width: 750px)" />
+                                <img id="author3" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-3_xs.png" alt="朱亞君" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-4_xl.png" media="(min-width: 750px)" />
+                                <img id="author4" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-4_xs.png" alt="朱凱蕾" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-5_xl.png" media="(min-width: 750px)" />
+                                <img id="author5" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-5_xs.png" alt="吳佩穎" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-6_xl.png" media="(min-width: 750px)" />
+                                <img id="author6" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-6_xs.png" alt="吳依瑋" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-7_xl.png" media="(min-width: 750px)" />
+                                <img id="author7" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-7_xs.png" alt="吳韻儀" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-8_xl.png" media="(min-width: 750px)" />
+                                <img id="author8" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-8_xs.png" alt="呂慧君" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-9_xl.png" media="(min-width: 750px)" />
+                                <img id="author9" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-9_xs.png" alt="李嘉琪" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-10_xl.png" media="(min-width: 750px)" />
+                                <img id="author10" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-10_xs.png" alt="李黨" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-11_xl.png" media="(min-width: 750px)" />
+                                <img id="author11" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-11_xs.png" alt="林怡君" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-12_xl.png" media="(min-width: 750px)" />
+                                <img id="author12" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-12_xs.png" alt="林怡君" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-13_xl.png" media="(min-width: 750px)" />
+                                <img id="author13" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-13_xs.png" alt="林欣靜" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-14_xl.png" media="(min-width: 750px)" />
+                                <img id="author14" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-14_xs.png" alt="林雲" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-15_xl.png" media="(min-width: 750px)" />
+                                <img id="author15" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-15_xs.png" alt="林麗文" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-16_xl.png" media="(min-width: 750px)" />
+                                <img id="author16" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-16_xs.png" alt="涂豐恩" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-17_xl.png" media="(min-width: 750px)" />
+                                <img id="author17" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-17_xs.png" alt="張育珊" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-18_xl.png" media="(min-width: 750px)" />
+                                <img id="author18" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-18_xs.png" alt="許婷婷" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-19_xl.png" media="(min-width: 750px)" />
+                                <img id="author19" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-19_xs.png" alt="陳正芳" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-20_xl.png" media="(min-width: 750px)" />
+                                <img id="author20" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-20_xs.png" alt="陳如翎" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-21_xl.png" media="(min-width: 750px)" />
+                                <img id="author21" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-21_xs.png" alt="陳瀅如" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-22_xl.png" media="(min-width: 750px)" />
+                                <img id="author22" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-22_xs.png" alt="彭之琬" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-23_xl.png" media="(min-width: 750px)" />
+                                <img id="author23" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-23_xs.png" alt="葉怡慧" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-24_xl.png" media="(min-width: 750px)" />
+                                <img id="author24" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-24_xs.png" alt="葉美瑤" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-25_xl.png" media="(min-width: 750px)" />
+                                <img id="author25" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-25_xs.png" alt="趙政岷" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-26_xl.png" media="(min-width: 750px)" />
+                                <img id="author26" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-26_xs.png" alt="蔡麗真" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-27_xl.png" media="(min-width: 750px)" />
+                                <img id="author27" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-27_xs.png" alt="鄭如瑤" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-28_xl.png" media="(min-width: 750px)" />
+                                <img id="author28" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-28_xs.png" alt="簡志興" />
+                            </picture>
+
+                            <picture>
+                                <source srcset="./assets/img/p6/sc2-editer-card-29_xl.png" media="(min-width: 750px)" />
+                                <img id="author29" class="img-fluid mt-3" src="./assets/img/p6/sc2-editer-card-29_xs.png" alt="Wendy" />
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="container my-5">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center">
+                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc3-title_xl.png" alt="十大圖書類型出版社TOP1" />
+                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc3-title_xs@2x.png" alt="十大圖書類型出版社TOP1" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center page-banner-text">
+                        <div class="col-12 col-xxl-8">
+                            <p class="lead text-start">
+                                面向所愛內容取向，專注經營，就此決定一生懸命！十大類型出版社，對特定內容愛好者許下長期承諾；以鑽研的心情深耕、偏愛的任性製成。喜歡藝術、翻譯文學、財經或科普書嗎？這些出版社口碑值得信賴，背後專業編輯或許也正是你的同好喔！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-xl p-0" id="sectionTab" style="margin-bottom: 2rem;">
+            <!-- 頁籤 -->
+            <div class="container row gx-3 mb-0 mb-md-5 info-block2" style="position: relative;">
+                <!-- 插圖 -->
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00078">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>原點出版</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-1@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">藝術</h4>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00079">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>野人文化</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-2@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">人文社科</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00080">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>春天出版</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-3@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">翻譯文學</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00081">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>三采文化</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-4@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">華文創作</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00082">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>遠見天下</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-5@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">財經</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="container row gx-3 info-block2" style="position: relative;">
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00083">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>時報文化</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-6@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">心理勵志</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00084">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>野人文化</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-7@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">健康生活</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00085">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>東立出版</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-8@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">休閒趣味</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00086">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>台灣東販</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-9@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">自然科普</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md mb-5 mb-md-0">
+                    <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00087">
+                        <div class="book-wrap">
+                            <!-- 類別標籤 -->
+                            <div class="type-label">
+                                <div class="type-text hanwang">
+                                    <span>國際學村</span>
+                                </div>
+                                <div class="type-decor"></div>
+                            </div>
+                            <div class="book-cover">
+                                <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc3-10@2x.png" alt="">
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h4 class="slide-title mb-1">語言學習</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc4-title_xl.png" alt="青少年/兒童書出版社TOP5" />
+                    <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc4-title_xs@2x.png" alt="青少年/兒童書出版社TOP5" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center page-banner-text mb-5">
+            <div class="col-12 col-xxl-8">
+                <p class="lead text-start">
+                    兒童出版分齡細緻，小至給0-3歲翻玩的幼幼書，大至給青少年讀的小說文字書——當然，還有大人也愛搶著看的療癒繪本！經營童書市場需要專業、需要愛，更需要耐力；感謝這些出版社與編輯，把爸爸媽媽與孩子們都照顧好了。
+                </p>
+            </div>
+        </div>
+        <div class="container-xl p-0" id="sectionTab" style="margin-bottom: 2rem;">
+        <div class="container row gx-3 mb-0 mb-md-5 info-block2" style="position: relative;">
+
+            <div class="col-6 col-md mb-5">
+                <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00088">
+                    <div class="book-wrap">
+                        <!-- 類別標籤 -->
+                        <div class="type-label">
+                            <div class="type-text hanwang">
+                                <span>親子天下</span>
+                            </div>
+                            <div class="type-decor"></div>
+                        </div>
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc4-5@2x.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-6 col-md mb-5">
+                <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00089">
+                    <div class="book-wrap">
+                        <!-- 類別標籤 -->
+                        <div class="type-label">
+                            <div class="type-text hanwang">
+                                <span> 三采文化</span>
+                            </div>
+                            <div class="type-decor"></div>
+                        </div>
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc4-3@2x.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md mb-5">
+                <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00090">
+                    <div class="book-wrap">
+                        <!-- 類別標籤 -->
+                        <div class="type-label">
+                            <div class="type-text hanwang">
+                                <span> 小天下出版 </span>
+                            </div>
+                            <div class="type-decor"></div>
+                        </div>
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc4-2@2x.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md mb-5">
+                <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00091">
+                    <div class="book-wrap">
+                        <!-- 類別標籤 -->
+                        <div class="type-label">
+                            <div class="type-text hanwang">
+                                <span>遠流出版</span>
+                            </div>
+                            <div class="type-decor"></div>
+                        </div>
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc4-4@2x.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md mb-5">
+                <a class="link-dark" target="_blank" href="https://www.eslite.com/exhibitions/CU202311-00092">
+                    <div class="book-wrap">
+                        <!-- 類別標籤 -->
+                        <div class="type-label">
+                            <div class="type-text hanwang">
+                                <span>采實文化</span>
+                            </div>
+                            <div class="type-decor"></div>
+                        </div>
+                        <div class="book-cover">
+                            <img class="img-fluid" src="./assets/img/p6/book/p6-book-sc4-3@2x.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+        <footer>
+            誠品線上 - 誠品生活股份有限公司<br />
+            本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script>
+            let swiper = new Swiper(".swiper", {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 12,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 5,
+                        slidesPerGroup: 5,
+                        spaceBetween: 24,
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
