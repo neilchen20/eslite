@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>誠品 | eslite</title>
+  <title>誠品社群十大之最 | 2023誠品年度閱讀報告</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- BS5 -->
@@ -24,7 +24,9 @@
       --minor-color: var(--cyan-light);
     }
 
-    
+    .lead {
+      font-weight: 400;
+    }
     body::before {
       display: none !important;
     }
@@ -59,11 +61,19 @@
 
     .image-container {
       margin-bottom: 20px;
+      & a {
+        display: block;
+      }
     }
 
     .image-container img {
       width: 100%;
       height: auto;
+      display: block;
+      margin: 0 auto;
+      @media (min-width: 992px) {
+        width: 70%;
+      }
     }
 
     p {
@@ -77,7 +87,7 @@
     /* 分頁Banner */
     /* Banner-X */
     #page-banner {
-      height: 100vh;
+      height: 670px;
 
       @media (min-width: 992px) {
         height: 826px;
@@ -118,7 +128,7 @@
     .banner-cat-left {
       width: 127px;
       left: -25px;
-      top: -45px;
+      top: 10px;
       z-index: -1;
     }
 
@@ -290,14 +300,6 @@
             </picture>
           </div>
         </div>
-<<<<<<< HEAD
-        <!-- 分頁Banner介紹 -->
-        <div class="row justify-content-center page-banner-text">
-          <div class="col-12 col-xxl-6">
-            <p class="lead">跟著誠品小編一起回顧2023最吸眼球的選書推薦！我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言Talk to
-              You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。往下看【誠品社群十大之最】，回放今年的社群話題！ </p>
-          </div>
-=======
       </div>
       <!-- 分頁Banner介紹 -->
       <div class="row justify-content-center page-banner-text">
@@ -305,7 +307,6 @@
           <p class="lead text-start">跟著誠品小編一起回顧 2023 最吸眼球的選書推薦！
               <span class="d-block">我們透過各種社群單元，從【周一人生電影學】、【週四讀詩】、【箴言 Talk to You】、【誠品深夜點播】、【始食嗜詩】到【引書聚光】，傳遞閱讀以及各種話題觀點。</span>
               <span class="d-block">往下看【誠品社群十大之最】，回放今年的社群話題！</span></p>
->>>>>>> e8d01249e0e5424595fc8a78a04561b5998d5bd4
         </div>
       </div>
       <!-- 浮動元素 -->
