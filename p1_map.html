@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>台灣地圖</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Fontawsome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- Custom -->
+    <link href="./assets/css/font.css" rel="stylesheet" />
+    <link href="./assets/css/all.min.css" rel="stylesheet" />
+    <link href="./assets/css/pin_position.css" rel="stylesheet" />
+    <!-- 預先載入22縣市圖 -->
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-01@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-02@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-03@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-04@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-05@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-06@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-07@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-08@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-09@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-10@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-11@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-12@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-13@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-14@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-15@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-16@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-17@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-18@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-19@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-20@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-21@2x.png">
+    <link rel="preload" as="image" href="./assets/img/p1/sc5-map-22@2x.png">
+    <style>
+      :root {
+        --main-color: var(--green-dark);
+        --minor-color: var(--green-light);
+      }
+      .lead {
+        font-weight: 400;
+      }
+      body:before {
+        display: none;
+      }
+      .btn-primary {
+        --bs-btn-padding-y: 12px;
+        --bs-btn-padding-x: 32px;
+        --bs-btn-bg: var(--main-color);
+        --bs-btn-border-color: var(--main-color);
+        --bs-btn-hover-bg: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-hover-border-color: color-mix(in srgb, var(--main-color) 90%, black);
+        --bs-btn-active-bg: color-mix(in srgb, var(--main-color) 80%, black);
+        --bs-btn-active-border-color: color-mix(in srgb, var(--main-color) 80%, black);
+      }
+      #twMap {
+        .intro {
+          gap: 0.75rem;
+          @media (min-width: 992px) {
+            gap: 1.5rem;
+          }
+        }
+        .remove-margin {
+          margin-left: -12px;
+          margin-right: -12px;
+          @media (min-width: 992px) {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+        .map-wrap {
+          overflow-x: scroll;
+          .map-content {
+            position: relative;
+            width: 600px;
+            aspect-ratio: 36 / 25;
+            @media (min-width: 992px) {
+              width: 100%;
+            }
+            .map-img {
+              width: 100%;
+              min-width: 100%;
+              height: auto;
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: -1;
+            }
+            .pin-groups {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              .point  {
+                border-radius: var(--bs-border-radius-pill);
+                --point-size: 1.5rem;
+                --inset-shadow: 7px;
+                background: var(--bs-white);
+                width: var(--point-size);
+                height: var(--point-size);
+                box-shadow: inset 0 0 0 var(--inset-shadow) var(--main-color);
+                position: absolute;
+                display: block;
+                transform-origin: center;
+                &:hover {
+                    --inset-shadow: 5px;
+                  }
+                transition: cubic-bezier(0.03, 0.69, 0.36, 1) 0.4s;
+                @media (min-width: 992px) {
+                  --inset-shadow: 10px;
+                  --point-size: 2.25rem;
+                  &:hover {
+                    --inset-shadow: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .tooltip {
+        --bs-tooltip-max-width: fit-content;
+      }
+      .tooltip-inner {
+        /* -—bs-tooltip-max-width: 100%; */
+        min-width: fit-content;
+        --custom-padding: 0.25rem;
+        --bs-tooltip-padding-y: var(--custom-padding);
+        --bs-tooltip-padding-x: var(--custom-padding);
+        padding-top: 0;
+        @media (min-width: 992px) {
+          --custom-padding: 1rem;
+        }
+      }
+      .tooltop-img {
+        width: 156px;
+        height: auto;
+        @media (min-width: 992px) {
+          width: 289px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 全台22縣市年度暢銷榜 -->
+    <section id="twMap">
+      <div class="container-xl d-flex flex-column row-gap-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 d-flex flex-column align-items-end intro">
+            <picture>
+              <source srcset="./assets/img/p1/sc5-title_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/p1/sc5-title_xs@2x.png" alt="">
+            </picture>
+            <p class="lead text-start m-0">盤點全台22縣市TOP3暢榜書，《原子習慣》、《蛤蟆先生去看心理師》、《底層邏輯》等三本書入榜最多縣市。除了不分地域性大眾通讀的書之外，以特定城市為主題的書籍，原來在當地會賣得特別好！比如澎湖縣《回到滬之島》、嘉義市《裏嘉義》、金門縣《跳島練習》等。島內移居是台灣常見現象，除了就業方便，居住不同地方，也影響生活節奏和樣貌。比如半導體與高效工作的書籍在新竹市與新竹縣賣得特別好。
+            至於其他地區呢？原來彰化人愛讀文學輕小說、南投人則偏愛神諭卡和芳療卡，而苗栗與基隆人熱衷研究保單與投資，新北人則愛抓寶可夢！</p>
+            <div class="link">
+              <a href="https://www.eslite.com/exhibitions/CU202310-00151" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">看更多<img src="./assets/img/arrow-long-right.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row gx-0 gx-lg-4 remove-margin">
+          <div class="col-12 px-0 ">
+            <div class="map-wrap">
+              <div class="map-content">
+                <img class="map-img" src="./assets/img/p1/sc5-map.png" alt="">
+                <!-- 大頭針 -->
+                <div class="pin-groups">
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point1" data-bs-toggle="tooltip" 
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-01@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point2" data-bs-toggle="tooltip" 
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-02@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point3" data-bs-toggle="tooltip" 
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-03@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point4" data-bs-toggle="tooltip" 
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-04@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point5" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-05@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point6" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-06@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point7" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-07@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point8" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-08@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point9" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-09@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point10" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-10@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point11" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-11@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point12" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-12@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point13" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-13@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point14" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-14@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point15" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-15@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point16" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-16@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point17" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-17@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point18" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-18@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point19" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-19@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point20" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-20@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point21" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-21@2x.png' />">
+                  </a>
+                  <a href="javascript:;" data-bs-html="true" class="point translate-middle" id="point22" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="<img class='tooltop-img' src='./assets/img/p1/sc5-map-22@2x.png' />">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+  </body>
+</html>
