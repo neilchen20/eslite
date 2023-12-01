@@ -64,6 +64,11 @@ body {
 @import '_nav.scss';
 @import '_home.scss';
 
+/* 加寬字母OP間距 */
+.expand-spacing {
+    letter-spacing: 0.18rem;
+}
+
 footer{
     color: #000;
     text-align: center;
