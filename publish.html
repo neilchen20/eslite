@@ -247,7 +247,7 @@
                 height: 450px;
             }
             /* 出版家 */
-            /* 頁籤 */
+            /* 出版頁籤 */
             #publisherList {
                 position: sticky;
                 top: 0;
@@ -310,7 +310,7 @@
                 text-align: center;
                 font-weight: bold;
             }
-            /* 內容 */
+            /* 出版內容 */
             .tab-pane:has(picture) {
                 @media (min-width: 992px){
                     position: sticky;
@@ -318,6 +318,15 @@
                 }
             }
             .tab-pane {
+                & a {
+                    border: 4px solid transparent;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    transition: ease 0.3s;
+                    &:hover {
+                        border-color: var(--main-color);
+                    }
+                }
                 & picture {
                     display: block;
                 }
@@ -586,29 +595,27 @@
         </section>
         <!-- 區塊2 -->
         <div class="container-xl p-0" id="sectionTab" style="margin-bottom: 6rem;">
-            <!-- 頁籤 -->
-
             <!-- 內容 -->
             <div class="container-xl" id="bookTypeContent">
                 <!-- 中文書內容 -->
-                <div class="tab-pane fade show active" id="chineseContent" role="tabpanel" aria-labelledby="chineseTab">
+                <div class="">
                     <div class="container-xl my-5">
-                        <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc1-title_xl.png" alt="年度出版社TOP2O" />
-                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc1-title_xs@2x.png" alt="年度出版社TOP2O" />
+                        <div class="row justify-content-center">
+                            <div class="col col-xl-8 d-flex flex-column gap-4">
+                                <!-- 標題 -->
+                                <picture class="d-block">
+                                    <source srcset="./assets/img/p6/sc1-title_xl.png" media="(min-width: 750px)">
+                                    <img class="img-fluid" src="./assets/img/p6/sc1-title_xs@2x.png" alt="">
+                                </picture>
+                                <!-- 內文 -->
+                                <div>
+                                    <p class="lead text-start">感謝這些出版社全年度、全天候為讀者供應好內容！無論是由島內找尋好題材、好作者，又或緊盯國際出版趨勢、獎項，他們為讀者做好第一層把關與篩選，並持續投入、穩定製作良好品質的書籍，將多維度的世界推送到讀者面前。</p>
+                                    <p class="text-start">
+                                        ＊統計區間:2023.01~2023.11
+                                        <span class="d-block">＊依出版社筆劃順序排列</span>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center page-banner-text">
-                        <div class="col-12 col-xxl-7">
-                            <p class="lead text-start">
-                                感謝這些出版社全年度、全天候為書店供應好內容！無論是由島內找尋好題材、好作者，又或緊盯國際出版趨勢、獎項，他們為讀者做好第一層把關與篩選，並持續投入、穩定製作良好品質的書籍，將多維度的世界推送到讀者面前。
-                            </p>
-                            <p class="text-start">
-                                ＊統計區間:2023.01~2023.11<br />
-                                ＊依出版社筆劃順序排列
-                            </p>
                         </div>
                     </div>
                     <div class="swiper-section">
@@ -765,23 +772,23 @@
                         </div>
                     </div>
                     <!-- 出版人心中的年度之最 -->
-                    <!-- 標題 -->
                     <div class="container-xl my-5">
-                        <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc2-title_xl.png" alt="出版人心中的年度之最" />
-                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc2-title_xs@2x.png" alt="出版人心中的年度之最" />
+                        <div class="row justify-content-center">
+                            <div class="col col-xl-8 d-flex flex-column gap-4">
+                                <!-- 標題 -->
+                                <picture class="d-block">
+                                    <source srcset="./assets/img/p6/sc2-title_xl.png" media="(min-width: 750px)">
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-title_xs@2x.png" alt="">
+                                </picture>
+                                <!-- 內文 -->
+                                <div>
+                                    <p class="lead text-start">
+                                        用心做出來的書，怎麼可能不愛？但如果只能從這堆書裡選出一本，成為「年度之最」，一定會讓許多出版人傷透腦筋吧⋯⋯出版社裡的專業職人每年讀過、經手過如此多的書，哪本書會是他們的年度之最呢？<br />
+                                        誠品邀請多位出版人，包含出版社社長、總編輯或主編，選出他們心目中2023年度最想推薦給讀者的一本書，裡頭可能有偏心、有私藏的愛，又或者呼應著時代——總之，必定是要趕緊加入購物車的必讀書單！
+                                    </p>
+                                    <p class="text-start">＊依出版人筆劃順序排列</p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- 內文 -->
-                    <div class="row justify-content-center page-banner-text">
-                        <div class="col-12 col-xxl-8">
-                            <p class="lead text-start">
-                                用心做出來的書，怎麼可能不愛？但如果只能從這堆書裡選出一本，成為「年度之最」，一定會讓許多出版人傷透腦筋吧⋯⋯出版社裡的專業職人每年讀過、經手過如此多的書，哪本書會是他們的年度之最呢？<br />
-                                誠品邀請29位出版人，包含出版社社長、總編輯或主編，選出他們心目中2023年度最想推薦給讀者的一本書，裡頭可能有偏心、有私藏的愛，又或者呼應著時代——總之，必定是要趕緊加入購物車的必讀書單！
-                            </p>
-                            <p class="text-start">＊依出版人筆劃順序排列</p>
                         </div>
                     </div>
                     <!-- 作家們 -->
@@ -809,8 +816,8 @@
                                     <button class="publisher-tab" data-bs-target="#author3" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>寶瓶文化</span>
+                                            <p class="lead">朱亞君</p>
                                         </div>
                                     </button>
                                 </div>
@@ -818,8 +825,8 @@
                                     <button class="publisher-tab" data-bs-target="#author4" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>高寶國際</span>
+                                            <p class="lead">朱凱蕾</p>
                                         </div>
                                     </button>
                                 </div>
@@ -827,8 +834,8 @@
                                     <button class="publisher-tab" data-bs-target="#author5" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>遠見天下</span>
+                                            <p class="lead">吳佩穎</p>
                                         </div>
                                     </button>
                                 </div>
@@ -836,8 +843,8 @@
                                     <button class="publisher-tab" data-bs-target="#author6" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>大是文化</span>
+                                            <p class="lead">吳韻儀</p>
                                         </div>
                                     </button>
                                 </div>
@@ -845,8 +852,8 @@
                                     <button class="publisher-tab" data-bs-target="#author7" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>台灣角川</span>
+                                            <p class="lead">呂慧君</p>
                                         </div>
                                     </button>
                                 </div>
@@ -854,8 +861,8 @@
                                     <button class="publisher-tab" data-bs-target="#author8" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>漫遊者</span>
+                                            <p class="lead">李嘉琪</p>
                                         </div>
                                     </button>
                                 </div>
@@ -863,8 +870,8 @@
                                     <button class="publisher-tab" data-bs-target="#author9" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>未來親子</span>
+                                            <p class="lead">李黨</p>
                                         </div>
                                     </button>
                                 </div>
@@ -872,8 +879,8 @@
                                     <button class="publisher-tab" data-bs-target="#author10" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>大塊文化</span>
+                                            <p class="lead">林怡君</p>
                                         </div>
                                     </button>
                                 </div>
@@ -881,8 +888,8 @@
                                     <button class="publisher-tab" data-bs-target="#author11" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>麥田出版</span>
+                                            <p class="lead">林怡君</p>
                                         </div>
                                     </button>
                                 </div>
@@ -890,8 +897,8 @@
                                     <button class="publisher-tab" data-bs-target="#author12" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>親子天下</span>
+                                            <p class="lead">林欣靜</p>
                                         </div>
                                     </button>
                                 </div>
@@ -899,8 +906,8 @@
                                     <button class="publisher-tab" data-bs-target="#author13" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>商業周刊</span>
+                                            <p class="lead">林雲</p>
                                         </div>
                                     </button>
                                 </div>
@@ -908,8 +915,8 @@
                                     <button class="publisher-tab" data-bs-target="#author14" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>幸福文化</span>
+                                            <p class="lead">林麗文</p>
                                         </div>
                                     </button>
                                 </div>
@@ -917,8 +924,8 @@
                                     <button class="publisher-tab" data-bs-target="#author15" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>聯經出版</span>
+                                            <p class="lead">涂豐恩</p>
                                         </div>
                                     </button>
                                 </div>
@@ -926,8 +933,8 @@
                                     <button class="publisher-tab" data-bs-target="#author16" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>三采文化</span>
+                                            <p class="lead">張育珊</p>
                                         </div>
                                     </button>
                                 </div>
@@ -935,8 +942,8 @@
                                     <button class="publisher-tab" data-bs-target="#author17" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>皇冠文化</span>
+                                            <p class="lead">許婷婷</p>
                                         </div>
                                     </button>
                                 </div>
@@ -944,8 +951,8 @@
                                     <button class="publisher-tab" data-bs-target="#author18" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>台灣東販</span>
+                                            <p class="lead">陳正芳</p>
                                         </div>
                                     </button>
                                 </div>
@@ -953,8 +960,8 @@
                                     <button class="publisher-tab" data-bs-target="#author19" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>采實文化</span>
+                                            <p class="lead">陳如翎</p>
                                         </div>
                                     </button>
                                 </div>
@@ -962,8 +969,8 @@
                                     <button class="publisher-tab" data-bs-target="#author20" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>木馬文化</span>
+                                            <p class="lead">陳瀅如</p>
                                         </div>
                                     </button>
                                 </div>
@@ -971,8 +978,8 @@
                                     <button class="publisher-tab" data-bs-target="#author21" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>商周出版</span>
+                                            <p class="lead">彭之琬</p>
                                         </div>
                                     </button>
                                 </div>
@@ -980,8 +987,8 @@
                                     <button class="publisher-tab" data-bs-target="#author22" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>悅知文化</span>
+                                            <p class="lead">葉怡慧</p>
                                         </div>
                                     </button>
                                 </div>
@@ -989,8 +996,8 @@
                                     <button class="publisher-tab" data-bs-target="#author23" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>新經典</span>
+                                            <p class="lead">葉美瑤</p>
                                         </div>
                                     </button>
                                 </div>
@@ -998,8 +1005,8 @@
                                     <button class="publisher-tab" data-bs-target="#author24" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>時報文化</span>
+                                            <p class="lead">趙政岷</p>
                                         </div>
                                     </button>
                                 </div>
@@ -1007,8 +1014,8 @@
                                     <button class="publisher-tab" data-bs-target="#author25" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>野人文化</span>
+                                            <p class="lead">蔡麗真</p>
                                         </div>
                                     </button>
                                 </div>
@@ -1016,8 +1023,8 @@
                                     <button class="publisher-tab" data-bs-target="#author26" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>小熊</span>
+                                            <p class="lead">鄭如瑤</p>
                                         </div>
                                     </button>
                                 </div>
@@ -1025,8 +1032,8 @@
                                     <button class="publisher-tab" data-bs-target="#author27" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>圓神出版</span>
+                                            <p class="lead">簡志興</p>
                                         </div>
                                     </button>
                                 </div>
@@ -1034,8 +1041,8 @@
                                     <button class="publisher-tab" data-bs-target="#author28" data-bs-toggle="pill" role="tab" type="button"
                                         aria-selected="false">
                                         <div class="names">
-                                            <span>尖端出版</span>
-                                            <p class="lead">王怡翔</p>
+                                            <span>東立出版</span>
+                                            <p class="lead">Wendy</p>
                                         </div>
                                     </button>
                                 </div>
@@ -1053,177 +1060,179 @@
                         <!-- 錨點內容 -->
                         <div class="col-12 col-md-8 col-xl-7 tab-content" id="publisherContent">
                             <div id="author1" class="tab-pane fade show active" role="tabpanel" tabindex="0">
-                                <picture>
-                                    <source srcset="./assets/img/p6/sc2-editer-card-1_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-1_xs.png" alt="王榮文" />
-                                </picture>
+                                <a href="https://www.eslite.com/product/10012010302682431603005" class="d-block my-3" target="_blank">
+                                    <picture>
+                                        <source srcset="./assets/img/p6/sc2-editer-card-1_xl.png" media="(min-width: 750px)" />
+                                        <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-1_xs.png" alt="王榮文" />
+                                    </picture>
+                                </a>
                             </div>
                             <div id="author2" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-2_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-2_xs.png" alt="王怡翔" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-2_xs.png" alt="王怡翔" />
                                 </picture>
                             </div>
                             <div id="author3" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-3_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-3_xs.png" alt="朱亞君" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-3_xs.png" alt="朱亞君" />
                                 </picture>
                             </div>
                             <div id="author4" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-4_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-4_xs.png" alt="朱凱蕾" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-4_xs.png" alt="朱凱蕾" />
                                 </picture>
                             </div>
                             <div id="author5" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-5_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-5_xs.png" alt="吳佩穎" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-5_xs.png" alt="吳佩穎" />
                                 </picture>
                             </div>
                             <div id="author6" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-6_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-6_xs.png" alt="吳依瑋" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-6_xs.png" alt="吳依瑋" />
                                 </picture>
                             </div>
                             <div id="author7" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-7_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-7_xs.png" alt="吳韻儀" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-7_xs.png" alt="吳韻儀" />
                                 </picture>
                             </div>
                             <div id="author8" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-8_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-8_xs.png" alt="呂慧君" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-8_xs.png" alt="呂慧君" />
                                 </picture>
                             </div>
                             <div id="author9" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-9_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-9_xs.png" alt="李嘉琪" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-9_xs.png" alt="李嘉琪" />
                                 </picture>
                             </div>
                             <div id="author10" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-10_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-10_xs.png" alt="李黨" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-10_xs.png" alt="李黨" />
                                 </picture>
                             </div>
                             <div id="author11" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-11_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-11_xs.png" alt="林怡君" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-11_xs.png" alt="林怡君" />
                                 </picture>
                             </div>
                             <div id="author12" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-12_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-12_xs.png" alt="林怡君" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-12_xs.png" alt="林怡君" />
                                 </picture>
                             </div>
                             <div id="author13" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-13_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-13_xs.png" alt="林欣靜" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-13_xs.png" alt="林欣靜" />
                                 </picture>
                             </div>
                             <div id="author14" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-14_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-14_xs.png" alt="林雲" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-14_xs.png" alt="林雲" />
                                 </picture>
                             </div>
                             <div id="author15" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-15_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-15_xs.png" alt="林麗文" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-15_xs.png" alt="林麗文" />
                                 </picture>
                             </div>
                             <div id="author16" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-16_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-16_xs.png" alt="涂豐恩" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-16_xs.png" alt="涂豐恩" />
                                 </picture>
                             </div>
                             <div id="author17" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-17_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-17_xs.png" alt="張育珊" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-17_xs.png" alt="張育珊" />
                                 </picture>
                             </div>
                             <div id="author18" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-18_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-18_xs.png" alt="許婷婷" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-18_xs.png" alt="許婷婷" />
                                 </picture>
                             </div>
                             <div id="author19" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-19_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-19_xs.png" alt="陳正芳" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-19_xs.png" alt="陳正芳" />
                                 </picture>
                             </div>
                             <div id="author20" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-20_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-20_xs.png" alt="陳如翎" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-20_xs.png" alt="陳如翎" />
                                 </picture>
                             </div>
                             <div id="author21" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-21_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-21_xs.png" alt="陳瀅如" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-21_xs.png" alt="陳瀅如" />
                                 </picture>
                             </div>
                             <div id="author22" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-22_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-22_xs.png" alt="彭之琬" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-22_xs.png" alt="彭之琬" />
                                 </picture>
                             </div>
                             <div id="author23" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-23_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-23_xs.png" alt="葉怡慧" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-23_xs.png" alt="葉怡慧" />
                                 </picture>
                             </div>
                             <div id="author24" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-24_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-24_xs.png" alt="葉美瑤" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-24_xs.png" alt="葉美瑤" />
                                 </picture>
                             </div>
                             <div id="author25" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-25_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-25_xs.png" alt="趙政岷" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-25_xs.png" alt="趙政岷" />
                                 </picture>
                             </div>
                             <div id="author26" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-26_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-26_xs.png" alt="蔡麗真" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-26_xs.png" alt="蔡麗真" />
                                 </picture>
                             </div>
                             <div id="author27" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-27_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-27_xs.png" alt="鄭如瑤" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-27_xs.png" alt="鄭如瑤" />
                                 </picture>
                             </div>
                             <div id="author28" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-28_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-28_xs.png" alt="簡志興" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-28_xs.png" alt="簡志興" />
                                 </picture>
                             </div>
                             <div id="author29" class="tab-pane fade" role="tabpanel" tabindex="0">
                                 <picture>
                                     <source srcset="./assets/img/p6/sc2-editer-card-29_xl.png" media="(min-width: 750px)" />
-                                    <img class="img-fluid my-3" src="./assets/img/p6/sc2-editer-card-29_xs.png" alt="Wendy" />
+                                    <img class="img-fluid" src="./assets/img/p6/sc2-editer-card-29_xs.png" alt="Wendy" />
                                 </picture>
                             </div>  
                         </div>
@@ -1231,19 +1240,20 @@
                     <!-- 十大圖書類型出版社TOP1 -->
                     <!-- 標題 -->
                     <div class="container my-5">
-                        <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc3-title_xl.png" alt="十大圖書類型出版社TOP1" />
-                                <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc3-title_xs@2x.png" alt="十大圖書類型出版社TOP1" />
+                        <div class="row justify-content-center">
+                            <div class="col col-xl-8 d-flex flex-column gap-4">
+                                <!-- 標題 -->
+                                <picture class="d-block">
+                                    <source srcset="./assets/img/p6/sc3-title_xl.png" media="(min-width: 750px)">
+                                    <img class="img-fluid" src="./assets/img/p6/sc3-title_xs@2x.png" alt="">
+                                </picture>
+                                <!-- 內文 -->
+                                <div>
+                                    <p class="lead text-start">
+                                        面向所愛內容取向，專注經營，就此決定一生懸命！十大類型出版社，對特定內容愛好者許下長期承諾；以鑽研的心情深耕、偏愛的任性製成。喜歡藝術、翻譯文學、財經或科普書嗎？這些出版社口碑值得信賴，背後專業編輯或許也正是你的同好喔！
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- 內文 -->
-                    <div class="row justify-content-center page-banner-text">
-                        <div class="col-12 col-xxl-8">
-                            <p class="lead text-start">
-                                面向所愛內容取向，專注經營，就此決定一生懸命！十大類型出版社，對特定內容愛好者許下長期承諾；以鑽研的心情深耕、偏愛的任性製成。喜歡藝術、翻譯文學、財經或科普書嗎？這些出版社口碑值得信賴，背後專業編輯或許也正是你的同好喔！
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -1449,20 +1459,23 @@
                 </div>
             </div>
         </div>
-
+        <!-- 十大圖書類型出版社TOP1 -->
         <div class="container my-5">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <img class="img-fluid d-lg-flex d-none" src="./assets/img/p6/sc4-title_xl.png" alt="青少年/兒童書出版社TOP5" />
-                    <img class="img-fluid d-flex d-lg-none" src="./assets/img/p6/sc4-title_xs@2x.png" alt="青少年/兒童書出版社TOP5" />
+            <div class="row justify-content-center">
+                <div class="col col-xl-8 d-flex flex-column gap-4">
+                    <!-- 標題 -->
+                    <picture class="d-block">
+                        <source srcset="./assets/img/p6/sc4-title_xl.png" media="(min-width: 750px)">
+                        <img class="img-fluid" src="./assets/img/p6/sc2-title_xs@2x.png" alt="">
+                    </picture>
+                    <!-- 內文 -->
+                    <div>
+                        <p class="lead text-start">
+                            兒童出版分齡細緻，小至給0-3歲翻玩的幼幼書，大至給青少年讀的小說文字書——當然，還有大人也愛搶著看的療癒繪本！經營童書市場需要專業、需要愛，更需要耐力；感謝這些出版社與編輯，把爸爸媽媽與孩子們都照顧好了。
+                        </p>
+                        <p class="text-start">＊依出版人筆劃順序排列</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-center page-banner-text mb-5">
-            <div class="col-12 col-xxl-8">
-                <p class="lead text-start">
-                    兒童出版分齡細緻，小至給0-3歲翻玩的幼幼書，大至給青少年讀的小說文字書——當然，還有大人也愛搶著看的療癒繪本！經營童書市場需要專業、需要愛，更需要耐力；感謝這些出版社與編輯，把爸爸媽媽與孩子們都照顧好了。
-                </p>
             </div>
         </div>
         <div class="container-xl p-0" id="sectionTab" style="margin-bottom: 2rem;">
