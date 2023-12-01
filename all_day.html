@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <title>誠品全通路24小時閱讀分析</title>
+    <title>誠品全通路24小時閱讀分析 | 2023誠品年度閱讀報告</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- BS5 -->
@@ -262,6 +262,7 @@
         }
       }
       .tooltip {
+        --bs-tooltip-opacity: 1;
         --bs-tooltip-max-width: fit-content;
       }
       .tooltip-inner {
@@ -273,8 +274,15 @@
         --bs-tooltip-padding-y: var(--custom-padding);
         --bs-tooltip-padding-x: var(--custom-padding);
         padding-top: 0;
+        background-color: rgba(99, 126, 62, 0.5);
+        backdrop-filter: blur(5px) brightness(50%);
         @media (min-width: 992px) {
           --custom-padding: 1rem;
+        }
+      }
+      .tooltip-arrow {
+        &:before {
+          --bs-tooltip-bg: var(--main-color);
         }
       }
       .tooltop-img {
@@ -283,13 +291,6 @@
         @media (min-width: 992px) {
           width: 289px;
         }
-      }
-
-      /*swiper內的樣式 s*/
-      .tooltip-inner {
-        background-color: var(--main-color);
-        box-shadow: 0px 0px 4px var(--main-color);
-        opacity: 1 !important;
       }
       .book-cover {
         --book-cover-padding-x: 0.5rem;
@@ -313,6 +314,19 @@
         }
       }
 
+      /*swiper內的樣式 s*/
+      /* 標準 */
+      .normal-swiper {
+        position: relative;
+      }
+      /* 照片 */
+      .gallery-swiper {
+        position: relative;
+        overflow: hidden !important;
+        .swiper-button-next, .swiper-button-prev {
+          --swiper-navigation-sides-offset: 0.75rem;
+        }
+      }
       .swiper {
         overflow: visible;
         & span {
@@ -362,8 +376,7 @@
       .swiper-pagination-bullet-active {
         --swiper-pagination-color: var(--main-color);
       }
-      .swiper-button-next,
-      .swiper-button-prev {
+      .swiper-button-next, .swiper-button-prev {
         transform: translateY(50%);
         --swiper-navigation-size: 2rem;
         --swiper-navigation-sides-offset: calc(
@@ -394,8 +407,6 @@
           }
         }
       }
-      /*swiper內的樣式 e*/
-
       /*共用樣式*/
       .icon {
         width: 1.5rem;
@@ -888,7 +899,7 @@
 
   <body>
     <!-- nav -->
-    <nav class="navbar fixed-top p-0">
+    <nav class="navbar fixed-top p-0 d-none">
       <div class="container-fluid p-0">
         <button
           class="navbar-toggler nav-mainToggler"
@@ -1198,17 +1209,105 @@
           </div>
         </div>
         <div class="col-12 col-lg-6 p-0 position-relative">
-          <img
-            src="./assets/img/p1/sc3-gallery-img-1.png"
-            alt="overview international books"
-            class="w-100" />
-          <div class="eighteen-books-overview">映像攝影：簡子鑫</div>
+          <div class="swiper gallery-swiper">
+            <!-- 照片區 -->
+            <div class="swiper-wrapper">
+              <!-- 照片 -->
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-01.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-02.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-03.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-04.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-05.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-06.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-07.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-08.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-09.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <div class="gallery-photo">
+                    <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-10.png" alt="">
+                  </div>
+                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
+                </div>
+              </div>
+            </div>
+            <!-- 上一張/下一張 -->
+            <div class="swiper-button-prev">
+              <img src="./assets/img/icon/arrow-left.svg" alt="">
+            </div>
+            <div class="swiper-button-next">
+              <img src="./assets/img/icon/arrow-right.svg" alt="">
+            </div>
+          </div>
         </div>
       </div>
       <div class="row mx-0 justify-content-center">
         <div class="col-12 p-0">
           <!--swiper-->
-          <div class="swiper">
+          <div class="normal-swiper">
             <div class="swiper-wrapper">
               <!-- 內容 -->
               <!-- book1-2-1 -->
@@ -2582,7 +2681,7 @@
       <div class="row mx-0 justify-content-center">
         <div class="col-12 p-0">
           <!--swiper-->
-          <div class="swiper">
+          <div class="normal-swiper">
             <div class="swiper-wrapper">
               <!-- 內容 -->
               <!-- book1-2-1 -->
@@ -2860,7 +2959,7 @@
       var mySVGsToInject = document.querySelectorAll('img.inject-me')
       SVGInjector(mySVGsToInject)
 
-      const swiper = new Swiper('.swiper', {
+      const swiper = new Swiper('.normal-swiper', {
         loop: false,
         // 每次5張
         slidesPerView: 2,
@@ -2881,6 +2980,18 @@
           prevEl: '.swiper-button-prev',
         },
       })
+      const swiper2 = new Swiper('.gallery-swiper', {
+          loop: false,
+          // 每次1張
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 12,
+
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        })
     </script>
   </body>
 </html>
