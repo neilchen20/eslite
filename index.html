@@ -24,7 +24,6 @@
     <!-- Custom -->
     <link href="./assets/css/font.css" rel="stylesheet" />
     <link href="./assets/css/all.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="./assets/js/chengeicon.js"></script>
 
     <style>
       :root {
@@ -34,7 +33,7 @@
     </style>
   </head>
 
-  <body>
+  <body id="home">
     <!-- nav -->
     <nav class="navbar fixed-top p-0">
       <div class="container-fluid p-0">
@@ -196,57 +195,60 @@
         </div>
       </div>
     </nav>
-
     <!-- kv -->
     <div class="container kv">
       <div class="row">
+        <!-- 文字 -->
         <div class="col-12 col-lg-6">
           <div class="kv-text">
             <div class="kv-date">
-              <span>2O23.12.O5</span><span class="date-line"></span
-              ><span>2O24.O3.O6</span>
+              <span>2O23.12.O5</span><span class="date-line"></span><span>2O24.O3.O6</span>
             </div>
             <h1 class="kv-title mb-3">
               <span class="large">2O23誠品</span>年度閱讀報告
             </h1>
             <div class="kv-bubble">
-              <img
-                class="img-fluid"
-                src="./assets/img/kv-text-bubble.png"
-                alt="開啟：書頁與世界的對話框" />
+              <picture>
+                <source srcset="./assets/img/kv-text-bubble_xs@2x.png" media="(min-width: 750px)">
+                <img class="img-fluid" src="./assets/img/kv-text-bubble.png" alt="開啟：書頁與世界的對話框">
+              </picture>
             </div>
             <div class="kv-sub-title">
-              <img
-                class="img-fluid"
-                src="./assets/img/sub-title.png"
-                alt="您有＿＿則來自世界的未讀訊息" />
+              <div class="sub-title-wrap">
+                  <h4 class="sub-title-head">您有＿＿則來自世界的未讀訊息</h4>
+                  <p class="sub-title-body">翻開書頁，文字傳來各種訊息，
+                    <span class="d-block">即便生活型態轉變，面對面的機會減少，</span>
+                    <span class="d-block">閱讀仍能引起不同時空的共鳴，展開與世界的對話。</span>
+                  </p>
+              </div>
+            </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-lg-6 mt-4 mt-lg-0">
-          <div class="kv-img">
-            <div class="kv-cloud">
-              <img
-                class="kv-main"
-                src="./assets/img/main.png"
-                alt="2023誠品年度閱讀報告 - 插畫家Crotor" />
+          <!-- 圖片 -->
+          <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+            <div class="kv-img">
+              <div class="kv-cloud">
+                <img class="kv-main" src="./assets/img/main.png" alt="2023誠品年度閱讀報告 - 插畫家Crotor" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <!-- 區塊2 -->
+    <div class="container-xl">
       <!-- kv 誠品年度閱讀報告 -->
-      <div class="row kv-sec">
-        <div class="col">
-          <img
-            src="./assets/img/intro_xl.png"
-            alt="2023誠品年度閱讀報告 - 線上登場"
-            class="d-lg-flex d-none" />
-          <img
-            src="./assets/img/intro_xs@2x.png"
-            alt="2023誠品年度閱讀報告 - 線上登場"
-            class="d-flex d-lg-none" />
+      <div class="row">
+        <div class="col-12">
+          <picture class="d-block">
+            <source srcset="./assets/img/intro_xl.png" media="(min-width: 750px)">
+            <img class="img-fluid" src="./assets/img/intro_xs@2x.png" alt="2023誠品年度閱讀報告 - 線上登場">
+          </picture>
         </div>
       </div>
+    </div>
+    <!-- 區塊3 -->
+    <div class="container-xl">
       <!-- bubble -->
       <div class="bubble">
         <div class="row bubbleone">
@@ -262,105 +264,71 @@
         </div>
         <div class="row bubblesec">
           <div class="col bubblesec-gap">
-            <img
-              src="./assets/img/bubble-like@2x.png"
-              alt="bubble like"
-              class="bubble-secimg" />
-            <img
-              src="./assets/img/bubble-save-subscribe@2x.png"
-              alt="bubble save subscribe"
-              class="bubble-secimg" />
-            <img
-              src="./assets/img/cat-man.png"
-              alt="cat man"
-              class="bubblesec-catman" />
+            <img src="./assets/img/bubble-like@2x.png" alt="bubble like" class="bubble-secimg" />
+            <img src="./assets/img/bubble-save-subscribe@2x.png" alt="bubble save subscribe" class="bubble-secimg" />
+            <img src="./assets/img/cat-man.png" alt="cat man" class="bubblesec-catman" />
           </div>
           <div class="row bubblesec-text">
-            <img
-              src="./assets/img/highlight.svg"
-              alt="點開通知"
-              class="bubblesec-limg" />
+            <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-limg" />
             <span>點開通知</span>
-            <img
-              src="./assets/img/highlight.svg"
-              alt="點開通知"
-              class="bubblesec-rimg" />
+            <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-rimg" />
             <span>讀取今年度的閱讀回顧總整理</span>
           </div>
         </div>
       </div>
+    </div>
+    <!-- 區塊4 -->
+    <div class="container-xl">
       <!-- link item -->
       <div id="link-item">
         <div class="row">
           <div class="col">
             <a href="" class="link-img1">
-              <img
-                src="./assets/img/link-item-1.png"
-                alt="誠品全通路24小時閱讀分析"
-                id="link-img1" />
+      
+              <img src="./assets/img/link-item-1.png" alt="誠品全通路24小時閱讀分析" id="link-img1" />
             </a>
           </div>
           <div class="col d-flex align-items-end position-relative">
             <a href="" class="link-img2">
-              <img
-                src="./assets/img/link-item-2.png"
-                alt="台灣閱讀觀察"
-                id="link-img2" />
+              <img src="./assets/img/link-item-2.png" alt="台灣閱讀觀察" id="link-img2" />
             </a>
           </div>
         </div>
         <div class="row link-secrow">
           <div class="col col-lg-6 link-colimg3">
             <a href="" class="link-img3">
-              <img
-                src="./assets/img/link-item-3.png"
-                alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察"
-                id="link-img3" />
+              <img src="./assets/img/link-item-3.png" alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察" id="link-img3" />
             </a>
           </div>
           <div class="col col-lg-6">
             <a href="" class="link-img4">
-              <img
-                src="./assets/img/link-item-4.png"
-                alt="台灣年度暢銷書榜"
-                id="link-img4" />
+              <img src="./assets/img/link-item-4.png" alt="台灣年度暢銷書榜" id="link-img4" />
             </a>
           </div>
         </div>
         <div class="row link-thrrow">
           <div class="col link-colimg5">
             <a href="" class="link-img5">
-              <img
-                src="./assets/img/link-item-5.png"
-                alt="台灣年度暢銷作家"
-                id="link-img5" />
+              <img src="./assets/img/link-item-5.png" alt="台灣年度暢銷作家" id="link-img5" />
             </a>
           </div>
           <div class="col">
             <a href="" class="link-img7">
-              <img
-                src="./assets/img/link-item-7.png"
-                alt="台灣年度之最＿出版社"
-                id="link-img7" />
+              <img src="./assets/img/link-item-7.png" alt="台灣年度之最＿出版社" id="link-img7" />
             </a>
           </div>
         </div>
         <div class="row link-fourow">
           <div class="col link-colimg6">
             <a href="" class="link-img6">
-              <img
-                src="./assets/img/link-item-6.png"
-                alt="誠品社群十大之最"
-                id="link-img6" />
+              <img src="./assets/img/link-item-6.png" alt="誠品社群十大之最" id="link-img6" />
             </a>
           </div>
         </div>
       </div>
     </div>
     <footer>
-      誠品線上 - 誠品生活股份有限公司<br />
-      本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
-      Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+      誠品線上 - 誠品生活股份有限公司<span class="d-block">本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google Chrome版本 60 以上 / Firefox版本 48 以上 / Safari 版本 11 以上</span>
     </footer>
     <script>
       var offcanvasElement = document.getElementById('nav-mainNavbar')
