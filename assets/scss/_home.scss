@@ -1,32 +1,9 @@
 // home
-#home {
-  &:before {
-    content: '';
-      display: block;
-      position: absolute;
-      background-image: url('../img/Ellipse2_xs.svg');
-      background-repeat: no-repeat;
-      width: 17.75rem;
-      height: 17.75rem;
-      top: -7rem;
-      left: -7rem;
-      z-index: -10;
-    
-      @media (min-width:992px) {
-        background-image: url('../img/Ellipse2.svg');
-        width: 25.5rem;
-        height: 25.5rem;
-        top: -10rem;
-        left: -7rem;
-      }
-  }
-}
 .kv {
-  overflow-x: hidden;
+  overflow: hidden;
   padding-top: 6rem;
 
   @media (min-width:992px) {
-    overflow-x: unset;
     padding-top: 10.625rem;
   }
 
@@ -191,32 +168,6 @@
         top: -4rem;
         left: 6rem;
         z-index: -10;
-      }
-    }
-
-    .kv-cloud::after {
-      content: '';
-      display: block;
-      position: absolute;
-      background-image: url('../img/Ellipse1_xs.svg');
-      background-repeat: no-repeat;
-      width: 23.75rem;
-      height: 23.75rem;
-      top: 0.5rem;
-      left: 2.5rem;
-      z-index: -15;
-
-      @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('../img/Ellipse1.svg');
-        background-repeat: no-repeat;
-        width: 64.875rem;
-        height: 64.875rem;
-        top: 2rem;
-        left: 1rem;
-        z-index: -15;
       }
     }
   }
@@ -458,7 +409,12 @@
     display: none;
   }
 }
-
+.container-xl:has(#link-item) {
+  /*md：直向平板，768以下*/
+  @media (max-width: 767.98px) {
+    overflow: hidden;
+  }
+}
 #link-item {
   margin-top: 5rem;
 

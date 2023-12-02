@@ -6,7 +6,7 @@ $tooltip-max-width: 100% !important;
 // Mixin
 // 紙張紋理
 @mixin paper-bg {
-    background: $paper-texture repeat;
+    background: $paper-texture repeat, #F8F6E5;
     background-size: 100px 100px;
 }
 // 格線紋理
@@ -45,17 +45,17 @@ $tooltip-max-width: 100% !important;
     --cyan-dark: #2E878D;
     --cyan-light: #A7D8DB;
 }
-::-webkit-scrollbar {
-    width: 0.5rem;
-    position: absolute;
-}
-::-webkit-scrollbar-track {
-    background: #F8F6E5;
-}
-::-webkit-scrollbar-thumb {
-    background-color: rgba(128, 128, 128, 0.511);
-    border-radius: 5px;
-}
+// ::-webkit-scrollbar {
+//     width: 0.5rem;
+//     position: absolute;
+// }
+// ::-webkit-scrollbar-track {
+//     background: #F8F6E5;
+// }
+// ::-webkit-scrollbar-thumb {
+//     background-color: rgba(128, 128, 128, 0.511);
+//     border-radius: 5px;
+// }
 body {
     font-family: 'Noto Sans TC', Arial, sans-serif;
     @include paper-bg;
@@ -64,20 +64,20 @@ body {
 @import '_nav.scss';
 @import '_home.scss';
 
-/* 加寬字母OP間距 */
+// 加寬字母OP間距
 .expand-spacing {
     letter-spacing: 0.18rem;
 }
 
+// 反選顏色
+html::selection {
+    background: var(--minor-color);
+    color: var(--main-color);
+}
+
 footer{
-    color: #000;
-    text-align: center;
-    font-family: Noto Sans TC;
-    font-size: 0.75rem;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 1.5rem;
-    margin-bottom: 12px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    & small {
+        color: var(--bs-dark);
+        font-size: 0.75rem;
+    }
 }

@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- W3.JS -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
   <!--svg-injector-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg-injector/1.1.3/svg-injector.min.js"></script>
   <!-- Custom -->
@@ -201,8 +203,8 @@
 
 <body>
   <!-- nav -->
-  <nav class="navbar fixed-top p-0 d-none">
-    <div class="container-fluid p-0">
+  <nav class="navbar fixed-top">
+    <div class="container-fluid px-lg-0">
       <button class="navbar-toggler nav-mainToggler" id="toggleButton" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#nav-mainNavbar" aria-controls="nav-mainNavbar" aria-label="Toggle navigation">
         <div class="nav-lefticon">
@@ -212,84 +214,38 @@
       </button>
       <!-- main-toggler -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="nav-mainNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-body d-none d-lg-block">
-          <ul class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 text-light">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/all-day.html">誠品全通路 24 小時閱讀分析</a>
+              <a class="nav-link" aria-current="page" href="./all_day.html">誠品全通路 24 小時閱讀分析</a>
             </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/taiwan-read.html">台灣閱讀觀察</a>
-            </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/hskt-read.html">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
-            </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/year-top.html">台灣年度暢銷書榜</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav flex-grow-1 flex-row" id="nav-mainsec">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/year-writer.html">台灣年度暢銷作家</a>
+              <a class="nav-link" aria-current="page" href="./taiwan_read.html">台灣閱讀觀察</a>
             </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/publish.html">台灣年度之最＿出版社</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./hskt_read.html">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
             </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/social.html">誠品社群十大之最</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./year_top.html">台灣年度暢銷書榜</a>
             </li>
-            <li class="nav-item nav-itemLink">
-              <a class="nav-link active" aria-current="page" href="/">返回首頁</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./year-writer.html">台灣年度暢銷作家</a>
             </li>
-          </ul>
-        </div>
-        <div class="offcanvas-body d-block d-lg-none">
-          <ul class="navbar-nav justify-content-start flex-grow-1 flex-row text-light">
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/all-day.html">誠品全通路 24 小時閱讀分析</a>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./publish.html">台灣年度之最＿出版社</a>
             </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/taiwan-read.html">台灣閱讀觀察</a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./social.html">誠品社群十大之最</a>
             </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/hskt-read.html">香港｜蘇州｜吉隆坡｜東京閱讀觀察</a>
-            </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/year-top.html">台灣年度暢銷書榜</a>
-            </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/year-writer.html">台灣年度暢銷作家</a>
-            </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/publish.html">台灣年度之最＿出版社</a>
-            </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/social.html">誠品社群十大之最</a>
-            </li>
-            <li class="nav-item nav-mobile">
-              <a class="nav-link active" aria-current="page" href="/">返回首頁</a>
-            </li>
+            <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./">返回首頁</a>
+                </li>
           </ul>
         </div>
       </div>
-
+  
       <!-- link-toggler -->
-      <div class="dropdown" id="link-dropdown">
-        <button class="btn btn-secondary dropdown-toggle p-0" id="link-dropbtn" type="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <div class="nav-righticon">
-            <img src="./assets/img/icon/menu-black.svg" alt="navbar link" id="d-menuIcon" />
-            <img src="./assets/img/icon/close-black.svg" alt="close navbar" style="display: none" id="d-closeIcon" />
-          </div>
-        </button>
-        <ul class="dropdown-menu">
-          <img src="./assets/img/Polygon1.svg" alt="Polygon1" id="nav-polygon" />
-          <li><a class="dropdown-item" href="#">中文館</a></li>
-          <li><a class="dropdown-item" href="#">外文館</a></li>
-          <li><a class="dropdown-item" href="#">兒童館</a></li>
-          <li><a class="dropdown-item" href="#">誠品線上</a></li>
-          <li><a class="dropdown-item" href="#">TOP 100</a></li>
-          <li><a class="dropdown-item" href="#">職人大賞</a></li>
-        </ul>
+      <div class="dropdown" id="link-dropdown" w3-include-html="nav-right.html">
       </div>
     </div>
   </nav>
@@ -612,34 +568,10 @@
       </div>
     </div>
   </div>
-
-
-
-
-  <footer>
-    誠品線上 - 誠品生活股份有限公司<br />
-    本網站已依台灣網站內容分級規定處理｜建議使用瀏覽器版本：Google
-    Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
-  </footer>
+  <footer w3-include-html="footer.html"></footer>
+  <script src="./assets/js/switch-nav-icon.js"></script>
   <script>
-    var offcanvasElement = document.getElementById('nav-mainNavbar')
-    offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-      document.getElementById('menuIcon').style.display = 'none'
-      document.getElementById('closeIcon').style.display = 'block'
-    })
-    offcanvasElement.addEventListener('hide.bs.offcanvas', (event) => {
-      document.getElementById('menuIcon').style.display = 'block'
-      document.getElementById('closeIcon').style.display = 'none'
-    })
-    var dropdownElement = document.getElementById('link-dropdown')
-    dropdownElement.addEventListener('show.bs.dropdown', (event) => {
-      document.getElementById('d-menuIcon').style.display = 'none'
-      document.getElementById('d-closeIcon').style.display = 'block'
-    })
-    dropdownElement.addEventListener('hide.bs.dropdown', (event) => {
-      document.getElementById('d-menuIcon').style.display = 'block'
-      document.getElementById('d-closeIcon').style.display = 'none'
-    })
+    w3.includeHTML();
     var mySVGsToInject = document.querySelectorAll('img.inject-icon')
       SVGInjector(mySVGsToInject)
   </script>
