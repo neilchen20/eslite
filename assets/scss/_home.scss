@@ -417,229 +417,73 @@
 }
 #link-item {
   margin-top: 5rem;
+  a[class^="link-img"] {
+    display: block;
+    width: fit-content;
+  }
 
   @media (min-width:992px) {
     margin-top: 7.37rem;
-  }
-
-  .link-img1 {
-    display: block;
-    transform: translate(-30px, 0);
-
-    @media (min-width: 992px) {
-      transform: translate(20px, 0);
+    img[id^="link-img"] {
+      width: auto;
     }
   }
-
-  #link-img1 {
-    width: 24rem;
-
-    @media (min-width: 768px) {
-      font-size: 5rem;
+  /*sm：橫向手機，576以下*/
+  @media (max-width: 575.98px) {
+    #link-img1 {
+      width: 24rem;
     }
-
-    @media (min-width: 992px) {
-      width: 38rem;
+    #link-img2 {
+      width: 23rem;
     }
-  }
-
-  .link-img2 {
-    display: block;
-    transform: translate(-12px, 0);
-
-    @media (min-width: 992px) {
-      transform: translate(-100px, 0);
+    #link-img3 {
+      width: 23rem;
     }
-  }
-
-  #link-img2 {
-    width: 23rem;
-
-    @media (min-width: 768px) {
-      font-size: 5rem;
+    #link-img4 {
+      width: 25rem;
     }
-
-    @media (min-width: 992px) {
-      width: 41rem;
+    #link-img5 {
+      width: 23rem;
     }
-
+    #link-img7 {
+      width: 17rem;
+    }
+    #link-img6 {
+      width: 23rem;
+    }
   }
 
   .link-secrow {
     position: relative;
     margin-top: 1.125rem;
-
     @media (min-width:992px) {
       margin-top: 2.88rem;
-    }
 
-    .link-img3 {
-      display: block;
-      transform: translate(-30px, 0);
-
-      @media (min-width: 992px) {
-        transform: translate(160px, 0);
-      }
-    }
-
-    .link-colimg3::before {
-      @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('../img/flow-balloon-small-1.png');
-        background-repeat: no-repeat;
-        width: 3.125rem;
-        height: 4.625rem;
-        bottom: 8rem;
-        z-index: -10;
-      }
-    }
-
-    #link-img3 {
-      width: 23rem;
-
-      @media (min-width: 768px) {
-        font-size: 5rem;
-      }
-
-      @media (min-width: 992px) {
-        width: 53.5rem;
-      }
-    }
-
-    .link-img4 {
-      display: block;
-
-      @media (min-width: 992px) {
-        transform: translate(-25px, 285px);
-      }
-    }
-
-    #link-img4 {
-      width: 25rem;
-
-      @media (min-width: 768px) {
-        font-size: 5rem;
-      }
-
-      @media (min-width: 992px) {
-        width: 50.25rem;
-      }
     }
   }
 
   .link-thrrow {
     position: relative;
     margin-top: 1.5rem;
-
     @media (min-width:992px) {
       margin-top: 5rem;
-    }
-
-    .link-img5 {
-      display: block;
-      transform: translate(24px, 0);
-
-      @media (min-width: 992px) {
-        transform: translate(60px, 0);
-      }
-    }
-
-    .link-colimg5::before {
-      @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('../img/flow-balloons.png');
-        background-repeat: no-repeat;
-        width: 12.5rem;
-        height: 13.75rem;
-        top: -6rem;
-        z-index: -10;
-      }
-    }
-
-    #link-img5 {
-      width: 23rem;
-
-      @media (min-width: 768px) {
-        font-size: 5rem;
-      }
-
-      @media (min-width: 992px) {
-        width: 40.625rem;
-      }
-    }
-
-    .link-img7 {
-      display: block;
-      transform: translate(60px, 0px);
-
-      @media (min-width: 992px) {
-        transform: translate(125px, 100px);
-      }
-    }
-
-    #link-img7 {
-      width: 17rem;
-
-      @media (min-width: 768px) {
-        font-size: 5rem;
-      }
-
-      @media (min-width: 992px) {
-        width: 26.875rem;
-      }
     }
   }
 
   .link-fourow {
     position: relative;
-
     .link-colimg6 {
       @media (min-width: 992px) {
-        display: flex;
-        justify-content: center;
-      }
-    }
-
-    .link-colimg6::before {
-      @media (min-width:992px) {
-        content: '';
-        display: block;
-        position: absolute;
-        background-image: url('../img/flow-tree.png');
-        background-repeat: no-repeat;
-        width: 11.875rem;
-        height: 16.875rem;
-        bottom: 0;
-        left: 5rem;
-        z-index: -10;
       }
     }
 
     .link-img6 {
-      display: flex;
-      transform: translate(-36px, 0px);
-
       @media (min-width: 992px) {
-        justify-content: center;
-        transform: translate(0, -20px);
-        width: fit-content;
-        width: -moz-fit-content;
       }
     }
 
     #link-img6 {
-      width: 23rem;
-
-      @media (min-width: 768px) {
-        font-size: 5rem;
-      }
-
       @media (min-width: 992px) {
-        width: 41.875rem;
       }
     }
   }
