@@ -720,7 +720,8 @@
                         <!-- 插圖 -->
                         <div class="col-12 col-md-4 col-xl-5">
                             <div class="col-12">
-                                <p class="lead sub-title">外文書年度注目作家TOP3</p>
+                                <h2 class="tab-title">外文書</h2>
+                                <p class="lead sub-title">年度注目作家TOP3</p>
                             </div>
                         </div>
                         <!-- 錨點列表 -->
@@ -853,6 +854,7 @@
             w3.includeHTML();
             let swiper = new Swiper(".swiper", {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 12,
                 pagination: {
                     el: ".swiper-pagination",
@@ -864,7 +866,9 @@
                 },
                 breakpoints: {
                     576: {
+                        // 每次5張
                         slidesPerView: 5,
+                        slidesPerGroup: 5,
                         spaceBetween: 24,
                     },
                 },

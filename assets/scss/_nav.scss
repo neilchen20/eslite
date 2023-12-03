@@ -87,7 +87,7 @@
     .nav-link{
       --opacity: 0;
       --bs-nav-link-padding-x: 1.125rem;
-      --bs-nav-link-padding-y: 1.25rem;
+      --bs-nav-link-padding-y: 0.75rem;
       white-space: nowrap;
       border-radius: 0.5rem;
       color: var(--bs-white);
@@ -96,6 +96,8 @@
         --opacity: 1;
       }
       @media (min-width:992px) {
+        --bs-nav-link-padding-x: 1.125rem;
+        --bs-nav-link-padding-y: 1.25rem;
         font-size: 1.125rem;
       }
     }
@@ -161,9 +163,9 @@
   .dropdown-item {
     --opacity: 0;
     display: flex;
-    --dropdown-item-padding: 0.75rem;
-    padding-top: var(--dropdown-item-padding);
-    padding-bottom: var(--dropdown-item-padding);
+    --dropdown-item-padding-y: 0.75rem;
+    padding-top: var(--dropdown-item-padding-y);
+    padding-bottom: var(--dropdown-item-padding-y);
     align-items: center;
     justify-content: center;
     color: var(--bs-white);

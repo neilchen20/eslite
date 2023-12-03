@@ -76,6 +76,10 @@ html::selection {
 }
 
 footer{
+    margin-top: 2.5rem;
+    @media (min-width:992px) {
+        margin-top: 4.5rem;
+    }
     & small {
         color: var(--bs-dark);
         font-size: 0.75rem;

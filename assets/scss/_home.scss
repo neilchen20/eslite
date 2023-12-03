@@ -421,35 +421,109 @@
     display: block;
     width: fit-content;
   }
+  img[id^="link-img"] {
+    position: absolute;
+  }
+  .col-12 {
+    position: relative;
+  }
 
   @media (min-width:992px) {
     margin-top: 7.37rem;
+    .link-firstrow {
+      height: 583px;
+    }
+    .link-secrow {
+      height: 542px;
+    }
+    .link-thrrow {
+      height: 556px;
+    }
+    .link-fourow {
+      height: 600px;
+    }
     img[id^="link-img"] {
       width: auto;
+    }
+    #link-img1 {
+      top: 0;
+      left: 30px;
+    }
+    #link-img2 {
+      bottom: 0;
+      left: -122px;
+    }
+    #link-img3 {
+      bottom: 0;
+      left: 150px;
+    }
+    #link-img4 {
+      bottom: -178px;
+      left: -24px;
+    }
+    #link-img5 {
+      left: 100px;
+      top: 0;
+    }
+    #link-img7 {
+      left: 158px;
+      bottom: -32px;
+    }
+    #link-img6 {
+      left: 310px;
+      top: 0;
     }
   }
   /*sm：橫向手機，576以下*/
   @media (max-width: 575.98px) {
     #link-img1 {
       width: 24rem;
+      left: -50px;
     }
     #link-img2 {
       width: 23rem;
+      left: -11px;
     }
     #link-img3 {
       width: 23rem;
+      left: -34px;
     }
     #link-img4 {
       width: 25rem;
+      left: 0;
     }
     #link-img5 {
       width: 23rem;
+      left: 0;
     }
     #link-img7 {
-      width: 17rem;
+      width: 20rem;
+      right: 0;
     }
     #link-img6 {
-      width: 23rem;
+      width: 28rem;
+      left: -110px;
+    }
+    .col-12:has(.link-img1) {
+      height: 370px;
+    }
+    .col-12:has(.link-img2) {
+      height: 260px;
+    }
+    .col-12:has(.link-img3) {
+      height: 378px;
+    }
+    .col-12:has(.link-img4) {
+      height: 265px;
+    }
+    .col-12:has(.link-img5) {
+      height: 333px;
+    }
+    .col-12:has(.link-img7) {
+      height: 267px;
+    }
+    .col-12:has(.link-img6) {
+      height: 371px;
     }
   }
 
@@ -473,16 +547,6 @@
   .link-fourow {
     position: relative;
     .link-colimg6 {
-      @media (min-width: 992px) {
-      }
-    }
-
-    .link-img6 {
-      @media (min-width: 992px) {
-      }
-    }
-
-    #link-img6 {
       @media (min-width: 992px) {
       }
     }
