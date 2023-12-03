@@ -31,6 +31,8 @@
       referrerpolicy="no-referrer" />
     <!-- W3.JS -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <!-- basicScroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/basicscroll/3.0.4/basicScroll.min.js"></script>
     <!-- Hover.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <!-- Custom -->
@@ -47,11 +49,20 @@
           transform: scale(1.1) rotate(-4deg);
         }
       }
-      
+      .flow {
+        will-change: transform;
+        transform: translateY(var(--translateY));
+      }
     </style>
   </head>
 
   <body id="home">
+    <!-- 浮動-圓圈 -->
+    <div class="circle-group">
+      <span data-modifier="100" class="flow flow-circle" id="circle1"></span>
+      <span data-modifier="200" class="flow flow-circle" id="circle2"></span>
+      <span data-modifier="90" class="flow flow-circle" id="circle3"></span>
+    </div>
     <!-- nav -->
     <nav class="navbar fixed-top">
       <div class="container-fluid px-lg-0">
@@ -93,7 +104,6 @@
             </ul>
           </div>
         </div>
-    
         <!-- link-toggler -->
         <div class="dropdown" id="link-dropdown" w3-include-html="nav-right.html">
         </div>
@@ -102,7 +112,7 @@
     <!-- kv -->
     <section class="kv">
       <div class="container-xl">
-        <div class="row">
+        <div class="row g-0">
           <!-- 文字 -->
           <div class="col-12 col-lg-6">
             <div class="kv-text">
@@ -133,7 +143,7 @@
           <div class="col-12 col-lg-6 mt-4 mt-lg-0">
             <div class="kv-img">
               <div class="kv-cloud">
-                <img class="kv-main" src="./assets/img/main.png" alt="2023誠品年度閱讀報告 - 插畫家Crotor" />
+                <img data-modifier="50" class="flow kv-main" src="./assets/img/main.png" alt="2023誠品年度閱讀報告 - 插畫家Crotor" />
               </div>
             </div>
           </div>
@@ -142,125 +152,155 @@
     </section>
     </div>
     <!-- 區塊2 -->
-    <div class="container-xl">
-      <!-- kv 誠品年度閱讀報告 -->
-      <div class="row">
-        <div class="col-12">
-          <picture class="d-block">
-            <source srcset="./assets/img/intro_xl.png" media="(min-width: 750px)">
-            <img class="img-fluid" src="./assets/img/intro_xs@2x.png" alt="2023誠品年度閱讀報告 - 線上登場">
-          </picture>
+    <section class="sc2">
+      <div class="container-xl">
+        <!-- kv 誠品年度閱讀報告 -->
+        <div class="row">
+          <div class="col-12">
+            <picture class="d-block">
+              <source srcset="./assets/img/intro_xl.png" media="(min-width: 750px)">
+              <img class="img-fluid" src="./assets/img/intro_xs@2x.png" alt="2023誠品年度閱讀報告 - 線上登場">
+            </picture>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- 區塊3 -->
-    <div class="container-xl">
-      <!-- bubble -->
-      <div class="bubble">
-        <div class="row bubbleone">
-          <div class="col-12 col-lg-4">
-            <img src="./assets/img/bubble-explore@2x.png" alt="bubble explore" />
+    <section class="sc3">
+      <div class="container-xl">
+        <!-- bubble -->
+        <div class="bubble">
+          <div class="row bubbleone">
+            <div class="col-12 col-lg-4">
+              <img src="./assets/img/bubble-explore@2x.png" alt="bubble explore" />
+            </div>
+            <div class="col-12 col-lg-4">
+              <img src="./assets/img/bubble-hashtag@2x.png" alt="bubble hashtag" />
+            </div>
+            <div class="col-12 col-lg-4">
+              <img src="./assets/img/bubble-checkin@2x.png" alt="bubble checkin" />
+            </div>
           </div>
-          <div class="col-12 col-lg-4">
-            <img src="./assets/img/bubble-hashtag@2x.png" alt="bubble hashtag" />
-          </div>
-          <div class="col-12 col-lg-4">
-            <img src="./assets/img/bubble-checkin@2x.png" alt="bubble checkin" />
-          </div>
-        </div>
-        <div class="row bubblesec">
-          <div class="col bubblesec-gap">
-            <img src="./assets/img/bubble-like@2x.png" alt="bubble like" class="bubble-secimg" />
-            <img src="./assets/img/bubble-save-subscribe@2x.png" alt="bubble save subscribe" class="bubble-secimg" />
-            <img src="./assets/img/cat-man.png" alt="cat man" class="bubblesec-catman" />
-          </div>
-          <div class="row bubblesec-text">
-            <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-limg" />
-            <span>點開通知</span>
-            <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-rimg" />
-            <span>讀取今年度的閱讀回顧總整理</span>
+          <div class="row bubblesec">
+            <div class="col bubblesec-gap">
+              <img src="./assets/img/bubble-like@2x.png" alt="bubble like" class="bubble-secimg" />
+              <img src="./assets/img/bubble-save-subscribe@2x.png" alt="bubble save subscribe" class="bubble-secimg" />
+              <img src="./assets/img/cat-man.png" alt="cat man" class="bubblesec-catman" />
+            </div>
+            <div class="row bubblesec-text">
+              <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-limg" />
+              <span>點開通知</span>
+              <img src="./assets/img/highlight.svg" alt="點開通知" class="bubblesec-rimg" />
+              <span>讀取今年度的閱讀回顧總整理</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- 區塊4 -->
-    <div class="container-xl">
-      <!-- link item -->
-      <div id="link-item">
-        <div class="row g-0 link-firstrow">
-          <div class="col-12 col-lg-6">
-            <a href="./all_day.html" class="link-img1 ">
-              <picture>
-                <source srcset="./assets/img/link-item-1.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-1_xs@2x.png" alt="誠品全通路24小時閱讀分析" id="link-img1" />
-              </picture>
-            </a>
+    <section class="sc4 position-relative">
+      <!-- 浮動-插畫 -->
+      <div class="misc-group">
+        <img data-modifier="30" class="flow flow-cat-read" src="./assets/img/cat-read.png" alt="">
+        <img data-modifier="29" class="flow flow-balloon-small-1" src="./assets/img/flow-balloon-small-1.png" alt="">
+        <img data-modifier="72" class="flow flow-balloons" src="./assets/img/flow-balloons.png" alt="">
+        <img data-modifier="30" class="flow flow-tree" src="./assets/img/flow-tree.png" alt="">
+      </div>
+      <div class="container-xl">
+        <!-- link item -->
+        <div id="link-item">
+          <div class="row g-0 link-firstrow">
+            <div class="col-12 col-lg-6">
+              <a href="./all_day.html" class="link-img1 ">
+                <picture>
+                  <source srcset="./assets/img/link-item-1.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-1_xs@2x.png" alt="誠品全通路24小時閱讀分析" id="link-img1" />
+                </picture>
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a href="./taiwan_read.html" class="link-img2">
+                <picture>
+                  <source srcset="./assets/img/link-item-2.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-2_xs@2x.png" alt="台灣閱讀觀察" id="link-img2" />
+                </picture>
+              </a>
+            </div>
           </div>
-          <div class="col-12 col-lg-6">
-            <a href="./taiwan_read.html" class="link-img2">
-              <picture>
-                <source srcset="./assets/img/link-item-2.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-2_xs@2x.png" alt="台灣閱讀觀察" id="link-img2" />
-              </picture>
-            </a>
+          <div class="row g-0 link-secrow">
+            <div class="col-12 col-lg-6">
+              <a href="./hskt_read.html" class="link-img3">
+                <picture>
+                  <source srcset="./assets/img/link-item-3.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-3_xs@2x.png" alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察"
+                    id="link-img3" />
+                </picture>
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a href="./year_top.html" class="link-img4">
+                <picture>
+                  <source srcset="./assets/img/link-item-4.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-4_xs@2x.png" alt="台灣年度暢銷書榜" id="link-img4" />
+                </picture>
+      
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="row g-0 link-secrow">
-          <div class="col-12 col-lg-6">
-            <a href="./hskt_read.html" class="link-img3">
-              <picture>
-                <source srcset="./assets/img/link-item-3.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-3_xs@2x.png" alt="香港｜蘇州｜吉隆坡｜東京閱讀觀察" id="link-img3" />
-              </picture>
-            </a>
+          <div class="row g-0 link-thrrow">
+            <div class="col-12 col-lg-6 link-colimg5">
+              <a href="./year-writer.html" class="link-img5">
+                <picture>
+                  <source srcset="./assets/img/link-item-5.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-5_xs@2x.png" alt="台灣年度暢銷作家" id="link-img5" />
+                </picture>
+      
+              </a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a href="./social.html" class="link-img7">
+                <picture>
+                  <source srcset="./assets/img/link-item-7.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-7_xs@2x.png" alt="台灣年度之最＿出版社" id="link-img7" />
+                </picture>
+      
+              </a>
+            </div>
           </div>
-          <div class="col-12 col-lg-6">
-            <a href="./year_top.html" class="link-img4">
-              <picture>
-                <source srcset="./assets/img/link-item-4.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-4_xs@2x.png" alt="台灣年度暢銷書榜" id="link-img4" />
-              </picture>
-              
-            </a>
-          </div>
-        </div>
-        <div class="row g-0 link-thrrow">
-          <div class="col-12 col-lg-6 link-colimg5">
-            <a href="./year-writer.html" class="link-img5">
-              <picture>
-                <source srcset="./assets/img/link-item-5.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-5_xs@2x.png" alt="台灣年度暢銷作家" id="link-img5" />
-              </picture>
-              
-            </a>
-          </div>
-          <div class="col-12 col-lg-6">
-            <a href="./social.html" class="link-img7">
-              <picture>
-                <source srcset="./assets/img/link-item-7.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-7_xs@2x.png" alt="台灣年度之最＿出版社" id="link-img7" />
-              </picture>
-              
-            </a>
-          </div>
-        </div>
-        <div class="row g-0 link-fourow">
-          <div class="col-12 col-lg-12 link-colimg6">
-            <a href="./publish.html" class="link-img6">
-              <picture>
-                <source srcset="./assets/img/link-item-6.png" media="(min-width: 750px)">
-                <img class="hvr-grow-rotate" src="./assets/img/link-item-6_xs@2x.png" alt="誠品社群十大之最" id="link-img6" />
-              </picture>
-              
-            </a>
+          <div class="row g-0 link-fourow">
+            <div class="col-12 col-lg-12 link-colimg6">
+              <a href="./publish.html" class="link-img6">
+                <picture>
+                  <source srcset="./assets/img/link-item-6.png" media="(min-width: 750px)">
+                  <img class="hvr-grow-rotate" src="./assets/img/link-item-6_xs@2x.png" alt="誠品社群十大之最" id="link-img6" />
+                </picture>
+      
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <footer w3-include-html="footer.html"></footer>
     <script src="./assets/js/switch-nav-icon.js"></script>
     <script>
       w3.includeHTML();
+      // basicScroll視差滾動
+      document.querySelectorAll('.flow').forEach((elem) => {
+      const modifier = elem.getAttribute('data-modifier')
+        basicScroll.create({
+          elem: elem,
+          from: 0,
+          to: 4700,
+          direct: true,
+          props: {
+            '--translateY': {
+              from: '0',
+              to: `${-10 * modifier}px`
+            }
+          }
+        }).start()
+    })
     </script>
   </body>
 </html>
