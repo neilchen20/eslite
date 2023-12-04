@@ -357,7 +357,7 @@
           padding-right: calc(var(--bs-gutter-x) * .5);
         }
         .swiper-button-next, .swiper-button-prev {
-          --swiper-navigation-sides-offset: 0.75rem;
+          --swiper-navigation-sides-offset: 0.05rem;
           --swiper-navigation-top-offset: 50%;
         }
       }
@@ -636,7 +636,10 @@
         margin-top: 1.5rem;
       }
       #eighteen-books img {
-        border-radius: 1.5rem;
+        border-radius: 1rem;
+        @media (min-width: 992px) {
+          border-radius: 1.5rem;
+        }
       }
       #eighteen-catman {
         width: 4.25rem;
@@ -1018,7 +1021,6 @@
         </div>
       </div>
     </nav>
-
     <!-- banner -->
     <section class="overflow-hidden" id="page-banner">
       <div class="container-xl position-relative">
@@ -1072,7 +1074,6 @@
         </div>
       </div>
     </section>
-
     <!--24x24-->
     <section class="container-xl" id="twenty-four">
       <div class="row mt-5">
@@ -1088,7 +1089,6 @@
         </div>
       </div>
     </section>
-
     <!--18年時光-->
     <section class="container-xl px-0" id="eighteen-year">
       <div class="row mx-0 justify-content-center">
@@ -1139,7 +1139,6 @@
         </div>
       </div>
     </section>
-
     <!--18年暢銷書榜-->
     <section class="container-xl" id="eighteen-books">
       <div class="row justify-content-center">
@@ -1167,14 +1166,14 @@
             </div>
             <div class="col-12 d-flex justify-content-end">
               <a href="https://www.eslite.com/exhibitions/CU202311-00287"
-                class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank" rel="noopener">看更多<img
+                class="btn btn-primary d-flex align-items-center gap-2 lead" target="_blank" rel="noopener">看更多<img
                   src="./assets/img/arrow-long-right.svg" alt="" class="inject-me" style="fill: var(--bs-white)" />
               </a>
             </div>
           </div>
         </div>
         <div class="col-12 col-lg-6 position-relative">
-          <div class="swiper gallery-swiper">
+          <div class="mt-5 mt-lg-0 swiper gallery-swiper">
             <!-- 照片區 -->
             <div class="swiper-wrapper">
               <!-- 照片 -->

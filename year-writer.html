@@ -88,12 +88,6 @@
                 }
                 }
             }
-            .fit-content-h {
-                width: fit-content;
-            }
-            .fit-content-v {
-                height: fit-content;
-            }
             .banner-big-book-left {
                 width: 304px;
                 left: -30px;
@@ -159,41 +153,16 @@
             }
             .tab-title {
                 font-family: "HanWangHeiHeavy", Arial, sans-serif;
-                font-size: 3.5rem;
+                font-size: 2rem;
+                margin-bottom: 0;
                 color: var(--teal-dark);
+                @media (min-width: 992px) {
+                    font-size: 3.5rem;
+                }
             }
             .sub-title {
                 font-size: 3rem;
                 font-family: "HanWangHeiHeavy", Arial, sans-serif;
-            }
-            #sectionTab {
-                .nav {
-                    justify-content: center;
-                    gap: 1rem;
-                    @media (min-width: 768px) {
-                        gap: 1.5rem;
-                    }
-                }
-                .nav-link {
-                    font-family: "HanWangHeiHeavy", Arial, sans-serif;
-                    --bs-nav-link-padding-y: 1rem;
-                    --bs-nav-link-padding-x: 1.5rem;
-                    border: 2px solid var(--main-color);
-                    border-radius: var(--bs-border-radius-pill);
-                    --bs-nav-link-color: var(--main-color);
-                    @media (min-width: 768px) {
-                        --bs-nav-link-padding-y: 1.5rem;
-                        --bs-nav-link-padding-x: 3.5rem;
-                        font-size: 2.5rem;
-                    }
-                }
-                .nav-link:hover {
-                    color: var(--main-color);
-                }
-                .nav-pills .nav-link.active {
-                    background-color: rgba(173, 197, 225, 0.5);
-                    --bs-nav-pills-link-active-color: var(--main-color);
-                }
             }
 
             .book-cover {
@@ -206,19 +175,13 @@
                 margin: 0 auto;
                 margin-bottom: 1rem;
             }
-            img {
-                max-width: 100%;
-            }
-            @media (min-width: 1200px) {
+            @media (min-width: 992px) {
                 .book-cover {
                     width: 100%;
                     margin-bottom: 0;
                 }
                 .tb-block {
                     min-height: 572px;
-                }
-                .swiper-pointer-events {
-                    overflow: visible !important;
                 }
             }
             .link .lead {
@@ -272,18 +235,18 @@
                 margin-top: 6rem;
             }
             .three-books {
-                background: rgba(163, 211, 191, 0.5);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 450px;
-                border-radius: 2rem;
             }
             /* Swiper */
             .swiper {
-                overflow: visible !important;
-                @media (min-width: 992px) {
+                overflow: visible;
+                /* @media (min-width: 992px) {
                     overflow: hidden;
+                } */
+                & img {
+                    max-width: 100%;
                 }
 
                 .swiper-button-next, .swiper-button-prev {
@@ -317,12 +280,9 @@
                 .swiper-button-prev {
                     left: var(--swiper-navigation-sides-offset);
                 }
-            }
-            .swiper .card {
-                width: 300px;
-                text-align: center;
-                border: none;
-                background: none;
+                .swiper-pagination {
+                    --swiper-pagination-bottom: -1.5rem;
+                }
             }
 
             .swiper-pagination-bullet {
@@ -333,10 +293,6 @@
             .swiper-pagination-bullet-active {
                 opacity: var(--swiper-pagination-bullet-opacity, 1);
                 background: var(--teal-dark) !important;
-            }
-            .swiper .thumbnail img {
-                padding: 0rem 0rem 2.5rem 0rem;
-                max-width: 100%;
             }
             @media (min-width: 768px) and (max-width: 1199.98px) {
                 .book-sec .article {
@@ -356,29 +312,19 @@
                 }
             }
             @media (max-width: 767.98px) {
-                #article1-2 {
-                    margin-right: auto;
-                    margin-left: auto;
-                }
-                .book-sec .article {
-                    padding: 2rem 0;
-                }
-                .tab-title {
-                    font-size: 2rem;
-                }
                 .lead {
                     font-size: 1rem;
                 }
                 .sub-title {
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                 }
                 .three-books {
                     display: block;
                     height: auto;
                     background-color: transparent;
                 }
-                .info-block {
-                    margin-top: 3rem;
+                .row:has(.swiper) {
+                    overflow: hidden;
                 }
             }
             .inject-icon{
@@ -386,8 +332,32 @@
                     fill:var(--bs-white);
                 }
             }
+            .sc-4 {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                @media (min-width: 992px) {
+                    gap: 5rem;
+                }
+                .info-block, .info-block2 {
+                    row-gap: 2rem;
+                }
+            }
+            .sc-5 {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                @media (min-width: 992px) {
+                    gap: 2.5rem;
+                }
+            }
+            .sc-wrap {
+                row-gap: 4.5rem;
+                @media (min-width: 992px) {
+                    row-gap: 6rem;
+                }
+            }
         </style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     </head>
     <body>
         <!-- nav -->
@@ -426,8 +396,8 @@
                                 <a class="nav-link" aria-current="page" href="./social.html">誠品社群十大之最</a>
                             </li>
                             <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./">返回首頁</a>
-                      </li>
+                                <a class="nav-link" aria-current="page" href="./">返回首頁</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -440,232 +410,116 @@
         <!-- banner -->
         <section class="overflow-hidden" id="page-banner">
             <div class="container-xl position-relative">
-              <!-- 中間元素 -->
-              <div class="main-element">
-                <!-- 分頁Banner標題 -->
-              <div class="row justify-content-center page-banner-title">
-                <div class="col-12 text-center">
-                  <picture>
-                    <source srcset="./assets/img/p5/p5-banner-title_xl.png" media="(min-width: 750px)">
-                    <img class="img-fluid" src="./assets/img/p5/p5-banner-title_xs@2x.png" alt="">
-                  </picture>
+                <!-- 中間元素 -->
+                <div class="main-element">
+                    <!-- 分頁Banner標題 -->
+                    <div class="row justify-content-center page-banner-title">
+                        <div class="col-12 text-center">
+                            <picture>
+                                <source srcset="./assets/img/p5/p5-banner-title_xl.png" media="(min-width: 750px)">
+                                <img class="img-fluid" src="./assets/img/p5/p5-banner-title_xs@2x.png" alt="">
+                            </picture>
+                        </div>
+                    </div>
+                    <!-- 分頁Banner介紹 -->
+                    <div class="row justify-content-center page-banner-text">
+                        <div class="col-12 col-xxl-6">
+                            <p class="lead text-start">
+                                是哪個作家，讓讀者甘願為他騰出時間閱讀、清出書架專屬C位？這些作家的作品，在讀者閱讀河道上享有特權，親簽版、首刷贈品版、誠品獨家書封版，第一時間統統要收齊！</p>
+                            <img src="./assets/img/p5/banner-icon-pen.svg" alt="">
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <!-- 分頁Banner介紹 -->
-              <div class="row justify-content-center page-banner-text">
-                <div class="col-12 col-xxl-6">
-                  <p class="lead text-start">是哪個作家，讓讀者甘願為他騰出時間閱讀、清出書架專屬C位？這些作家的作品，在讀者閱讀河道上享有特權，親簽版、首刷贈品版、誠品獨家書封版，第一時間統統要收齊！</p>
-                  <img src="./assets/img/p5/banner-icon-pen.svg" alt="">
+                <!-- 浮動元素 -->
+                <div class="flow-element w-100 position-relative">
+                    <div class="position-relative circle-left">
+                        <img class="banner-big-book-left position-absolute" src="./assets/img/p5/banner/big-book-left.png"
+                            alt="">
+                    </div>
+                    <div class="d-none d-xl-block position-relative circle-right">
+                        <img class="banner-teacher-right position-absolute" src="./assets/img/p5/banner/teacher-right.png"
+                            alt="">
+                    </div>
                 </div>
-              </div>
-              </div>
-              <!-- 浮動元素 -->
-              <div class="flow-element w-100 position-relative">
-                <div class="position-relative circle-left">
-                  <img class="banner-big-book-left position-absolute" src="./assets/img/p5/banner/big-book-left.png" alt="">
-                </div>
-                <div class="d-none d-xl-block position-relative circle-right">
-                  <img class="banner-teacher-right position-absolute" src="./assets/img/p5/banner/teacher-right.png" alt="">
-                </div>
-              </div>
             </div>
-          </section>
-        <!-- 中文書華文文學作家TOP1O -->
-        <div class="container-xl" id="" style="margin-bottom: 6rem;">
-            <!-- 文案 -->
-            <div class="info-block row row-gap-3">
-                <!-- 標題 -->
-                <div class="col-12 col-md-4 col-xl-5">
-                    <h2 class="tab-title">中文書</h2>
-                    <p class="lead sub-title mb-0 mb-lg-3">華文文學作家TOP1O</p>
-                </div>
-                <!-- 內文 -->
-                <div class="col-12 col-md-8 col-xl-7">
+        </section>
+        <div class="d-flex flex-column sc-wrap">
+            <!-- 中文書華文文學作家TOP1O -->
+            <div class="container-xl sc-2">
+                <!-- 文案 -->
+                <div class="info-block row">
+                    <!-- 標題 -->
+                    <div class="col-12 col-md-4 col-xl-5">
+                        <h2 class="tab-title">中文書</h2>
+                        <p class="lead sub-title mb-0 mb-lg-3">華文文學作家TOP1O</p>
+                    </div>
+                    <!-- 內文 -->
+                    <div class="col-12 col-md-8 col-xl-7">
                         <p class="lead">
                             「你懂我」是種跨世代與地域的精神共振。華文文學作家中，社群上活躍的新生代作家、詩人榜上有名。他們以簡短詞句、對話來貼近大眾內心隱微的情感，獲得廣大讀者共鳴。而善寫恐怖、愛情等題材的類型文學作家，長年在網路上分享自己的小說連載，作品產出穩定，成書即熱銷。文壇資深作家張曼娟不綴地創作，凡出書必有熱烈迴響；張愛玲作品亦也是始終長青。
                         </p>
                         <div class="link" style="display: inline-block; float: right;">
-                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
+                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img
+                                    src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
                         </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column gap-5 mt-3 mt-lg-5">
-                <!-- Swiper -->
-                <div class="row justify-content-center" id="article1-1">
-                    <div class="col-12 col-xl-12">
-                            <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                                <div class="swiper-wrapper" id="swiper-wrapper-c10e2a429117b0f15" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
-                                    <div class="swiper-slide card swiper-slide-active" role="group" aria-label="1 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-0" target="_blank"><img src="./assets/img/p5/sc1-book-1.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card swiper-slide-next" role="group" aria-label="2 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-1" target="_blank"><img src="./assets/img/p5/sc1-book-2.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="3 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-2" target="_blank"><img src="./assets/img/p5/sc1-book-3.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="4 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-3" target="_blank"><img src="./assets/img/p5/sc1-book-4.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="5 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-4" target="_blank"><img src="./assets/img/p5/sc1-book-5.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="6 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-5" target="_blank"><img src="./assets/img/p5/sc1-book-6.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="7 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-6" target="_blank"><img src="./assets/img/p5/sc1-book-7.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="8 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-7" target="_blank"><img src="./assets/img/p5/sc1-book-8.png" alt="" /> </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="9 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-8" target="_blank"> <img src="./assets/img/p5/sc1-book-9.png" alt="" /></a>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide card" role="group" aria-label="10 / 10" style="width: 252.8px; margin-right: 20px;">
-                                        <div class="thumbnail">
-                                            <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-9" target="_blank"><img src="./assets/img/p5/sc1-book-10.png" alt="" /></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- 頁數 -->
-                                <div class="swiper-pagination d-none d-xl-block"></div>
-                                <!-- 上一張/下一張 -->
-                                <div class="swiper-button-prev">
-                                    <img src="./assets/img/icon/arrow-left.svg" alt="">
-                                </div>
-                                <div class="swiper-button-next">
-                                    <img src="./assets/img/icon/arrow-right.svg" alt="">
-                                </div>
-                            </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- 中文書外國文學作家TOP1O -->
-        <div class="container-xl" id="" style="margin-bottom: 6rem;">
-            <!-- 文案 -->
-            <div class="info-block row row-gap-3 mt-5">
-                <!-- 標題 -->
-                <div class="col-12 col-md-4 col-xl-5">
-                    <h2 class="tab-title">中文書</h2>
-                    <p class="lead sub-title mb-0 mb-lg-3">外國文學作家TOP1O</p>
-                </div>
-                <!-- 內文 -->
-                <div class="col-12 col-md-8 col-xl-7">
-                    <p class="lead">
-                        療癒系、網路小說與類型推理成2023年度暢銷作家的三大關鍵項目，結構性十足且極具情節張力的故事鋪排，次次向讀者保證讀了絕不會後悔的閱讀樂趣。而新海誠與辻村深月的作品，則個別還有電影及日本樂團YOASOBI合作加持！影迷與歌迷，都一同被圈入了閱讀的行列之中。
-                    </p>
-                    <div class="link" style="display: inline-block; float: right;">
-                        <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img
-                                src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex flex-column gap-5 mt-3 mt-lg-5">
                 <!-- Swiper -->
-                <div class="row justify-content-center" id="article1-2">
+                <div class="row justify-content-center mt-3 mt-lg-5" id="article1-1">
                     <div class="col-12 col-xl-12">
-                        <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
-                            <div class="swiper-wrapper" id="swiper-wrapper-c10e2a429117b0f15" aria-live="polite"
-                                style="transform: translate3d(0px, 0px, 0px);">
-                                <div class="swiper-slide card swiper-slide-active" role="group" aria-label="1 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-0" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-1.png" alt="" /> </a>
-                                    </div>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- 內容 -->
+                                <!-- book1-1 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-0" target="_blank">
+                                        <img src="./assets/img/p5/sc1-book-1.png" alt="" />
+                                    </a>
                                 </div>
-                                <div class="swiper-slide card swiper-slide-next" role="group" aria-label="2 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-1" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-2.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-2 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-1" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-2.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="3 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-2" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-3.png" alt="" /></a>
-                                    </div>
+                                <!-- book1-3 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-2" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-3.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="4 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-3" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-4.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-4 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-3" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-4.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="5 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-4" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-5.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-5 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-4" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-5.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="6 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-5" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-6.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-6 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-5" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-6.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="7 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-6" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-7.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-7 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-6" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-7.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="8 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-7" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-8.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-8 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-7" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-8.png" alt="" /> </a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="9 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-8" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-9.png" alt="" /> </a>
-                                    </div>
+                                <!-- book1-9 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-8" target="_blank"> <img
+                                            src="./assets/img/p5/sc1-book-9.png" alt="" /></a>
                                 </div>
-                                <div class="swiper-slide card" role="group" aria-label="10 / 10"
-                                    style="width: 252.8px; margin-right: 20px;">
-                                    <div class="thumbnail">
-                                        <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-9" target="_blank">
-                                            <img src="./assets/img/p5/sc2-book-10.png" alt="" /></a>
-                                    </div>
+                                <!-- book1-10 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00053#sidebar-2-9" target="_blank"><img
+                                            src="./assets/img/p5/sc1-book-10.png" alt="" /></a>
                                 </div>
                             </div>
                             <!-- 頁數 -->
@@ -681,175 +535,291 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- 紀念2023這一年，我們失去的 -->
-        <div class="justify-content-center mt-0 mt-lg-5 mb-lg-5 container" id="article1-2">
-            <div class="row book-sec">
-                <div class="col-12 col-xl-8 d-flex align-items-center">
-                    <div class="article ms-0 ms-xl-5">
-                        <div class="d-flex flex-column align-items-start">
-                            <div class="article-title">
-                                <h4 class="sub-title">紀念2023這一年，我們失去的—</h4>
-                            </div>
-                            <p class="lead">
-                                由文學、音樂、圖像創作乃至企業經營與思想層面，深刻影響一代人的文壇前輩、藝術創作者與企業家，於辭世前仍舊不斷企圖以自身生命鼓動出世界的漣漪。而我們幸虧仍擁有他們遺留下的重要文化資產、創作以及口述生命史，透過閱讀，汲取他們既長且短的一生中，萃取出的信念與生命質地。
-                            </p>
-                            <div class="link">
-                                <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">
-                                    看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
-                            </div>
-                        </div>
+            <!-- 中文書外國文學作家TOP1O -->
+            <div class="container-xl sc-3">
+                <!-- 文案 -->
+                <div class="info-block row">
+                    <!-- 標題 -->
+                    <div class="col-12 col-md-4 col-xl-5">
+                        <h2 class="tab-title">中文書</h2>
+                        <p class="lead sub-title mb-0 mb-lg-3">外國文學作家TOP1O</p>
                     </div>
-                </div>
-                <div class="col-12 col-xl-4">
-                    <div class="book-cover" style="width: auto;">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-0" target="_blank"><img
-                                class="img-fluid" src="./assets/img/p5/sc3-book-1.png" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tb-block mt-5">
-            <div class="three-books">
-                <div class="row row-gap-3 info-block2" style="position: relative;">
-                    <!-- 三本書 -->
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-1" target="_blank"> <img src="./assets/img/p5/sc3-book-2.png" /></a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-2" target="_blank"> <img src="./assets/img/p5/sc3-book-3.png" /></a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-3" target="_blank"> <img src="./assets/img/p5/sc3-book-4.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tb-block mt-5">
-            <div class="three-books">
-                <div class="row row-gap-3 info-block2" style="position: relative;">
-                    <!-- 三本書 -->
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-4" target="_blank"> <img src="./assets/img/p5/sc3-book-5.png" /></a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-5" target="_blank"> <img src="./assets/img/p5/sc3-book-6.png" /></a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-6" target="_blank"> <img src="./assets/img/p5/sc3-book-7.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 外文書年度注目作家TOP3 -->
-        <div class="container-xl" id="" style="margin-bottom: 6rem;">
-            <!-- 文案 -->
-            <div class="info-block mb-5 row row-gap-3">
-                <!-- 標題 -->
-                <div class="col-12 col-md-4 col-xl-5">
-                    <h2 class="tab-title mt-5 mt-lg-0">外文書</h2>
-                    <p class="lead sub-title mb-0 mb-lg-3">年度注目作家TOP3</p>
-                </div>
-                <!-- 內文 -->
-                <div class="col-12 col-md-8 col-xl-7">
+                    <!-- 內文 -->
+                    <div class="col-12 col-md-8 col-xl-7">
                         <p class="lead">
-                            轉換語言與文化脈絡，在西方視角下，如何觀看台灣這塊島嶼與其相關的國際財經、政治系統？而繼承著亞洲血統的新生代移民後裔，在美國又創造了什麼樣屬於自己的新生命史？翻開一本書，此時此地正是世界交匯處。
+                            療癒系、網路小說與類型推理成2023年度暢銷作家的三大關鍵項目，結構性十足且極具情節張力的故事鋪排，次次向讀者保證讀了絕不會後悔的閱讀樂趣。而新海誠與辻村深月的作品，則個別還有電影及日本樂團YOASOBI合作加持！影迷與歌迷，都一同被圈入了閱讀的行列之中。
                         </p>
                         <div class="link" style="display: inline-block; float: right;">
                             <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
                         </div>
+                    </div>
+                </div>
+                <!-- Swiper -->
+                <div class="row justify-content-center mt-3 mt-lg-5" id="article1-2">
+                    <div class="col-12 col-xl-12">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <!-- 內容 -->
+                                <!-- book2-1 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-0" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-1.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-2 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-1" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-2.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-3 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-2" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-3.png" alt="" /></a>
+                                </div>
+                                <!-- book2-4 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-3" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-4.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-5 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-4" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-5.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-6 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-5" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-6.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-7 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-6" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-7.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-8 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-7" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-8.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-9 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-8" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-9.png" alt="" /> </a>
+                                </div>
+                                <!-- book2-10 -->
+                                <div class="swiper-slide">
+                                    <a href="https://www.eslite.com/exhibitions/CU202311-00054#sidebar-2-9" target="_blank">
+                                        <img src="./assets/img/p5/sc2-book-10.png" alt="" /></a>
+                                </div>
+                            </div>
+                            <!-- 頁數 -->
+                            <div class="swiper-pagination d-none d-xl-block"></div>
+                            <!-- 上一張/下一張 -->
+                            <div class="swiper-button-prev">
+                                <img src="./assets/img/icon/arrow-left.svg" alt="">
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="./assets/img/icon/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 三本書 -->
-            <div class="row row-gap-3 info-block2" style="position: relative;">
-                <!-- 插圖 -->
-                <div class="col-12 col-md-4">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-0" target="_blank"><img src="./assets/img/p5/sc4-book-1.png" /> </a>
+            <!-- 紀念2023這一年，我們失去的 -->
+            <div class="container-xl sc-4">
+                <div class="row gy-4 book-sec justify-content-center">
+                    <div class="col-12 col-xl-8 d-flex align-items-center">
+                        <div class="article ms-0 ms-xl-5">
+                            <div class="d-flex flex-column align-items-start">
+                                <div class="article-title">
+                                    <h4 class="sub-title">紀念2023這一年，我們失去的—</h4>
+                                </div>
+                                <p class="lead">
+                                    由文學、音樂、圖像創作乃至企業經營與思想層面，深刻影響一代人的文壇前輩、藝術創作者與企業家，於辭世前仍舊不斷企圖以自身生命鼓動出世界的漣漪。而我們幸虧仍擁有他們遺留下的重要文化資產、創作以及口述生命史，透過閱讀，汲取他們既長且短的一生中，萃取出的信念與生命質地。
+                                </p>
+                                <div class="link">
+                                    <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank">
+                                        看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-0" target="_blank"><img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-1.png" alt="" /></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-1" target="_blank"> <img src="./assets/img/p5/sc4-book-2.png" /></a>
+                <!-- 第一列書 -->
+                <div class="tb-block">
+                    <div class="row info-block">
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-1" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-2.png" /></a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-2" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-3.png" /></a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-3" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-4.png" /></a>
+                        </div>
+            
+                    </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-2" target="_blank"><img src="./assets/img/p5/sc4-book-3.png" /> </a>
+                <!-- 第二列書 -->
+                <div class="tb-block">
+                    <div class="row info-block2">
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-4" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-5.png" /></a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-5" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-6.png" /></a>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <a href="https://www.eslite.com/exhibitions/CU202311-00056#sidebar-2-6" target="_blank"> <img
+                                    class="img-fluid" src="./assets/img/p5/sc3-book-7.png" /></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- 青少年/兒童書華文創作者TOP5 -->
-        <div class="container-xl" id="" style="margin-bottom: 6rem;">
-            <!-- 文案 -->
-            <div class="row row-gap-3 mb-5 info-block ">
+            <!-- 外文書年度注目作家TOP3 -->
+            <div class="container-xl sc-5">
+                <!-- 文案 -->
+                <div class="row">
                     <!-- 標題 -->
                     <div class="col-12 col-md-4 col-xl-5">
-                            <h2 class="tab-title">青少年/兒童書</h2>
-                            <p class="lead sub-title mb-0 mb-lg-3">華文創作者TOP5</p>
+                        <h2 class="tab-title">外文書</h2>
+                        <p class="lead sub-title mb-0 mb-lg-3">年度注目作家TOP3</p>
                     </div>
                     <!-- 內文 -->
                     <div class="col-12 col-md-8 col-xl-7">
-                            <p class="lead">
-                                長期投入為孩子創作故事的人，不只憑藉創造力腦洞大開。這些作家以科學知識、歷史考究刻畫童心，文字、畫筆，將世界轉譯為迷人故事與畫面。其中更不乏帶有強烈東方色彩的奇幻文學與知識漫畫，就連武俠傳奇、論語也能打造為小孩界的故事明星！
-                            </p>
-                            <div class="link" style="display: inline-block; float: right;">
-                                <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
-                            </div>
+                        <p class="lead">
+                            轉換語言與文化脈絡，在西方視角下，如何觀看台灣這塊島嶼與其相關的國際財經、政治系統？而繼承著亞洲血統的新生代移民後裔，在美國又創造了什麼樣屬於自己的新生命史？翻開一本書，此時此地正是世界交匯處。
+                        </p>
+                        <div class="link" style="display: inline-block; float: right;">
+                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img
+                                    src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
+                        </div>
                     </div>
+                </div>
+                <!-- 三本書 -->
+                <div class="row gy-4" style="position: relative;">
+                    <!-- 插圖 -->
+                    <div class="col-12 col-md-4">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-0" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc4-book-1.png" />
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-1" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc4-book-2.png" />
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00069#sidebar-2-2" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc4-book-3.png" />
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- 五本書 -->
-            <div class="row row-gap-3 info-block2" style="position: relative;">
-                <!-- 插圖 -->
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-0" target="_blank"> <img src="./assets/img/p5/sc5-book-1.png" /></a>
+            <!-- 青少年/兒童書華文創作者TOP5 -->
+            <div class="container-xl sc-6">
+                <!-- 文案 -->
+                <div class="row mb-5 info-block ">
+                    <!-- 標題 -->
+                    <div class="col-12 col-md-4 col-xl-5">
+                        <h2 class="tab-title">青少年/兒童書</h2>
+                        <p class="lead sub-title mb-0 mb-lg-3">華文創作者TOP5</p>
+                    </div>
+                    <!-- 內文 -->
+                    <div class="col-12 col-md-8 col-xl-7">
+                        <p class="lead">
+                            長期投入為孩子創作故事的人，不只憑藉創造力腦洞大開。這些作家以科學知識、歷史考究刻畫童心，文字、畫筆，將世界轉譯為迷人故事與畫面。其中更不乏帶有強烈東方色彩的奇幻文學與知識漫畫，就連武俠傳奇、論語也能打造為小孩界的故事明星！
+                        </p>
+                        <div class="link" style="display: inline-block; float: right;">
+                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img
+                                    src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-1" target="_blank"> <img src="./assets/img/p5/sc5-book-2.png" /></a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-2" target="_blank"> <img src="./assets/img/p5/sc5-book-3.png" /></a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-3" target="_blank"> <img src="./assets/img/p5/sc5-book-4.png" /></a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-4" target="_blank"> <img src="./assets/img/p5/sc5-book-5.png" /></a>
+                <!-- 五本書 -->
+                <div class="row gy-4">
+                    <!-- 插圖 -->
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-0" target="_blank"> <img
+                                class="img-fluid" src="./assets/img/p5/sc5-book-1.png" /></a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-1" target="_blank"> <img
+                                class="img-fluid" src="./assets/img/p5/sc5-book-2.png" /></a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-2" target="_blank"> <img
+                                class="img-fluid" src="./assets/img/p5/sc5-book-3.png" /></a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-3" target="_blank"> <img
+                                class="img-fluid" src="./assets/img/p5/sc5-book-4.png" /></a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-2-4" target="_blank"> <img
+                                class="img-fluid" src="./assets/img/p5/sc5-book-5.png" /></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- 青少年/兒童書外文創作者TOP5 -->
-        <div class="container-xl" id="" style="margin-bottom: 6rem;">
-            <!-- 文案 -->
-            <div class="row row-gap-3 mb-5 info-block">
-                <!-- 標題 -->
-                <div class="col-12 col-md-4 col-xl-5">
+            <!-- 青少年/兒童書外文創作者TOP5 -->
+            <div class="container-xl sc-7">
+                <!-- 文案 -->
+                <div class="row mb-5 info-block">
+                    <!-- 標題 -->
+                    <div class="col-12 col-md-4 col-xl-5">
                         <h2 class="tab-title">青少年/兒童書</h2>
                         <p class="lead sub-title mb-0 mb-lg-3">外文創作者TOP5</p>
-                </div>
-                <!-- 內文 -->
-                <div class="col-12 col-md-8 col-xl-7">
+                    </div>
+                    <!-- 內文 -->
+                    <div class="col-12 col-md-8 col-xl-7">
                         <p class="lead">
                             有多少代人，從小就嚮往要到霍格華滋魔法與巫術學院就讀？除了哈利波特，長青的故事角色IP還有
                             ——好餓好餓的毛毛蟲、神探狗狗與小鼠波波，都陪數代小孩成長的不老玩伴。到底，這一本本讀不盡的奇思異想，背後藏鏡人是誰？
                         </p>
                         <div class="link" style="display: inline-block; float: right;">
-                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
+                            <a href="#" class="btn btn-primary btn-lg d-flex align-items-center gap-2 lead" target="_blank"> 看更多<img
+                                    src="./assets/img/arrow-long-right.svg" class="inject-icon" alt="" /> </a>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <!-- 五本書 -->
-            <div class="row row-gap-3 info-block2" style="position: relative;">
-                <!-- 插圖 -->
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-0" target="_blank"> <img src="./assets/img/p5/sc6-book-1.png" /> </a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-1" target="_blank"> <img src="./assets/img/p5/sc6-book-2.png" /> </a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-2" target="_blank"> <img src="./assets/img/p5/sc6-book-3.png" /> </a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-3" target="_blank"> <img src="./assets/img/p5/sc6-book-4.png" /></a>
-                </div>
-                <div class="col-6 col-md p-xl-0">
-                    <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-4" target="_blank"> <img src="./assets/img/p5/sc6-book-5.png" /> </a>
+                <!-- 五本書 -->
+                <div class="row gy-4">
+                    <!-- 插圖 -->
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-0" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc6-book-1.png" />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-1" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc6-book-2.png" />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-2" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc6-book-3.png" />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-3" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc6-book-4.png" />
+                        </a>
+                    </div>
+                    <div class="col-6 col-md p-xl-0">
+                        <a href="https://www.eslite.com/exhibitions/CU202311-00094#sidebar-3-4" target="_blank">
+                            <img class="img-fluid" src="./assets/img/p5/sc6-book-5.png" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -878,7 +848,7 @@
                     },
                 },
             });
-            var mySVGsToInject = document.querySelectorAll('img.inject-icon')
+            var mySVGsToInject = document.querySelectorAll('.inject-icon')
             SVGInjector(mySVGsToInject)
         </script>
     </body>
