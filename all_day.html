@@ -358,6 +358,7 @@
         }
         .swiper-button-next, .swiper-button-prev {
           --swiper-navigation-sides-offset: 0.75rem;
+          --swiper-navigation-top-offset: 50%;
         }
       }
       .swiper {
@@ -411,12 +412,10 @@
         --swiper-pagination-color: var(--main-color);
       }
       .swiper-button-next, .swiper-button-prev {
-        transform: translateY(50%);
         --swiper-navigation-size: 2rem;
         --swiper-navigation-sides-offset: calc(
-          -1 * var(--swiper-navigation-size) / 3
-        );
-        --swiper-navigation-top-offset: 90px;
+          -1 * var(--swiper-navigation-size) / 3);
+        --swiper-navigation-top-offset: calc(50% - 48px);
         --swiper-pagination-color: var(--main-color);
         background: var(--main-color);
         border-radius: 100%;
@@ -426,8 +425,8 @@
           --swiper-navigation-sides-offset: calc(
             -1 * var(--swiper-navigation-size) / 2
           );
-          --swiper-navigation-top-offset: 116px;
           --swiper-navigation-size: 3.5rem;
+          --swiper-navigation-top-offset: calc(50% - 70px);
         }
         &:after {
           display: none;
@@ -641,9 +640,6 @@
       }
       #eighteen-catman {
         width: 4.25rem;
-      }
-      #eighteen-books span {
-        display: block;
       }
       #eighteen-books span:first-child {
         color: var(--bs-dark);
@@ -957,7 +953,7 @@
       }
       @media (min-width: 992px) {
         #coin {
-          margin-top: 19rem;
+          margin-top: 4rem;
         }
         #coin .sc-2 {
           margin-top: 6rem;
@@ -1187,7 +1183,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-01.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1195,7 +1190,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-02.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1203,7 +1197,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-03.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1211,7 +1204,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-04.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1219,7 +1211,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-05.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1227,7 +1218,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-06.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1235,7 +1225,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-07.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1243,7 +1232,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-08.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1251,7 +1239,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-09.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
               <div class="swiper-slide">
@@ -1259,7 +1246,6 @@
                   <div class="gallery-photo">
                     <img class="img-fluid" src="./assets/img/p1/sc3-carousel-img-10.png" alt="">
                   </div>
-                  <span class="eighteen-books-overview">映像攝影：簡子鑫</span>
                 </div>
               </div>
             </div>
@@ -1271,6 +1257,7 @@
               <img src="./assets/img/icon/arrow-right.svg" alt="">
             </div>
           </div>
+          <small class="eighteen-books-overview">映像攝影：簡子鑫</small>
         </div>
       </div>
       <div class="row mx-0 justify-content-center">
@@ -1848,7 +1835,7 @@
           </div>
           <hr />
           <span class="sec-content">
-            不同年齡層個別於實體或線上書店購買的書籍類型中，有四個年齡區段的TOP1類型有明顯特色。29歲以下與50歲以上兩族群無論線上或實體，均以文學創作類購書佔比最大；30-39歲和40-49歲族群於實體買最多兒少圖書，線上則以圖像休閒類為主。
+            不同年齡層個別於實體或線上書店購買的書籍類型中，有四個年齡區段的TOP1類型有明顯特色。29歲以下與50歲以上兩族群無論線上或實體，均以文學創作類購書佔比最大；30-39歲和40-49歲族群於實體買最多兒少圖書，線上則以旅遊休閒類為主。
           </span>
         </div>
       </div>

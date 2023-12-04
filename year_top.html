@@ -280,7 +280,7 @@
         --book-cover-padding-y: 0.625rem;
         width: 220px;
         background-color: white;
-        border: 1px solid var(--main-color);
+        border: 2px solid var(--main-color);
         border-radius: 0.75rem;
         padding-top: var(--book-cover-padding-y);
         padding-bottom: var(--book-cover-padding-y);
@@ -428,7 +428,7 @@
         transform: translateY(50%);
         --swiper-navigation-size: 2rem;
         --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 3);
-        --swiper-navigation-top-offset: 90px;
+        --swiper-navigation-top-offset: calc(50% - 52px);
         --swiper-pagination-color: var(--main-color);
         background: var(--main-color);
         border-radius: 100%;
@@ -436,7 +436,7 @@
         height: var(--swiper-navigation-size);
         @media (min-width: 992px) {
             --swiper-navigation-sides-offset: calc(-1 * var(--swiper-navigation-size) / 2);
-            --swiper-navigation-top-offset: 116px;
+            --swiper-navigation-top-offset: calc(50% - 85px);
             --swiper-navigation-size: 3.5rem;
         }
         &:after {
