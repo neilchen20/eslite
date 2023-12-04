@@ -32,7 +32,8 @@
     height: var(--circle-size);
     @media (min-width:992px) {
       --circle-size: 1037px;
-      left: 592px;
+      right: -160px;
+      left: unset;
       top: 203px;
     }
   }
@@ -62,12 +63,12 @@
     }
   }
   .flow-cat-read {
-    left: 1094px;
+    right: 246px;
     top: 800px;
   }
   .flow-balloon-small-1 {
     left: 52px;
-    top: 940px;
+    top: 640px;
   }
   .flow-balloons {
     left: 33px;
